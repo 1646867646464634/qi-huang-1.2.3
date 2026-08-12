@@ -1,0 +1,36 @@
+# ===== 岐黄·辅助诊疗系统 - Git 忽略规则 =====
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+*.log
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+package-lock.json
+
+# 环境变量与密钥（严禁提交，Key 只放 Vercel 环境变量）
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*secret*
+*token*
+
+# 部署临时产物
+.vercel/
+out/
+dist/
+build/
+*.local
+
+# 开发期抓图脚本的临时输出
+scripts/tmp/
+scripts/*.tmp
