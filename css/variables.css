@@ -8,8 +8,13 @@
     --color-ink-dark:         #1A1A1A;
     --color-ink-light:        #666666;
     --color-ink-pale:         #999999;
+    --color-ink-soft:         #5A534B;   /* 次级柔和文字 */
     --color-ink-bg:           #F5F0EB;
     --color-ink-bg-dark:      #EBE5DD;
+    
+    /* 界面色 */
+    --color-card:             #FBF8F4;   /* 卡片/表单背景 */
+    --color-line:             #E2D9CC;   /* 通用分隔线/描边 */
     
     /* 朱砂红系 */
     --color-vermillion:       #C04040;

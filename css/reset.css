@@ -59,12 +59,19 @@ button {
     font-family: var(--font-body);
     cursor: pointer;
     border: none;
-    outline: none;
+    /* 键盘焦点样式见下方 :focus-visible */
 }
 
 input, textarea, select {
     font-family: var(--font-body);
-    outline: none;
+    /* 键盘焦点样式见下方 :focus-visible */
+}
+
+/* 键盘导航焦点（可访问性）：仅键盘 Tab 时显示清晰焦点环，鼠标点击不显示 */
+:focus-visible {
+    outline: 2px solid var(--color-vermillion);
+    outline-offset: 2px;
+    border-radius: 2px;
 }
 
 ul, ol {

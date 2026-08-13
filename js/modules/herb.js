@@ -201,11 +201,20 @@ class HerbModule {
         const yinpianUrl = (img && img.localYinpian) || (img && img.yinpianUrl) || '';
         const hasAny = originalUrl || yinpianUrl;
 
+        // 远程 wikimedia 直链追加宽度缩略参数以减小下载量；本地路径不做处理
+        const optimizeUrl = (url) => {
+            if (!url) return '';
+            if (url.indexOf('upload.wikimedia.org') !== -1 && url.indexOf('?') === -1) {
+                return url + '?width=800';
+            }
+            return url;
+        };
+
         const imgCard = (url, label, alt) => `
             <div class="herb-img-item">
                 ${url ? `
                     <a href="${url}" target="_blank" rel="noopener noreferrer" class="herb-img-link">
-                        <img src="${url}" alt="${alt}" loading="lazy" class="herb-img"
+                        <img src="${optimizeUrl(url)}" alt="${alt}" loading="lazy" decoding="async" class="herb-img"
                              onerror="this.parentElement.classList.add('img-error');this.remove();">
                         <span class="herb-img-zoom">🔍 查看大图</span>
                     </a>

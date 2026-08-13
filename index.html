@@ -6,13 +6,44 @@
     <title>岐黄·辅助诊疗系统</title>
     <meta name="description" content="中医辅助诊疗系统 - 体质辨识、病症辨证、中药百科、方剂推荐、舌诊分析">
 
+    <!-- favicon -->
+    <link rel="icon" href="assets/images/decorations/taiji.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/images/decorations/taiji.svg">
+
+    <!-- 社交分享（Open Graph / Twitter Card） -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="岐黄·辅助诊疗系统">
+    <meta property="og:description" content="中医辅助诊疗系统 - 体质辨识、病症辨证、中药百科、方剂推荐、舌诊分析">
+    <meta property="og:url" content="https://qi-huang-123.vercel.app/">
+    <meta property="og:site_name" content="岐黄·辅助诊疗系统">
+    <meta property="og:image" content="https://qi-huang-123.vercel.app/assets/images/decorations/taiji.svg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="岐黄·辅助诊疗系统">
+    <meta name="twitter:description" content="中医辅助诊疗系统 - 体质辨识、病症辨证、中药百科、方剂推荐、舌诊分析">
+
+    <!-- 结构化数据（WebApplication） -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "岐黄·辅助诊疗系统",
+        "url": "https://qi-huang-123.vercel.app/",
+        "description": "中医辅助诊疗系统，提供体质辨识、病症辨证、中药百科、方剂推荐、舌诊与面诊辅助、AI 图片识别等功能，仅供中医知识学习与健康参考。",
+        "applicationCategory": "HealthApplication",
+        "inLanguage": "zh-CN",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true
+    }
+    </script>
+
     <!-- 智谱 GLM-4V 代理地址（Vercel 函数；不配置则 AI 识别自动降级为手动表单） -->
     <meta name="glm-proxy-url" content="https://qi-huang-123.vercel.app/api/glm">
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts（异步加载，避免阻塞渲染） -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet"></noscript>
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/variables.css">
@@ -297,51 +328,51 @@
     </div>
     
     <!-- Scripts -->
-    <script src="js/utils/constants.js"></script>
-    <script src="js/utils/storage.js"></script>
-    <script src="js/utils/dom.js"></script>
-    <script src="js/utils/event-bus.js"></script>
-    <script src="js/router.js"></script>
+    <script src="js/utils/constants.js" defer></script>
+    <script src="js/utils/storage.js" defer></script>
+    <script src="js/utils/dom.js" defer></script>
+    <script src="js/utils/event-bus.js" defer></script>
+    <script src="js/router.js" defer></script>
     <!-- 数据文件 -->
-    <script src="js/data/constitution-questions.js"></script>
-    <script src="js/data/herbs-database.js"></script>
-    <script src="js/data/herb-images.js"></script>
-    <script src="js/data/formulas-database.js"></script>
-    <script src="js/data/syndromes-database.js"></script>
-    <script src="js/data/symptom-mapping-extension.js"></script>
-    <script src="js/data/symptom-mapping.js"></script>
-    <script src="js/data/symptom-categories.js"></script>
-    <script src="js/data/tongue-rules.js"></script>
-    <script src="js/data/face-rules.js"></script>
-    <script src="js/data/formula-verses.js"></script>
-    <script src="js/data/herb-comparisons.js"></script>
-    <script src="js/data/syndrome-differentials.js"></script>
-    <script src="js/data/case-studies.js"></script>
+    <script src="js/data/constitution-questions.js" defer></script>
+    <script src="js/data/herbs-database.js" defer></script>
+    <script src="js/data/herb-images.js" defer></script>
+    <script src="js/data/formulas-database.js" defer></script>
+    <script src="js/data/syndromes-database.js" defer></script>
+    <script src="js/data/symptom-mapping-extension.js" defer></script>
+    <script src="js/data/symptom-mapping.js" defer></script>
+    <script src="js/data/symptom-categories.js" defer></script>
+    <script src="js/data/tongue-rules.js" defer></script>
+    <script src="js/data/face-rules.js" defer></script>
+    <script src="js/data/formula-verses.js" defer></script>
+    <script src="js/data/herb-comparisons.js" defer></script>
+    <script src="js/data/syndrome-differentials.js" defer></script>
+    <script src="js/data/case-studies.js" defer></script>
     <!-- 工具与组件 -->
-    <script src="js/utils/question-generator.js"></script>
-    <script src="js/utils/diagnosis-engine.js"></script>
-    <script src="js/utils/glm-vision.js"></script>
-    <script src="js/utils/danger-signals.js"></script>
-    <script src="js/components/detail-modal.js"></script>
-    <script src="js/utils/safety-check.js"></script>
-    <script src="js/utils/export-utils.js"></script>
-    <script src="js/utils/sm2.js"></script>
-    <script src="js/utils/search.js"></script>
+    <script src="js/utils/question-generator.js" defer></script>
+    <script src="js/utils/diagnosis-engine.js" defer></script>
+    <script src="js/utils/glm-vision.js" defer></script>
+    <script src="js/utils/danger-signals.js" defer></script>
+    <script src="js/components/detail-modal.js" defer></script>
+    <script src="js/utils/safety-check.js" defer></script>
+    <script src="js/utils/export-utils.js" defer></script>
+    <script src="js/utils/sm2.js" defer></script>
+    <script src="js/utils/search.js" defer></script>
     <!-- 功能模块 -->
-    <script src="js/modules/constitution.js"></script>
-    <script src="js/modules/herb.js"></script>
-    <script src="js/modules/formula.js"></script>
-    <script src="js/modules/symptom.js"></script>
-    <script src="js/modules/tongue.js"></script>
-    <script src="js/modules/face.js"></script>
-    <script src="js/modules/study.js"></script>
-    <script src="js/modules/favorites.js"></script>
-    <script src="js/modules/comprehensive.js"></script>
-    <script src="js/modules/records.js"></script>
-    <script src="js/modules/profile.js"></script>
-    <script src="js/modules/plans.js"></script>
-    <script src="js/components/identity-guide.js"></script>
+    <script src="js/modules/constitution.js" defer></script>
+    <script src="js/modules/herb.js" defer></script>
+    <script src="js/modules/formula.js" defer></script>
+    <script src="js/modules/symptom.js" defer></script>
+    <script src="js/modules/tongue.js" defer></script>
+    <script src="js/modules/face.js" defer></script>
+    <script src="js/modules/study.js" defer></script>
+    <script src="js/modules/favorites.js" defer></script>
+    <script src="js/modules/comprehensive.js" defer></script>
+    <script src="js/modules/records.js" defer></script>
+    <script src="js/modules/profile.js" defer></script>
+    <script src="js/modules/plans.js" defer></script>
+    <script src="js/components/identity-guide.js" defer></script>
     <!-- 应用入口 -->
-    <script src="js/app.js"></script>
+    <script src="js/app.js" defer></script>
 </body>
 </html>

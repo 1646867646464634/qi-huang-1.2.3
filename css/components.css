@@ -60,9 +60,15 @@
     cursor: pointer;
     transition: all var(--transition-fast);
     position: relative;
-    outline: none;
     border: 1px solid transparent;
     white-space: nowrap;
+}
+
+/* 触屏点击反馈（尊重 prefers-reduced-motion） */
+@media (prefers-reduced-motion: no-preference) {
+    .btn:active {
+        transform: scale(0.97);
+    }
 }
 
 .btn:disabled {
@@ -492,6 +498,10 @@
 @media (min-width: 769px) and (max-width: 1024px) {
     .grid-3, .grid-4 {
         grid-template-columns: repeat(2, 1fr);
+    }
+    /* 平板区间 grid-2 折叠为单列，避免内容过窄挤压 */
+    .grid-2 {
+        grid-template-columns: 1fr;
     }
 }
 
