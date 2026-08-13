@@ -2,6 +2,6 @@
     "version": 2,
     "outputDirectory": ".",
     "functions": {
-        "api/glm.js": { "maxDuration": 30 }
+        "api/glm.js": { "maxDuration": 60 }
     }
 }

@@ -4,9 +4,9 @@
 // 注意：package.json 无 "type":"module"，必须用 CommonJS 导出。
 
 const ZHIPU_ENDPOINT = 'https://open.bigmodel.cn/api/paas/v4/chat/completions';
-const DEFAULT_MAX_TOKENS = 1024;
+const DEFAULT_MAX_TOKENS = 2048;
 const DEFAULT_TEMPERATURE = 0.1;
-const UPSTREAM_TIMEOUT_MS = 30000;
+const UPSTREAM_TIMEOUT_MS = 60000;
 
 // 白名单字段，防止代理被滥用为通用转发
 const ALLOWED_FIELDS = ['model', 'messages', 'max_tokens', 'temperature'];
@@ -51,7 +51,7 @@ module.exports = async function handler(req, res) {
     res.setHeader('Content-Type', 'application/json');
     return res.end(JSON.stringify({ error: 'messages array is required' }));
   }
-  if (!payload.model) payload.model = 'glm-4v-flash';
+  if (!payload.model) payload.model = 'glm-4.6v-flash';
   if (!payload.max_tokens) payload.max_tokens = DEFAULT_MAX_TOKENS;
   if (payload.temperature === undefined) payload.temperature = DEFAULT_TEMPERATURE;
 

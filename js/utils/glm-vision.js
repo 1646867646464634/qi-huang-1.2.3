@@ -4,11 +4,11 @@
 
 const GLM_CONFIG = {
     proxyUrl: 'https://<your-vercel-app>.vercel.app/api/glm', // 占位符，部署后替换（见 README 部署说明）
-    model: 'glm-4v-flash',
+    model: 'glm-4.6v-flash',
     enabled: true,
-    timeoutMs: 30000,
-    retries: 2,             // 429/5xx/网络错误时的重试次数
-    retryBaseMs: 1000,      // 指数退避基准：1s、3s
+    timeoutMs: 60000,
+    retries: 3,             // 429/5xx/网络错误时的重试次数
+    retryBaseMs: 2000,      // 指数退避基准：2s、4s、8s
     maxImageBytes: 5 * 1024 * 1024,
     maxImageEdge: 2000,     // 压缩后最长边
     jpegQuality: 0.9
@@ -97,7 +97,7 @@ async function analyzeImage(analysisType, imageBase64, userPrompt) {
                 { type: 'text', text: userPrompt }
             ]
         }],
-        max_tokens: 1024,
+        max_tokens: 2048,   // 推理模型需预留推理 token 空间
         temperature: 0.1
     };
 
@@ -257,10 +257,11 @@ function buildPrompt(analysisType, rules) {
 
     lines.push('');
     lines.push('输出要求：');
-    lines.push('1. 只输出一个 JSON 对象，不要任何解释、注释、markdown 代码围栏或其他文字。');
+    lines.push('1. 只输出一个 JSON 对象，不要任何解释、思考过程、注释、markdown 代码围栏或其他文字。');
     lines.push('2. 单选字段输出字符串；某字段无法确定时输出空字符串 ""。');
     lines.push('3. 多选字段输出 JSON 数组；无发现时输出空数组 []。');
     lines.push('4. 若图片不是清晰' + subject + '或无法辨识，单选字段输出 ""，多选字段输出 []。');
+    lines.push('5. 直接给出 JSON 结果，禁止输出分析过程。');
 
     const sample = analysisType === 'tongue'
         ? '{"tongueColor":"红","tongueShape":"胖大","coatingColor":"白","coatingQuality":"腻"}'
