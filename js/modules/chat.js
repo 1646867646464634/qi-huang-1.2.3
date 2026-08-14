@@ -274,7 +274,7 @@ class ChatModule {
         const apiMessages = [{ role: 'system', content: system }]
             .concat(session.messages.map(m => ({ role: m.role, content: m.content })));
 
-        // 4. 流式渲染
+        // 4. 渲染（前端模拟打字效果，实际由代理非流式一次性返回完整文本）
         this.abortController = new AbortController();
         this.streaming = true;
         this._setLoadingState(container, true);
@@ -290,12 +290,22 @@ class ChatModule {
         let reply = '';
         try {
             reply = await GLMChat.streamChat(apiMessages, {
-                signal: this.abortController.signal,
-                onDelta: (t) => {
-                    textEl.textContent += t;
-                    box.scrollTop = box.scrollHeight;
-                }
+                signal: this.abortController.signal
+                // 注：当前为非流式，streamChat 内部忽略 onDelta/onReasoning，直接返回完整文本
             });
+            // 前端模拟打字：逐字写入气泡（避免一次性 setTextContent 显得突兀）
+            if (reply) {
+                const chars = Array.from(reply);
+                let i = 0;
+                const step = chars.length > 200 ? 3 : 1; // 长文 3 字/次、短文 1 字/次
+                const timer = setInterval(() => {
+                    if (this.abortController && this.abortController.signal.aborted) { clearInterval(timer); return; }
+                    textEl.textContent += chars.slice(i, i + step).join('');
+                    i += step;
+                    box.scrollTop = box.scrollHeight;
+                    if (i >= chars.length) clearInterval(timer);
+                }, 12);
+            }
         } catch (err) {
             textEl.textContent += (err && err.message) || '对话失败，请稍后重试';
         } finally {

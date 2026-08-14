@@ -127,7 +127,8 @@ async function streamChat(messages, opts) {
     const payload = {
         model: GLM_CHAT_CONFIG.model,
         messages: messages,
-        stream: true,
+        // 不传 stream：非流式 POST 一次性返回完整 JSON。Vercel Node runtime 对 SSE 流式支持不佳（连接池满/缓冲），
+        // 非流式 2s 内返回，体验稳定。流式打字效果改为前端 setInterval 模拟。
         thinking: GLM_CHAT_CONFIG.thinking,
         max_tokens: GLM_CHAT_CONFIG.maxTokens,
         temperature: GLM_CHAT_CONFIG.temperature
@@ -157,6 +158,29 @@ async function streamChat(messages, opts) {
         throw e;
     }
     if (!resp.body) throw { code: 'BAD_RESPONSE', message: 'AI 返回格式异常' };
+
+    // ---- 分支：流式（SSE） / 非流式（JSON）----
+    const ct = (resp.headers.get('Content-Type') || '').toLowerCase();
+    const isEventStream = ct.indexOf('text/event-stream') !== -1;
+
+    if (!isEventStream) {
+        // 非流式：一次性读取 JSON 提取 content（更快、更兼容 Vercel 部署）
+        try {
+            const text = await resp.text();
+            let json = null;
+            try { json = JSON.parse(text); } catch (e) { throw { code: 'BAD_RESPONSE', message: 'AI 返回 JSON 解析失败：' + text.slice(0, 100) }; }
+            const msg = json && json.choices && json.choices[0] && json.choices[0].message;
+            const content = msg && typeof msg.content === 'string' ? msg.content : '';
+            const reasoning = msg && typeof msg.reasoning_content === 'string' ? msg.reasoning_content : '';
+            if (reasoning) onReasoning(reasoning);
+            if (!content) throw { code: 'BAD_RESPONSE', message: 'AI 返回内容为空' };
+            onDelta(content);
+            return content;
+        } catch (err) {
+            if (err && err.code) throw err;
+            throw { code: 'BAD_RESPONSE', message: String((err && err.message) || err) };
+        }
+    }
 
     // ---- SSE 解析：buffer 按 \n\n 分块，逐行取 data: ----
     const reader = resp.body.getReader();
