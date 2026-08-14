@@ -294,8 +294,10 @@ class ChatModule {
                 // 注：当前为非流式，streamChat 内部忽略 onDelta/onReasoning，直接返回完整文本
             });
             // 前端模拟打字：逐字写入气泡（避免一次性 setTextContent 显得突兀）
-            if (reply) {
-                const chars = Array.from(reply);
+            // 双重防御：reply 类型检查，避免非字符串（如异常对象）变成 "[object Object]"
+            const replyStr = typeof reply === 'string' ? reply : (reply && typeof reply.message === 'string' ? reply.message : '');
+            if (replyStr) {
+                const chars = Array.from(replyStr);
                 let i = 0;
                 const step = chars.length > 200 ? 3 : 1; // 长文 3 字/次、短文 1 字/次
                 const timer = setInterval(() => {

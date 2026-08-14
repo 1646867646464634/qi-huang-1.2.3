@@ -39,10 +39,11 @@ function checkFrontRateLimit() {
 
 /**
  * 脱敏：手机号 / 身份证 / 连续 8+ 数字 → 打码
- * 发送前对用户输入与画像字段统一调用
+ * 仅对字符串生效；非字符串返回空（避免 [object Object] 渗入 prompt）
  */
 function sanitize(text) {
-    let s = String(text || '');
+    if (typeof text !== 'string') return '';
+    let s = text;
     s = s.replace(/1[3-9]\d{9}/g, '1**********');  // 手机号
     s = s.replace(/\d{17}[\dXx]/g, '***');          // 身份证
     s = s.replace(/\d{8,}/g, '***');                // 连续 8 位及以上数字
@@ -85,9 +86,15 @@ function buildSystemPrompt(profile, recentRecords) {
         lines.push('');
         lines.push('最近诊断记录摘要（脱敏后，最多 3 条）：');
         recs.forEach((r, i) => {
+            const symptoms = (r && r.input && Array.isArray(r.input.symptoms))
+                ? r.input.symptoms.filter(x => typeof x === 'string').join('、')
+                : '';
+            const names = (Array.isArray(r && r.results))
+                ? r.results.slice(0, 3).map(x => x && typeof x.name === 'string' ? x.name : '').filter(Boolean).join('、')
+                : '';
             lines.push((i + 1) + '. ' + (new Date(r.time)).toLocaleDateString('zh-CN') +
-                ' 症状：' + ((r.input && r.input.symptoms) || []).join('、') +
-                '；辨证：' + ((r.results || []).slice(0, 3).map(x => x.name).join('、') || '—'));
+                ' 症状：' + symptoms +
+                '；辨证：' + (names || '—'));
         });
     }
     lines.push('');
