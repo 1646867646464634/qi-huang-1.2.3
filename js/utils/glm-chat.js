@@ -6,10 +6,10 @@ const GLM_CHAT_CONFIG = {
     proxyUrl: 'https://qi-huang-123.vercel.app/api/glm',
     model: 'glm-4.7-flash',          // 免费文本对话模型（200K 上下文）
     enabled: true,
-    timeoutMs: 60000,
-    maxTokens: 4096,                 // 官方示例可达 65536，4-8K 足够
+    timeoutMs: 60000,                // Vercel 函数 maxDuration=60s 上限对齐
+    maxTokens: 4096,                 // 关闭 thinking 后 4K 足够
     temperature: 0.7,
-    thinking: { type: 'enabled' },   // 智谱 thinking 参数（启用会先流 reasoning_content）
+    thinking: { type: 'disabled' },  // 智谱 thinking 关闭：避免 1 并发排队 + 思考慢导致超时（问诊场景追求快速反馈）
     // 前端本地限流（localStorage 计数，60s 内 ≤8 次）
     RATE_KEY: 'tcm_chat_ratelimit',
     RATE_WINDOW_MS: 60000,
