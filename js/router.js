@@ -13,7 +13,8 @@ const ROUTE_META = {
     'favorites': { title: '收藏夹', desc: '已收藏的方剂、中药与证型' },
     'records': { title: '诊断记录', desc: '历次辨证结果留存、对比与导出' },
     'plans': { title: '常用方案', desc: '保存的体质调理与辨证方案' },
-    'profile': { title: '我的画像', desc: '个人健康画像与背景信息管理' }
+    'profile': { title: '我的画像', desc: '个人健康画像与背景信息管理' },
+    'chat': { title: 'AI 在线问诊', desc: '与 GLM 智能问诊助手对话，获取中医健康科普与调理参考' }
 };
 const APP_NAME = '岐黄·辅助诊疗系统';
 

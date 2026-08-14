@@ -15,7 +15,8 @@
         comprehensive: null,
         records: null,
         profile: null,
-        plans: null
+        plans: null,
+        chat: null
     };
     
     // 初始化
@@ -36,6 +37,7 @@
             'records': () => loadModule('records'),
             'profile': () => loadModule('profile'),
             'plans': () => loadModule('plans'),
+            'chat': () => loadModule('chat'),
             'home': () => showWelcome(),
         }, 'home');
         
@@ -177,6 +179,7 @@
     // 欢迎卡片数据 + 按身份/画像动态排序
     function getWelcomeCards() {
         const cards = [
+            { path: 'chat', icon: '💬', title: 'AI 在线问诊', desc: '与 GLM 智能问诊助手对话，获取中医健康科普与调理参考' },
             { path: 'constitution', icon: '📋', title: '体质辨识', desc: '九种体质问卷测评，了解您的中医体质类型' },
             { path: 'symptom', icon: '🔍', title: '病症辨证', desc: '按症状搜索，获取中医辨证分析与调理建议' },
             { path: 'comprehensive', icon: '🩺', title: '四诊合参', desc: '症状·舌象·面象·体质综合辨证，获取统一报告' },
@@ -306,6 +309,9 @@
                     break;
                 case 'plans':
                     modules[name] = new PlansModule();
+                    break;
+                case 'chat':
+                    modules[name] = new ChatModule();
                     break;
             }
         }
