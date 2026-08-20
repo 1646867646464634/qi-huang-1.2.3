@@ -201,14 +201,18 @@ class ChatModule {
     }
 
     _renderBubble(msg, container) {
+        // 渲染防御：历史消息 content 可能是对象（旧版脏数据），强制转字符串，避免显示 [object Object]
+        const content = typeof msg.content === 'string' ? msg.content
+            : (msg.content && typeof msg.content.message === 'string') ? msg.content.message
+            : '';
         const wrap = document.createElement('div');
         if (msg.role === 'user') {
             wrap.className = 'msg-bubble msg-user';
-            wrap.textContent = msg.content;
+            wrap.textContent = content;
         } else {
             wrap.className = 'msg-bubble msg-ai';
             const text = document.createElement('div');
-            text.textContent = msg.content;
+            text.textContent = content;
             wrap.appendChild(text);
             if (msg.reasoning) {
                 const fold = document.createElement('div');
@@ -221,7 +225,7 @@ class ChatModule {
                 wrap.appendChild(fold);
                 wrap.appendChild(body);
             }
-            this._maybeAddSyndromeLink(wrap, msg.content, container);
+            this._maybeAddSyndromeLink(wrap, content, container);
         }
         return wrap;
     }
@@ -271,8 +275,13 @@ class ChatModule {
         if (typeof Profile !== 'undefined' && Profile.get) profile = Profile.get();
         if (typeof Records !== 'undefined' && Records.list) recent = Records.list().slice(0, 3);
         const system = GLMChat.buildSystemPrompt(profile, recent);
+        // 关键修复：历史消息 content 强制转字符串，防止脏数据（对象/数组）原样发给 GLM
+        // 导致模型把 "[object Object]" 当文本回复
         const apiMessages = [{ role: 'system', content: system }]
-            .concat(session.messages.map(m => ({ role: m.role, content: m.content })));
+            .concat(session.messages.map(m => ({
+                role: m.role,
+                content: typeof m.content === 'string' ? m.content : (m.content && m.content.message) || String(m.content || '')
+            })));
 
         // 4. 渲染（前端模拟打字效果，实际由代理非流式一次性返回完整文本）
         this.abortController = new AbortController();
@@ -322,7 +331,8 @@ class ChatModule {
         session.messages.push({ role: 'assistant', content: reply, time: Date.now() });
         if (!session.title || session.title === '新会话') {
             const first = session.messages.find(m => m.role === 'user');
-            session.title = (first ? first.content : '新会话').slice(0, 15);
+            const firstText = first && typeof first.content === 'string' ? first.content : '';
+            session.title = (firstText || '新会话').slice(0, 15);
         }
         ChatSessions.save(session);
         this.activeSessionId = session.id;
@@ -380,9 +390,10 @@ class ChatModule {
         }
         const lines = ['# 岐黄 AI 问诊记录', '', '时间：' + new Date(session.time).toLocaleString('zh-CN'), '标题：' + session.title, ''];
         session.messages.forEach(m => {
+            const c = typeof m.content === 'string' ? m.content : (m.content && typeof m.content.message === 'string' ? m.content.message : '');
             lines.push('## ' + (m.role === 'user' ? '用户' : 'AI 助手') + '（' + new Date(m.time).toLocaleString('zh-CN') + '）');
             lines.push('');
-            lines.push(m.content);
+            lines.push(c);
             lines.push('');
         });
         lines.push('---');
