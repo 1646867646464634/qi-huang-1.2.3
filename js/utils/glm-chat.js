@@ -4,12 +4,13 @@
 
 const GLM_CHAT_CONFIG = {
     proxyUrl: 'https://qi-huang-123.vercel.app/api/glm',
-    model: 'glm-4.7-flash',          // 免费文本对话模型（200K 上下文）
+    model: 'glm-4.7-flash',          // 免费文本对话模型（200K 上下文，思考模型）
     enabled: true,
     timeoutMs: 60000,                // Vercel 函数 maxDuration=60s 上限对齐
     maxTokens: 4096,                 // 关闭 thinking 后 4K 足够
     temperature: 0.7,
-    thinking: { type: 'disabled' },  // 智谱 thinking 关闭：避免 1 并发排队 + 思考慢导致超时（问诊场景追求快速反馈）
+    // 不传 thinking：GLM-4.7-Flash 是思考模型，传 disabled 可能导致模型把异常字段写入 content
+    // 让模型用默认行为（启用思考），前端只取 content 字符串（rejection/空内容都有防御）
     // 前端本地限流（localStorage 计数，60s 内 ≤8 次）
     RATE_KEY: 'tcm_chat_ratelimit',
     RATE_WINDOW_MS: 60000,
@@ -134,9 +135,9 @@ async function streamChat(messages, opts) {
     const payload = {
         model: GLM_CHAT_CONFIG.model,
         messages: messages,
+        // 不传 thinking：让 GLM-4.7-Flash 用默认思考行为（content 字符串 + reasoning_content 可选）
         // 不传 stream：非流式 POST 一次性返回完整 JSON。Vercel Node runtime 对 SSE 流式支持不佳（连接池满/缓冲），
         // 非流式 2s 内返回，体验稳定。流式打字效果改为前端 setInterval 模拟。
-        thinking: GLM_CHAT_CONFIG.thinking,
         max_tokens: GLM_CHAT_CONFIG.maxTokens,
         temperature: GLM_CHAT_CONFIG.temperature
     };
