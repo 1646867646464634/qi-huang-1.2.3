@@ -832,7 +832,249 @@ const symptomMappingExtension = {
     "齿衄": [
         { syndromeId: "syn_104", keyword: "齿衄", weight: 10 }
     ]
-};
+,
+"局部红肿热痛": [
+        { syndromeId: "syn_128", keyword: "局部红肿热痛", weight: 10 }
+    ],
+    "疮疡初起": [
+        { syndromeId: "syn_128", keyword: "疮疡初起", weight: 10 }
+    ],
+    "发热恶寒": [
+        { syndromeId: "syn_128", keyword: "发热恶寒", weight: 10 }
+    ],
+    "小便黄": [
+        { syndromeId: "syn_128", keyword: "小便黄", weight: 10 },
+        { syndromeId: "syn_139", keyword: "小便黄", weight: 10 }
+    ],
+    "舌红苔黄": [
+        { syndromeId: "syn_128", keyword: "舌红苔黄", weight: 10 },
+        { syndromeId: "syn_139", keyword: "舌红苔黄", weight: 10 }
+    ],
+    "脉数有力": [
+        { syndromeId: "syn_128", keyword: "脉数有力", weight: 10 }
+    ],
+    "下肢红肿热痛": [
+        { syndromeId: "syn_129", keyword: "下肢红肿热痛", weight: 10 }
+    ],
+    "局部灼热": [
+        { syndromeId: "syn_129", keyword: "局部灼热", weight: 10 }
+    ],
+    "皮肤湿疹": [
+        { syndromeId: "syn_129", keyword: "皮肤湿疹", weight: 10 }
+    ],
+    "大便黏滞": [
+        { syndromeId: "syn_129", keyword: "大便黏滞", weight: 10 }
+    ],
+    "舌红苔黄腻": [
+        { syndromeId: "syn_129", keyword: "舌红苔黄腻", weight: 10 },
+        { syndromeId: "syn_134", keyword: "舌红苔黄腻", weight: 10 },
+        { syndromeId: "syn_136", keyword: "舌红苔黄腻", weight: 10 }
+    ],
+    "脉滑数": [
+        { syndromeId: "syn_129", keyword: "脉滑数", weight: 10 },
+        { syndromeId: "syn_134", keyword: "脉滑数", weight: 10 },
+        { syndromeId: "syn_136", keyword: "脉滑数", weight: 10 },
+        { syndromeId: "syn_139", keyword: "脉滑数", weight: 10 }
+    ],
+    "腹部积块": [
+        { syndromeId: "syn_130", keyword: "腹部积块", weight: 10 }
+    ],
+    "固定不移": [
+        { syndromeId: "syn_130", keyword: "固定不移", weight: 10 }
+    ],
+    "疼痛拒按": [
+        { syndromeId: "syn_130", keyword: "疼痛拒按", weight: 10 }
+    ],
+    "月经量多": [
+        { syndromeId: "syn_130", keyword: "月经量多", weight: 10 }
+    ],
+    "经色紫暗有块": [
+        { syndromeId: "syn_130", keyword: "经色紫暗有块", weight: 10 },
+        { syndromeId: "syn_131", keyword: "经色紫暗有块", weight: 10 }
+    ],
+    "舌紫暗有瘀斑": [
+        { syndromeId: "syn_130", keyword: "舌紫暗有瘀斑", weight: 10 }
+    ],
+    "脉涩": [
+        { syndromeId: "syn_130", keyword: "脉涩", weight: 10 }
+    ],
+    "经前或经期小腹冷痛": [
+        { syndromeId: "syn_131", keyword: "经前或经期小腹冷痛", weight: 10 }
+    ],
+    "经血量少": [
+        { syndromeId: "syn_131", keyword: "经血量少", weight: 10 }
+    ],
+    "面色青白": [
+        { syndromeId: "syn_131", keyword: "面色青白", weight: 10 }
+    ],
+    "舌暗苔白": [
+        { syndromeId: "syn_131", keyword: "舌暗苔白", weight: 10 }
+    ],
+    "脉沉紧": [
+        { syndromeId: "syn_131", keyword: "脉沉紧", weight: 10 }
+    ],
+    "月经后期": [
+        { syndromeId: "syn_132", keyword: "月经后期", weight: 10 }
+    ],
+    "经血量少色淡": [
+        { syndromeId: "syn_132", keyword: "经血量少色淡", weight: 10 }
+    ],
+    "经质清稀": [
+        { syndromeId: "syn_132", keyword: "经质清稀", weight: 10 }
+    ],
+    "头晕心悸": [
+        { syndromeId: "syn_132", keyword: "头晕心悸", weight: 10 }
+    ],
+    "舌淡苔薄": [
+        { syndromeId: "syn_132", keyword: "舌淡苔薄", weight: 10 }
+    ],
+    "脉细弱": [
+        { syndromeId: "syn_132", keyword: "脉细弱", weight: 10 }
+    ],
+    "经血非时而下": [
+        { syndromeId: "syn_133", keyword: "经血非时而下", weight: 10 }
+    ],
+    "量多如注": [
+        { syndromeId: "syn_133", keyword: "量多如注", weight: 10 }
+    ],
+    "或淋漓不尽": [
+        { syndromeId: "syn_133", keyword: "或淋漓不尽", weight: 10 }
+    ],
+    "色淡质稀": [
+        { syndromeId: "syn_133", keyword: "色淡质稀", weight: 10 }
+    ],
+    "神疲肢倦": [
+        { syndromeId: "syn_133", keyword: "神疲肢倦", weight: 10 }
+    ],
+    "舌淡苔白": [
+        { syndromeId: "syn_133", keyword: "舌淡苔白", weight: 10 },
+        { syndromeId: "syn_135", keyword: "舌淡苔白", weight: 10 },
+        { syndromeId: "syn_137", keyword: "舌淡苔白", weight: 10 }
+    ],
+    "脉沉弱": [
+        { syndromeId: "syn_133", keyword: "脉沉弱", weight: 10 }
+    ],
+    "带下量多": [
+        { syndromeId: "syn_134", keyword: "带下量多", weight: 10 }
+    ],
+    "色黄质稠": [
+        { syndromeId: "syn_134", keyword: "色黄质稠", weight: 10 }
+    ],
+    "气味腥臭": [
+        { syndromeId: "syn_134", keyword: "气味腥臭", weight: 10 }
+    ],
+    "阴部瘙痒": [
+        { syndromeId: "syn_134", keyword: "阴部瘙痒", weight: 10 }
+    ],
+    "带下量多色白": [
+        { syndromeId: "syn_135", keyword: "带下量多色白", weight: 10 }
+    ],
+    "清稀无臭": [
+        { syndromeId: "syn_135", keyword: "清稀无臭", weight: 10 }
+    ],
+    "面色晄白": [
+        { syndromeId: "syn_135", keyword: "面色晄白", weight: 10 }
+    ],
+    "纳少便溏": [
+        { syndromeId: "syn_135", keyword: "纳少便溏", weight: 10 }
+    ],
+    "脉缓弱": [
+        { syndromeId: "syn_135", keyword: "脉缓弱", weight: 10 }
+    ],
+    "高热不退": [
+        { syndromeId: "syn_136", keyword: "高热不退", weight: 10 }
+    ],
+    "突然抽搐": [
+        { syndromeId: "syn_136", keyword: "突然抽搐", weight: 10 }
+    ],
+    "神志昏迷": [
+        { syndromeId: "syn_136", keyword: "神志昏迷", weight: 10 }
+    ],
+    "喉间痰鸣": [
+        { syndromeId: "syn_136", keyword: "喉间痰鸣", weight: 10 }
+    ],
+    "牙关紧闭": [
+        { syndromeId: "syn_136", keyword: "牙关紧闭", weight: 10 }
+    ],
+    "目睛上视": [
+        { syndromeId: "syn_136", keyword: "目睛上视", weight: 10 }
+    ],
+    "四肢抽动": [
+        { syndromeId: "syn_136", keyword: "四肢抽动", weight: 10 }
+    ],
+    "久泻不止": [
+        { syndromeId: "syn_137", keyword: "久泻不止", weight: 10 }
+    ],
+    "食后即泻": [
+        { syndromeId: "syn_137", keyword: "食后即泻", weight: 10 }
+    ],
+    "脉弱": [
+        { syndromeId: "syn_137", keyword: "脉弱", weight: 10 }
+    ],
+    "不思饮食": [
+        { syndromeId: "syn_138", keyword: "不思饮食", weight: 10 }
+    ],
+    "呕吐酸腐": [
+        { syndromeId: "syn_138", keyword: "呕吐酸腐", weight: 10 }
+    ],
+    "大便酸臭": [
+        { syndromeId: "syn_138", keyword: "大便酸臭", weight: 10 }
+    ],
+    "夜卧不宁": [
+        { syndromeId: "syn_138", keyword: "夜卧不宁", weight: 10 }
+    ],
+    "舌苔厚腻": [
+        { syndromeId: "syn_138", keyword: "舌苔厚腻", weight: 10 }
+    ],
+    "脉滑": [
+        { syndromeId: "syn_138", keyword: "脉滑", weight: 10 }
+    ],
+    "咳嗽气粗": [
+        { syndromeId: "syn_139", keyword: "咳嗽气粗", weight: 10 }
+    ],
+    "流黄稠涕": [
+        { syndromeId: "syn_140", keyword: "流黄稠涕", weight: 10 }
+    ],
+    "前额头痛": [
+        { syndromeId: "syn_140", keyword: "前额头痛", weight: 10 }
+    ],
+    "嗅觉减退": [
+        { syndromeId: "syn_140", keyword: "嗅觉减退", weight: 10 }
+    ],
+    "舌红苔薄黄": [
+        { syndromeId: "syn_140", keyword: "舌红苔薄黄", weight: 10 },
+        { syndromeId: "syn_141", keyword: "舌红苔薄黄", weight: 10 }
+    ],
+    "脉浮数": [
+        { syndromeId: "syn_140", keyword: "脉浮数", weight: 10 }
+    ],
+    "目赤肿痛": [
+        { syndromeId: "syn_141", keyword: "目赤肿痛", weight: 10 }
+    ],
+    "羞明流泪": [
+        { syndromeId: "syn_141", keyword: "羞明流泪", weight: 10 }
+    ],
+    "目眵多": [
+        { syndromeId: "syn_141", keyword: "目眵多", weight: 10 }
+    ],
+    "脉弦数": [
+        { syndromeId: "syn_141", keyword: "脉弦数", weight: 10 }
+    ],
+    "干咳少痰": [
+        { syndromeId: "syn_142", keyword: "干咳少痰", weight: 10 }
+    ],
+    "或痰中带血": [
+        { syndromeId: "syn_142", keyword: "或痰中带血", weight: 10 }
+    ],
+    "咽干口燥": [
+        { syndromeId: "syn_142", keyword: "咽干口燥", weight: 10 }
+    ],
+    "舌红少苔": [
+        { syndromeId: "syn_142", keyword: "舌红少苔", weight: 10 }
+    ],
+    "脉细数": [
+        { syndromeId: "syn_142", keyword: "脉细数", weight: 10 }
+    ]};
 
 if (typeof window !== "undefined") {
     window.symptomMappingExtension = symptomMappingExtension;
