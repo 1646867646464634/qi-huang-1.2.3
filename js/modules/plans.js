@@ -7,7 +7,8 @@ const Plans = {
     KEY: PLANS_KEY,
 
     list() {
-        return Storage.get(PLANS_KEY, []);
+        const v = Storage.get(PLANS_KEY, []);
+        return Array.isArray(v) ? v : [];
     },
 
     // 供 constitution/symptom/comprehensive/formula 调用
@@ -173,9 +174,9 @@ class PlansModule {
         if (data.description) detailHtml += `<p style="font-size:var(--text-sm);">${this._esc(data.description)}</p>`;
         if (data.formulas && data.formulas.length) {
             detailHtml += `<p style="font-size:var(--text-sm);"><b>相关方剂：</b></p><div class="result-tags">`;
-            detailHtml += data.formulas.map(f => {
-                const name = typeof f === 'string' ? f : f.name;
-                const id = typeof f === 'string' ? '' : f.id;
+            detailHtml += data.formulas.filter(Boolean).map(f => {
+                const name = typeof f === 'string' ? f : (f && f.name);
+                const id = typeof f === 'string' ? '' : (f && f.id);
                 return id
                     ? `<span class="tag tag-formula formula-link" data-formula-id="${id}" style="cursor:pointer;">${this._esc(name)}</span>`
                     : `<span class="tag tag-formula">${this._esc(name)}</span>`;
