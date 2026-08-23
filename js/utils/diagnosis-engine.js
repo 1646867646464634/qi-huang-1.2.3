@@ -68,9 +68,9 @@ const DiagnosisEngine = {
         const db = window.syndromesDatabase || [];
         const mapping = window.symptomSyndromeMapping || {};
 
-        // 收集舌象/面象关键词（按规则表）
-        const tongueKws = this._collectFieldKeywords(TongueRules, tongue);
-        const faceKws = this._collectFieldKeywords(FaceRules, face);
+        // 收集舌象/面象关键词（按规则表；规则数据缺失时降级为空，避免 ReferenceError）
+        const tongueKws = this._collectFieldKeywords((typeof TongueRules !== 'undefined') ? TongueRules : null, tongue);
+        const faceKws = this._collectFieldKeywords((typeof FaceRules !== 'undefined') ? FaceRules : null, face);
 
         const scored = db.map(s => {
             const reasoning = [];
