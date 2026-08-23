@@ -31,10 +31,14 @@ class ChatModule {
         this.activeSession = null;     // 当前会话对象（未落盘，流式中）
         this.abortController = null;   // 停止按钮
         this.streaming = false;
+        this._typeTimer = null;        // 模拟打字定时器（供 destroy/stop 清理）
     }
 
     destroy() {
+        // 清理打字定时器与进行中的请求，避免切路由后继续向已脱离 DOM 的节点写入
+        if (this._typeTimer) { clearInterval(this._typeTimer); this._typeTimer = null; }
         if (this.abortController) { this.abortController.abort(); this.abortController = null; }
+        this.streaming = false;
     }
 
     render(container) {
@@ -201,14 +205,18 @@ class ChatModule {
     }
 
     _renderBubble(msg, container) {
+        // 渲染防御：历史消息 content 可能是对象（旧版脏数据），强制转字符串，避免显示 [object Object]
+        const content = typeof msg.content === 'string' ? msg.content
+            : (msg.content && typeof msg.content.message === 'string') ? msg.content.message
+            : '';
         const wrap = document.createElement('div');
         if (msg.role === 'user') {
             wrap.className = 'msg-bubble msg-user';
-            wrap.textContent = msg.content;
+            wrap.textContent = content;
         } else {
             wrap.className = 'msg-bubble msg-ai';
             const text = document.createElement('div');
-            text.textContent = msg.content;
+            text.textContent = content;
             wrap.appendChild(text);
             if (msg.reasoning) {
                 const fold = document.createElement('div');
@@ -221,7 +229,7 @@ class ChatModule {
                 wrap.appendChild(fold);
                 wrap.appendChild(body);
             }
-            this._maybeAddSyndromeLink(wrap, msg.content, container);
+            this._maybeAddSyndromeLink(wrap, content, container);
         }
         return wrap;
     }
@@ -271,8 +279,14 @@ class ChatModule {
         if (typeof Profile !== 'undefined' && Profile.get) profile = Profile.get();
         if (typeof Records !== 'undefined' && Records.list) recent = Records.list().slice(0, 3);
         const system = GLMChat.buildSystemPrompt(profile, recent);
+        // 关键修复：历史消息 content 强制转字符串，防止脏数据（对象/数组）原样发给 GLM
+        // 导致模型把 "[object Object]" 当文本回复
         const apiMessages = [{ role: 'system', content: system }]
-            .concat(session.messages.map(m => ({ role: m.role, content: m.content })));
+            .concat(session.messages.map(m => ({
+                role: m.role,
+                // 非字符串一律收敛为空串，绝不 String(obj) 产生 "[object Object]" 污染发送内容
+                content: typeof m.content === 'string' ? m.content : ''
+            })));
 
         // 4. 渲染（前端模拟打字效果，实际由代理非流式一次性返回完整文本）
         this.abortController = new AbortController();
@@ -300,13 +314,21 @@ class ChatModule {
                 const chars = Array.from(replyStr);
                 let i = 0;
                 const step = chars.length > 200 ? 3 : 1; // 长文 3 字/次、短文 1 字/次
-                const timer = setInterval(() => {
-                    if (this.abortController && this.abortController.signal.aborted) { clearInterval(timer); return; }
+                // 定时器存入实例字段，destroy/_stop 时可中断打字
+                this._typeTimer = setInterval(() => {
                     textEl.textContent += chars.slice(i, i + step).join('');
                     i += step;
                     box.scrollTop = box.scrollHeight;
-                    if (i >= chars.length) clearInterval(timer);
+                    if (i >= chars.length) { clearInterval(this._typeTimer); this._typeTimer = null; }
                 }, 12);
+                // 等待打字完成后再复位 streaming/loading，避免打字期间可并发再发送
+                await new Promise((resolve) => {
+                    const poll = () => {
+                        if (!this._typeTimer) return resolve();
+                        setTimeout(poll, 50);
+                    };
+                    poll();
+                });
             }
         } catch (err) {
             textEl.textContent += (err && err.message) || '对话失败，请稍后重试';
@@ -322,7 +344,8 @@ class ChatModule {
         session.messages.push({ role: 'assistant', content: reply, time: Date.now() });
         if (!session.title || session.title === '新会话') {
             const first = session.messages.find(m => m.role === 'user');
-            session.title = (first ? first.content : '新会话').slice(0, 15);
+            const firstText = first && typeof first.content === 'string' ? first.content : '';
+            session.title = (firstText || '新会话').slice(0, 15);
         }
         ChatSessions.save(session);
         this.activeSessionId = session.id;
@@ -380,14 +403,18 @@ class ChatModule {
         }
         const lines = ['# 岐黄 AI 问诊记录', '', '时间：' + new Date(session.time).toLocaleString('zh-CN'), '标题：' + session.title, ''];
         session.messages.forEach(m => {
+            const c = typeof m.content === 'string' ? m.content : (m.content && typeof m.content.message === 'string' ? m.content.message : '');
             lines.push('## ' + (m.role === 'user' ? '用户' : 'AI 助手') + '（' + new Date(m.time).toLocaleString('zh-CN') + '）');
             lines.push('');
-            lines.push(m.content);
+            lines.push(c);
             lines.push('');
         });
         lines.push('---');
         lines.push('本记录由岐黄·辅助诊疗系统生成，仅供健康参考，不构成医疗诊断。');
-        const fname = '岐黄AI问诊_' + new Date(session.time).toISOString().slice(0, 10) + '.md';
+        // 会话时间缺失/非法时用兜底日期，避免 toISOString 抛 RangeError 中断导出
+        const sessTime = new Date(session.time);
+        const day = isNaN(sessTime.getTime()) ? '0000-00-00' : sessTime.toISOString().slice(0, 10);
+        const fname = '岐黄AI问诊_' + day + '.md';
         if (typeof ExportUtils !== 'undefined' && ExportUtils.downloadText) {
             ExportUtils.downloadText(fname, lines.join('\n'), 'text/markdown;charset=utf-8');
             Toast.show('已导出问诊记录', 'success');
