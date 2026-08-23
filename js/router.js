@@ -38,16 +38,20 @@ class Router {
         
         // 解析查询参数
         this.params = {};
+        // 安全解码：畸形百分号编码（如孤立 %）会抛 URIError，需兜底避免整个路由失效
+        const safeDecode = (s) => {
+            try { return decodeURIComponent(s); } catch (e) { return s; }
+        };
         if (paramParts.length > 0) {
             paramParts.join('?').split('&').forEach(pair => {
                 if (!pair) return;
                 const eq = pair.indexOf('=');
                 if (eq === -1) {
-                    this.params[decodeURIComponent(pair)] = '';
+                    this.params[safeDecode(pair)] = '';
                 } else {
                     const k = pair.slice(0, eq);
                     const v = pair.slice(eq + 1);
-                    this.params[decodeURIComponent(k)] = decodeURIComponent(v || '');
+                    this.params[safeDecode(k)] = safeDecode(v || '');
                 }
             });
         }
@@ -99,8 +103,9 @@ class Router {
                 .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
                 .join('&');
             if (qs) {
-                hash = hash.replace(/[?#].*$/, '');
-                if (!hash.startsWith('#')) hash = '#' + (hash.startsWith('/') ? '' : '/') + hash;
+                // 先剥离 # 前缀与旧查询串，再统一拼回 #/，避免 '#/xxx' 被 [?#] 误删 # 导致跳回首页
+                hash = String(hash).replace(/^#/, '').replace(/[?#].*$/, '');
+                hash = '#' + (hash.startsWith('/') ? '' : '/') + hash;
                 hash += '?' + qs;
             }
         }
