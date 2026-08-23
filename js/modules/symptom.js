@@ -221,8 +221,8 @@ class SymptomModule {
                 if (!symptom) return;
                 const idx = me.selectedSymptoms.indexOf(symptom);
                 if (idx === -1) {
-                    if (me.selectedSymptoms.length >= 5) {
-                        Toast.show('最多选择 5 个症状进行组合辨证', 'warning');
+                    if (me.selectedSymptoms.length >= 10) {
+                        Toast.show('最多选择 10 个症状进行组合辨证', 'warning');
                         return;
                     }
                     me.selectedSymptoms.push(symptom);
@@ -375,8 +375,8 @@ class SymptomModule {
                 if (this.selectedSymptoms.includes(symptom)) {
                     this.selectedSymptoms = this.selectedSymptoms.filter(s => s !== symptom);
                 } else {
-                    if (this.selectedSymptoms.length >= 5) {
-                        Toast.show('最多选择 5 个症状进行组合辨证', 'warning');
+                    if (this.selectedSymptoms.length >= 10) {
+                        Toast.show('最多选择 10 个症状进行组合辨证', 'warning');
                         return;
                     }
                     this.selectedSymptoms.push(symptom);
@@ -473,8 +473,8 @@ class SymptomModule {
 
                 // 添加到选中症状
                 if (!this.selectedSymptoms.includes(symptom)) {
-                    if (this.selectedSymptoms.length >= 5) {
-                        Toast.show('最多选择 5 个症状进行组合辨证', 'warning');
+                    if (this.selectedSymptoms.length >= 10) {
+                        Toast.show('最多选择 10 个症状进行组合辨证', 'warning');
                         return;
                     }
                     this.selectedSymptoms.push(symptom);
@@ -506,10 +506,10 @@ class SymptomModule {
                 s => s === this.searchQuery
             );
             if (exactMatch) {
-                if (this.selectedSymptoms.length < 5) {
+                if (this.selectedSymptoms.length < 10) {
                     this.selectedSymptoms.push(exactMatch);
                 } else {
-                    Toast.show('最多选择 5 个症状进行组合辨证', 'warning');
+                    Toast.show('最多选择 10 个症状进行组合辨证', 'warning');
                 }
                 this.reRenderChips(container);
             } else {
@@ -518,7 +518,7 @@ class SymptomModule {
                     s => s.includes(this.searchQuery)
                 );
                 if (partialMatch) {
-                    if (this.selectedSymptoms.length < 5) {
+                    if (this.selectedSymptoms.length < 10) {
                         this.selectedSymptoms.push(partialMatch);
                     }
                     this.reRenderChips(container);
@@ -575,8 +575,8 @@ class SymptomModule {
                 if (this.selectedSymptoms.includes(symptom)) {
                     this.selectedSymptoms = this.selectedSymptoms.filter(s => s !== symptom);
                 } else {
-                    if (this.selectedSymptoms.length >= 5) {
-                        Toast.show('最多选择 5 个症状进行组合辨证', 'warning');
+                    if (this.selectedSymptoms.length >= 10) {
+                        Toast.show('最多选择 10 个症状进行组合辨证', 'warning');
                         return;
                     }
                     this.selectedSymptoms.push(symptom);
