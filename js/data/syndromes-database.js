@@ -1021,6 +1021,323 @@ const syndromesDatabase = [
         relatedConstitutions: ["气虚质"],
         source: "《中医诊断学》规划教材", level: "基础", lastUpdated: "2026-08"
     }
+,
+    {
+        id: "syn_128",
+        name: "热毒蕴肤证",
+        category: "外科辨证",
+        pattern: "热毒炽盛证",
+        organ: "皮肤",
+        symptoms: ["局部红肿热痛", "疮疡初起", "发热恶寒", "口渴", "小便黄", "舌红苔黄", "脉数有力"],
+        tongueAppearance: { tongueBody: "红", tongueCoating: "苔黄" },
+        pulseCondition: "脉数有力",
+        etiology: "外感火毒，或饮食不节，过食辛辣厚味，蕴生热毒",
+        pathogenesis: "热毒蕴结肌肤，气血壅滞，血肉腐败，发为疮疡",
+        description: "热毒蕴肤证为外科疮疡初期之常见证候，以局部红肿热痛、疮形高突为特征，多伴全身发热恶寒、口渴等实热表现，属阳证、热证范畴。",
+        treatmentPrinciple: "清热解毒，消肿散结",
+        treatmentMethod: "清热解毒，活血消肿",
+        recommendedFormulas: [
+            { id: "formula_114", name: "仙方活命饮", matchScore: 95 },
+            { id: "formula_115", name: "五味消毒饮", matchScore: 90 }
+        ],
+        relatedConstitutions: ["湿热质"],
+        keyPoints: ["疮疡初起红肿热痛", "疮形高突", "发热口渴", "舌红苔黄"]
+    },
+    {
+        id: "syn_129",
+        name: "湿热下注证",
+        category: "外科辨证",
+        pattern: "湿热证",
+        organ: "下肢",
+        symptoms: ["下肢红肿热痛", "局部灼热", "皮肤湿疹", "口苦", "小便黄赤", "大便黏滞", "舌红苔黄腻", "脉滑数"],
+        tongueAppearance: { tongueBody: "红", tongueCoating: "苔黄腻" },
+        pulseCondition: "脉滑数",
+        etiology: "外感湿热之邪，或嗜食肥甘厚味，酿生湿热，流注下焦",
+        pathogenesis: "湿热蕴结下焦，气血壅滞，经脉痹阻",
+        description: "湿热下注证以下肢红肿热痛、皮肤湿疹或带下异常为特征，多伴口苦、小便黄赤等湿热内蕴之象，常见于丹毒、下肢静脉曲张伴感染及湿热痹证。",
+        treatmentPrinciple: "清热利湿，通络止痛",
+        treatmentMethod: "清热利湿，活血通络",
+        recommendedFormulas: [
+            { id: "formula_116", name: "四妙丸", matchScore: 95 },
+            { id: "formula_117", name: "完带汤", matchScore: 70 }
+        ],
+        relatedConstitutions: ["湿热质"],
+        keyPoints: ["下肢红肿热痛", "皮肤湿疹", "口苦尿黄", "舌红苔黄腻", "脉滑数"]
+    },
+    {
+        id: "syn_130",
+        name: "癥瘕血瘀证",
+        category: "妇科辨证",
+        pattern: "血瘀证",
+        organ: "胞宫",
+        symptoms: ["腹部积块", "固定不移", "疼痛拒按", "月经量多", "经色紫暗有块", "面色晦暗", "舌紫暗有瘀斑", "脉涩"],
+        tongueAppearance: { tongueBody: "紫暗或有瘀斑", tongueCoating: "苔薄" },
+        pulseCondition: "脉涩",
+        etiology: "气滞血瘀，或经期产后感受寒邪，瘀血内停，积而成癥",
+        pathogenesis: "瘀血内结，聚于胞宫，日久成癥瘕积聚",
+        description: "癥瘕血瘀证为妇科腹部肿块之证，以腹中积块固定不移、疼痛拒按为特征，多伴月经异常、经色紫暗有块，属血瘀内结、癥积成块之候。",
+        treatmentPrinciple: "活血化瘀，消癥散结",
+        treatmentMethod: "活血破瘀，软坚消癥",
+        recommendedFormulas: [
+            { id: "formula_111", name: "膈下逐瘀汤", matchScore: 90 },
+            { id: "formula_113", name: "活络效灵丹", matchScore: 80 }
+        ],
+        relatedConstitutions: ["血瘀质"],
+        keyPoints: ["腹中积块固定不移", "疼痛拒按", "经色紫暗有块", "舌紫暗有瘀斑", "脉涩"]
+    },
+    {
+        id: "syn_131",
+        name: "痛经寒凝血瘀证",
+        category: "妇科辨证",
+        pattern: "寒凝血瘀证",
+        organ: "胞宫",
+        symptoms: ["经前或经期小腹冷痛", "得温则减", "经血量少", "经色紫暗有块", "畏寒肢冷", "面色青白", "舌暗苔白", "脉沉紧"],
+        tongueAppearance: { tongueBody: "暗淡", tongueCoating: "苔白" },
+        pulseCondition: "脉沉紧",
+        etiology: "经期产后贪凉饮冷，或起居不慎，寒邪客于胞宫，血为寒凝",
+        pathogenesis: "寒凝血脉，气血运行不畅，不通则痛",
+        description: "痛经寒凝血瘀证以经期小腹冷痛、得温痛减为特征，多伴经血紫暗有块、畏寒肢冷，属寒凝胞宫、血脉瘀阻之候，多见于原发性及继发性痛经。",
+        treatmentPrinciple: "温经散寒，化瘀止痛",
+        treatmentMethod: "温经散寒，活血止痛",
+        recommendedFormulas: [
+            { id: "formula_112", name: "少腹逐瘀汤", matchScore: 95 },
+            { id: "formula_110", name: "失笑散", matchScore: 80 }
+        ],
+        relatedConstitutions: ["血瘀质", "阳虚质"],
+        keyPoints: ["小腹冷痛得温则减", "经色紫暗有块", "畏寒肢冷", "舌暗苔白", "脉沉紧"]
+    },
+    {
+        id: "syn_132",
+        name: "气血两虚月经不调证",
+        category: "妇科辨证",
+        pattern: "气血两虚证",
+        organ: "胞宫",
+        symptoms: ["月经后期", "经血量少色淡", "经质清稀", "面色苍白", "神疲乏力", "头晕心悸", "舌淡苔薄", "脉细弱"],
+        tongueAppearance: { tongueBody: "淡白", tongueCoating: "苔薄白" },
+        pulseCondition: "脉细弱",
+        etiology: "素体虚弱，或久病失养，或思虑过度，暗耗气血",
+        pathogenesis: "气血亏虚，冲任失养，血海不能按时满盈",
+        description: "气血两虚月经不调证以月经后期、量少色淡为特征，多伴面色苍白、神疲乏力、头晕心悸等气血不足之象，常见于营养不良、慢性失血及大病久病后。",
+        treatmentPrinciple: "补气养血调经",
+        treatmentMethod: "益气补血，调理冲任",
+        recommendedFormulas: [
+            { id: "formula_120", name: "圣愈汤", matchScore: 90 },
+            { id: "formula_109", name: "桃红四物汤", matchScore: 70 }
+        ],
+        relatedConstitutions: ["气虚质", "血瘀质"],
+        keyPoints: ["月经后期量少色淡", "面色苍白", "神疲乏力", "舌淡脉细弱"]
+    },
+    {
+        id: "syn_133",
+        name: "冲任不固崩漏证",
+        category: "妇科辨证",
+        pattern: "气虚不摄证",
+        organ: "胞宫",
+        symptoms: ["经血非时而下", "量多如注", "或淋漓不尽", "色淡质稀", "面色萎黄", "神疲肢倦", "气短懒言", "舌淡苔白", "脉沉弱"],
+        tongueAppearance: { tongueBody: "淡胖", tongueCoating: "苔白" },
+        pulseCondition: "脉沉弱",
+        etiology: "素体脾虚，或劳倦过度，损伤脾气，冲任不固，不能统摄血液",
+        pathogenesis: "脾虚气弱，冲任不固，血失统摄，经血妄行",
+        description: "冲任不固崩漏证以经血非时而下、量多或淋漓不尽为特征，多伴面色萎黄、神疲肢倦、气短懒言等气虚之象，属脾虚气弱、冲任失固之候。",
+        treatmentPrinciple: "补气固冲，摄血止崩",
+        treatmentMethod: "益气健脾，固冲摄血",
+        recommendedFormulas: [
+            { id: "formula_119", name: "固冲汤", matchScore: 95 },
+            { id: "formula_120", name: "圣愈汤", matchScore: 75 }
+        ],
+        relatedConstitutions: ["气虚质"],
+        keyPoints: ["经血非时而下量多如注", "色淡质稀", "神疲肢倦", "舌淡脉沉弱"]
+    },
+    {
+        id: "syn_134",
+        name: "湿热下注带下证",
+        category: "妇科辨证",
+        pattern: "湿热证",
+        organ: "带脉",
+        symptoms: ["带下量多", "色黄质稠", "气味腥臭", "阴部瘙痒", "口苦咽干", "小便黄赤", "舌红苔黄腻", "脉滑数"],
+        tongueAppearance: { tongueBody: "红", tongueCoating: "苔黄腻" },
+        pulseCondition: "脉滑数",
+        etiology: "经行产后，胞脉空虚，湿热之邪乘虚入侵，或脾虚湿盛，郁久化热",
+        pathogenesis: "湿热蕴结下焦，损伤任带二脉，带脉失约",
+        description: "湿热下注带下证以带下量多、色黄质稠、气味腥臭为特征，多伴阴部瘙痒、口苦咽干、小便黄赤，属湿热蕴结、任带失约之候。",
+        treatmentPrinciple: "清热利湿止带",
+        treatmentMethod: "清热利湿，固涩止带",
+        recommendedFormulas: [
+            { id: "formula_118", name: "易黄汤", matchScore: 95 },
+            { id: "formula_117", name: "完带汤", matchScore: 80 }
+        ],
+        relatedConstitutions: ["湿热质"],
+        keyPoints: ["带下色黄质稠腥臭", "阴部瘙痒", "口苦尿黄", "舌红苔黄腻", "脉滑数"]
+    },
+    {
+        id: "syn_135",
+        name: "脾虚带下证",
+        category: "妇科辨证",
+        pattern: "脾虚湿盛证",
+        organ: "带脉",
+        symptoms: ["带下量多色白", "清稀无臭", "面色晄白", "四肢不温", "神疲乏力", "纳少便溏", "舌淡苔白", "脉缓弱"],
+        tongueAppearance: { tongueBody: "淡胖", tongueCoating: "苔白腻" },
+        pulseCondition: "脉缓弱",
+        etiology: "素体脾虚，或饮食不节，劳倦过度，损伤脾气，运化失常",
+        pathogenesis: "脾虚失运，水湿内停，下注任带，带脉失约",
+        description: "脾虚带下证以带下量多色白、清稀无臭为特征，多伴面色晄白、四肢不温、神疲乏力、纳少便溏，属脾虚失运、湿浊下注之候。",
+        treatmentPrinciple: "健脾益气，升阳除湿",
+        treatmentMethod: "健脾化湿止带",
+        recommendedFormulas: [
+            { id: "formula_117", name: "完带汤", matchScore: 95 },
+            { id: "formula_118", name: "易黄汤", matchScore: 70 }
+        ],
+        relatedConstitutions: ["气虚质", "痰湿质"],
+        keyPoints: ["带下量多色白清稀", "面色晄白", "神疲纳少便溏", "舌淡苔白"]
+    },
+    {
+        id: "syn_136",
+        name: "急惊风痰热证",
+        category: "儿科辨证",
+        pattern: "痰热动风证",
+        organ: "肝",
+        symptoms: ["高热不退", "突然抽搐", "神志昏迷", "喉间痰鸣", "牙关紧闭", "目睛上视", "四肢抽动", "舌红苔黄腻", "脉滑数"],
+        tongueAppearance: { tongueBody: "红", tongueCoating: "苔黄腻" },
+        pulseCondition: "脉滑数",
+        etiology: "小儿脏腑娇嫩，感受时邪，或乳食不节，痰热内蕴，引动肝风",
+        pathogenesis: "热扰心神，痰蒙清窍，热极生风，肝风内动",
+        description: "急惊风痰热证为儿科急症，以高热、抽搐、神昏、痰鸣四症并见为特征，属痰热内蕴、热极生风之危候，发病急骤，变化迅速。",
+        treatmentPrinciple: "清热豁痰，开窍息风",
+        treatmentMethod: "清热化痰，息风开窍",
+        recommendedFormulas: [
+            { id: "formula_126", name: "抱龙丸", matchScore: 95 },
+            { id: "formula_124", name: "健脾丸", matchScore: 60 }
+        ],
+        relatedConstitutions: ["平和质"],
+        keyPoints: ["高热突然抽搐", "神志昏迷", "喉间痰鸣", "舌红苔黄腻", "脉滑数"]
+    },
+    {
+        id: "syn_137",
+        name: "脾虚泄泻证",
+        category: "儿科辨证",
+        pattern: "脾虚证",
+        organ: "脾",
+        symptoms: ["大便溏薄", "久泻不止", "食后即泻", "面色萎黄", "神疲乏力", "食欲不振", "形体消瘦", "舌淡苔白", "脉弱"],
+        tongueAppearance: { tongueBody: "淡胖有齿痕", tongueCoating: "苔白" },
+        pulseCondition: "脉弱",
+        etiology: "小儿脾胃薄弱，饮食不节，或久病失调，损伤脾胃",
+        pathogenesis: "脾胃虚弱，运化失职，水谷不化，清浊不分",
+        description: "脾虚泄泻证为儿科常见证候，以大便溏薄、久泻不止、食后即泻为特征，多伴面色萎黄、神疲乏力、食欲不振，属脾胃虚弱、运化失健之候。",
+        treatmentPrinciple: "健脾益气，助运止泻",
+        treatmentMethod: "健脾和胃，渗湿止泻",
+        recommendedFormulas: [
+            { id: "formula_124", name: "健脾丸", matchScore: 95 },
+            { id: "formula_125", name: "七味白术散", matchScore: 90 }
+        ],
+        relatedConstitutions: ["气虚质", "痰湿质"],
+        keyPoints: ["大便溏薄久泻不止", "面色萎黄", "食欲不振", "舌淡苔白", "脉弱"]
+    },
+    {
+        id: "syn_138",
+        name: "食积证",
+        category: "儿科辨证",
+        pattern: "食滞胃肠证",
+        organ: "脾胃",
+        symptoms: ["脘腹胀满", "嗳腐吞酸", "不思饮食", "呕吐酸腐", "大便酸臭", "夜卧不宁", "舌苔厚腻", "脉滑"],
+        tongueAppearance: { tongueBody: "红", tongueCoating: "苔厚腻" },
+        pulseCondition: "脉滑",
+        etiology: "乳食不节，喂养不当，损伤脾胃，运化不及，乳食停滞",
+        pathogenesis: "乳食内停，阻滞中焦，气机不利，升降失常",
+        description: "食积证为儿科常见脾胃病证，以脘腹胀满、嗳腐吞酸、不思饮食为特征，多伴呕吐酸腐、大便酸臭、夜卧不宁，属乳食内停、中焦阻滞之候。",
+        treatmentPrinciple: "消食导滞，和中健脾",
+        treatmentMethod: "消食化积，理气和胃",
+        recommendedFormulas: [
+            { id: "formula_124", name: "健脾丸", matchScore: 90 },
+            { id: "formula_125", name: "七味白术散", matchScore: 75 }
+        ],
+        relatedConstitutions: ["痰湿质"],
+        keyPoints: ["脘腹胀满嗳腐吞酸", "不思饮食", "大便酸臭", "舌苔厚腻", "脉滑"]
+    },
+    {
+        id: "syn_139",
+        name: "肺热咳嗽证",
+        category: "儿科辨证",
+        pattern: "肺热证",
+        organ: "肺",
+        symptoms: ["咳嗽气粗", "痰黄黏稠", "咽痛", "发热", "口渴", "小便黄", "舌红苔黄", "脉滑数"],
+        tongueAppearance: { tongueBody: "红", tongueCoating: "苔黄" },
+        pulseCondition: "脉滑数",
+        etiology: "外感风热，或风寒化热，邪热犯肺，肺失清肃",
+        pathogenesis: "热邪犯肺，肺气上逆，炼液为痰",
+        description: "肺热咳嗽证为儿科常见病证，以咳嗽气粗、痰黄黏稠为特征，多伴咽痛、发热、口渴，属邪热犯肺、肺失清肃之候。",
+        treatmentPrinciple: "清肺泻热，化痰止咳",
+        treatmentMethod: "清肺化痰止咳",
+        recommendedFormulas: [
+            { id: "formula_123", name: "泻白散", matchScore: 95 },
+            { id: "formula_106", name: "三子养亲汤", matchScore: 70 }
+        ],
+        relatedConstitutions: ["平和质"],
+        keyPoints: ["咳嗽气粗", "痰黄黏稠", "咽痛口渴", "舌红苔黄", "脉滑数"]
+    },
+    {
+        id: "syn_140",
+        name: "鼻渊肺经风热证",
+        category: "五官科辨证",
+        pattern: "肺经风热证",
+        organ: "鼻",
+        symptoms: ["鼻塞", "流黄稠涕", "前额头痛", "嗅觉减退", "发热", "咽痛", "舌红苔薄黄", "脉浮数"],
+        tongueAppearance: { tongueBody: "边尖红", tongueCoating: "苔薄黄" },
+        pulseCondition: "脉浮数",
+        etiology: "外感风热，或风寒化热，邪犯肺窍，熏蒸鼻窍",
+        pathogenesis: "风热犯肺，肺失清肃，鼻窍壅塞不通",
+        description: "鼻渊肺经风热证以鼻塞、流黄稠涕、前额头痛为特征，多伴发热、咽痛，属风热犯肺、鼻窍壅塞之候，常见于急慢性鼻窦炎。",
+        treatmentPrinciple: "疏风清热，宣肺通窍",
+        treatmentMethod: "疏风散热，通利鼻窍",
+        recommendedFormulas: [
+            { id: "formula_121", name: "苍耳子散", matchScore: 95 },
+            { id: "formula_127", name: "荆防败毒散", matchScore: 70 }
+        ],
+        relatedConstitutions: ["平和质"],
+        keyPoints: ["鼻塞流黄稠涕", "前额头痛", "嗅觉减退", "舌红苔薄黄", "脉浮数"]
+    },
+    {
+        id: "syn_141",
+        name: "目赤肝经风热证",
+        category: "五官科辨证",
+        pattern: "肝经风热证",
+        organ: "目",
+        symptoms: ["目赤肿痛", "羞明流泪", "目眵多", "头痛", "口苦", "舌红苔薄黄", "脉弦数"],
+        tongueAppearance: { tongueBody: "红", tongueCoating: "苔薄黄" },
+        pulseCondition: "脉弦数",
+        etiology: "风热之邪侵袭肝经，或肝火上炎，循经上犯目窍",
+        pathogenesis: "肝经风热上扰，气血壅滞目窍",
+        description: "目赤肝经风热证以目赤肿痛、羞明流泪为特征，多伴头痛、口苦，属风热犯肝、循经上炎之候，常见于急性结膜炎、角膜炎等。",
+        treatmentPrinciple: "疏风清热，清肝明目",
+        treatmentMethod: "疏风散热，泻肝明目",
+        recommendedFormulas: [
+            { id: "formula_122", name: "石决明散", matchScore: 90 },
+            { id: "formula_128", name: "金铃子散", matchScore: 70 }
+        ],
+        relatedConstitutions: ["阴虚质", "平和质"],
+        keyPoints: ["目赤肿痛羞明流泪", "头痛口苦", "舌红苔薄黄", "脉弦数"]
+    },
+    {
+        id: "syn_142",
+        name: "肺肾阴虚证",
+        category: "脏腑辨证",
+        pattern: "肺肾阴虚证",
+        organ: "肺肾",
+        symptoms: ["干咳少痰", "或痰中带血", "潮热盗汗", "五心烦热", "咽干口燥", "腰膝酸软", "舌红少苔", "脉细数"],
+        tongueAppearance: { tongueBody: "红", tongueCoating: "少苔或光剥" },
+        pulseCondition: "脉细数",
+        etiology: "久咳伤肺，或痨虫蚀肺，或热病后期，阴津耗伤，肺肾同病",
+        pathogenesis: "肺肾阴虚，虚火内生，肺失滋润，肾失濡养",
+        description: "肺肾阴虚证以干咳少痰、潮热盗汗、咽干口燥为特征，多伴腰膝酸软、五心烦热，属肺肾阴虚、虚火内灼之候，常见于慢性咳嗽、肺结核恢复期等。",
+        treatmentPrinciple: "滋补肺肾，润燥止咳",
+        treatmentMethod: "滋阴润肺，益肾止咳",
+        recommendedFormulas: [
+            { id: "formula_130", name: "麦味地黄丸", matchScore: 95 },
+            { id: "formula_108", name: "一贯煎", matchScore: 75 }
+        ],
+        relatedConstitutions: ["阴虚质"],
+        keyPoints: ["干咳少痰", "潮热盗汗", "咽干口燥", "腰膝酸软", "舌红少苔", "脉细数"]
+    }
+
 ];
 
 // 挂载到全局
