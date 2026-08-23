@@ -9,8 +9,18 @@ class ConstitutionModule {
         // 恢复之前未完成的问卷
         const saved = Storage.get(CONSTANTS.STORAGE_KEYS.QUESTIONNAIRE);
         if (saved) {
-            this.answers = saved.answers || {};
-            this.currentQuestion = saved.currentQuestion || 0;
+            this.answers = (saved.answers && typeof saved.answers === 'object') ? saved.answers : {};
+            // 范围校验：题库更新导致题目数变化或存储被污染时，避免越界崩溃
+            const qTotal = Array.isArray(constitutionQuestions) ? constitutionQuestions.length : 0;
+            const rawQ = parseInt(saved.currentQuestion, 10);
+            this.currentQuestion = Number.isFinite(rawQ) && rawQ >= 0 && rawQ < qTotal ? rawQ : 0;
+        }
+        // 若已完成测评但问卷残留（上次提交时 QUESTIONNAIRE 未成功移除），清理残留并恢复完成态
+        const doneResult = Storage.get(CONSTANTS.STORAGE_KEYS.CONSTITUTION_RESULT);
+        if (doneResult) {
+            this.isCompleted = true;
+            this.result = doneResult;
+            Storage.remove(CONSTANTS.STORAGE_KEYS.QUESTIONNAIRE);
         }
     }
     
@@ -195,10 +205,10 @@ class ConstitutionModule {
         
         const isBalanced = balancedScore >= CONSTANTS.SCORING.BALANCED_THRESHOLD
             && otherScores.every(s => s < CONSTANTS.SCORING.TENDENCY_THRESHOLD);
-        
+
         const biasedTypes = [];
         const tendencyTypes = [];
-        
+
         CONSTANTS.CONSTITUTION_TYPES.filter(t => t !== '平和质').forEach(type => {
             const score = scores[type]?.convertedScore || 0;
             if (score >= CONSTANTS.SCORING.BIASED_THRESHOLD) {
@@ -207,11 +217,24 @@ class ConstitutionModule {
                 tendencyTypes.push(type);
             }
         });
-        
+
+        // 若平和质达标且无偏颇倾向 → 平和质；有偏颇 → 主偏颇体质；
+        // 否则若平和质与各偏颇分均低（数据不足）→ 返回 null 由调用方提示"暂难判定"，避免自相矛盾的"非平衡平和质"
+        let primaryType;
+        if (isBalanced) {
+            primaryType = '平和质';
+        } else if (biasedTypes[0]) {
+            primaryType = biasedTypes[0];
+        } else if (tendencyTypes[0]) {
+            primaryType = tendencyTypes[0];
+        } else {
+            primaryType = balancedScore >= CONSTANTS.SCORING.TENDENCY_THRESHOLD ? '平和质' : null;
+        }
+
         return {
             scores,
             isBalanced,
-            primaryType: isBalanced ? '平和质' : (biasedTypes[0] || tendencyTypes[0] || '平和质'),
+            primaryType,
             biasedTypes,
             tendencyTypes,
             allTypes: CONSTANTS.CONSTITUTION_TYPES.map(type => ({
@@ -224,9 +247,12 @@ class ConstitutionModule {
     
     renderResult(container) {
         const { scores, isBalanced, primaryType, biasedTypes, tendencyTypes, allTypes } = this.result;
-        const primaryMeta = constitutionMeta[primaryType];
+        // primaryType 为 null 表示各型得分均低（数据不足/作答异常），给出降级展示而非渲染 null
+        const undetermined = !primaryType;
+        const displayType = primaryType || '暂难判定';
+        const primaryMeta = constitutionMeta[primaryType || '平和质'];
         const top5 = allTypes.slice(0, 5).filter(t => t.score > 0);
-        
+
         container.innerHTML = `
             <div class="module-page constitution-result-page">
                 <div class="page-header">
@@ -242,10 +268,10 @@ class ConstitutionModule {
                         ${isBalanced ? '☯' : '⚖'}
                     </div>
                     <h3 style="font-family: var(--font-display); color: var(--color-vermillion-dark); font-size: var(--text-3xl); margin-bottom: var(--space-sm);">
-                        ${primaryType}
+                        ${displayType}
                     </h3>
                     <p style="color: var(--color-ink-light); max-width: 500px; margin: 0 auto;">
-                        ${primaryMeta?.description || ''}
+                        ${undetermined ? '各项体质得分均较低，暂难明确判定体质类型。建议根据真实情况重新作答，或咨询专业中医师。' : (primaryMeta?.description || '')}
                     </p>
                     
                     ${biasedTypes.length > 1 ? `
@@ -265,7 +291,7 @@ class ConstitutionModule {
                 <!-- 得分详情 -->
                 <h3 style="margin-bottom: var(--space-md);">各体质得分详情</h3>
                 <div style="margin-bottom: var(--space-xl);">
-                    ${top5.map(t => `
+                    ${top5.length ? top5.map(t => `
                         <div style="display:flex;align-items:center;gap:var(--space-md);margin-bottom:var(--space-sm);">
                             <span style="width:80px;font-size:var(--text-sm);text-align:right;">${t.type}</span>
                             <div style="flex:1;height:24px;background:rgba(44,44,44,0.06);border-radius:12px;overflow:hidden;">
@@ -273,7 +299,7 @@ class ConstitutionModule {
                             </div>
                             <span style="width:50px;font-size:var(--text-sm);font-weight:600;">${t.score}分</span>
                         </div>
-                    `).join('')}
+                    `).join('') : '<p style="font-size:var(--text-sm);color:var(--color-ink-pale);">暂无有效得分数据，请重新作答。</p>'}
                 </div>
                 
                 <!-- 调理建议 -->
@@ -282,11 +308,11 @@ class ConstitutionModule {
                     <div class="grid-2">
                         <div class="card">
                             <h4 style="font-family:var(--font-heading);color:var(--color-vermillion-dark);margin-bottom:var(--space-sm);">🥗 饮食调理</h4>
-                            <p style="font-size:var(--text-sm);color:var(--color-ink-light);">${primaryMeta.dietAdvice}</p>
+                            <p style="font-size:var(--text-sm);color:var(--color-ink-light);">${primaryMeta.dietAdvice || '—'}</p>
                         </div>
                         <div class="card">
                             <h4 style="font-family:var(--font-heading);color:var(--color-vermillion-dark);margin-bottom:var(--space-sm);">🏃 生活建议</h4>
-                            <p style="font-size:var(--text-sm);color:var(--color-ink-light);">${primaryMeta.lifestyleAdvice}</p>
+                            <p style="font-size:var(--text-sm);color:var(--color-ink-light);">${primaryMeta.lifestyleAdvice || '—'}</p>
                         </div>
                     </div>
                     
