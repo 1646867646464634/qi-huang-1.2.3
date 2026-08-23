@@ -12,7 +12,8 @@ class StudyModule {
         this.quizAnswers = [];
         this.quizStartTime = 0;
         this.quizTimer = null;
-        this.wrongFilter = 'all';
+        // 初始为 '全部'，与过滤 UI 文案保持一致，避免首次进入错题本时列表被过滤为空
+        this.wrongFilter = '全部';
     }
 
     destroy() {
@@ -50,6 +51,8 @@ class StudyModule {
         container.querySelectorAll('.study-tab').forEach(tab => {
             tab.addEventListener('click', () => {
                 this.activeTab = tab.dataset.tab;
+                // 切换 tab 时清理自测计时器，避免常驻泄漏
+                if (this.quizTimer) { clearInterval(this.quizTimer); this.quizTimer = null; }
                 container.querySelectorAll('.study-tab').forEach(t => t.classList.toggle('active', t === tab));
                 this.renderTab(container);
             });
@@ -212,9 +215,17 @@ class StudyModule {
         }
 
         const prevBtn = content.querySelector('#cardPrevBtn');
-        if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); this.cardIndex = (this.cardIndex - 1 + this._deckSize()) % this._deckSize(); this.cardFlipped = false; this.renderCards(content, container); });
         const nextBtn = content.querySelector('#cardNextBtn');
-        if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); this.cardIndex = (this.cardIndex + 1) % this._deckSize(); this.cardFlipped = false; this.renderCards(content, container); });
+        // 空卡组时禁用翻页，避免 % 0 产生 NaN
+        const deckSize = this._deckSize();
+        if (prevBtn) {
+            if (deckSize === 0) prevBtn.disabled = true;
+            else prevBtn.addEventListener('click', (e) => { e.stopPropagation(); this.cardIndex = (this.cardIndex - 1 + deckSize) % deckSize; this.cardFlipped = false; this.renderCards(content, container); });
+        }
+        if (nextBtn) {
+            if (deckSize === 0) nextBtn.disabled = true;
+            else nextBtn.addEventListener('click', (e) => { e.stopPropagation(); this.cardIndex = (this.cardIndex + 1) % deckSize; this.cardFlipped = false; this.renderCards(content, container); });
+        }
 
         content.querySelectorAll('.study-rate-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -294,6 +305,16 @@ class StudyModule {
 
     startQuiz(content, subject) {
         this.quizQuestions = QuestionGenerator.generateQuiz(subject, 10);
+        // 题库为空（数据缺失）时降级提示，避免后续 index/除零崩溃
+        if (!this.quizQuestions.length) {
+            if (this.quizTimer) { clearInterval(this.quizTimer); this.quizTimer = null; }
+            const setup = content.querySelector('.study-quiz-setup');
+            if (setup) {
+                setup.style.display = 'none';
+                setup.innerHTML = '<p style="padding:var(--space-lg);text-align:center;color:var(--color-ink-pale);">未能生成题目，请确认相关数据已加载后重试。</p>';
+            }
+            return;
+        }
         this.quizIndex = 0;
         this.quizAnswers = new Array(this.quizQuestions.length).fill(null);
         this.quizStartTime = Date.now();
@@ -373,6 +394,21 @@ class StudyModule {
         const correct = this.quizQuestions.filter((q, i) => this.quizAnswers[i] === q.answer).length;
         const total = this.quizQuestions.length;
         const seconds = Math.floor((Date.now() - this.quizStartTime) / 1000);
+
+        // 题库为空（数据未加载）时给出降级，避免 0/0 → NaN 与"再练一次"崩溃
+        if (total === 0) {
+            area.innerHTML = `
+                <div class="study-quiz-result">
+                    <p class="quiz-result-text">未生成自测题目，请确认数据加载完整后重试。</p>
+                    <div class="quiz-result-actions">
+                        <button class="btn btn-ghost" id="quizBackBtn">返回科目选择</button>
+                    </div>
+                </div>
+            `;
+            const backBtn = area.querySelector('#quizBackBtn');
+            if (backBtn) backBtn.addEventListener('click', () => { this.quizQuestions = []; this.activeTab = 'quiz'; this.renderTab(content); });
+            return;
+        }
 
         // 记录
         const record = {
@@ -560,12 +596,19 @@ class StudyModule {
         const wrongs = Storage.get('tcm_wrong_questions', []);
         if (wrongs.length === 0) { Toast.show('没有可导出的错题', 'warning'); return; }
         const lines = wrongs.map((w, i) => `【${i + 1}】${w.subject}｜${w.question}\n    正确答案：${w.answer}\n    解析：${w.explanation}`).join('\n\n');
-        const blob = new Blob(['# 岐黄学习中心 · 错题本导出\n\n' + lines], { type: 'text/markdown;charset=utf-8' });
-        const a = document.createElement('a');
-        a.href = URL.createObjectURL(blob);
-        a.download = '岐黄错题本_' + new Date().toISOString().slice(0, 10) + '.md';
-        a.click();
-        URL.revokeObjectURL(a.href);
+        const content = '# 岐黄学习中心 · 错题本导出\n\n' + lines;
+        if (typeof ExportUtils !== 'undefined' && ExportUtils.downloadText) {
+            ExportUtils.downloadText('岐黄错题本_' + new Date().toISOString().slice(0, 10) + '.md', content, 'text/markdown;charset=utf-8');
+        } else {
+            // 兜底：挂载 DOM 后延迟 revoke，避免部分浏览器下载失败
+            const blob = new Blob([content], { type: 'text/markdown;charset=utf-8' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = '岐黄错题本_' + new Date().toISOString().slice(0, 10) + '.md';
+            document.body.appendChild(a);
+            a.click();
+            setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 200);
+        }
         Toast.show('已导出错题本（Markdown）', 'success');
     }
 
@@ -591,13 +634,12 @@ class StudyModule {
             { stage: '中药学', entry: '中药卡 / 中药自测', deps: ['方剂学'], subject: '中药学', desc: '性味归经、功效主治、配伍禁忌、有毒限量' }
         ];
 
-        // 判定解锁：前一阶段正确率 ≥ 60%
+        // 判定解锁：前一阶段正确率 ≥ 60%（修正：先判断上一阶段再取 isUnlocked，避免 stage 1 恒解锁）
         let unlocked = true;
         const stageHtml = PATH.map((p, i) => {
             const rateNow = rate(p.subject);
-            const isUnlocked = unlocked;
             if (i > 0 && rate(PATH[i - 1].subject) < 0.6) unlocked = false;
-            if (i === 0 && rateNow === 0) isUnlocked && true;
+            const isUnlocked = unlocked;
             const status = !isUnlocked ? '🔒' : (rateNow >= 0.6 ? '✅' : '⏳');
             return `
                 <div class="card" style="padding:var(--space-md);margin-bottom:var(--space-md);${!isUnlocked ? 'opacity:.55;' : ''}">
@@ -606,7 +648,7 @@ class StudyModule {
                             <h4 style="margin:0;font-family:var(--font-heading);color:var(--color-vermillion-dark);">${status} 阶段${i + 1} · ${p.stage}</h4>
                             <p style="font-size:var(--text-sm);color:var(--color-ink-light);margin:6px 0 0 0;">${p.desc}</p>
                         </div>
-                        <span class="tag ${rateNow >= 0.6 ? 'tag-plain' : 'tag-plain'}" style="color:var(--color-bronze-dark);">正确率 ${(rateNow * 100).toFixed(0)}%</span>
+                        <span class="tag tag-plain" style="color:var(--color-bronze-dark);">正确率 ${(rateNow * 100).toFixed(0)}%</span>
                     </div>
                     <div style="margin-top:var(--space-sm);font-size:var(--text-sm);color:var(--color-blue-porcelain,#3B5E8B);">入口：${p.entry}</div>
                     ${!isUnlocked ? `<p style="font-size:var(--text-xs);color:var(--color-ink-pale);margin-top:6px;">完成上一阶段（正确率≥60%）后解锁</p>` : ''}
