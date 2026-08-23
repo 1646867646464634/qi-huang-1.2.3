@@ -178,6 +178,8 @@ class TongueModule {
         const spinner = container.querySelector('#' + analysisType + 'AnalyzingSpinner');
         const preview = container.querySelector('#' + analysisType + 'UploadZone .upload-preview');
         const diagnoseBtn = container.querySelector('#' + analysisType + 'DiagnoseBtn');
+        // 代际令牌：模块切换/新上传后旧请求的结果不再回填，避免污染新页面
+        const reqId = (this._reqSeq = (this._reqSeq || 0) + 1);
 
         this._analyzing = true;
         if (diagnoseBtn) diagnoseBtn.disabled = true;
@@ -189,6 +191,8 @@ class TongueModule {
             const base64 = await GLMVision.readImage(file);
             const prompt = GLMVision.buildPrompt(analysisType, rules);
             const text = await GLMVision.analyzeImage(analysisType, base64, prompt);
+            // 期间已切换/重新上传 → 丢弃过期结果
+            if (this._reqSeq !== reqId) return;
             const parsed = GLMVision.parseVisionJSON(text);
             if (!parsed) throw { code: 'PARSE', message: 'AI 返回内容无法解析为结构化数据' };
             const selection = GLMVision.mapToSelection(rules, parsed);
@@ -203,10 +207,13 @@ class TongueModule {
             const msg = (err && err.message) || 'AI 识别失败';
             Toast.show(msg + '，可手动选择下方特征', 'error');
         } finally {
+            if (this._reqSeq !== reqId) return;
             this._analyzing = false;
             if (spinner) spinner.style.display = 'none';
             if (diagnoseBtn) diagnoseBtn.disabled = false;
-            if (preview && preview.src && preview.src.indexOf('blob:') === 0) URL.revokeObjectURL(preview.src);
+            // 注意：不再 revoke preview 的 blob URL，直到下次上传/清空时统一释放，避免预览图失效
+            const fileInput = container.querySelector('#' + analysisType + 'FileInput');
+            if (fileInput) fileInput.value = ''; // 允许重新选择同一文件
         }
     }
 

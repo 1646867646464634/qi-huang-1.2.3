@@ -6,7 +6,9 @@ const Records = {
     MAX: 100,
 
     list() {
-        return Storage.get(this.KEY, []);
+        // 归一化：localStorage 中可能被写入非数组（旧版本/损坏），避免下游 map/filter 崩溃
+        const v = Storage.get(this.KEY, []);
+        return Array.isArray(v) ? v : [];
     },
 
     /**
@@ -135,7 +137,7 @@ class RecordsModule {
                         <div class="fav-card-type">${typeLabel[r.type] || r.type}</div>
                         <div class="fav-card-name">${(r.results && r.results[0] && r.results[0].name) || '（未匹配证型）'}${r.results && r.results.length > 1 ? ' 等' + r.results.length + '项' : ''}</div>
                         <div class="fav-card-time">${new Date(r.time).toLocaleString('zh-CN')}</div>
-                        <div style="margin-top:8px;font-size:12px;color:var(--color-ink-pale);">症状：${(r.input.symptoms || []).join('、') || '—'}</div>
+                        <div style="margin-top:8px;font-size:12px;color:var(--color-ink-pale);">症状：${((r.input && r.input.symptoms) || []).join('、') || '—'}</div>
                         <div style="display:flex;gap:10px;margin-top:8px;">
                             <button class="fav-card-remove" data-compare="${r.id}">⚖ 对比</button>
                             <button class="fav-card-remove" data-remove="${r.id}">✕ 删除</button>
@@ -205,8 +207,8 @@ class RecordsModule {
                     </div>
                 </div>
                 <div style="margin-top:var(--space-md);">
-                    <p style="font-size:var(--text-sm);">症状：${(rec.input.symptoms || []).join('、') || '—'}</p>
-                    ${rec.input.constitution ? `<p style="font-size:var(--text-sm);">体质：${rec.input.constitution}</p>` : ''}
+                    <p style="font-size:var(--text-sm);">症状：${((rec.input && rec.input.symptoms) || []).join('、') || '—'}</p>
+                    ${(rec.input && rec.input.constitution) ? `<p style="font-size:var(--text-sm);">体质：${rec.input.constitution}</p>` : ''}
                 </div>
             </div>
             <div>

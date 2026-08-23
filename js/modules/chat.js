@@ -31,10 +31,14 @@ class ChatModule {
         this.activeSession = null;     // 当前会话对象（未落盘，流式中）
         this.abortController = null;   // 停止按钮
         this.streaming = false;
+        this._typeTimer = null;        // 模拟打字定时器（供 destroy/stop 清理）
     }
 
     destroy() {
+        // 清理打字定时器与进行中的请求，避免切路由后继续向已脱离 DOM 的节点写入
+        if (this._typeTimer) { clearInterval(this._typeTimer); this._typeTimer = null; }
         if (this.abortController) { this.abortController.abort(); this.abortController = null; }
+        this.streaming = false;
     }
 
     render(container) {
@@ -280,7 +284,8 @@ class ChatModule {
         const apiMessages = [{ role: 'system', content: system }]
             .concat(session.messages.map(m => ({
                 role: m.role,
-                content: typeof m.content === 'string' ? m.content : (m.content && m.content.message) || String(m.content || '')
+                // 非字符串一律收敛为空串，绝不 String(obj) 产生 "[object Object]" 污染发送内容
+                content: typeof m.content === 'string' ? m.content : ''
             })));
 
         // 4. 渲染（前端模拟打字效果，实际由代理非流式一次性返回完整文本）
@@ -309,13 +314,21 @@ class ChatModule {
                 const chars = Array.from(replyStr);
                 let i = 0;
                 const step = chars.length > 200 ? 3 : 1; // 长文 3 字/次、短文 1 字/次
-                const timer = setInterval(() => {
-                    if (this.abortController && this.abortController.signal.aborted) { clearInterval(timer); return; }
+                // 定时器存入实例字段，destroy/_stop 时可中断打字
+                this._typeTimer = setInterval(() => {
                     textEl.textContent += chars.slice(i, i + step).join('');
                     i += step;
                     box.scrollTop = box.scrollHeight;
-                    if (i >= chars.length) clearInterval(timer);
+                    if (i >= chars.length) { clearInterval(this._typeTimer); this._typeTimer = null; }
                 }, 12);
+                // 等待打字完成后再复位 streaming/loading，避免打字期间可并发再发送
+                await new Promise((resolve) => {
+                    const poll = () => {
+                        if (!this._typeTimer) return resolve();
+                        setTimeout(poll, 50);
+                    };
+                    poll();
+                });
             }
         } catch (err) {
             textEl.textContent += (err && err.message) || '对话失败，请稍后重试';
@@ -398,7 +411,10 @@ class ChatModule {
         });
         lines.push('---');
         lines.push('本记录由岐黄·辅助诊疗系统生成，仅供健康参考，不构成医疗诊断。');
-        const fname = '岐黄AI问诊_' + new Date(session.time).toISOString().slice(0, 10) + '.md';
+        // 会话时间缺失/非法时用兜底日期，避免 toISOString 抛 RangeError 中断导出
+        const sessTime = new Date(session.time);
+        const day = isNaN(sessTime.getTime()) ? '0000-00-00' : sessTime.toISOString().slice(0, 10);
+        const fname = '岐黄AI问诊_' + day + '.md';
         if (typeof ExportUtils !== 'undefined' && ExportUtils.downloadText) {
             ExportUtils.downloadText(fname, lines.join('\n'), 'text/markdown;charset=utf-8');
             Toast.show('已导出问诊记录', 'success');

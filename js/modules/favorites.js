@@ -38,7 +38,9 @@ class FavoritesModule {
     renderSection(container) {
         const content = container.querySelector('#favContent');
         const key = this.activeSection === 'favorites' ? 'tcm_favorites' : 'tcm_history';
-        const items = Storage.get(key, []);
+        const raw = Storage.get(key, []);
+        // 归一化：损坏存储（非数组）时按空处理，避免 map/splice 崩溃
+        const items = Array.isArray(raw) ? raw : [];
         const typeLabel = { herb: '中药', formula: '方剂', syndrome: '证型' };
 
         if (items.length === 0) {
@@ -50,7 +52,7 @@ class FavoritesModule {
             <div class="fav-grid">
                 ${items.map((item, i) => `
                     <div class="fav-card" data-type="${item.type}" data-id="${item.id}">
-                        <div class="fav-card-type">${typeLabel[item.type] || item.type}</div>
+                        <div class="fav-card-type">${typeLabel[item.type] || item.type || '—'}</div>
                         <div class="fav-card-name">${item.title || ''}</div>
                         <div class="fav-card-time">${new Date(item.time).toLocaleString('zh-CN')}</div>
                         ${this.activeSection === 'favorites'
@@ -76,8 +78,10 @@ class FavoritesModule {
         content.querySelectorAll('.fav-card-remove').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.stopPropagation();
-                const items = Storage.get(key, []);
-                items.splice(parseInt(btn.dataset.idx, 10), 1);
+                const raw = Storage.get(key, []);
+                const items = Array.isArray(raw) ? raw : [];
+                const idx = parseInt(btn.dataset.idx, 10);
+                if (idx >= 0 && idx < items.length) items.splice(idx, 1);
                 Storage.set(key, items);
                 Toast.show('已移除', 'info');
                 this.renderSection(container);

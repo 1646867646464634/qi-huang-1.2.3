@@ -29,6 +29,9 @@ const MAX_MESSAGES = 40;      // 对话消息条数上限
 const MAX_TOTAL_CHARS = 20000;// 对话消息总字符上限
 const _rateMap = new Map();   // ip -> { count, ts }
 
+// 单实例串行队列（尽力而为的并发限制；Vercel 多实例不共享）
+let _queue = Promise.resolve();
+
 function getClientIp(req) {
   const xff = req.headers['x-forwarded-for'];
   if (xff) return String(xff).split(',')[0].trim();
@@ -36,6 +39,12 @@ function getClientIp(req) {
 }
 function rateLimited(ip) {
   const now = Date.now();
+  // 顺带清理超窗条目，防止 Map 无限增长（内存泄漏）
+  if (_rateMap.size > 200) {
+    for (const [k, v] of _rateMap) {
+      if (now - v.ts > RATE_WINDOW_MS) _rateMap.delete(k);
+    }
+  }
   const rec = _rateMap.get(ip);
   if (!rec || now - rec.ts > RATE_WINDOW_MS) {
     _rateMap.set(ip, { count: 1, ts: now });
@@ -43,6 +52,13 @@ function rateLimited(ip) {
   }
   rec.count += 1;
   return rec.count > RATE_MAX;
+}
+// 判断是否视觉请求（messages 含 image_url/base64 图片内容）——用于跳过文本长度校验，避免 base64 被误杀
+function isVisionRequest(messages) {
+  return (messages || []).some(m => {
+    const c = m && m.content;
+    return Array.isArray(c) && c.some(p => p && p.type === 'image_url');
+  });
 }
 function messageTotalChars(messages) {
   let n = 0;
@@ -54,10 +70,14 @@ function messageTotalChars(messages) {
   return n;
 }
 function sendJson(res, status, obj) {
-  res.statusCode = status;
-  res.setHeader('Content-Type', 'application/json; charset=utf-8');
-  res.setHeader('Cache-Control', 'no-store');
-  res.end(JSON.stringify(obj));
+  // 客户端已断开/响应已结束时不再写入，避免 ERR_STREAM_DESTROYED
+  if (res.destroyed || res.writableEnded) return;
+  try {
+    res.statusCode = status;
+    res.setHeader('Content-Type', 'application/json; charset=utf-8');
+    res.setHeader('Cache-Control', 'no-store');
+    res.end(JSON.stringify(obj));
+  } catch (e) { /* 忽略已断开连接上的写入错误 */ }
 }
 
 module.exports = async function handler(req, res) {
@@ -93,14 +113,13 @@ module.exports = async function handler(req, res) {
   if (payload.temperature === undefined) payload.temperature = DEFAULT_TEMPERATURE;
 
   const isStream = payload.stream === true;
-  if (isStream) {
-    // 限流与长度校验仅作用于流式对话请求；非流式视觉路径保持原逻辑（避免 base64 图被误杀）
-    if (rateLimited(getClientIp(req))) {
-      return sendJson(res, 429, { error: 'rate_limited', message: '请求过于频繁，请稍后再试' });
-    }
-    if (payload.messages.length > MAX_MESSAGES || messageTotalChars(payload.messages) > MAX_TOTAL_CHARS) {
-      return sendJson(res, 429, { error: 'payload_too_large', message: '对话内容过长，请精简后重试' });
-    }
+  // 限流与长度校验对**所有** POST 生效（不再仅限流式），视觉请求跳过文本长度校验
+  const visionReq = isVisionRequest(payload.messages);
+  if (rateLimited(getClientIp(req))) {
+    return sendJson(res, 429, { error: 'rate_limited', message: '请求过于频繁，请稍后再试' });
+  }
+  if (!visionReq && (payload.messages.length > MAX_MESSAGES || messageTotalChars(payload.messages) > MAX_TOTAL_CHARS)) {
+    return sendJson(res, 429, { error: 'payload_too_large', message: '对话内容过长，请精简后重试' });
   }
 
   // ---- 转发智谱，60s 超时；客户端断开中止上游 ----
@@ -109,19 +128,30 @@ module.exports = async function handler(req, res) {
   res.on('close', () => { if (!res.writableEnded && !controller.signal.aborted) controller.abort(); });
 
   try {
-    const upstream = await fetch(ZHIPU_ENDPOINT, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + apiKey
-      },
-      body: JSON.stringify(payload),
-      signal: controller.signal
+    // 单实例串行：一次只允许一个请求转发智谱（尽力而为的 1 并发约束）
+    const upstream = await new Promise((resolve, reject) => {
+      _queue = _queue.then(async () => {
+        try {
+          const r = await fetch(ZHIPU_ENDPOINT, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer ' + apiKey
+            },
+            body: JSON.stringify(payload),
+            signal: controller.signal
+          });
+          resolve(r);
+        } catch (e) {
+          reject(e);
+        }
+      });
     });
     clearTimeout(timer);
 
     // 透传上游响应（JSON；若上游为 SSE 也原样透传文本，前端按 Content-Type 分支解析）
     const text = await upstream.text();
+    if (res.destroyed || res.writableEnded) return;
     res.statusCode = upstream.status;
     res.setHeader('Content-Type', upstream.headers.get('Content-Type') || 'application/json; charset=utf-8');
     res.setHeader('Cache-Control', 'no-store');

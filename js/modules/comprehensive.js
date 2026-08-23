@@ -10,9 +10,12 @@ class ComprehensiveModule {
             face: {},
             constitution: ''
         };
+        this._docClickHandler = null;        // 自动完成关闭监听（防泄漏）
     }
 
-    destroy() {}
+    destroy() {
+        if (this._docClickHandler) { document.removeEventListener('click', this._docClickHandler); this._docClickHandler = null; }
+    }
 
     render(container) {
         container.innerHTML = `
@@ -126,9 +129,12 @@ class ComprehensiveModule {
                     }
                 }
             });
-            document.addEventListener('click', (e) => {
+            // 点击外部关闭自动完成（实例持有监听，避免重复绑定）
+            if (this._docClickHandler) document.removeEventListener('click', this._docClickHandler);
+            this._docClickHandler = (e) => {
                 if (dropdown && !dropdown.contains(e.target) && e.target !== input) dropdown.style.display = 'none';
-            });
+            };
+            document.addEventListener('click', this._docClickHandler);
         }
 
         // 已选标签点击取消
@@ -182,13 +188,18 @@ class ComprehensiveModule {
                             <span style="font-weight:400;color:var(--color-ink-pale);font-size:var(--text-xs);margin-left:8px;">${field.hint || ''}</span>
                         </label>
                         <div class="form-option-grid" style="display:flex;flex-wrap:wrap;gap:8px;">
-                            ${field.options.map(opt => `
-                                <label class="form-option-chip" style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border:1px solid var(--color-line,#e2d9cc);border-radius:20px;cursor:pointer;font-size:var(--text-sm);">
-                                    <input type="${field.multi ? 'checkbox' : 'radio'}" name="${selKey}_${field.key}" value="${this._esc(opt.value)}" style="accent-color:var(--color-vermillion,#C04040);">
-                                    <span>${opt.label}</span>
-                                    <span style="font-size:11px;color:var(--color-ink-pale);">${opt.desc || ''}</span>
-                                </label>
-                            `).join('')}
+                            ${field.options.map(opt => {
+                                // 回显已选项（步骤回退/重新渲染时保持选中）
+                                const prevVals = (this.selection[selKey] && this.selection[selKey][field.key]) || [];
+                                const isChecked = prevVals.includes(opt.value);
+                                return `
+                                    <label class="form-option-chip${isChecked ? ' chip-selected' : ''}" style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border:1px solid var(--color-line,#e2d9cc);border-radius:20px;cursor:pointer;font-size:var(--text-sm);">
+                                        <input type="${field.multi ? 'checkbox' : 'radio'}" name="${selKey}_${field.key}" value="${this._esc(opt.value)}" ${isChecked ? 'checked' : ''} style="accent-color:var(--color-vermillion,#C04040);">
+                                        <span>${opt.label}</span>
+                                        <span style="font-size:11px;color:var(--color-ink-pale);">${opt.desc || ''}</span>
+                                    </label>
+                                `;
+                            }).join('')}
                         </div>
                     </div>
                 `).join('')}
@@ -293,7 +304,25 @@ class ComprehensiveModule {
 
     // ---------- 汇总辨证 ----------
     diagnose(container) {
-        const results = DiagnosisEngine.diagnose(this.selection);
+        let results;
+        try {
+            results = DiagnosisEngine.diagnose(this.selection);
+        } catch (err) {
+            console.error('辨证引擎异常:', err);
+            const content = container.querySelector('#comprehensiveContent');
+            if (content) {
+                content.innerHTML = `
+                    <div class="empty-state card" style="text-align:center;padding: var(--space-2xl) var(--space-lg);">
+                        <div style="font-size:48px;margin-bottom:var(--space-md);opacity:.3;">🩺</div>
+                        <h4 style="color:var(--color-ink-light);margin-bottom:var(--space-sm);">辨证引擎运行异常</h4>
+                        <p style="color:var(--color-ink-pale);font-size:var(--text-sm);">数据加载可能不完整，请刷新页面重试。</p>
+                        <button class="btn btn-outline" id="compRetry" style="margin-top:var(--space-md);">返回修改</button>
+                    </div>
+                `;
+                content.querySelector('#compRetry').addEventListener('click', () => { this.step = 1; this.render(container); });
+            }
+            return;
+        }
         const sel = this.selection;
         const dangerHTML = (typeof dangerBannerHTML !== 'undefined') ? dangerBannerHTML(sel.symptoms) : '';
 

@@ -4,6 +4,7 @@ class HerbModule {
         this.currentCategory = null;
         this.searchQuery = '';
         this.activeModal = null;
+        this._debounceTimer = null;  // 搜索防抖定时器（destroy 时清理）
     }
 
     render(container) {
@@ -358,6 +359,11 @@ class HerbModule {
     }
 
     closeModal() {
+        // 同步移除 ESC 监听，避免每次开弹窗都向 document 追加一个 keydown 监听
+        if (this._escHandler) {
+            document.removeEventListener('keydown', this._escHandler);
+            this._escHandler = null;
+        }
         if (this.activeModal) {
             this.activeModal.remove();
             this.activeModal = null;
@@ -403,10 +409,9 @@ class HerbModule {
         // 搜索输入
         const searchInput = DOM.$('#herbSearchInput', container);
         if (searchInput) {
-            let debounceTimer;
             searchInput.addEventListener('input', () => {
-                clearTimeout(debounceTimer);
-                debounceTimer = setTimeout(() => {
+                clearTimeout(this._debounceTimer);
+                this._debounceTimer = setTimeout(() => {
                     this.searchQuery = searchInput.value;
                     this.render(container);
                 }, 300);
@@ -431,6 +436,8 @@ class HerbModule {
     }
 
     destroy() {
+        // 清理防抖定时器，避免切路由后回调覆盖当前页面
+        if (this._debounceTimer) { clearTimeout(this._debounceTimer); this._debounceTimer = null; }
         this.closeModal();
         if (this._escHandler) {
             document.removeEventListener('keydown', this._escHandler);

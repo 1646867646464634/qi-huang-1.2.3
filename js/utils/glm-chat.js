@@ -32,7 +32,9 @@ const GLM_CHAT_CONFIG = {
 function checkFrontRateLimit() {
     const now = Date.now();
     let rec = Storage.get(GLM_CHAT_CONFIG.RATE_KEY, null);
-    if (!rec || now - rec.ts > GLM_CHAT_CONFIG.RATE_WINDOW_MS) rec = { ts: now, count: 0 };
+    // 结构校验 + 时钟回拨/脏数据防御：rec 非对象、ts 非法或在未来 → 重置窗口
+    const valid = rec && typeof rec === 'object' && typeof rec.count === 'number' && typeof rec.ts === 'number';
+    if (!valid || now - rec.ts > GLM_CHAT_CONFIG.RATE_WINDOW_MS || rec.ts > now) rec = { ts: now, count: 0 };
     rec.count += 1;
     Storage.set(GLM_CHAT_CONFIG.RATE_KEY, rec);
     return rec.count <= GLM_CHAT_CONFIG.RATE_MAX;
@@ -125,12 +127,17 @@ async function streamChat(messages, opts) {
     const onDelta = opts.onDelta || function () {};
     const onReasoning = opts.onReasoning || function () {};
 
-    // 内部超时 + 外部停止信号（AbortSignal.any 现代浏览器可用）
-    const timeoutController = new AbortController();
-    const timer = setTimeout(() => timeoutController.abort(), GLM_CHAT_CONFIG.timeoutMs);
-    const signal = (opts.signal && typeof AbortSignal.any === 'function')
-        ? AbortSignal.any([opts.signal, timeoutController.signal])
-        : timeoutController.signal;
+    // 内部超时 + 外部停止信号合并：兼容不支持 AbortSignal.any 的低版本浏览器，
+    // 并让"用户主动停止"与"超时"可区分（用户停止抛 CANCELLED，不误报超时）
+    const controller = new AbortController();
+    let cancelledByUser = false;
+    const abortTimer = setTimeout(() => controller.abort(), GLM_CHAT_CONFIG.timeoutMs);
+    let _onUserAbort = null;
+    if (opts.signal) {
+        _onUserAbort = () => { cancelledByUser = true; controller.abort(); };
+        opts.signal.addEventListener('abort', _onUserAbort, { once: true });
+    }
+    const signal = controller.signal;
 
     const payload = {
         model: GLM_CHAT_CONFIG.model,
@@ -151,11 +158,16 @@ async function streamChat(messages, opts) {
             signal: signal
         });
     } catch (err) {
-        clearTimeout(timer);
-        if (err && err.name === 'AbortError') throw { code: 'TIMEOUT', message: 'AI 对话超时（60s）' };
+        if (_onUserAbort) opts.signal.removeEventListener('abort', _onUserAbort);
+        clearTimeout(abortTimer);
+        if (err && err.name === 'AbortError') {
+            throw cancelledByUser
+                ? { code: 'CANCELLED', message: '已停止生成' }
+                : { code: 'TIMEOUT', message: 'AI 对话超时（60s）' };
+        }
         throw { code: 'NETWORK', message: '网络异常，请检查网络连接' };
     }
-    clearTimeout(timer);
+    // fetch 完成后定时器保持（读流期间仍需超时保护），请求结束路径统一清理
 
     // HTTP 错误（含代理限流 429 / 智谱 401/429/5xx）
     if (!resp.ok) {
@@ -185,8 +197,12 @@ async function streamChat(messages, opts) {
             if (reasoning) onReasoning(reasoning);
             if (!content) throw { code: 'BAD_RESPONSE', message: 'AI 返回内容为空' };
             onDelta(content);
+            clearTimeout(abortTimer);
+            if (_onUserAbort) opts.signal.removeEventListener('abort', _onUserAbort);
             return content;
         } catch (err) {
+            clearTimeout(abortTimer);
+            if (_onUserAbort) opts.signal.removeEventListener('abort', _onUserAbort);
             if (err && err.code) throw err;
             throw { code: 'BAD_RESPONSE', message: String((err && err.message) || err) };
         }
@@ -235,8 +251,16 @@ async function streamChat(messages, opts) {
         buffer += decoder.decode(); // 收尾 flush
         processBuffer();
     } catch (err) {
-        if (err && err.name === 'AbortError') throw { code: 'TIMEOUT', message: 'AI 对话超时或已停止' };
+        // 读流期间 abortTimer 仍生效，提供超时兜底；区分用户停止
+        if (err && err.name === 'AbortError') {
+            throw cancelledByUser
+                ? { code: 'CANCELLED', message: '已停止生成' }
+                : { code: 'TIMEOUT', message: 'AI 对话超时或已停止' };
+        }
         throw { code: 'STREAM_ERROR', message: '对话流中断：' + String((err && err.message) || err) };
+    } finally {
+        clearTimeout(abortTimer);
+        if (_onUserAbort) opts.signal.removeEventListener('abort', _onUserAbort);
     }
 
     if (!full) throw { code: 'BAD_RESPONSE', message: 'AI 返回内容为空' };

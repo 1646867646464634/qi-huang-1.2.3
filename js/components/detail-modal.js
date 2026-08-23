@@ -7,6 +7,8 @@ const DetailModal = {
 
     // 打开详情：DetailModal.open('herb'|'formula'|'syndrome', id)
     open(type, id) {
+        // 未知类型直接拒绝，避免空白弹窗与污染收藏
+        if (!['herb', 'formula', 'syndrome'].includes(type)) return;
         let data = null;
         let title = '';
         let body = '';
@@ -84,12 +86,14 @@ const DetailModal = {
     },
 
     _isFav(type, id) {
-        const favs = Storage.get('tcm_favorites', []);
+        const v = Storage.get('tcm_favorites', []);
+        const favs = Array.isArray(v) ? v : [];
         return favs.some(f => f.type === type && f.id === id);
     },
 
     _toggleFav(btn, type, id, title) {
-        let favs = Storage.get('tcm_favorites', []);
+        const v = Storage.get('tcm_favorites', []);
+        let favs = Array.isArray(v) ? v : [];
         const idx = favs.findIndex(f => f.type === type && f.id === id);
         if (idx !== -1) {
             favs.splice(idx, 1);
@@ -105,7 +109,8 @@ const DetailModal = {
     },
 
     _addHistory(type, id, title) {
-        let history = Storage.get('tcm_history', []);
+        const v = Storage.get('tcm_history', []);
+        let history = Array.isArray(v) ? v : [];
         history = history.filter(h => !(h.type === type && h.id === id));
         history.unshift({ type, id, title, time: Date.now() });
         history = history.slice(0, 50);

@@ -204,11 +204,13 @@ function _matchValue(candidate, raw) {
     const c = _norm(candidate), r = _norm(raw);
     if (!r) return false;
     if (c === r) return true; // 完全一致
-    if (c.indexOf(r) !== -1 || r.indexOf(c) !== -1) return true; // "红"∈"淡红" 双向子串
-    const alias = _aliasMap[r];
-    if (alias && _norm(alias) === c) return true;
+    // 别名优先于子串，避免 "黄腻" 同时命中 "黄" 与 "腻"
+    const alias = _aliasMap[r] || _aliasMap[c];
+    if (alias && (_norm(alias) === c || _norm(alias) === r)) return true;
     if (r.indexOf('苔') !== -1 && c === r.replace('苔', '')) return true; // "白苔"→"白"
     if (r.indexOf('面色') !== -1 && c === r.replace('面色', '')) return true; // "面色红润"→"红润"
+    // 双向子串仅对双字及以上生效，避免 "红"∈"淡红"/"绛红" 的过度匹配
+    if (c.length >= 2 && r.length >= 2 && (c.indexOf(r) !== -1 || r.indexOf(c) !== -1)) return true;
     return false;
 }
 
@@ -229,7 +231,7 @@ function mapToSelection(rules, parsed) {
         raws.forEach(r => {
             const s = String(r).trim();
             if (!s || s === '不确定' || s === '无法确定' || s === '不清楚') return; // 空/不确定 → 跳过
-            const opt = field.options.find(o => _matchValue(o.value, s));
+            const opt = (field.options || []).find(o => _matchValue(o.value, s));
             if (opt && matched.indexOf(opt.value) === -1) matched.push(opt.value);
         });
         if (matched.length) selection[field.key] = matched;

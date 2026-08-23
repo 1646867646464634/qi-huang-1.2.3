@@ -15,7 +15,14 @@ const SM2 = {
      */
     update(card, quality) {
         const c = Object.assign(this.init(), card || {});
-        const q = Math.max(0, Math.min(5, Math.round(quality || 0)));
+        // quality 校验：NaN/null/非数字一律按失败处理，避免 NaN 污染后续计算
+        const qNum = Math.round(Number(quality));
+        const q = Number.isFinite(qNum) ? Math.max(0, Math.min(5, qNum)) : 0;
+        // ef 归一化：损坏数据（字符串）转数字，防止字符串拼接
+        c.ef = Number.isFinite(Number(c.ef)) ? Number(c.ef) : 2.5;
+        c.interval = Number.isFinite(Number(c.interval)) ? Number(c.interval) : 0;
+        c.reps = Number.isFinite(Number(c.reps)) ? Number(c.reps) : 0;
+        c.lapses = Number.isFinite(Number(c.lapses)) ? Number(c.lapses) : 0;
 
         // EF 更新（q<3 视为失败）
         if (q >= 3) {
