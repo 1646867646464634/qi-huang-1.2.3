@@ -56,7 +56,7 @@ class ComprehensiveModule {
         content.innerHTML = `
             <div class="card" style="margin-bottom: var(--space-lg);">
                 <h4 style="font-family:var(--font-heading);color:var(--color-vermillion-dark);margin-bottom: var(--space-sm);">
-                    选择主要不适症状（最多 5 个）
+                    选择主要不适症状（最多 10 个）
                 </h4>
                 <div class="qc-search-row" style="margin-bottom: var(--space-md);">
                     <input type="text" id="compSymInput" class="qc-search-input" placeholder="🔍 输入并选择症状（如：头痛、失眠、乏力…）" autocomplete="off">
@@ -84,7 +84,7 @@ class ComprehensiveModule {
                 const chip = inp.closest('.form-option-chip');
                 const sym = inp.value;
                 if (inp.checked) {
-                    if (this.selection.symptoms.length >= 5) { inp.checked = false; Toast.show('最多选择 5 个症状', 'warning'); return; }
+                    if (this.selection.symptoms.length >= 10) { inp.checked = false; Toast.show('最多选择 10 个症状', 'warning'); return; }
                     if (!this.selection.symptoms.includes(sym)) this.selection.symptoms.push(sym);
                     chip.classList.add('chip-selected');
                 } else {
@@ -153,7 +153,7 @@ class ComprehensiveModule {
     _addSymptom(s, content, container) {
         if (!s) return;
         if (this.selection.symptoms.includes(s)) return;
-        if (this.selection.symptoms.length >= 5) { Toast.show('最多选择 5 个症状', 'warning'); return; }
+        if (this.selection.symptoms.length >= 10) { Toast.show('最多选择 10 个症状', 'warning'); return; }
         this.selection.symptoms.push(s);
         this.renderSymptoms(content, container);
     }
