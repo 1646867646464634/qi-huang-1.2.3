@@ -267,6 +267,7 @@ const DetailModal = {
                     ${s.source ? `<span>来源：${s.source}</span>` : ''}
                 </div>
                 ${(s.dangerSignals && s.dangerSignals.length) ? `<div class="danger-banner" role="alert">⚠ 本证型含危重信号：${s.dangerSignals.join('、')}。如出现相关表现，请立即就医。</div>` : ''}
+                ${s.description ? this._block('证型概述', `<p>${s.description}</p>`) : ''}
                 ${this._block('主要症状', `<p>${(s.symptoms || []).join('、')}</p>`)}
                 ${(s.keySymptoms && s.keySymptoms.length) ? this._block('必见症状（辨证关键）', `<p>${s.keySymptoms.join('、')}</p>`) : ''}
                 ${this._block('舌象脉象', `<p>舌象：${tongueText || '—'}；脉象：${s.pulseCondition || '—'}</p>`)}
