@@ -118,6 +118,10 @@
     }
     
     function showWelcome() {
+        // 与 loadModule 一致：切回首页也销毁当前模块（清理监听/定时器/进行中的异步），避免泄漏与跨页污染
+        Object.values(modules).forEach(m => {
+            if (m && m.destroy) m.destroy();
+        });
         // 恢复欢迎页内容
         const container = DOM.$('#mainContent');
         if (container) {
@@ -190,7 +194,7 @@
         ];
 
         // 依据身份画像计算推荐优先级
-        const identity = Storage.get('tcm_identity');
+        const identity = (typeof Storage !== 'undefined') ? Storage.get('tcm_identity') : null;
         const profile = (typeof Profile !== 'undefined') ? Profile.get() : null;
         const role = identity && identity.role;
         const weights = {};
@@ -201,7 +205,7 @@
         else { w('constitution', 3); w('symptom', 3); w('comprehensive', 2); }
 
         // 有诊断记录的人优先复诊辨证
-        const records = Records && Records.list ? Records.list() : [];
+        const records = (typeof Records !== 'undefined' && Records.list) ? Records.list() : [];
         if (records.length > 0) { w('symptom', 2); w('records', 2); }
 
         cards.sort((a, b) => (weights[b.path] || 0) - (weights[a.path] || 0));
