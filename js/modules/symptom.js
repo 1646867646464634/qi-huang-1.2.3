@@ -5,9 +5,27 @@ class SymptomModule {
         this.selectedSymptoms = [];
         this.searchResults = null;
         this.activeResultIndex = -1;
+        this._docClickHandler = null;  // 自动完成关闭监听（防重复绑定/泄漏）
+        this._qcTimer = null;          // 快速选择防抖定时器（防跨路由触发）
+    }
+
+    // 自动完成关闭监听（document 级，实例持有以便清理）
+    _bindDocClick(autocompleteDropdown, searchInput) {
+        if (this._docClickHandler) document.removeEventListener('click', this._docClickHandler);
+        this._docClickHandler = (e) => {
+            if (autocompleteDropdown && !autocompleteDropdown.contains(e.target) && e.target !== searchInput) {
+                DOM.hide(autocompleteDropdown);
+            }
+        };
+        document.addEventListener('click', this._docClickHandler);
     }
 
     render(container) {
+        // 知识库未加载时给出降级提示，避免白屏
+        if (typeof symptomSyndromeMapping === 'undefined' || !symptomSyndromeMapping) {
+            container.innerHTML = '<div class="empty-state card" style="text-align:center;padding:var(--space-2xl) var(--space-lg);"><h4 style="color:var(--color-ink-light);margin-bottom:var(--space-sm);">症状知识库未加载</h4><p style="color:var(--color-ink-pale);font-size:var(--text-sm);">请刷新页面重试，或检查数据文件是否加载完整。</p></div>';
+            return;
+        }
         const allSymptoms = Object.keys(symptomSyndromeMapping);
 
         // 读取 URL 参数（支持从舌诊/面诊等模块跳转带 search 自动辨证）
@@ -283,10 +301,9 @@ class SymptomModule {
         });
         const qcSearchInput = container.querySelector('#qcSearchInput');
         if (qcSearchInput) {
-            let qcTimer = null;
             qcSearchInput.addEventListener('input', () => {
-                clearTimeout(qcTimer);
-                qcTimer = setTimeout(() => {
+                clearTimeout(me._qcTimer);
+                me._qcTimer = setTimeout(() => {
                     me.qcFilter = qcSearchInput.value.trim();
                     me.reRenderQuickChipsTree(container);
                 }, 150);
@@ -358,34 +375,8 @@ class SymptomModule {
             });
         }
 
-        // 点击其他地方关闭自动完成
-        document.addEventListener('click', (e) => {
-            if (autocompleteDropdown && !autocompleteDropdown.contains(e.target) && e.target !== searchInput) {
-                DOM.hide(autocompleteDropdown);
-            }
-        });
-
-        // 快速选择标签点击
-        const chips = container.querySelectorAll('.symptom-chip');
-        chips.forEach(chip => {
-            chip.addEventListener('click', () => {
-                const symptom = chip.dataset.symptom;
-                if (!symptom) return;
-
-                if (this.selectedSymptoms.includes(symptom)) {
-                    this.selectedSymptoms = this.selectedSymptoms.filter(s => s !== symptom);
-                } else {
-                    if (this.selectedSymptoms.length >= 10) {
-                        Toast.show('最多选择 10 个症状进行组合辨证', 'warning');
-                        return;
-                    }
-                    this.selectedSymptoms.push(symptom);
-                }
-
-                this.reRenderChips(container);
-                this.renderSelectedTags(container);
-            });
-        });
+        // 点击其他地方关闭自动完成（实例持有监听，避免每次 render 重复绑定）
+        this._bindDocClick(autocompleteDropdown, searchInput);
 
         // 多症状诊断按钮
         const multiBtn = container.querySelector('#multiDiagnosisBtn');
@@ -991,6 +982,9 @@ class SymptomModule {
     }
 
     destroy() {
+        // 清理 document 级监听与防抖定时器，避免跨路由泄漏/竞态
+        if (this._docClickHandler) { document.removeEventListener('click', this._docClickHandler); this._docClickHandler = null; }
+        if (this._qcTimer) { clearTimeout(this._qcTimer); this._qcTimer = null; }
         this.searchQuery = '';
         this.selectedSymptoms = [];
         this.searchResults = null;
