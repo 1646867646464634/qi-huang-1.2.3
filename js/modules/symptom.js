@@ -241,12 +241,9 @@ class SymptomModule {
                 if (!symptom) return;
                 const idx = me.selectedSymptoms.indexOf(symptom);
                 if (idx === -1) {
-                    if (me.selectedSymptoms.length >= 10) {
-                        Toast.show('最多选择 10 个症状进行组合辨证', 'warning');
-                        return;
+                    if (me._tryAddSymptom(symptom)) {
+                        chip.classList.add('chip-selected');
                     }
-                    me.selectedSymptoms.push(symptom);
-                    chip.classList.add('chip-selected');
                 } else {
                     me.selectedSymptoms.splice(idx, 1);
                     chip.classList.remove('chip-selected');
@@ -259,6 +256,32 @@ class SymptomModule {
                 }
             });
         });
+    }
+
+    // v3：检查待选症状是否与已选症状构成同组互斥（如"舌淡/舌红"、"恶寒重/发热重"）
+    _checkMutex(symptom) {
+        const groups = (typeof SymptomMutexGroups !== 'undefined') ? SymptomMutexGroups
+            : (typeof window !== 'undefined' && window.SymptomMutexGroups) || [];
+        for (const group of groups) {
+            const conflict = this.selectedSymptoms.find(s =>
+                (group.includes(symptom) || group.some(g => symptom.includes(g)))
+                && (group.includes(s) || group.some(g => s.includes(g)))
+            );
+            if (conflict) {
+                Toast.show(`「${symptom}」与已选「${conflict}」相冲突，请二选一`, 'warning');
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // 统一入口：将症状加入选中列表（含互斥与数量校验）
+    _tryAddSymptom(symptom) {
+        if (!symptom || this.selectedSymptoms.includes(symptom)) return false;
+        if (this.selectedSymptoms.length >= 10) { Toast.show('最多选择 10 个症状进行组合辨证', 'warning'); return false; }
+        if (this._checkMutex(symptom)) return false;
+        this.selectedSymptoms.push(symptom);
+        return true;
     }
 
     renderQuickChips(symptoms) {
@@ -466,11 +489,7 @@ class SymptomModule {
 
                 // 添加到选中症状
                 if (!this.selectedSymptoms.includes(symptom)) {
-                    if (this.selectedSymptoms.length >= 10) {
-                        Toast.show('最多选择 10 个症状进行组合辨证', 'warning');
-                        return;
-                    }
-                    this.selectedSymptoms.push(symptom);
+                    if (!this._tryAddSymptom(symptom)) return;
                 }
 
                 container.querySelector('#symptomSearchInput').value = '';
@@ -499,22 +518,18 @@ class SymptomModule {
                 s => s === this.searchQuery
             );
             if (exactMatch) {
-                if (this.selectedSymptoms.length < 10) {
-                    this.selectedSymptoms.push(exactMatch);
-                } else {
-                    Toast.show('最多选择 10 个症状进行组合辨证', 'warning');
+                if (this._tryAddSymptom(exactMatch)) {
+                    this.reRenderChips(container);
                 }
-                this.reRenderChips(container);
             } else {
                 // 部分匹配：尝试添加到选中
                 const partialMatch = Object.keys(symptomSyndromeMapping).find(
                     s => s.includes(this.searchQuery)
                 );
                 if (partialMatch) {
-                    if (this.selectedSymptoms.length < 10) {
-                        this.selectedSymptoms.push(partialMatch);
+                    if (this._tryAddSymptom(partialMatch)) {
+                        this.reRenderChips(container);
                     }
-                    this.reRenderChips(container);
                 }
             }
         }
@@ -568,11 +583,7 @@ class SymptomModule {
                 if (this.selectedSymptoms.includes(symptom)) {
                     this.selectedSymptoms = this.selectedSymptoms.filter(s => s !== symptom);
                 } else {
-                    if (this.selectedSymptoms.length >= 10) {
-                        Toast.show('最多选择 10 个症状进行组合辨证', 'warning');
-                        return;
-                    }
-                    this.selectedSymptoms.push(symptom);
+                    if (!this._tryAddSymptom(symptom)) return;
                 }
 
                 this.reRenderChips(container);
@@ -710,9 +721,11 @@ class SymptomModule {
                 const syndrome = result.syndrome;
                 if (!syndrome) return '';
 
-                const matchPercentage = maxScore > 0
-                    ? Math.round((result.score / maxScore) * 100)
-                    : 0;
+                // v3：优先使用引擎已归一的 matchScore（饱和函数分层），
+                // 兼容旧结果（无 matchScore 字段）时回退相对百分比
+                const matchPercentage = typeof result.matchScore === 'number'
+                    ? result.matchScore
+                    : (maxScore > 0 ? Math.round((result.score / maxScore) * 100) : 0);
 
                 const scoreColor = matchPercentage >= 80 ? 'var(--color-vermillion)'
                     : matchPercentage >= 60 ? 'var(--color-bronze-text)'
@@ -841,6 +854,17 @@ class SymptomModule {
                                         </div>
                                     ` : '<p class="result-text" style="color: var(--color-ink-pale);">暂无推荐方剂</p>'}
                                 </div>
+                                ${(result.formulaAdvice && result.formulaAdvice.length) ? `
+                                    <div class="result-section" style="margin-top: var(--space-sm); padding: var(--space-sm) var(--space-md); background: rgba(91,139,59,0.06); border-left: 3px solid var(--color-success, #5B8B3B); border-radius: 0 6px 6px 0;">
+                                        <h5 class="result-section-title" style="color: var(--color-success, #5B8B3B);">随证加减建议</h5>
+                                        ${result.formulaAdvice.map(fa => `
+                                            <p class="result-text" style="font-size: var(--text-sm); line-height: 1.9; margin-bottom: 6px;">
+                                                <b>${fa.formulaName}：</b>
+                                                ${fa.adjustments.map(ad => `<span style="display:block;">· ${ad.condition} → ${ad.modification}</span>`).join('')}
+                                            </p>
+                                        `).join('')}
+                                    </div>
+                                ` : ''}
                             </div>
                             ${syndrome.relatedConstitutions && syndrome.relatedConstitutions.length > 0 ? `
                                 <div class="result-section">
@@ -880,7 +904,7 @@ class SymptomModule {
                         results: this.searchResults.map(r => ({
                             syndromeId: r.syndrome ? r.syndrome.id : '',
                             name: r.syndrome ? r.syndrome.name : '未知',
-                            matchScore: r.score ? Math.round(r.score / maxScore * 100) : 0
+                            matchScore: typeof r.matchScore === 'number' ? r.matchScore : (r.score ? Math.round(r.score / maxScore * 100) : 0)
                         }))
                     });
                 } else {

@@ -73,6 +73,28 @@ function runAll() {
     });
 }
 
+// 病例题库断言：从 scenario 文本中自动提取命中的症状映射键 → 辨证 → 断言 detailId 进入 top3
+// 注：不使用 slice 截断，避免关键症状（keySymptoms）被排除；真实 UI 的 10 个上限由前端交互控制
+function runCaseAssertions() {
+    let { CASE_STUDIES } = require(path.join(base, 'case-studies.js'));
+    let pass = 0, fail = 0, noHit = 0;
+    const details = [];
+    (CASE_STUDIES || []).forEach(cs => {
+        const hits = Object.keys(map).filter(k => k.length >= 2 && cs.scenario.includes(k));
+        if (!hits.length) { noHit++; details.push(`${cs.id}: 无命中症状`); return; }
+        const res = DiagnosisEngine.diagnose({ symptoms: hits });
+        const rank = res.findIndex(r => r.syndrome.id === cs.detailId);
+        if (rank >= 0 && rank < 3) {
+            pass++;
+            details.push(`${cs.id} ${cs.answer} 第${rank + 1}位 ✓`);
+        } else {
+            fail++;
+            details.push(`${cs.id} ${cs.answer} 期望${cs.detailId} ${rank >= 0 ? '第' + (rank + 1) + '位' : '未进top8'} ✗`);
+        }
+    });
+    return { pass, fail, noHit, details };
+}
+
 function summarize(out) {
     let pass = 0, fail = 0;
     out.forEach(c => {
@@ -95,6 +117,15 @@ function summarize(out) {
 
 const args = process.argv.slice(2);
 const out = runAll();
+
+if (args.includes('--cases')) {
+    console.log('===== 病例题库辨证断言（期望证型进入 top3）=====');
+    const ca = runCaseAssertions();
+    ca.details.forEach(d => console.log(d));
+    console.log('----------------------------------------');
+    console.log(`通过 ${ca.pass}/${ca.pass + ca.fail}（无命中症状 ${ca.noHit} 例）`);
+    process.exit(ca.fail ? 1 : 0);
+}
 
 if (args.includes('--save')) {
     const file = path.join(__dirname, 'engine-baseline.json');

@@ -1,12 +1,13 @@
 // ===== 岐黄·辅助诊疗系统 - 四诊合参综合辨证模块 =====
-// 症状 + 舌象 + 面象 + 体质 → 调用 DiagnosisEngine.diagnose v2 输出统一辨证报告
-// 依赖：TongueRules / FaceRules / DiagnosisEngine / symptomSyndromeMapping
+// 症状 + 舌象 + 脉象 + 面象 + 体质 → 调用 DiagnosisEngine.diagnose v3 输出统一辨证报告
+// 依赖：TongueRules / PulseRules / FaceRules / DiagnosisEngine / symptomSyndromeMapping
 class ComprehensiveModule {
     constructor() {
-        this.step = 1;                       // 1症状 2舌象 3面象 4体质
+        this.step = 1;                       // 1症状 2舌象 3脉象 4面象 5体质
         this.selection = {
             symptoms: [],
             tongue: {},
+            pulse: {},
             face: {},
             constitution: ''
         };
@@ -25,15 +26,15 @@ class ComprehensiveModule {
                         <span class="seal-stamp">合</span>
                         四诊合参综合辨证
                     </h1>
-                    <p class="page-subtitle">症状 · 舌象 · 面象 · 体质 四步合参，本地规则引擎推演辨证参考</p>
+                    <p class="page-subtitle">症状 · 舌象 · 脉象 · 面象 · 体质 五步合参，本地规则引擎推演辨证参考</p>
                 </div>
 
                 <div class="card" style="margin-bottom: var(--space-lg);">
                     <div class="progress-info" style="display:flex;justify-content:space-between;margin-bottom:8px;">
-                        <span class="progress-text">步骤 ${this.step}/4</span>
-                        <span class="progress-text">${['选择症状','选择舌象','选择面象','确认体质'][this.step - 1]}</span>
+                        <span class="progress-text">步骤 ${this.step}/5</span>
+                        <span class="progress-text">${['选择症状','选择舌象','选择脉象','选择面象','确认体质'][this.step - 1]}</span>
                     </div>
-                    <div class="progress-bar"><div class="progress-fill" style="width:${this.step * 25}%"></div></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width:${this.step * 20}%"></div></div>
                 </div>
 
                 <div id="comprehensiveContent"></div>
@@ -47,8 +48,9 @@ class ComprehensiveModule {
         switch (this.step) {
             case 1: this.renderSymptoms(content, container); break;
             case 2: this.renderTongue(content, container); break;
-            case 3: this.renderFace(content, container); break;
-            case 4: this.renderConstitution(content, container); break;
+            case 3: this.renderPulse(content, container); break;
+            case 4: this.renderFace(content, container); break;
+            case 5: this.renderConstitution(content, container); break;
         }
     }
 
@@ -245,12 +247,17 @@ class ComprehensiveModule {
         this.renderRuleForm(content, container, TongueRules, 'tongue', '舌象', 3);
     }
 
-    renderFace(content, container) {
-        if (typeof FaceRules === 'undefined') { Toast.show('面诊规则数据未加载', 'warning'); return; }
-        this.renderRuleForm(content, container, FaceRules, 'face', '面象', 4);
+    renderPulse(content, container) {
+        if (typeof PulseRules === 'undefined') { Toast.show('脉诊规则数据未加载', 'warning'); return; }
+        this.renderRuleForm(content, container, PulseRules, 'pulse', '脉象', 4);
     }
 
-    // ---------- Step 4 体质 ----------
+    renderFace(content, container) {
+        if (typeof FaceRules === 'undefined') { Toast.show('面诊规则数据未加载', 'warning'); return; }
+        this.renderRuleForm(content, container, FaceRules, 'face', '面象', 5);
+    }
+
+    // ---------- Step 5 体质 ----------
     renderConstitution(content, container) {
         const saved = Storage.get(CONSTANTS.STORAGE_KEYS.CONSTITUTION_RESULT);
         const savedType = saved && saved.primaryType ? saved.primaryType : '';
@@ -294,7 +301,7 @@ class ComprehensiveModule {
             });
             if (inp.checked) chip.classList.add('chip-selected');
         });
-        content.querySelector('#compStepPrev').addEventListener('click', () => { this.step = 3; this.render(container); });
+        content.querySelector('#compStepPrev').addEventListener('click', () => { this.step = 4; this.render(container); });
         content.querySelector('#compDiagnose').addEventListener('click', () => {
             const checked = content.querySelector('input[name="compConstitution"]:checked');
             this.selection.constitution = checked ? checked.value : '';
@@ -349,7 +356,7 @@ class ComprehensiveModule {
                     <h2 style="font-family:var(--font-heading);color:var(--color-vermillion-dark);">综合辨证报告</h2>
                 </div>
                 <p style="font-size:var(--text-sm);color:var(--color-ink-light);margin-bottom:var(--space-sm);">
-                    输入：症状「${sel.symptoms.join('、') || '—'}」${sel.tongue && Object.keys(sel.tongue).length ? '；舌象已选' : ''}${sel.face && Object.keys(sel.face).length ? '；面象已选' : ''}${sel.constitution ? `；体质「${sel.constitution}」` : ''}
+                    输入：症状「${sel.symptoms.join('、') || '—'}」${sel.tongue && Object.keys(sel.tongue).length ? '；舌象已选' : ''}${sel.pulse && Object.keys(sel.pulse).length ? '；脉象已选' : ''}${sel.face && Object.keys(sel.face).length ? '；面象已选' : ''}${sel.constitution ? `；体质「${sel.constitution}」` : ''}
                 </p>
                 ${results.slice(0, 3).map((r, i) => `
                     <div class="result-card" style="border:1px solid var(--color-line,#e2d9cc);border-radius:10px;margin-bottom: var(--space-md);overflow:hidden;">
@@ -373,6 +380,17 @@ class ComprehensiveModule {
                                     <span class="tag tag-formula formula-link" data-formula-id="${f.id}" style="cursor:pointer;margin:4px 4px 0 0;display:inline-block;">${f.name}（${f.matchScore}%）</span>
                                 `).join('') || '<span style="font-size:var(--text-sm);color:var(--color-ink-pale);">暂无</span>'}
                             </div>
+                            ${(r.formulaAdvice && r.formulaAdvice.length) ? `
+                                <div style="margin-top:10px;padding:10px 12px;background:rgba(91,139,59,.06);border-left:3px solid var(--color-success,#5B8B3B);border-radius:0 6px 6px 0;">
+                                    <b style="font-size:var(--text-sm);color:var(--color-success,#5B8B3B);">随证加减建议</b>
+                                    ${r.formulaAdvice.map(fa => `
+                                        <div style="margin-top:6px;font-size:var(--text-sm);line-height:1.8;">
+                                            <span style="font-weight:600;">${fa.formulaName}：</span>
+                                            ${fa.adjustments.map(ad => `<span style="display:block;color:var(--color-ink-light);">· ${ad.condition} → ${ad.modification}</span>`).join('')}
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            ` : ''}
                         </div>
                     </div>
                 `).join('')}
@@ -393,7 +411,7 @@ class ComprehensiveModule {
         // 事件绑定
         content.querySelector('#compRestart').addEventListener('click', () => {
             this.step = 1;
-            this.selection = { symptoms: [], tongue: {}, face: {}, constitution: '' };
+            this.selection = { symptoms: [], tongue: {}, pulse: {}, face: {}, constitution: '' };
             this.render(container);
         });
         content.querySelector('#compSaveRecord').addEventListener('click', () => {

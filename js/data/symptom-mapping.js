@@ -359,49 +359,57 @@ function normalizeSymptom(sym) {
 }
 
 /**
- * 根据症状关键词搜索证型
+ * 根据症状关键词搜索证型（v3：统一委托 DiagnosisEngine.diagnose）
+ * 保留原模糊匹配定位逻辑（确定最佳症状键），打分全部交给 v3 引擎，
+ * 使单症状路径与组合辨证共享同一套 keySymptoms/矛盾/舌脉面/体质/归一化机制。
  * @param {string} query - 搜索关键词
  * @returns {Array} 匹配的证型列表（按匹配分排序）
  */
 function searchSyndromes(query) {
     if (!query || query.trim().length < 1) return [];
-    
-    const results = {};
+
     const q = query.trim().toLowerCase();
-    
-    // 模糊匹配所有症状关键词
-    Object.entries(symptomSyndromeMapping).forEach(([symptom, mappings]) => {
-        if (symptom.includes(q) || q.includes(symptom)) {
-            // 关键词匹配度系数
-            const matchQuality = symptom === q ? 1.0 : 
-                                 symptom.startsWith(q) ? 0.8 :
-                                 symptom.includes(q) ? 0.6 : 0.4;
-            
-            mappings.forEach(({ syndromeId, weight }) => {
-                if (!results[syndromeId]) {
-                    results[syndromeId] = { 
-                        syndromeId, 
-                        score: 0, 
-                        matchedSymptoms: [] 
-                    };
-                }
-                const adjustedWeight = weight * matchQuality;
-                results[syndromeId].score += adjustedWeight;
-                results[syndromeId].matchedSymptoms.push(symptom);
-            });
-        }
+
+    // 模糊匹配定位最佳症状键（含同义词归一后的命中）
+    let best = null;
+    let bestScore = -1;
+    Object.keys(symptomSyndromeMapping).forEach(symptom => {
+        const norm = (typeof normalizeSymptom === 'function') ? normalizeSymptom(symptom) : symptom;
+        let matchQuality = 0;
+        if (symptom === q || norm === q) matchQuality = 1.0;
+        else if (symptom.startsWith(q) || norm.startsWith(q)) matchQuality = 0.8;
+        else if (symptom.includes(q) || norm.includes(q)) matchQuality = 0.6;
+        else if (q.includes(symptom)) matchQuality = 0.4;
+        if (matchQuality > bestScore) { bestScore = matchQuality; best = symptom; }
     });
-    
-    // 转换为数组并按分数排序
+
+    if (!best || bestScore <= 0) return [];
+
+    // 委托 v3 引擎（未加载时回退旧版加权求和）
+    if (typeof DiagnosisEngine !== 'undefined' && typeof DiagnosisEngine.diagnose === 'function') {
+        return DiagnosisEngine.diagnose({ symptoms: [best] });
+    }
+
+    // ---- 回退：旧版加权求和（引擎未加载时） ----
+    const results = {};
+    [best].forEach(symptom => {
+        const mappings = symptomSyndromeMapping[symptom];
+        if (!mappings) return;
+        mappings.forEach(({ syndromeId, weight }) => {
+            if (!results[syndromeId]) {
+                results[syndromeId] = { syndromeId, score: 0, matchedSymptoms: [] };
+            }
+            results[syndromeId].score += weight;
+            results[syndromeId].matchedSymptoms.push(symptom);
+        });
+    });
+
     return Object.values(results)
         .sort((a, b) => b.score - a.score)
         .slice(0, 10)
         .map(result => {
             const syndrome = syndromesDatabase.find(s => s.id === result.syndromeId);
-            return {
-                ...result,
-                syndrome: syndrome || null
-            };
+            return { ...result, syndrome: syndrome || null };
         });
 }
 

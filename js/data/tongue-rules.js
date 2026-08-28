@@ -45,9 +45,22 @@ const TongueRules = {
     ]
 };
 
+// ===== 症状互斥组（v3）：同一维度内的对立/冲突词不可同时作为有效证据 =====
+// symptom.js 选择芯片据此拦截；diagnosis-engine 亦作防御性减分（各 -2，不排除）
+const SymptomMutexGroups = [
+    ['舌淡', '舌红'],
+    ['淡白', '红'],
+    ['苔白', '苔黄'],
+    ['润', '燥'],
+    ['恶寒重', '发热重'],
+    ['无汗', '有汗'],
+    ['大便溏薄', '大便秘结']
+];
+
 if (typeof window !== 'undefined') {
     window.TongueRules = TongueRules;
+    window.SymptomMutexGroups = SymptomMutexGroups;
 }
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { TongueRules };
+    module.exports = { TongueRules, SymptomMutexGroups };
 }

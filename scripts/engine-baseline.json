@@ -1,5 +1,5 @@
 {
-  "savedAt": "2026-08-28T15:38:27.048Z",
+  "savedAt": "2026-08-28T18:07:28.741Z",
   "cases": [
     {
       "name": "风寒表实证",
@@ -16,55 +16,13 @@
         {
           "id": "syn_001",
           "name": "风寒表实证",
-          "score": 40,
-          "matchScore": 95,
-          "confidence": null
-        },
-        {
-          "id": "syn_002",
-          "name": "风热表证",
-          "score": 10,
-          "matchScore": 24,
-          "confidence": null
-        },
-        {
-          "id": "syn_042",
-          "name": "风寒犯肺证",
-          "score": 10,
-          "matchScore": 24,
-          "confidence": null
-        },
-        {
-          "id": "syn_022",
-          "name": "肝阳上亢证",
-          "score": 8,
-          "matchScore": 19,
-          "confidence": null
-        },
-        {
-          "id": "syn_080",
-          "name": "太阳中风证",
-          "score": 8,
-          "matchScore": 19,
-          "confidence": null
-        },
-        {
-          "id": "syn_021",
-          "name": "肝火上炎证",
-          "score": 7,
-          "matchScore": 17,
-          "confidence": null
-        },
-        {
-          "id": "syn_071",
-          "name": "血虚证",
-          "score": 5,
-          "matchScore": 12,
-          "confidence": null
+          "score": 38,
+          "matchScore": 74,
+          "confidence": 100
         }
       ],
       "top1": "syn_001",
-      "top1Score": 40
+      "top1Score": 38
     },
     {
       "name": "风热表证",
@@ -81,20 +39,13 @@
         {
           "id": "syn_002",
           "name": "风热表证",
-          "score": 40,
-          "matchScore": 95,
-          "confidence": null
-        },
-        {
-          "id": "syn_003",
-          "name": "实热证",
-          "score": 7,
-          "matchScore": 17,
-          "confidence": null
+          "score": 36,
+          "matchScore": 72,
+          "confidence": 100
         }
       ],
       "top1": "syn_002",
-      "top1Score": 40
+      "top1Score": 36
     },
     {
       "name": "实热证",
@@ -111,34 +62,20 @@
         {
           "id": "syn_003",
           "name": "实热证",
-          "score": 39,
-          "matchScore": 95,
-          "confidence": null
+          "score": 35,
+          "matchScore": 72,
+          "confidence": 100
         },
         {
           "id": "syn_021",
           "name": "肝火上炎证",
-          "score": 17,
-          "matchScore": 41,
-          "confidence": null
-        },
-        {
-          "id": "syn_022",
-          "name": "肝阳上亢证",
           "score": 10,
-          "matchScore": 24,
-          "confidence": null
-        },
-        {
-          "id": "syn_043",
-          "name": "痰热壅肺证",
-          "score": 8,
-          "matchScore": 19,
-          "confidence": null
+          "matchScore": 31,
+          "confidence": 50
         }
       ],
       "top1": "syn_003",
-      "top1Score": 39
+      "top1Score": 35
     },
     {
       "name": "虚寒证",
@@ -155,62 +92,55 @@
         {
           "id": "syn_004",
           "name": "虚寒证",
-          "score": 40,
-          "matchScore": 95,
-          "confidence": null
-        },
-        {
-          "id": "syn_051",
-          "name": "肾阳虚证",
-          "score": 29,
-          "matchScore": 69,
-          "confidence": null
-        },
-        {
-          "id": "syn_030",
-          "name": "脾气虚证",
-          "score": 10,
-          "matchScore": 24,
-          "confidence": null
-        },
-        {
-          "id": "syn_040",
-          "name": "肺气虚证",
-          "score": 10,
-          "matchScore": 24,
-          "confidence": null
-        },
-        {
-          "id": "syn_053",
-          "name": "肾气不固证",
-          "score": 10,
-          "matchScore": 24,
-          "confidence": null
+          "score": 35,
+          "matchScore": 72,
+          "confidence": 100
         },
         {
           "id": "syn_070",
           "name": "气虚证",
           "score": 10,
-          "matchScore": 24,
-          "confidence": null
+          "matchScore": 31,
+          "confidence": 50
         },
         {
           "id": "syn_073",
           "name": "气血两虚证",
           "score": 10,
-          "matchScore": 24,
-          "confidence": null
+          "matchScore": 31,
+          "confidence": 50
         },
         {
           "id": "syn_104",
           "name": "脾不统血证",
           "score": 10,
-          "matchScore": 24,
+          "matchScore": 31,
+          "confidence": 50
+        },
+        {
+          "id": "syn_105",
+          "name": "中气下陷证",
+          "score": 10,
+          "matchScore": 31,
+          "confidence": 50
+        },
+        {
+          "id": "syn_121",
+          "name": "气不摄血证",
+          "score": 10,
+          "matchScore": 31,
+          "confidence": 50
+        },
+        {
+          "id": "syn_127",
+          "name": "肺脾气虚证",
+          "score": 10,
+          "matchScore": 31,
           "confidence": 50
         }
       ],
       "top1": "syn_004",
-      "top1Score": 40
+      "top1Score": 35
     },
     {
       "name": "心血虚证",
@@ -227,55 +157,34 @@
         {
           "id": "syn_010",
           "name": "心血虚证",
-          "score": 40,
-          "matchScore": 95,
-          "confidence": null
+          "score": 38,
+          "matchScore": 74,
+          "confidence": 100
         },
         {
           "id": "syn_011",
           "name": "心阴虚证",
           "score": 28,
-          "matchScore": 67,
-          "confidence": null
+          "matchScore": 64,
+          "confidence": 50
         },
         {
-          "id": "syn_050",
-          "name": "肾阴虚证",
-          "score": 15,
-          "matchScore": 36,
-          "confidence": null
+          "id": "syn_102",
+          "name": "痰热扰心证",
+          "score": 20,
+          "matchScore": 52,
+          "confidence": 67
         },
         {
-          "id": "syn_021",
-          "name": "肝火上炎证",
-          "score": 7,
-          "matchScore": 17,
-          "confidence": null
-        },
-        {
-          "id": "syn_022",
-          "name": "肝阳上亢证",
-          "score": 7,
-          "matchScore": 17,
-          "confidence": null
-        },
-        {
-          "id": "syn_071",
-          "name": "血虚证",
-          "score": 7,
-          "matchScore": 17,
-          "confidence": null
-        },
-        {
-          "id": "syn_073",
-          "name": "气血两虚证",
-          "score": 7,
-          "matchScore": 17,
-          "confidence": null
+          "id": "syn_100",
+          "name": "心气虚证",
+          "score": 10,
+          "matchScore": 31,
+          "confidence": 50
         }
       ],
       "top1": "syn_010",
-      "top1Score": 40
+      "top1Score": 38
     },
     {
       "name": "肝气郁结证",
@@ -292,20 +201,13 @@
         {
           "id": "syn_020",
           "name": "肝气郁结证",
-          "score": 40,
-          "matchScore": 95,
-          "confidence": null
-        },
-        {
-          "id": "syn_081",
-          "name": "少阳病证",
-          "score": 8,
-          "matchScore": 19,
-          "confidence": null
+          "score": 36,
+          "matchScore": 72,
+          "confidence": 100
         }
       ],
       "top1": "syn_020",
-      "top1Score": 40
+      "top1Score": 36
     },
     {
       "name": "肝火上炎证",
@@ -322,27 +224,13 @@
         {
           "id": "syn_021",
           "name": "肝火上炎证",
-          "score": 40,
-          "matchScore": 95,
-          "confidence": null
-        },
-        {
-          "id": "syn_022",
-          "name": "肝阳上亢证",
-          "score": 19,
-          "matchScore": 45,
-          "confidence": null
-        },
-        {
-          "id": "syn_003",
-          "name": "实热证",
-          "score": 10,
-          "matchScore": 24,
-          "confidence": null
+          "score": 35,
+          "matchScore": 72,
+          "confidence": 100
         }
       ],
       "top1": "syn_021",
-      "top1Score": 40
+      "top1Score": 35
     },
     {
       "name": "脾气虚证",
@@ -360,50 +248,8 @@
           "id": "syn_030",
           "name": "脾气虚证",
           "score": 40,
-          "matchScore": 95,
-          "confidence": null
-        },
-        {
-          "id": "syn_062",
-          "name": "食滞胃脘证",
-          "score": 17,
-          "matchScore": 40,
-          "confidence": null
-        },
-        {
-          "id": "syn_031",
-          "name": "脾阳虚证",
-          "score": 10,
-          "matchScore": 24,
-          "confidence": null
-        },
-        {
-          "id": "syn_004",
-          "name": "虚寒证",
-          "score": 8,
-          "matchScore": 19,
-          "confidence": null
-        },
-        {
-          "id": "syn_032",
-          "name": "寒湿困脾证",
-          "score": 8,
-          "matchScore": 19,
-          "confidence": null
-        },
-        {
-          "id": "syn_033",
-          "name": "脾胃湿热证",
-          "score": 8,
-          "matchScore": 19,
-          "confidence": null
-        },
-        {
-          "id": "syn_081",
-          "name": "少阳病证",
-          "score": 7,
-          "matchScore": 17,
-          "confidence": null
+          "matchScore": 76,
+          "confidence": 100
         }
       ],
       "top1": "syn_030",
@@ -424,62 +270,48 @@
         {
           "id": "syn_050",
           "name": "肾阴虚证",
-          "score": 40,
-          "matchScore": 95,
-          "confidence": null
+          "score": 30,
+          "matchScore": 66,
+          "confidence": 100
         },
         {
           "id": "syn_022",
           "name": "肝阳上亢证",
           "score": 20,
-          "matchScore": 48,
-          "confidence": null
+          "matchScore": 52,
+          "confidence": 50
         },
         {
           "id": "syn_113",
           "name": "肾阴阳两虚证",
           "score": 20,
-          "matchScore": 48,
+          "matchScore": 52,
+          "confidence": 50
+        },
+        {
+          "id": "syn_114",
+          "name": "肝肾阴虚证",
+          "score": 15,
+          "matchScore": 43,
           "confidence": 50
         },
         {
           "id": "syn_011",
           "name": "心阴虚证",
           "score": 10,
-          "matchScore": 24,
-          "confidence": null
+          "matchScore": 31,
+          "confidence": 50
         },
         {
-          "id": "syn_021",
-          "name": "肝火上炎证",
+          "id": "syn_116",
+          "name": "心脾两虚证",
           "score": 10,
-          "matchScore": 24,
-          "confidence": null
-        },
-        {
-          "id": "syn_023",
-          "name": "肝血虚证",
-          "score": 10,
-          "matchScore": 24,
-          "confidence": null
-        },
-        {
-          "id": "syn_041",
-          "name": "肺阴虚证",
-          "score": 10,
-          "matchScore": 24,
-          "confidence": null
-        },
-        {
-          "id": "syn_051",
-          "name": "肾阳虚证",
-          "score": 10,
-          "matchScore": 24,
-          "confidence": null
+          "matchScore": 31,
+          "confidence": 33
         }
       ],
       "top1": "syn_050",
-      "top1Score": 40
+      "top1Score": 30
     },
     {
       "name": "心脾两虚证",
@@ -496,55 +328,27 @@
         {
           "id": "syn_116",
           "name": "心脾两虚证",
-          "score": 40,
-          "matchScore": 95,
+          "score": 38,
+          "matchScore": 74,
           "confidence": 100
-        },
-        {
-          "id": "syn_021",
-          "name": "肝火上炎证",
-          "score": 10,
-          "matchScore": 24,
-          "confidence": null
-        },
-        {
-          "id": "syn_022",
-          "name": "肝阳上亢证",
-          "score": 10,
-          "matchScore": 24,
-          "confidence": null
-        },
-        {
-          "id": "syn_023",
-          "name": "肝血虚证",
-          "score": 10,
-          "matchScore": 24,
-          "confidence": null
-        },
-        {
-          "id": "syn_050",
-          "name": "肾阴虚证",
-          "score": 10,
-          "matchScore": 24,
-          "confidence": null
         },
         {
           "id": "syn_101",
           "name": "心阳虚证",
           "score": 10,
-          "matchScore": 24,
+          "matchScore": 31,
           "confidence": 50
         },
         {
           "id": "syn_127",
           "name": "肺脾气虚证",
           "score": 10,
-          "matchScore": 24,
+          "matchScore": 31,
           "confidence": 50
         }
       ],
       "top1": "syn_116",
-      "top1Score": 40
+      "top1Score": 38
     },
     {
       "name": "痰热扰心证（鉴别）",
@@ -555,69 +359,55 @@
           "失眠",
           "心烦",
           "口苦",
-          "胸闷痰多"
+          "痰多黄稠"
         ]
       },
       "top8": [
         {
+          "id": "syn_102",
+          "name": "痰热扰心证",
+          "score": 41,
+          "matchScore": 77,
+          "confidence": 100
+        },
+        {
           "id": "syn_011",
           "name": "心阴虚证",
-          "score": 29,
-          "matchScore": 95,
-          "confidence": null
+          "score": 25,
+          "matchScore": 60,
+          "confidence": 50
         },
         {
           "id": "syn_010",
           "name": "心血虚证",
-          "score": 20,
-          "matchScore": 66,
-          "confidence": null
-        },
-        {
-          "id": "syn_021",
-          "name": "肝火上炎证",
-          "score": 16,
-          "matchScore": 52,
-          "confidence": null
+          "score": 12,
+          "matchScore": 36,
+          "confidence": 100
         },
         {
           "id": "syn_024",
           "name": "肝胆湿热证",
           "score": 10,
-          "matchScore": 33,
-          "confidence": null
+          "matchScore": 31,
+          "confidence": 50
         },
         {
-          "id": "syn_081",
-          "name": "少阳病证",
+          "id": "syn_100",
+          "name": "心气虚证",
           "score": 10,
-          "matchScore": 33,
-          "confidence": null
+          "matchScore": 31,
+          "confidence": 50
         },
         {
-          "id": "syn_102",
-          "name": "痰热扰心证",
+          "id": "syn_112",
+          "name": "胆郁痰扰证",
           "score": 10,
-          "matchScore": 33,
-          "confidence": 67
-        },
-        {
-          "id": "syn_050",
-          "name": "肾阴虚证",
-          "score": 8,
-          "matchScore": 26,
-          "confidence": null
-        },
-        {
-          "id": "syn_022",
-          "name": "肝阳上亢证",
-          "score": 7,
-          "matchScore": 23,
-          "confidence": null
+          "matchScore": 31,
+          "confidence": 50
         }
       ],
-      "top1": "syn_011",
-      "top1Score": 29
+      "top1": "syn_102",
+      "top1Score": 41
     },
     {
       "name": "肾阳虚证",
@@ -634,48 +424,41 @@
         {
           "id": "syn_051",
           "name": "肾阳虚证",
-          "score": 40,
-          "matchScore": 95,
-          "confidence": null
+          "score": 38,
+          "matchScore": 74,
+          "confidence": 100
+        },
+        {
+          "id": "syn_115",
+          "name": "脾肾阳虚证",
+          "score": 15,
+          "matchScore": 43,
+          "confidence": 50
         },
         {
           "id": "syn_101",
           "name": "心阳虚证",
           "score": 10,
-          "matchScore": 24,
+          "matchScore": 31,
           "confidence": 50
         },
         {
           "id": "syn_113",
           "name": "肾阴阳两虚证",
           "score": 10,
-          "matchScore": 24,
-          "confidence": 50
-        },
-        {
-          "id": "syn_115",
-          "name": "脾肾阳虚证",
-          "score": 10,
-          "matchScore": 24,
+          "matchScore": 31,
           "confidence": 50
         },
         {
           "id": "syn_053",
           "name": "肾气不固证",
           "score": 9,
-          "matchScore": 21,
-          "confidence": null
-        },
-        {
-          "id": "syn_004",
-          "name": "虚寒证",
-          "score": 8,
-          "matchScore": 19,
-          "confidence": null
+          "matchScore": 29,
+          "confidence": 50
         }
       ],
       "top1": "syn_051",
-      "top1Score": 40
+      "top1Score": 38
     },
     {
       "name": "食滞胃脘证",
@@ -692,13 +475,20 @@
         {
           "id": "syn_062",
           "name": "食滞胃脘证",
-          "score": 40,
-          "matchScore": 95,
-          "confidence": null
+          "score": 36,
+          "matchScore": 72,
+          "confidence": 100
+        },
+        {
+          "id": "syn_138",
+          "name": "食积证",
+          "score": 10,
+          "matchScore": 31,
+          "confidence": 50
         }
       ],
       "top1": "syn_062",
-      "top1Score": 40
+      "top1Score": 36
     },
     {
       "name": "风寒犯肺证",
@@ -715,20 +505,13 @@
         {
           "id": "syn_042",
           "name": "风寒犯肺证",
-          "score": 40,
-          "matchScore": 95,
-          "confidence": null
-        },
-        {
-          "id": "syn_001",
-          "name": "风寒表实证",
-          "score": 10,
-          "matchScore": 24,
-          "confidence": null
+          "score": 34,
+          "matchScore": 71,
+          "confidence": 100
         }
       ],
       "top1": "syn_042",
-      "top1Score": 40
+      "top1Score": 34
     },
     {
       "name": "湿热下注证",
@@ -745,34 +528,27 @@
         {
           "id": "syn_129",
           "name": "湿热下注证",
-          "score": 30,
-          "matchScore": 95,
-          "confidence": null
+          "score": 33,
+          "matchScore": 70,
+          "confidence": 100
         },
         {
           "id": "syn_024",
           "name": "肝胆湿热证",
           "score": 10,
-          "matchScore": 32,
-          "confidence": null
+          "matchScore": 31,
+          "confidence": 50
         },
         {
-          "id": "syn_081",
-          "name": "少阳病证",
+          "id": "syn_112",
+          "name": "胆郁痰扰证",
           "score": 10,
-          "matchScore": 32,
-          "confidence": null
-        },
-        {
-          "id": "syn_021",
-          "name": "肝火上炎证",
-          "score": 9,
-          "matchScore": 29,
-          "confidence": null
+          "matchScore": 31,
+          "confidence": 50
         }
       ],
       "top1": "syn_129",
-      "top1Score": 30
+      "top1Score": 33
     },
     {
       "name": "四诊合参·阴虚心神",
@@ -797,62 +573,41 @@
         {
           "id": "syn_011",
           "name": "心阴虚证",
-          "score": 48,
-          "matchScore": 95,
-          "confidence": null
+          "score": 45,
+          "matchScore": 79,
+          "confidence": 100
         },
         {
           "id": "syn_050",
           "name": "肾阴虚证",
-          "score": 37,
-          "matchScore": 73,
-          "confidence": null
+          "score": 26,
+          "matchScore": 61,
+          "confidence": 50
+        },
+        {
+          "id": "syn_102",
+          "name": "痰热扰心证",
+          "score": 24,
+          "matchScore": 59,
+          "confidence": 67
         },
         {
           "id": "syn_010",
           "name": "心血虚证",
-          "score": 35,
-          "matchScore": 69,
-          "confidence": null
+          "score": 20,
+          "matchScore": 52,
+          "confidence": 100
         },
         {
-          "id": "syn_041",
-          "name": "肺阴虚证",
-          "score": 29,
-          "matchScore": 57,
-          "confidence": null
-        },
-        {
-          "id": "syn_075",
-          "name": "津液亏虚证",
-          "score": 27,
-          "matchScore": 53,
-          "confidence": null
-        },
-        {
-          "id": "syn_022",
-          "name": "肝阳上亢证",
-          "score": 26,
-          "matchScore": 51,
-          "confidence": null
-        },
-        {
-          "id": "syn_071",
-          "name": "血虚证",
-          "score": 22,
-          "matchScore": 44,
-          "confidence": null
-        },
-        {
-          "id": "syn_060",
-          "name": "胃阴虚证",
-          "score": 19,
-          "matchScore": 38,
-          "confidence": null
+          "id": "syn_100",
+          "name": "心气虚证",
+          "score": 2,
+          "matchScore": 7,
+          "confidence": 50
         }
       ],
       "top1": "syn_011",
-      "top1Score": 48
+      "top1Score": 45
     }
   ]
 }
