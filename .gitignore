@@ -34,3 +34,6 @@ build/
 # 开发期抓图脚本的临时输出
 scripts/tmp/
 scripts/*.tmp
+
+.vercel
+.env*
