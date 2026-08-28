@@ -1099,7 +1099,7 @@ const herbImages = {
         yinpianUrl: "",
         note: "待补充"
     },
-    "herb_219": { // 灯心草
+    "herb_219": { // 淫羊藿
         originalUrl: "",
         yinpianUrl: "",
         note: "待补充"
@@ -1144,7 +1144,7 @@ const herbImages = {
         yinpianUrl: "",
         note: "待补充"
     },
-    "herb_228": { // 南瓜子
+    "herb_228": { // 肉苁蓉
         originalUrl: "",
         yinpianUrl: "",
         note: "待补充"
@@ -1159,7 +1159,7 @@ const herbImages = {
         yinpianUrl: "",
         note: "待补充"
     },
-    "herb_231": { // 藕节
+    "herb_231": { // 仙茅
         originalUrl: "",
         yinpianUrl: "",
         note: "待补充"

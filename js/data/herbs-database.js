@@ -3925,20 +3925,20 @@ const herbsDatabase = [
     },
     {
         id: "herb_219",
-        name: "灯心草",
-        pinyin: "Deng Xin Cao",
-        latinName: "Juncus effusus L.",
-        category: "利水渗湿药",
-        subcategory: "利尿通淋药",
-        nature: "微寒",
-        tastes: ["甘", "淡"],
-        meridians: ["心经", "肺经", "小肠经"],
-        functions: ["清心火", "利小便"],
-        indications: ["心烦失眠", "尿少涩痛", "口舌生疮"],
-        usage: "煎服，1-3g。",
-        contraindications: ["下焦虚寒者慎用", "小便失禁者忌用"],
-        tags: ["清心"],
-        keywords: ["清心火", "利小便", "心烦失眠", "尿少涩痛"]
+        name: "淫羊藿",
+        pinyin: "Yin Yang Huo",
+        latinName: "Epimedium brevicornum Maxim.",
+        category: "补虚药",
+        subcategory: "补阳药",
+        nature: "温",
+        tastes: ["辛", "甘"],
+        meridians: ["肝经", "肾经"],
+        functions: ["补肾阳", "强筋骨", "祛风湿"],
+        indications: ["肾阳虚衰", "阳痿遗精", "筋骨痿软", "风湿痹痛", "麻木拘挛"],
+        usage: "煎服，6-10g。",
+        contraindications: ["阴虚火旺者忌用", "湿热痹痛者忌用"],
+        tags: ["补阳"],
+        keywords: ["补肾阳", "强筋骨", "祛风湿", "阳痿", "二仙汤"]
     },
     {
         id: "herb_220",
@@ -4078,20 +4078,20 @@ const herbsDatabase = [
     },
     {
         id: "herb_228",
-        name: "南瓜子",
-        pinyin: "Nan Gua Zi",
-        latinName: "Cucurbita moschata Duch.",
-        category: "驱虫药",
-        subcategory: "驱虫药",
-        nature: "平",
-        tastes: ["甘"],
-        meridians: ["胃经", "大肠经"],
-        functions: ["杀虫"],
-        indications: ["绦虫病", "血吸虫病"],
-        usage: "研粉冷开水调服，60-120g。常与槟榔同用增强驱绦虫之力。",
-        contraindications: ["无明显禁忌"],
-        tags: ["杀虫"],
-        keywords: ["杀虫", "绦虫", "驱虫"]
+        name: "肉苁蓉",
+        pinyin: "Rou Cong Rong",
+        latinName: "Cistanche deserticola Y.C.Ma",
+        category: "补虚药",
+        subcategory: "补阳药",
+        nature: "温",
+        tastes: ["甘", "咸"],
+        meridians: ["肾经", "大肠经"],
+        functions: ["补肾阳", "益精血", "润肠通便"],
+        indications: ["肾阳不足", "精血亏虚", "阳痿不孕", "腰膝酸软", "筋骨无力", "肠燥便秘"],
+        usage: "煎服，6-10g。补阳不燥，药力和缓。",
+        contraindications: ["热结便秘者忌用", "阴虚火旺者忌用", "大便溏泄者忌用"],
+        tags: ["补阳"],
+        keywords: ["补肾阳", "益精血", "润肠", "阳痿", "便秘", "济川煎"]
     },
     {
         id: "herb_229",
@@ -4129,20 +4129,21 @@ const herbsDatabase = [
     },
     {
         id: "herb_231",
-        name: "藕节",
-        pinyin: "Ou Jie",
-        latinName: "Nelumbo nucifera Gaertn.",
-        category: "止血药",
-        subcategory: "收敛止血药",
-        nature: "平",
-        tastes: ["甘", "涩"],
-        meridians: ["肝经", "肺经", "胃经"],
-        functions: ["收敛止血", "化瘀"],
-        indications: ["吐血", "咯血", "衄血", "尿血", "崩漏"],
-        usage: "煎服，9-15g。鲜用捣汁可用至60g。",
-        contraindications: ["无明显禁忌"],
-        tags: ["止血"],
-        keywords: ["收敛止血", "化瘀", "吐血", "衄血"]
+        name: "仙茅",
+        pinyin: "Xian Mao",
+        latinName: "Curculigo orchioides Gaertn.",
+        category: "补虚药",
+        subcategory: "补阳药",
+        nature: "热",
+        tastes: ["辛"],
+        meridians: ["肾经", "肝经", "脾经"],
+        functions: ["温肾壮阳", "祛寒除湿"],
+        indications: ["阳痿精冷", "遗尿尿频", "脘腹冷痛", "筋骨痿软", "腰膝冷痛"],
+        usage: "煎服，3-10g。须炮制后使用。",
+        toxicNote: { limit: "煎服3~10g，制后用", note: "有毒，过量可致唇舌发麻、烦躁，不宜久服；阴虚火旺者忌服" },
+        contraindications: ["阴虚火旺者忌用", "实热证者忌用", "不宜过量久服"],
+        tags: ["补阳", "有毒"],
+        keywords: ["温肾", "壮阳", "祛寒", "除湿", "二仙汤"]
     },
     {
         id: "herb_232",
@@ -4620,8 +4621,7 @@ const herbCategories = {
             { id: "herb_181", name: "海金沙" },
             { id: "herb_182", name: "地肤子" },
             { id: "herb_183", name: "萆薢" },
-            { id: "herb_218", name: "萹蓄" },
-            { id: "herb_219", name: "灯心草" }],
+            { id: "herb_218", name: "萹蓄" }],
         "利湿退黄药": [
             { id: "herb_046", name: "茵陈" },
             { id: "herb_047", name: "金钱草" },
@@ -4668,8 +4668,7 @@ const herbCategories = {
     "驱虫药": {
         "驱虫药": [
             { id: "herb_059", name: "使君子" },
-            { id: "herb_227", name: "槟榔" },
-            { id: "herb_228", name: "南瓜子" }
+            { id: "herb_227", name: "槟榔" }
         ]
     },
     "止血药": {
@@ -4690,8 +4689,7 @@ const herbCategories = {
             { id: "herb_065", name: "白及" },
             { id: "herb_066", name: "仙鹤草" }
         ,
-            { id: "herb_190", name: "海螵蛸" },
-            { id: "herb_231", name: "藕节" }],
+            { id: "herb_190", name: "海螵蛸" }],
         "温经止血药": [
             { id: "herb_067", name: "艾叶" }
         ]
@@ -4829,7 +4827,10 @@ const herbCategories = {
             { id: "herb_111", name: "杜仲" },
             { id: "herb_112", name: "补骨脂" },
             { id: "herb_160", name: "菟丝子" },
-            { id: "herb_247", name: "巴戟天" }
+            { id: "herb_247", name: "巴戟天" },
+            { id: "herb_219", name: "淫羊藿" },
+            { id: "herb_228", name: "肉苁蓉" },
+            { id: "herb_231", name: "仙茅" }
         ]
     },
     "收涩药": {
