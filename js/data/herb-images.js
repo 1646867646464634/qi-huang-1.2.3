@@ -809,6 +809,456 @@ const herbImages = {
         yinpianUrl: "",
         note: "原貌图已填充"
     },
+    "herb_161": { // 羌活
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_162": { // 苍耳子
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_163": { // 辛夷
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_164": { // 藁本
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_165": { // 浮萍
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_166": { // 蔓荆子
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_167": { // 决明子
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_168": { // 青葙子
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_169": { // 谷精草
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_170": { // 密蒙花
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_171": { // 苦参
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_172": { // 山慈菇
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_173": { // 马齿苋
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_174": { // 半边莲
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_175": { // 白花蛇舌草
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_176": { // 贯众
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_177": { // 紫草
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_178": { // 海风藤
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_179": { // 草果
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_180": { // 茯苓皮
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_181": { // 海金沙
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_182": { // 地肤子
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_183": { // 萆薢
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_184": { // 小茴香
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_185": { // 花椒
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_186": { // 枳壳
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_187": { // 乌药
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_188": { // 鸡内金
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_189": { // 茜草
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_190": { // 海螵蛸
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_191": { // 乳香
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_192": { // 没药
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_193": { // 五灵脂
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_194": { // 泽兰
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_195": { // 三棱
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_196": { // 白前
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_197": { // 前胡
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_198": { // 海蛤壳
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_199": { // 昆布
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_200": { // 首乌藤
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_201": { // 香薷
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_202": { // 蝉蜕
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_203": { // 淡豆豉
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_204": { // 淡竹叶
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_205": { // 射干
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_206": { // 山豆根
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_207": { // 马勃
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_208": { // 紫花地丁
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_209": { // 土茯苓
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_210": { // 胡黄连
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_211": { // 番泻叶
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_212": { // 牵牛子
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_213": { // 桑枝
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_214": { // 络石藤
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_215": { // 五加皮
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_216": { // 狗脊
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_217": { // 豆蔻
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_218": { // 萹蓄
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_219": { // 灯心草
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_220": { // 虎杖
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_221": { // 丁香
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_222": { // 高良姜
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_223": { // 青皮
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_224": { // 佛手
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_225": { // 柿蒂
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_226": { // 谷芽
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_227": { // 槟榔
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_228": { // 南瓜子
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_229": { // 槐花
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_230": { // 侧柏叶
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_231": { // 藕节
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_232": { // 王不留行
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_233": { // 苏木
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_234": { // 胖大海
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_235": { // 紫苏子
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_236": { // 枇杷叶
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_237": { // 白附子
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_238": { // 磁石
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_239": { // 灵芝
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_240": { // 珍珠母
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_241": { // 刺蒺藜
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_242": { // 蜈蚣
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_243": { // 苏合香
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_244": { // 党参
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_245": { // 西洋参
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_246": { // 大枣
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_247": { // 巴戟天
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_248": { // 浮小麦
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_249": { // 诃子
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    },
+    "herb_250": { // 芡实
+        originalUrl: "",
+        yinpianUrl: "",
+        note: "待补充"
+    }
 };
 herbImages.get=function(id){return herbImages[id]||null;};
 if(typeof window!=="undefined"){window.herbImages=herbImages;};if(typeof module!=="undefined"&&module.exports){module.exports={herbImages};};

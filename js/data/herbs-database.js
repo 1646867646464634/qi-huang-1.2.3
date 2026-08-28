@@ -1,6 +1,6 @@
 /**
  * 岐黄·辅助诊疗系统 — 中药数据库
- * 包含 160 味常用中药的完整信息
+ * 包含 250 味常用中药的完整信息
  * 按中医传统分类组织
  *
  * 导出:
@@ -3609,6 +3609,865 @@ const herbsDatabase = [
         contraindications: ["躁狂实火者慎用"],
         tags: ["安神"],
         keywords: ["养心安神", "祛风通络", "失眠"]
+    },
+
+    // ================================================================================
+    // 数据扩充批次 v3（herb_201 ~ herb_250）— 按《中药学》教材与《中国药典》补录常用品种
+    // ================================================================================
+
+    {
+        id: "herb_201",
+        name: "香薷",
+        pinyin: "Xiang Ru",
+        latinName: "Mosla chinensis Maxim.",
+        category: "解表药",
+        subcategory: "辛温解表药",
+        nature: "微温",
+        tastes: ["辛"],
+        meridians: ["肺经", "脾经", "胃经"],
+        functions: ["发汗解表", "化湿和中", "利水消肿"],
+        indications: ["暑湿感冒", "恶寒发热", "头痛无汗", "腹痛吐泻", "水肿脚气"],
+        usage: "煎服，3-10g。用于发表宜量小不宜久煎，用于利水消肿宜量大同煎。",
+        contraindications: ["表虚自汗者忌服", "阴虚火旺者慎用"],
+        tags: ["常用", "解表", "化湿"],
+        keywords: ["暑湿", "夏季感冒", "阴暑", "化湿", "解表"]
+    },
+    {
+        id: "herb_202",
+        name: "蝉蜕",
+        pinyin: "Chan Tui",
+        latinName: "Cryptotympana pustulata Fabricius",
+        category: "解表药",
+        subcategory: "辛凉解表药",
+        nature: "寒",
+        tastes: ["甘"],
+        meridians: ["肺经", "肝经"],
+        functions: ["疏散风热", "利咽开音", "透疹", "明目退翳", "解痉"],
+        indications: ["风热感冒", "咽痛音哑", "麻疹不透", "风疹瘙痒", "目赤翳障", "小儿夜啼", "破伤风"],
+        usage: "煎服，3-6g。单用研末冲服治疗破伤风。",
+        contraindications: ["孕妇慎用"],
+        tags: ["常用", "利咽", "解痉"],
+        keywords: ["风热", "咽痛", "音哑", "麻疹", "退翳", "解痉"]
+    },
+    {
+        id: "herb_203",
+        name: "淡豆豉",
+        pinyin: "Dan Dou Chi",
+        latinName: "Glycine max (L.) Merr.",
+        category: "解表药",
+        subcategory: "辛凉解表药",
+        nature: "凉",
+        tastes: ["苦", "辛"],
+        meridians: ["肺经", "胃经"],
+        functions: ["解表", "除烦", "宣发郁热"],
+        indications: ["外感表证", "寒热头痛", "胸中烦闷", "虚烦不眠"],
+        usage: "煎服，6-12g。以桑叶、青蒿发酵者偏凉性，治风热感冒、虚烦不眠。",
+        contraindications: ["胃虚易泛恶心者慎用"],
+        tags: ["常用", "除烦"],
+        keywords: ["解表", "除烦", "虚烦不眠", "栀子豉汤"]
+    },
+    {
+        id: "herb_204",
+        name: "淡竹叶",
+        pinyin: "Dan Zhu Ye",
+        latinName: "Lophatherum gracile Brongn.",
+        category: "清热药",
+        subcategory: "清热泻火药",
+        nature: "寒",
+        tastes: ["甘", "淡"],
+        meridians: ["心经", "胃经", "小肠经"],
+        functions: ["清热泻火", "除烦止渴", "利尿通淋"],
+        indications: ["热病烦渴", "口舌生疮", "小便短赤涩痛"],
+        usage: "煎服，6-10g。",
+        contraindications: ["无湿热及体虚寒者慎用"],
+        tags: ["常用", "利尿"],
+        keywords: ["清热", "除烦", "利尿", "口舌生疮", "凉膈散"]
+    },
+    {
+        id: "herb_205",
+        name: "射干",
+        pinyin: "She Gan",
+        latinName: "Belamcanda chinensis (L.) DC.",
+        category: "清热药",
+        subcategory: "清热解毒药",
+        nature: "寒",
+        tastes: ["苦"],
+        meridians: ["肺经"],
+        functions: ["清热解毒", "消痰", "利咽"],
+        indications: ["热毒痰火郁结", "咽喉肿痛", "痰涎壅盛", "咳嗽气喘"],
+        usage: "煎服，3-10g。",
+        contraindications: ["脾虚便溏者慎用", "孕妇慎用", "无实火者不宜用"],
+        tags: ["常用", "利咽"],
+        keywords: ["咽喉肿痛", "痰盛咳喘", "利咽", "射干麻黄汤"]
+    },
+    {
+        id: "herb_206",
+        name: "山豆根",
+        pinyin: "Shan Dou Gen",
+        latinName: "Sophora tonkinensis Gagnep.",
+        category: "清热药",
+        subcategory: "清热解毒药",
+        nature: "寒",
+        tastes: ["苦"],
+        meridians: ["肺经", "胃经"],
+        functions: ["清热解毒", "利咽消肿"],
+        indications: ["火毒蕴结", "咽喉肿痛", "乳蛾喉痛", "牙龈肿痛"],
+        usage: "煎服，3-6g。有大毒，切不可过量使用。",
+        toxicNote: { limit: "3~6g，不可过量", note: "过量可致呕吐、腹泻、胸闷、心悸，严重者可致呼吸衰竭；孕妇忌服" },
+        contraindications: ["脾胃虚寒者慎用", "孕妇忌服", "不可过量久服"],
+        tags: ["利咽", "有毒"],
+        keywords: ["咽喉肿痛", "火毒", "利咽消肿", "山豆根汤"]
+    },
+    {
+        id: "herb_207",
+        name: "马勃",
+        pinyin: "Ma Bo",
+        latinName: "Lasiosphaera fenzlii Reich.",
+        category: "清热药",
+        subcategory: "清热解毒药",
+        nature: "平",
+        tastes: ["辛"],
+        meridians: ["肺经"],
+        functions: ["清肺利咽", "止血"],
+        indications: ["风热郁肺咽痛", "音哑", "咳嗽", "鼻衄", "外伤出血"],
+        usage: "煎服，2-6g。外用适量，敷患处或吹喉。",
+        contraindications: ["风寒伏肺咳嗽失音者禁用"],
+        tags: ["利咽", "止血"],
+        keywords: ["咽痛", "音哑", "止血", "清肺"]
+    },
+    {
+        id: "herb_208",
+        name: "紫花地丁",
+        pinyin: "Zi Hua Di Ding",
+        latinName: "Viola yedoensis Makino",
+        category: "清热药",
+        subcategory: "清热解毒药",
+        nature: "寒",
+        tastes: ["苦", "辛"],
+        meridians: ["心经", "肝经"],
+        functions: ["清热解毒", "凉血消肿"],
+        indications: ["疔疮肿毒", "痈疽发背", "丹毒", "毒蛇咬伤"],
+        usage: "煎服，15-30g。外用鲜品适量捣敷。",
+        contraindications: ["体质虚寒者慎用"],
+        tags: ["解毒", "消痈"],
+        keywords: ["疔疮", "痈肿", "丹毒", "五味消毒饮"]
+    },
+    {
+        id: "herb_209",
+        name: "土茯苓",
+        pinyin: "Tu Fu Ling",
+        latinName: "Smilax glabra Roxb.",
+        category: "清热药",
+        subcategory: "清热解毒药",
+        nature: "平",
+        tastes: ["甘", "淡"],
+        meridians: ["肝经", "胃经"],
+        functions: ["解毒", "除湿", "通利关节"],
+        indications: ["梅毒", "汞毒所致肢体拘挛", "淋浊", "带下", "湿热疮毒"],
+        usage: "煎服，15-60g。",
+        contraindications: ["肝肾阴虚者慎用", "服药期间忌饮茶"],
+        tags: ["解毒", "除湿"],
+        keywords: ["梅毒", "淋浊", "疮毒", "通利关节"]
+    },
+    {
+        id: "herb_210",
+        name: "胡黄连",
+        pinyin: "Hu Huang Lian",
+        latinName: "Picrorhiza scrophulariiflora Pennell",
+        category: "清热药",
+        subcategory: "清虚热药",
+        nature: "寒",
+        tastes: ["苦"],
+        meridians: ["肝经", "胃经", "大肠经"],
+        functions: ["退虚热", "除疳热", "清湿热"],
+        indications: ["骨蒸潮热", "小儿疳热", "湿热泻痢", "黄疸", "痔疮肿痛"],
+        usage: "煎服，3-10g。",
+        contraindications: ["脾胃虚寒者慎用"],
+        tags: ["退虚热"],
+        keywords: ["骨蒸潮热", "小儿疳热", "湿热泻痢", "清虚热"]
+    },
+    {
+        id: "herb_211",
+        name: "番泻叶",
+        pinyin: "Fan Xie Ye",
+        latinName: "Cassia angustifolia Vahl",
+        category: "泻下药",
+        subcategory: "攻下药",
+        nature: "寒",
+        tastes: ["甘", "苦"],
+        meridians: ["大肠经"],
+        functions: ["泻热行滞", "通便", "利水"],
+        indications: ["热结积滞", "便秘腹痛", "水肿胀满"],
+        usage: "温开水泡服，2-6g；煎服宜后下。剂量过大可致腹痛、恶心。",
+        contraindications: ["孕妇忌服", "哺乳期慎用", "体虚及津亏者慎用", "不宜久服"],
+        tags: ["通便"],
+        keywords: ["热结便秘", "泻下", "行滞", "通便"]
+    },
+    {
+        id: "herb_212",
+        name: "牵牛子",
+        pinyin: "Qian Niu Zi",
+        latinName: "Pharbitis nil (L.) Choisy",
+        category: "泻下药",
+        subcategory: "逐水药",
+        nature: "寒",
+        tastes: ["苦"],
+        meridians: ["肺经", "肾经", "大肠经"],
+        functions: ["泻水通便", "消痰涤饮", "杀虫攻积"],
+        indications: ["水肿胀满", "二便不通", "痰饮积聚", "气逆喘咳", "虫积腹痛"],
+        usage: "煎服，3-6g；入丸散每次1.5-3g。炒用药性稍缓。",
+        toxicNote: { limit: "煎服3~6g，入丸散1.5~3g", note: "过量可致呕吐、腹痛、便血、血尿，损害肾功能；孕妇忌用" },
+        contraindications: ["孕妇忌用", "体虚者慎用", "不宜与巴豆、巴豆霜同用"],
+        tags: ["逐水", "有毒"],
+        keywords: ["逐水", "水肿", "痰饮", "杀虫", "攻积"]
+    },
+    {
+        id: "herb_213",
+        name: "桑枝",
+        pinyin: "Sang Zhi",
+        latinName: "Morus alba L.",
+        category: "祛风湿药",
+        subcategory: "祛风湿清热药",
+        nature: "平",
+        tastes: ["微苦"],
+        meridians: ["肝经"],
+        functions: ["祛风湿", "利关节"],
+        indications: ["风湿痹病", "肩臂关节酸痛麻木"],
+        usage: "煎服，9-15g。尤宜于上肢痹痛。",
+        contraindications: ["无明显禁忌"],
+        tags: ["常用", "通络"],
+        keywords: ["痹证", "上肢痹痛", "关节酸痛", "祛风", "利关节"]
+    },
+    {
+        id: "herb_214",
+        name: "络石藤",
+        pinyin: "Luo Shi Teng",
+        latinName: "Trachelospermum jasminoides (Lindl.) Lem.",
+        category: "祛风湿药",
+        subcategory: "祛风湿清热药",
+        nature: "微寒",
+        tastes: ["苦"],
+        meridians: ["心经", "肝经", "肾经"],
+        functions: ["祛风通络", "凉血消肿"],
+        indications: ["风湿热痹", "筋脉拘挛", "腰膝酸痛", "喉痹", "痈肿", "跌打损伤"],
+        usage: "煎服，6-12g。外用鲜品适量捣敷。",
+        contraindications: ["阳虚畏寒便溏者不宜"],
+        tags: ["通络"],
+        keywords: ["风湿热痹", "筋脉拘挛", "凉血", "消肿"]
+    },
+    {
+        id: "herb_215",
+        name: "五加皮",
+        pinyin: "Wu Jia Pi",
+        latinName: "Acanthopanax gracilistylus W. W. Smith",
+        category: "祛风湿药",
+        subcategory: "祛风湿补益药",
+        nature: "温",
+        tastes: ["辛", "苦"],
+        meridians: ["肝经", "肾经"],
+        functions: ["祛风除湿", "补益肝肾", "强筋壮骨", "利水消肿"],
+        indications: ["风湿痹病", "腰膝疼痛", "筋骨痿软", "小儿行迟", "体虚乏力", "水肿脚气"],
+        usage: "煎服，5-10g。",
+        contraindications: ["阴虚火旺者慎用"],
+        tags: ["强筋骨"],
+        keywords: ["痹证", "腰膝酸痛", "筋骨痿软", "强筋骨", "水肿"]
+    },
+    {
+        id: "herb_216",
+        name: "狗脊",
+        pinyin: "Gou Ji",
+        latinName: "Cibotium barometz (L.) J. Sm.",
+        category: "祛风湿药",
+        subcategory: "祛风湿补益药",
+        nature: "温",
+        tastes: ["苦", "甘"],
+        meridians: ["肝经", "肾经"],
+        functions: ["祛风湿", "补肝肾", "强腰膝"],
+        indications: ["风湿痹痛", "腰膝酸软", "下肢无力", "遗尿", "白带过多"],
+        usage: "煎服，6-12g。",
+        contraindications: ["肾虚有热者慎用", "小便不利者慎用"],
+        tags: ["强腰膝"],
+        keywords: ["痹证", "腰膝酸软", "强腰膝", "补肝肾"]
+    },
+    {
+        id: "herb_217",
+        name: "豆蔻",
+        pinyin: "Dou Kou",
+        latinName: "Amomum kravanh Pierre ex Gagnep.",
+        category: "化湿药",
+        subcategory: "化湿药",
+        nature: "温",
+        tastes: ["辛"],
+        meridians: ["肺经", "脾经", "胃经"],
+        functions: ["化湿行气", "温中止呕", "开胃消食"],
+        indications: ["湿浊中阻", "脾胃气滞", "不思饮食", "湿温初起", "胸闷不饥", "寒湿呕逆"],
+        usage: "煎服，3-6g，入汤剂宜后下。",
+        contraindications: ["阴虚血燥者慎用"],
+        tags: ["常用", "化湿"],
+        keywords: ["化湿", "行气", "温中", "呕逆", "湿温"]
+    },
+    {
+        id: "herb_218",
+        name: "萹蓄",
+        pinyin: "Bian Xu",
+        latinName: "Polygonum aviculare L.",
+        category: "利水渗湿药",
+        subcategory: "利尿通淋药",
+        nature: "微寒",
+        tastes: ["苦"],
+        meridians: ["膀胱经"],
+        functions: ["利尿通淋", "杀虫", "止痒"],
+        indications: ["热淋涩痛", "小便短赤", "虫积腹痛", "皮肤湿疹", "阴痒带下"],
+        usage: "煎服，9-15g。外用适量煎洗患处。",
+        contraindications: ["脾虚者慎用"],
+        tags: ["通淋"],
+        keywords: ["热淋", "小便短赤", "杀虫", "止痒", "湿疹"]
+    },
+    {
+        id: "herb_219",
+        name: "灯心草",
+        pinyin: "Deng Xin Cao",
+        latinName: "Juncus effusus L.",
+        category: "利水渗湿药",
+        subcategory: "利尿通淋药",
+        nature: "微寒",
+        tastes: ["甘", "淡"],
+        meridians: ["心经", "肺经", "小肠经"],
+        functions: ["清心火", "利小便"],
+        indications: ["心烦失眠", "尿少涩痛", "口舌生疮"],
+        usage: "煎服，1-3g。",
+        contraindications: ["下焦虚寒者慎用", "小便失禁者忌用"],
+        tags: ["清心"],
+        keywords: ["清心火", "利小便", "心烦失眠", "尿少涩痛"]
+    },
+    {
+        id: "herb_220",
+        name: "虎杖",
+        pinyin: "Hu Zhang",
+        latinName: "Polygonum cuspidatum Sieb. et Zucc.",
+        category: "利水渗湿药",
+        subcategory: "利湿退黄药",
+        nature: "微寒",
+        tastes: ["微苦"],
+        meridians: ["肝经", "胆经", "肺经"],
+        functions: ["利湿退黄", "清热解毒", "散瘀止痛", "止咳化痰"],
+        indications: ["湿热黄疸", "淋浊带下", "水火烫伤", "痈肿疮毒", "经闭癥瘕", "肺热咳嗽"],
+        usage: "煎服，9-15g。外用适量。",
+        contraindications: ["孕妇忌服"],
+        tags: ["退黄"],
+        keywords: ["黄疸", "利湿", "散瘀", "止咳", "烫伤"]
+    },
+    {
+        id: "herb_221",
+        name: "丁香",
+        pinyin: "Ding Xiang",
+        latinName: "Eugenia caryophyllata Thunb.",
+        category: "温里药",
+        subcategory: "温里药",
+        nature: "温",
+        tastes: ["辛"],
+        meridians: ["脾经", "胃经", "肾经"],
+        functions: ["温中降逆", "补肾助阳"],
+        indications: ["脾胃虚寒", "呃逆呕吐", "食少吐泻", "肾虚阳痿"],
+        usage: "煎服，1-3g。",
+        contraindications: ["热病及阴虚内热者忌服", "不宜与郁金同用"],
+        tags: ["常用", "降逆"],
+        keywords: ["呃逆", "呕吐", "温中", "降逆", "暖肾"]
+    },
+    {
+        id: "herb_222",
+        name: "高良姜",
+        pinyin: "Gao Liang Jiang",
+        latinName: "Alpinia officinarum Hance",
+        category: "温里药",
+        subcategory: "温里药",
+        nature: "热",
+        tastes: ["辛"],
+        meridians: ["脾经", "胃经"],
+        functions: ["温胃止呕", "散寒止痛"],
+        indications: ["脘腹冷痛", "胃寒呕吐", "嗳气吞酸"],
+        usage: "煎服，3-6g。",
+        contraindications: ["阴虚有热者忌服"],
+        tags: ["温胃"],
+        keywords: ["胃寒", "冷痛", "呕吐", "散寒", "温胃"]
+    },
+    {
+        id: "herb_223",
+        name: "青皮",
+        pinyin: "Qing Pi",
+        latinName: "Citrus reticulata Blanco",
+        category: "理气药",
+        subcategory: "理气药",
+        nature: "温",
+        tastes: ["苦", "辛"],
+        meridians: ["肝经", "胆经", "胃经"],
+        functions: ["疏肝破气", "消积化滞"],
+        indications: ["胸胁胀痛", "疝气疼痛", "乳癖", "食积气滞", "脘腹胀痛"],
+        usage: "煎服，3-10g。醋制增强疏肝止痛之力。",
+        contraindications: ["气虚者慎用"],
+        tags: ["常用", "疏肝"],
+        keywords: ["疏肝", "破气", "胸胁胀痛", "疝气", "食积"]
+    },
+    {
+        id: "herb_224",
+        name: "佛手",
+        pinyin: "Fo Shou",
+        latinName: "Citrus medica L. var. sarcodactylis Swingle",
+        category: "理气药",
+        subcategory: "理气药",
+        nature: "温",
+        tastes: ["辛", "苦", "酸"],
+        meridians: ["肝经", "脾经", "胃经", "肺经"],
+        functions: ["疏肝理气", "和胃止痛", "燥湿化痰"],
+        indications: ["肝胃气滞", "胸胁胀痛", "脘腹痞满", "呕吐噎膈", "咳嗽痰多"],
+        usage: "煎服，3-10g。",
+        contraindications: ["阴虚有火者慎用", "无气滞者慎用"],
+        tags: ["疏肝"],
+        keywords: ["疏肝", "理气", "和胃", "止痛", "化痰"]
+    },
+    {
+        id: "herb_225",
+        name: "柿蒂",
+        pinyin: "Shi Di",
+        latinName: "Diospyros kaki Thunb.",
+        category: "理气药",
+        subcategory: "理气药",
+        nature: "平",
+        tastes: ["苦", "涩"],
+        meridians: ["胃经"],
+        functions: ["降逆止呃"],
+        indications: ["呃逆", "恶心", "嗳气"], 
+        usage: "煎服，5-10g。为治呃逆之要药，随寒热配伍应用。",
+        contraindications: ["无明显禁忌"],
+        tags: ["止呃"],
+        keywords: ["呃逆", "降逆", "止呃", "柿蒂汤"]
+    },
+    {
+        id: "herb_226",
+        name: "谷芽",
+        pinyin: "Gu Ya",
+        latinName: "Setaria italica (L.) Beauv.",
+        category: "消食药",
+        subcategory: "消食药",
+        nature: "温",
+        tastes: ["甘"],
+        meridians: ["脾经", "胃经"],
+        functions: ["消食和中", "健脾开胃"],
+        indications: ["食积不消", "腹胀口臭", "脾胃虚弱", "不饥食少"],
+        usage: "煎服，9-15g。炒谷芽偏于消食，生谷芽偏于养胃。",
+        contraindications: ["无明显禁忌"],
+        tags: ["消食"],
+        keywords: ["消食", "和中", "健脾", "开胃", "食积"]
+    },
+    {
+        id: "herb_227",
+        name: "槟榔",
+        pinyin: "Bing Lang",
+        latinName: "Areca catechu L.",
+        category: "驱虫药",
+        subcategory: "驱虫药",
+        nature: "温",
+        tastes: ["苦", "辛"],
+        meridians: ["胃经", "大肠经"],
+        functions: ["杀虫", "消积", "行气", "利水", "截疟"],
+        indications: ["绦虫病", "蛔虫病", "姜片虫病", "虫积腹痛", "积滞泻痢", "里急后重", "水肿脚气", "疟疾"],
+        usage: "煎服，3-10g；驱绦虫、姜片虫可用60-120g。",
+        contraindications: ["脾虚便溏者慎用", "气虚下陷者忌用", "孕妇忌用"],
+        tags: ["杀虫"],
+        keywords: ["杀虫", "消积", "行气", "利水", "截疟", "绦虫"]
+    },
+    {
+        id: "herb_228",
+        name: "南瓜子",
+        pinyin: "Nan Gua Zi",
+        latinName: "Cucurbita moschata Duch.",
+        category: "驱虫药",
+        subcategory: "驱虫药",
+        nature: "平",
+        tastes: ["甘"],
+        meridians: ["胃经", "大肠经"],
+        functions: ["杀虫"],
+        indications: ["绦虫病", "血吸虫病"],
+        usage: "研粉冷开水调服，60-120g。常与槟榔同用增强驱绦虫之力。",
+        contraindications: ["无明显禁忌"],
+        tags: ["杀虫"],
+        keywords: ["杀虫", "绦虫", "驱虫"]
+    },
+    {
+        id: "herb_229",
+        name: "槐花",
+        pinyin: "Huai Hua",
+        latinName: "Sophora japonica L.",
+        category: "止血药",
+        subcategory: "凉血止血药",
+        nature: "微寒",
+        tastes: ["苦"],
+        meridians: ["肝经", "大肠经"],
+        functions: ["凉血止血", "清肝泻火"],
+        indications: ["便血", "痔血", "血痢", "崩漏", "吐血衄血", "肝热目赤", "头痛眩晕"],
+        usage: "煎服，5-10g。止血宜炒炭用，清肝泻火宜生用。",
+        contraindications: ["脾胃虚寒者慎用", "阴虚发热而无实火者慎用"],
+        tags: ["止血"],
+        keywords: ["便血", "痔血", "凉血", "清肝", "槐花散"]
+    },
+    {
+        id: "herb_230",
+        name: "侧柏叶",
+        pinyin: "Ce Bai Ye",
+        latinName: "Platycladus orientalis (L.) Franco",
+        category: "止血药",
+        subcategory: "凉血止血药",
+        nature: "寒",
+        tastes: ["苦", "涩"],
+        meridians: ["肺经", "肝经", "脾经"],
+        functions: ["凉血止血", "化痰止咳", "生发乌发"],
+        indications: ["吐血衄血", "咯血便血", "崩漏下血", "肺热咳嗽", "血热脱发", "须发早白"],
+        usage: "煎服，6-12g。外用适量。止血多炒炭用，化痰止咳宜生用。",
+        contraindications: ["虚寒性出血者慎用"],
+        tags: ["止血"],
+        keywords: ["凉血", "止血", "化痰", "生发", "乌发", "槐花散"]
+    },
+    {
+        id: "herb_231",
+        name: "藕节",
+        pinyin: "Ou Jie",
+        latinName: "Nelumbo nucifera Gaertn.",
+        category: "止血药",
+        subcategory: "收敛止血药",
+        nature: "平",
+        tastes: ["甘", "涩"],
+        meridians: ["肝经", "肺经", "胃经"],
+        functions: ["收敛止血", "化瘀"],
+        indications: ["吐血", "咯血", "衄血", "尿血", "崩漏"],
+        usage: "煎服，9-15g。鲜用捣汁可用至60g。",
+        contraindications: ["无明显禁忌"],
+        tags: ["止血"],
+        keywords: ["收敛止血", "化瘀", "吐血", "衄血"]
+    },
+    {
+        id: "herb_232",
+        name: "王不留行",
+        pinyin: "Wang Bu Liu Xing",
+        latinName: "Vaccaria segetalis (Neck.) Garcke",
+        category: "活血化瘀药",
+        subcategory: "活血调经药",
+        nature: "平",
+        tastes: ["苦"],
+        meridians: ["肝经", "胃经"],
+        functions: ["活血通经", "下乳消肿", "利尿通淋"],
+        indications: ["经闭", "痛经", "乳汁不下", "乳痈肿痛", "淋证涩痛"],
+        usage: "煎服，5-10g。走而不守，善于通利血脉。",
+        contraindications: ["孕妇慎用"],
+        tags: ["通经"],
+        keywords: ["活血", "通经", "下乳", "消肿", "利尿"]
+    },
+    {
+        id: "herb_233",
+        name: "苏木",
+        pinyin: "Su Mu",
+        latinName: "Caesalpinia sappan L.",
+        category: "活血化瘀药",
+        subcategory: "活血疗伤药",
+        nature: "平",
+        tastes: ["甘", "咸"],
+        meridians: ["心经", "肝经", "脾经"],
+        functions: ["活血祛瘀", "消肿止痛"],
+        indications: ["跌打损伤", "骨折筋伤", "瘀滞肿痛", "经闭痛经", "产后瘀阻", "胸腹刺痛"],
+        usage: "煎服，3-9g。",
+        contraindications: ["孕妇忌用", "月经过多者慎用", "血虚无瘀滞者忌用"],
+        tags: ["疗伤"],
+        keywords: ["活血", "祛瘀", "消肿", "止痛", "跌打"]
+    },
+    {
+        id: "herb_234",
+        name: "胖大海",
+        pinyin: "Pang Da Hai",
+        latinName: "Sterculia lychnophora Hance",
+        category: "化痰止咳平喘药",
+        subcategory: "清化热痰药",
+        nature: "寒",
+        tastes: ["甘"],
+        meridians: ["肺经", "大肠经"],
+        functions: ["清热润肺", "利咽开音", "润肠通便"],
+        indications: ["肺热声哑", "干咳无痰", "咽喉干痛", "热结便闭", "头痛目赤"],
+        usage: "2-3枚，沸水泡服或煎服。",
+        contraindications: ["脾胃虚寒泄泻者慎用"],
+        tags: ["利咽"],
+        keywords: ["利咽", "开音", "声哑", "润肠", "通便"]
+    },
+    {
+        id: "herb_235",
+        name: "紫苏子",
+        pinyin: "Zi Su Zi",
+        latinName: "Perilla frutescens (L.) Britt.",
+        category: "化痰止咳平喘药",
+        subcategory: "止咳平喘药",
+        nature: "温",
+        tastes: ["辛"],
+        meridians: ["肺经", "大肠经"],
+        functions: ["降气化痰", "止咳平喘", "润肠通便"],
+        indications: ["痰壅气逆", "咳嗽气喘", "肠燥便秘"],
+        usage: "煎服，3-10g。常炒用，阴虚喘咳及脾虚便溏者慎用。",
+        contraindications: ["阴虚喘咳者慎用", "脾虚便溏者慎用"],
+        tags: ["常用", "降气"],
+        keywords: ["降气", "化痰", "平喘", "润肠", "三子养亲汤"]
+    },
+    {
+        id: "herb_236",
+        name: "枇杷叶",
+        pinyin: "Pi Pa Ye",
+        latinName: "Eriobotrya japonica (Thunb.) Lindl.",
+        category: "化痰止咳平喘药",
+        subcategory: "止咳平喘药",
+        nature: "微寒",
+        tastes: ["苦"],
+        meridians: ["肺经", "胃经"],
+        functions: ["清肺止咳", "降逆止呕"],
+        indications: ["肺热咳嗽", "气逆喘急", "胃热呕逆", "烦热口渴"],
+        usage: "煎服，6-10g，刷去绒毛后使用，止咳宜炙用，止呕宜生用。",
+        contraindications: ["胃寒呕吐者慎用", "风寒咳嗽者慎用"],
+        tags: ["止咳"],
+        keywords: ["清肺", "止咳", "降逆", "止呕", "化痰"]
+    },
+    {
+        id: "herb_237",
+        name: "白附子",
+        pinyin: "Bai Fu Zi",
+        latinName: "Typhonium giganteum Engl.",
+        category: "化痰止咳平喘药",
+        subcategory: "温化寒痰药",
+        nature: "温",
+        tastes: ["辛"],
+        meridians: ["胃经", "肝经"],
+        functions: ["祛风痰", "定惊搐", "解毒散结", "止痛"],
+        indications: ["中风痰壅", "口眼㖞斜", "惊风癫痫", "破伤风", "痰厥头痛", "偏正头痛", "瘰疬痰核", "毒蛇咬伤"],
+        usage: "煎服，3-6g，一般炮制后用；外用生品适量。制品称制白附子。",
+        toxicNote: { limit: "煎服3~6g，制后用", note: "生品有大毒，内服须炮制；过量可致口舌麻木、咽喉灼痛，严重者窒息；孕妇忌用" },
+        contraindications: ["孕妇忌用", "阴虚血虚动风者慎用", "生品不可内服"],
+        tags: ["有毒", "祛风痰"],
+        keywords: ["祛风痰", "定惊", "口眼歪斜", "破伤风", "牵正散"]
+    },
+    {
+        id: "herb_238",
+        name: "磁石",
+        pinyin: "Ci Shi",
+        latinName: "Magnetitum",
+        category: "安神药",
+        subcategory: "重镇安神药",
+        nature: "寒",
+        tastes: ["咸"],
+        meridians: ["肝经", "心经", "肾经"],
+        functions: ["镇惊安神", "平肝潜阳", "聪耳明目", "纳气平喘"],
+        indications: ["心神不宁", "惊悸失眠", "头晕目眩", "耳鸣耳聋", "肾虚气喘"],
+        usage: "煎服，9-30g，打碎先煎；入丸散每次1-3g。",
+        contraindications: ["脾胃虚弱者慎用", "不宜久服"],
+        tags: ["重镇"],
+        keywords: ["镇惊", "安神", "平肝", "潜阳", "聪耳", "纳气"]
+    },
+    {
+        id: "herb_239",
+        name: "灵芝",
+        pinyin: "Ling Zhi",
+        latinName: "Ganoderma lucidum (Leyss. ex Fr.) Karst.",
+        category: "安神药",
+        subcategory: "养心安神药",
+        nature: "平",
+        tastes: ["甘"],
+        meridians: ["心经", "肺经", "肝经", "肾经"],
+        functions: ["补气安神", "止咳平喘"],
+        indications: ["心神不宁", "失眠心悸", "肺虚咳喘", "虚劳短气", "不思饮食"],
+        usage: "煎服，6-12g；研末吞服每次1.5-3g。",
+        contraindications: ["外感初起者慎用"],
+        tags: ["安神"],
+        keywords: ["安神", "补气", "止咳", "平喘", "虚劳"]
+    },
+    {
+        id: "herb_240",
+        name: "珍珠母",
+        pinyin: "Zhen Zhu Mu",
+        latinName: "Concha Margaritifera Usta",
+        category: "平肝息风药",
+        subcategory: "平抑肝阳药",
+        nature: "寒",
+        tastes: ["咸"],
+        meridians: ["肝经", "心经"],
+        functions: ["平肝潜阳", "安神定惊", "明目退翳", "燥湿收敛（外用）"],
+        indications: ["头晕目眩", "惊悸失眠", "目赤翳障", "视物昏花", "湿疮瘙痒"],
+        usage: "煎服，10-25g，打碎先煎；外用适量研末敷。",
+        contraindications: ["脾胃虚寒者慎用"],
+        tags: ["平肝"],
+        keywords: ["平肝", "潜阳", "安神", "明目", "退翳"]
+    },
+    {
+        id: "herb_241",
+        name: "刺蒺藜",
+        pinyin: "Ci Ji Li",
+        latinName: "Tribulus terrestris L.",
+        category: "平肝息风药",
+        subcategory: "平抑肝阳药",
+        nature: "微温",
+        tastes: ["辛", "苦"],
+        meridians: ["肝经"],
+        functions: ["平肝解郁", "活血祛风", "明目", "止痒"],
+        indications: ["头痛眩晕", "胸胁胀痛", "乳闭乳痈", "目赤翳障", "风疹瘙痒"],
+        usage: "煎服，6-10g。",
+        contraindications: ["孕妇慎用", "血虚气弱者慎用"],
+        tags: ["平肝"],
+        keywords: ["平肝", "解郁", "祛风", "明目", "止痒"]
+    },
+    {
+        id: "herb_242",
+        name: "蜈蚣",
+        pinyin: "Wu Gong",
+        latinName: "Scolopendra subspinipes mutilans L. Koch",
+        category: "平肝息风药",
+        subcategory: "息风止痉药",
+        nature: "温",
+        tastes: ["辛"],
+        meridians: ["肝经"],
+        functions: ["息风镇痉", "通络止痛", "攻毒散结"],
+        indications: ["肝风内动", "痉挛抽搐", "小儿惊风", "破伤风", "半身不遂", "风湿顽痹", "疮疡", "瘰疬", "毒蛇咬伤"],
+        usage: "煎服，3-5g；研末吞服每次0.6-1g。与全蝎相须为用。",
+        toxicNote: { limit: "煎服3~5g，研末0.6~1g", note: "有毒，用量过大可致溶血、心肌损害；孕妇忌用" },
+        contraindications: ["孕妇忌用", "血虚生风者慎用", "用量不可过大"],
+        tags: ["有毒", "息风"],
+        keywords: ["息风", "镇痉", "通络", "止痛", "攻毒", "牵正散"]
+    },
+    {
+        id: "herb_243",
+        name: "苏合香",
+        pinyin: "Su He Xiang",
+        latinName: "Liquidambar orientalis Mill.",
+        category: "开窍药",
+        subcategory: "开窍药",
+        nature: "温",
+        tastes: ["辛"],
+        meridians: ["心经", "脾经"],
+        functions: ["开窍辟秽", "止痛"],
+        indications: ["中风痰厥", "猝然昏倒", "惊痫", "胸痹心痛", "脘腹冷痛"],
+        usage: "入丸散，0.3-1g，不入煎剂。为温开之代表药。",
+        contraindications: ["脱证之神昏忌用", "阴虚火旺者慎用"],
+        tags: ["开窍"],
+        keywords: ["开窍", "辟秽", "温开", "痰厥", "苏合香丸"]
+    },
+    {
+        id: "herb_244",
+        name: "党参",
+        pinyin: "Dang Shen",
+        latinName: "Codonopsis pilosula (Franch.) Nannf.",
+        category: "补虚药",
+        subcategory: "补气药",
+        nature: "平",
+        tastes: ["甘"],
+        meridians: ["脾经", "肺经"],
+        functions: ["健脾益肺", "养血生津"],
+        indications: ["脾肺气虚", "食少倦怠", "咳嗽虚喘", "气血不足", "面色萎黄", "心悸气短", "津伤口渴"],
+        usage: "煎服，9-30g。功近人参而力缓，多代人参用于气虚轻证。",
+        contraindications: ["不宜与藜芦同用", "实热证者不宜"],
+        tags: ["常用", "补气"],
+        keywords: ["补气", "健脾", "益肺", "养血", "生津", "气虚"]
+    },
+    {
+        id: "herb_245",
+        name: "西洋参",
+        pinyin: "Xi Yang Shen",
+        latinName: "Panax quinquefolium L.",
+        category: "补虚药",
+        subcategory: "补气药",
+        nature: "凉",
+        tastes: ["甘", "微苦"],
+        meridians: ["心经", "肺经", "肾经"],
+        functions: ["补气养阴", "清热生津"],
+        indications: ["气虚阴亏", "虚热烦倦", "咳喘痰血", "内热消渴", "口燥咽干"],
+        usage: "另煎兑服，3-6g。",
+        contraindications: ["不宜与藜芦同用", "中阳虚衰者慎用", "寒湿中阻者忌用"],
+        tags: ["常用", "补气"],
+        keywords: ["补气", "养阴", "清热", "生津", "气阴两虚"]
+    },
+    {
+        id: "herb_246",
+        name: "大枣",
+        pinyin: "Da Zao",
+        latinName: "Ziziphus jujuba Mill.",
+        category: "补虚药",
+        subcategory: "补气药",
+        nature: "温",
+        tastes: ["甘"],
+        meridians: ["脾经", "胃经", "心经"],
+        functions: ["补中益气", "养血安神"],
+        indications: ["脾虚食少", "乏力便溏", "妇人脏躁", "失眠"], 
+        usage: "煎服，6-15g。常与甘草、小麦同用治脏躁（甘麦大枣汤）。",
+        contraindications: ["湿盛脘腹胀满者慎用", "痰热咳嗽者慎用"],
+        tags: ["常用", "补气"],
+        keywords: ["补中", "益气", "养血", "安神", "脏躁", "甘麦大枣汤"]
+    },
+    {
+        id: "herb_247",
+        name: "巴戟天",
+        pinyin: "Ba Ji Tian",
+        latinName: "Morinda officinalis How",
+        category: "补虚药",
+        subcategory: "补阳药",
+        nature: "微温",
+        tastes: ["甘", "辛"],
+        meridians: ["肾经", "肝经"],
+        functions: ["补肾阳", "强筋骨", "祛风湿"],
+        indications: ["阳痿遗精", "宫冷不孕", "月经不调", "少腹冷痛", "风湿痹痛", "筋骨痿软"],
+        usage: "煎服，3-10g。",
+        contraindications: ["阴虚火旺者忌用", "湿热下注者忌用"],
+        tags: ["补阳"],
+        keywords: ["补肾阳", "强筋骨", "祛风湿", "阳痿", "宫冷"]
+    },
+    {
+        id: "herb_248",
+        name: "浮小麦",
+        pinyin: "Fu Xiao Mai",
+        latinName: "Triticum aestivum L.",
+        category: "收涩药",
+        subcategory: "固表止汗药",
+        nature: "凉",
+        tastes: ["甘"],
+        meridians: ["心经"],
+        functions: ["固表止汗", "益气", "除热"],
+        indications: ["自汗", "盗汗", "骨蒸劳热"],
+        usage: "煎服，15-30g；研末服效果更佳。",
+        contraindications: ["无汗而烦躁者不宜用"],
+        tags: ["止汗"],
+        keywords: ["止汗", "自汗", "盗汗", "除热", "牡蛎散"]
+    },
+    {
+        id: "herb_249",
+        name: "诃子",
+        pinyin: "He Zi",
+        latinName: "Terminalia chebula Retz.",
+        category: "收涩药",
+        subcategory: "涩肠止泻药",
+        nature: "平",
+        tastes: ["苦", "酸", "涩"],
+        meridians: ["肺经", "大肠经"],
+        functions: ["涩肠止泻", "敛肺止咳", "降火利咽"],
+        indications: ["久泻久痢", "便血脱肛", "肺虚喘咳", "久嗽不止", "咽痛音哑"],
+        usage: "煎服，3-10g。涩肠止泻宜煨用，敛肺清热利咽宜生用。",
+        contraindications: ["外有表邪者慎用", "内有湿热积滞者忌用"],
+        tags: ["收涩"],
+        keywords: ["涩肠", "止泻", "敛肺", "利咽", "久泻"]
+    },
+    {
+        id: "herb_250",
+        name: "芡实",
+        pinyin: "Qian Shi",
+        latinName: "Euryale ferox Salisb.",
+        category: "收涩药",
+        subcategory: "固精缩尿止带药",
+        nature: "平",
+        tastes: ["甘", "涩"],
+        meridians: ["脾经", "肾经"],
+        functions: ["益肾固精", "补脾止泻", "除湿止带"],
+        indications: ["遗精滑精", "遗尿尿频", "脾虚久泻", "白浊带下"],
+        usage: "煎服，9-15g。",
+        contraindications: ["大小便不利者不宜", "食滞不化者慎用"],
+        tags: ["收涩"],
+        keywords: ["固精", "补脾", "止泻", "止带", "易黄汤"]
     }
 
 ];
@@ -3632,7 +4491,8 @@ const herbCategories = {
             { id: "herb_161", name: "羌活" },
             { id: "herb_162", name: "苍耳子" },
             { id: "herb_163", name: "辛夷" },
-            { id: "herb_164", name: "藁本" }],
+            { id: "herb_164", name: "藁本" },
+            { id: "herb_201", name: "香薷" }],
         "辛凉解表药": [
             { id: "herb_008", name: "薄荷" },
             { id: "herb_009", name: "牛蒡子" },
@@ -3643,7 +4503,9 @@ const herbCategories = {
             { id: "herb_123", name: "桑叶" }
         ,
             { id: "herb_165", name: "浮萍" },
-            { id: "herb_166", name: "蔓荆子" }]
+            { id: "herb_166", name: "蔓荆子" },
+            { id: "herb_202", name: "蝉蜕" },
+            { id: "herb_203", name: "淡豆豉" }]
     },
     "清热药": {
         "清热泻火药": [
@@ -3657,7 +4519,8 @@ const herbCategories = {
             { id: "herb_167", name: "决明子" },
             { id: "herb_168", name: "青葙子" },
             { id: "herb_169", name: "谷精草" },
-            { id: "herb_170", name: "密蒙花" }],
+            { id: "herb_170", name: "密蒙花" },
+            { id: "herb_204", name: "淡竹叶" }],
         "清热燥湿药": [
             { id: "herb_016", name: "黄芩" },
             { id: "herb_017", name: "黄连" },
@@ -3677,7 +4540,12 @@ const herbCategories = {
             { id: "herb_173", name: "马齿苋" },
             { id: "herb_174", name: "半边莲" },
             { id: "herb_175", name: "白花蛇舌草" },
-            { id: "herb_176", name: "贯众" }],
+            { id: "herb_176", name: "贯众" },
+            { id: "herb_205", name: "射干" },
+            { id: "herb_206", name: "山豆根" },
+            { id: "herb_207", name: "马勃" },
+            { id: "herb_208", name: "紫花地丁" },
+            { id: "herb_209", name: "土茯苓" }],
         "清热凉血药": [
             { id: "herb_024", name: "生地黄" },
             { id: "herb_025", name: "玄参" },
@@ -3687,20 +4555,23 @@ const herbCategories = {
             { id: "herb_177", name: "紫草" }],
         "清虚热药": [
             { id: "herb_128", name: "青蒿" },
-            { id: "herb_129", name: "地骨皮" }
+            { id: "herb_129", name: "地骨皮" },
+            { id: "herb_210", name: "胡黄连" }
         ]
     },
     "泻下药": {
         "攻下药": [
             { id: "herb_027", name: "大黄" },
-            { id: "herb_028", name: "芒硝" }
+            { id: "herb_028", name: "芒硝" },
+            { id: "herb_211", name: "番泻叶" }
         ],
         "润下药": [
             { id: "herb_029", name: "火麻仁" },
             { id: "herb_030", name: "郁李仁" }
         ],
         "逐水药": [
-            { id: "herb_031", name: "甘遂" }
+            { id: "herb_031", name: "甘遂" },
+            { id: "herb_212", name: "牵牛子" }
         ]
     },
     "祛风湿药": {
@@ -3712,10 +4583,14 @@ const herbCategories = {
             { id: "herb_178", name: "海风藤" }],
         "祛风湿清热药": [
             { id: "herb_034", name: "秦艽" },
-            { id: "herb_035", name: "防己" }
+            { id: "herb_035", name: "防己" },
+            { id: "herb_213", name: "桑枝" },
+            { id: "herb_214", name: "络石藤" }
         ],
         "祛风湿补益药": [
-            { id: "herb_036", name: "桑寄生" }
+            { id: "herb_036", name: "桑寄生" },
+            { id: "herb_215", name: "五加皮" },
+            { id: "herb_216", name: "狗脊" }
         ]
     },
     "化湿药": {
@@ -3726,7 +4601,8 @@ const herbCategories = {
             { id: "herb_040", name: "砂仁" },
             { id: "herb_133", name: "佩兰" }
         ,
-            { id: "herb_179", name: "草果" }]
+            { id: "herb_179", name: "草果" },
+            { id: "herb_217", name: "豆蔻" }]
     },
     "利水渗湿药": {
         "利水消肿药": [
@@ -3743,10 +4619,13 @@ const herbCategories = {
         ,
             { id: "herb_181", name: "海金沙" },
             { id: "herb_182", name: "地肤子" },
-            { id: "herb_183", name: "萆薢" }],
+            { id: "herb_183", name: "萆薢" },
+            { id: "herb_218", name: "萹蓄" },
+            { id: "herb_219", name: "灯心草" }],
         "利湿退黄药": [
             { id: "herb_046", name: "茵陈" },
-            { id: "herb_047", name: "金钱草" }
+            { id: "herb_047", name: "金钱草" },
+            { id: "herb_220", name: "虎杖" }
         ]
     },
     "温里药": {
@@ -3757,7 +4636,9 @@ const herbCategories = {
             { id: "herb_136", name: "吴茱萸" }
         ,
             { id: "herb_184", name: "小茴香" },
-            { id: "herb_185", name: "花椒" }]
+            { id: "herb_185", name: "花椒" },
+            { id: "herb_221", name: "丁香" },
+            { id: "herb_222", name: "高良姜" }]
     },
     "理气药": {
         "理气药": [
@@ -3769,7 +4650,10 @@ const herbCategories = {
             { id: "herb_137", name: "川楝子" }
         ,
             { id: "herb_186", name: "枳壳" },
-            { id: "herb_187", name: "乌药" }]
+            { id: "herb_187", name: "乌药" },
+            { id: "herb_223", name: "青皮" },
+            { id: "herb_224", name: "佛手" },
+            { id: "herb_225", name: "柿蒂" }]
     },
     "消食药": {
         "消食药": [
@@ -3778,11 +4662,14 @@ const herbCategories = {
             { id: "herb_058", name: "麦芽" },
             { id: "herb_138", name: "莱菔子" }
         ,
-            { id: "herb_188", name: "鸡内金" }]
+            { id: "herb_188", name: "鸡内金" },
+            { id: "herb_226", name: "谷芽" }]
     },
     "驱虫药": {
         "驱虫药": [
-            { id: "herb_059", name: "使君子" }
+            { id: "herb_059", name: "使君子" },
+            { id: "herb_227", name: "槟榔" },
+            { id: "herb_228", name: "南瓜子" }
         ]
     },
     "止血药": {
@@ -3790,7 +4677,9 @@ const herbCategories = {
             { id: "herb_060", name: "小蓟" },
             { id: "herb_061", name: "地榆" },
             { id: "herb_062", name: "白茅根" },
-            { id: "herb_139", name: "大蓟" }
+            { id: "herb_139", name: "大蓟" },
+            { id: "herb_229", name: "槐花" },
+            { id: "herb_230", name: "侧柏叶" }
         ],
         "化瘀止血药": [
             { id: "herb_063", name: "三七" },
@@ -3801,7 +4690,8 @@ const herbCategories = {
             { id: "herb_065", name: "白及" },
             { id: "herb_066", name: "仙鹤草" }
         ,
-            { id: "herb_190", name: "海螵蛸" }],
+            { id: "herb_190", name: "海螵蛸" },
+            { id: "herb_231", name: "藕节" }],
         "温经止血药": [
             { id: "herb_067", name: "艾叶" }
         ]
@@ -3823,9 +4713,11 @@ const herbCategories = {
             { id: "herb_140", name: "牛膝" },
             { id: "herb_141", name: "鸡血藤" }
         ,
-            { id: "herb_194", name: "泽兰" }],
+            { id: "herb_194", name: "泽兰" },
+            { id: "herb_232", name: "王不留行" }],
         "活血疗伤药": [
-            { id: "herb_075", name: "骨碎补" }
+            { id: "herb_075", name: "骨碎补" },
+            { id: "herb_233", name: "苏木" }
         ],
         "破血消癥药": [
             { id: "herb_076", name: "莪术" }
@@ -3840,7 +4732,8 @@ const herbCategories = {
             { id: "herb_143", name: "旋覆花" }
         ,
             { id: "herb_196", name: "白前" },
-            { id: "herb_197", name: "前胡" }],
+            { id: "herb_197", name: "前胡" },
+            { id: "herb_237", name: "白附子" }],
         "清化热痰药": [
             { id: "herb_080", name: "川贝母" },
             { id: "herb_081", name: "瓜蒌" },
@@ -3849,19 +4742,23 @@ const herbCategories = {
             { id: "herb_146", name: "浙贝母" }
         ,
             { id: "herb_198", name: "海蛤壳" },
-            { id: "herb_199", name: "昆布" }],
+            { id: "herb_199", name: "昆布" },
+            { id: "herb_234", name: "胖大海" }],
         "止咳平喘药": [
             { id: "herb_083", name: "苦杏仁" },
             { id: "herb_084", name: "百部" },
             { id: "herb_085", name: "桑白皮" },
             { id: "herb_144", name: "紫菀" },
-            { id: "herb_145", name: "款冬花" }
+            { id: "herb_145", name: "款冬花" },
+            { id: "herb_235", name: "紫苏子" },
+            { id: "herb_236", name: "枇杷叶" }
         ]
     },
     "安神药": {
         "重镇安神药": [
             { id: "herb_086", name: "朱砂" },
-            { id: "herb_087", name: "龙骨" }
+            { id: "herb_087", name: "龙骨" },
+            { id: "herb_238", name: "磁石" }
         ],
         "养心安神药": [
             { id: "herb_088", name: "酸枣仁" },
@@ -3869,27 +4766,32 @@ const herbCategories = {
             { id: "herb_090", name: "合欢皮" },
             { id: "herb_147", name: "柏子仁" }
         ,
-            { id: "herb_200", name: "首乌藤" }]
+            { id: "herb_200", name: "首乌藤" },
+            { id: "herb_239", name: "灵芝" }]
     },
     "平肝息风药": {
         "平抑肝阳药": [
             { id: "herb_091", name: "石决明" },
             { id: "herb_092", name: "牡蛎" },
-            { id: "herb_093", name: "代赭石" }
+            { id: "herb_093", name: "代赭石" },
+            { id: "herb_240", name: "珍珠母" },
+            { id: "herb_241", name: "刺蒺藜" }
         ],
         "息风止痉药": [
             { id: "herb_094", name: "天麻" },
             { id: "herb_095", name: "钩藤" },
             { id: "herb_096", name: "全蝎" },
             { id: "herb_148", name: "僵蚕" },
-            { id: "herb_149", name: "地龙" }
+            { id: "herb_149", name: "地龙" },
+            { id: "herb_242", name: "蜈蚣" }
         ]
     },
     "开窍药": {
         "开窍药": [
             { id: "herb_097", name: "麝香" },
             { id: "herb_098", name: "冰片" },
-            { id: "herb_150", name: "石菖蒲" }
+            { id: "herb_150", name: "石菖蒲" },
+            { id: "herb_243", name: "苏合香" }
         ]
     },
     "补虚药": {
@@ -3899,7 +4801,10 @@ const herbCategories = {
             { id: "herb_101", name: "白术" },
             { id: "herb_102", name: "甘草" },
             { id: "herb_151", name: "山药" },
-            { id: "herb_152", name: "白扁豆" }
+            { id: "herb_152", name: "白扁豆" },
+            { id: "herb_244", name: "党参" },
+            { id: "herb_245", name: "西洋参" },
+            { id: "herb_246", name: "大枣" }
         ],
         "补血药": [
             { id: "herb_103", name: "当归" },
@@ -3923,20 +4828,24 @@ const herbCategories = {
             { id: "herb_110", name: "鹿茸" },
             { id: "herb_111", name: "杜仲" },
             { id: "herb_112", name: "补骨脂" },
-            { id: "herb_160", name: "菟丝子" }
+            { id: "herb_160", name: "菟丝子" },
+            { id: "herb_247", name: "巴戟天" }
         ]
     },
     "收涩药": {
         "固表止汗药": [
-            { id: "herb_113", name: "麻黄根" }
+            { id: "herb_113", name: "麻黄根" },
+            { id: "herb_248", name: "浮小麦" }
         ],
         "涩肠止泻药": [
             { id: "herb_114", name: "五味子" },
-            { id: "herb_115", name: "乌梅" }
+            { id: "herb_115", name: "乌梅" },
+            { id: "herb_249", name: "诃子" }
         ],
         "固精缩尿止带药": [
             { id: "herb_116", name: "山茱萸" },
-            { id: "herb_117", name: "金樱子" }
+            { id: "herb_117", name: "金樱子" },
+            { id: "herb_250", name: "芡实" }
         ]
     },
     "涌吐药": {

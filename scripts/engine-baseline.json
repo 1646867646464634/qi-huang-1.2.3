@@ -1,0 +1,858 @@
+{
+  "savedAt": "2026-08-28T15:38:27.048Z",
+  "cases": [
+    {
+      "name": "风寒表实证",
+      "expect": "syn_001",
+      "input": {
+        "symptoms": [
+          "恶寒重",
+          "发热轻",
+          "无汗",
+          "头痛"
+        ]
+      },
+      "top8": [
+        {
+          "id": "syn_001",
+          "name": "风寒表实证",
+          "score": 40,
+          "matchScore": 95,
+          "confidence": null
+        },
+        {
+          "id": "syn_002",
+          "name": "风热表证",
+          "score": 10,
+          "matchScore": 24,
+          "confidence": null
+        },
+        {
+          "id": "syn_042",
+          "name": "风寒犯肺证",
+          "score": 10,
+          "matchScore": 24,
+          "confidence": null
+        },
+        {
+          "id": "syn_022",
+          "name": "肝阳上亢证",
+          "score": 8,
+          "matchScore": 19,
+          "confidence": null
+        },
+        {
+          "id": "syn_080",
+          "name": "太阳中风证",
+          "score": 8,
+          "matchScore": 19,
+          "confidence": null
+        },
+        {
+          "id": "syn_021",
+          "name": "肝火上炎证",
+          "score": 7,
+          "matchScore": 17,
+          "confidence": null
+        },
+        {
+          "id": "syn_071",
+          "name": "血虚证",
+          "score": 5,
+          "matchScore": 12,
+          "confidence": null
+        }
+      ],
+      "top1": "syn_001",
+      "top1Score": 40
+    },
+    {
+      "name": "风热表证",
+      "expect": "syn_002",
+      "input": {
+        "symptoms": [
+          "发热重",
+          "恶寒轻",
+          "有汗",
+          "咽痛"
+        ]
+      },
+      "top8": [
+        {
+          "id": "syn_002",
+          "name": "风热表证",
+          "score": 40,
+          "matchScore": 95,
+          "confidence": null
+        },
+        {
+          "id": "syn_003",
+          "name": "实热证",
+          "score": 7,
+          "matchScore": 17,
+          "confidence": null
+        }
+      ],
+      "top1": "syn_002",
+      "top1Score": 40
+    },
+    {
+      "name": "实热证",
+      "expect": "syn_003",
+      "input": {
+        "symptoms": [
+          "高热",
+          "烦躁",
+          "口渴喜冷饮",
+          "面红目赤"
+        ]
+      },
+      "top8": [
+        {
+          "id": "syn_003",
+          "name": "实热证",
+          "score": 39,
+          "matchScore": 95,
+          "confidence": null
+        },
+        {
+          "id": "syn_021",
+          "name": "肝火上炎证",
+          "score": 17,
+          "matchScore": 41,
+          "confidence": null
+        },
+        {
+          "id": "syn_022",
+          "name": "肝阳上亢证",
+          "score": 10,
+          "matchScore": 24,
+          "confidence": null
+        },
+        {
+          "id": "syn_043",
+          "name": "痰热壅肺证",
+          "score": 8,
+          "matchScore": 19,
+          "confidence": null
+        }
+      ],
+      "top1": "syn_003",
+      "top1Score": 39
+    },
+    {
+      "name": "虚寒证",
+      "expect": "syn_004",
+      "input": {
+        "symptoms": [
+          "畏寒怕冷",
+          "四肢不温",
+          "神疲乏力",
+          "小便清长"
+        ]
+      },
+      "top8": [
+        {
+          "id": "syn_004",
+          "name": "虚寒证",
+          "score": 40,
+          "matchScore": 95,
+          "confidence": null
+        },
+        {
+          "id": "syn_051",
+          "name": "肾阳虚证",
+          "score": 29,
+          "matchScore": 69,
+          "confidence": null
+        },
+        {
+          "id": "syn_030",
+          "name": "脾气虚证",
+          "score": 10,
+          "matchScore": 24,
+          "confidence": null
+        },
+        {
+          "id": "syn_040",
+          "name": "肺气虚证",
+          "score": 10,
+          "matchScore": 24,
+          "confidence": null
+        },
+        {
+          "id": "syn_053",
+          "name": "肾气不固证",
+          "score": 10,
+          "matchScore": 24,
+          "confidence": null
+        },
+        {
+          "id": "syn_070",
+          "name": "气虚证",
+          "score": 10,
+          "matchScore": 24,
+          "confidence": null
+        },
+        {
+          "id": "syn_073",
+          "name": "气血两虚证",
+          "score": 10,
+          "matchScore": 24,
+          "confidence": null
+        },
+        {
+          "id": "syn_104",
+          "name": "脾不统血证",
+          "score": 10,
+          "matchScore": 24,
+          "confidence": 50
+        }
+      ],
+      "top1": "syn_004",
+      "top1Score": 40
+    },
+    {
+      "name": "心血虚证",
+      "expect": "syn_010",
+      "input": {
+        "symptoms": [
+          "心悸",
+          "失眠",
+          "多梦",
+          "健忘"
+        ]
+      },
+      "top8": [
+        {
+          "id": "syn_010",
+          "name": "心血虚证",
+          "score": 40,
+          "matchScore": 95,
+          "confidence": null
+        },
+        {
+          "id": "syn_011",
+          "name": "心阴虚证",
+          "score": 28,
+          "matchScore": 67,
+          "confidence": null
+        },
+        {
+          "id": "syn_050",
+          "name": "肾阴虚证",
+          "score": 15,
+          "matchScore": 36,
+          "confidence": null
+        },
+        {
+          "id": "syn_021",
+          "name": "肝火上炎证",
+          "score": 7,
+          "matchScore": 17,
+          "confidence": null
+        },
+        {
+          "id": "syn_022",
+          "name": "肝阳上亢证",
+          "score": 7,
+          "matchScore": 17,
+          "confidence": null
+        },
+        {
+          "id": "syn_071",
+          "name": "血虚证",
+          "score": 7,
+          "matchScore": 17,
+          "confidence": null
+        },
+        {
+          "id": "syn_073",
+          "name": "气血两虚证",
+          "score": 7,
+          "matchScore": 17,
+          "confidence": null
+        }
+      ],
+      "top1": "syn_010",
+      "top1Score": 40
+    },
+    {
+      "name": "肝气郁结证",
+      "expect": "syn_020",
+      "input": {
+        "symptoms": [
+          "胸胁胀痛",
+          "情绪抑郁",
+          "善太息",
+          "乳房胀痛"
+        ]
+      },
+      "top8": [
+        {
+          "id": "syn_020",
+          "name": "肝气郁结证",
+          "score": 40,
+          "matchScore": 95,
+          "confidence": null
+        },
+        {
+          "id": "syn_081",
+          "name": "少阳病证",
+          "score": 8,
+          "matchScore": 19,
+          "confidence": null
+        }
+      ],
+      "top1": "syn_020",
+      "top1Score": 40
+    },
+    {
+      "name": "肝火上炎证",
+      "expect": "syn_021",
+      "input": {
+        "symptoms": [
+          "头痛眩晕",
+          "面红目赤",
+          "急躁易怒",
+          "口苦咽干"
+        ]
+      },
+      "top8": [
+        {
+          "id": "syn_021",
+          "name": "肝火上炎证",
+          "score": 40,
+          "matchScore": 95,
+          "confidence": null
+        },
+        {
+          "id": "syn_022",
+          "name": "肝阳上亢证",
+          "score": 19,
+          "matchScore": 45,
+          "confidence": null
+        },
+        {
+          "id": "syn_003",
+          "name": "实热证",
+          "score": 10,
+          "matchScore": 24,
+          "confidence": null
+        }
+      ],
+      "top1": "syn_021",
+      "top1Score": 40
+    },
+    {
+      "name": "脾气虚证",
+      "expect": "syn_030",
+      "input": {
+        "symptoms": [
+          "食欲不振",
+          "腹胀",
+          "食后胀甚",
+          "大便溏薄"
+        ]
+      },
+      "top8": [
+        {
+          "id": "syn_030",
+          "name": "脾气虚证",
+          "score": 40,
+          "matchScore": 95,
+          "confidence": null
+        },
+        {
+          "id": "syn_062",
+          "name": "食滞胃脘证",
+          "score": 17,
+          "matchScore": 40,
+          "confidence": null
+        },
+        {
+          "id": "syn_031",
+          "name": "脾阳虚证",
+          "score": 10,
+          "matchScore": 24,
+          "confidence": null
+        },
+        {
+          "id": "syn_004",
+          "name": "虚寒证",
+          "score": 8,
+          "matchScore": 19,
+          "confidence": null
+        },
+        {
+          "id": "syn_032",
+          "name": "寒湿困脾证",
+          "score": 8,
+          "matchScore": 19,
+          "confidence": null
+        },
+        {
+          "id": "syn_033",
+          "name": "脾胃湿热证",
+          "score": 8,
+          "matchScore": 19,
+          "confidence": null
+        },
+        {
+          "id": "syn_081",
+          "name": "少阳病证",
+          "score": 7,
+          "matchScore": 17,
+          "confidence": null
+        }
+      ],
+      "top1": "syn_030",
+      "top1Score": 40
+    },
+    {
+      "name": "肾阴虚证",
+      "expect": "syn_050",
+      "input": {
+        "symptoms": [
+          "腰膝酸软",
+          "眩晕耳鸣",
+          "失眠多梦",
+          "五心烦热"
+        ]
+      },
+      "top8": [
+        {
+          "id": "syn_050",
+          "name": "肾阴虚证",
+          "score": 40,
+          "matchScore": 95,
+          "confidence": null
+        },
+        {
+          "id": "syn_022",
+          "name": "肝阳上亢证",
+          "score": 20,
+          "matchScore": 48,
+          "confidence": null
+        },
+        {
+          "id": "syn_113",
+          "name": "肾阴阳两虚证",
+          "score": 20,
+          "matchScore": 48,
+          "confidence": 50
+        },
+        {
+          "id": "syn_011",
+          "name": "心阴虚证",
+          "score": 10,
+          "matchScore": 24,
+          "confidence": null
+        },
+        {
+          "id": "syn_021",
+          "name": "肝火上炎证",
+          "score": 10,
+          "matchScore": 24,
+          "confidence": null
+        },
+        {
+          "id": "syn_023",
+          "name": "肝血虚证",
+          "score": 10,
+          "matchScore": 24,
+          "confidence": null
+        },
+        {
+          "id": "syn_041",
+          "name": "肺阴虚证",
+          "score": 10,
+          "matchScore": 24,
+          "confidence": null
+        },
+        {
+          "id": "syn_051",
+          "name": "肾阳虚证",
+          "score": 10,
+          "matchScore": 24,
+          "confidence": null
+        }
+      ],
+      "top1": "syn_050",
+      "top1Score": 40
+    },
+    {
+      "name": "心脾两虚证",
+      "expect": "syn_116",
+      "input": {
+        "symptoms": [
+          "心悸怔忡",
+          "失眠多梦",
+          "食少腹胀",
+          "头晕健忘"
+        ]
+      },
+      "top8": [
+        {
+          "id": "syn_116",
+          "name": "心脾两虚证",
+          "score": 40,
+          "matchScore": 95,
+          "confidence": 100
+        },
+        {
+          "id": "syn_021",
+          "name": "肝火上炎证",
+          "score": 10,
+          "matchScore": 24,
+          "confidence": null
+        },
+        {
+          "id": "syn_022",
+          "name": "肝阳上亢证",
+          "score": 10,
+          "matchScore": 24,
+          "confidence": null
+        },
+        {
+          "id": "syn_023",
+          "name": "肝血虚证",
+          "score": 10,
+          "matchScore": 24,
+          "confidence": null
+        },
+        {
+          "id": "syn_050",
+          "name": "肾阴虚证",
+          "score": 10,
+          "matchScore": 24,
+          "confidence": null
+        },
+        {
+          "id": "syn_101",
+          "name": "心阳虚证",
+          "score": 10,
+          "matchScore": 24,
+          "confidence": 50
+        },
+        {
+          "id": "syn_127",
+          "name": "肺脾气虚证",
+          "score": 10,
+          "matchScore": 24,
+          "confidence": 50
+        }
+      ],
+      "top1": "syn_116",
+      "top1Score": 40
+    },
+    {
+      "name": "痰热扰心证（鉴别）",
+      "expect": "syn_102",
+      "input": {
+        "symptoms": [
+          "心悸",
+          "失眠",
+          "心烦",
+          "口苦",
+          "胸闷痰多"
+        ]
+      },
+      "top8": [
+        {
+          "id": "syn_011",
+          "name": "心阴虚证",
+          "score": 29,
+          "matchScore": 95,
+          "confidence": null
+        },
+        {
+          "id": "syn_010",
+          "name": "心血虚证",
+          "score": 20,
+          "matchScore": 66,
+          "confidence": null
+        },
+        {
+          "id": "syn_021",
+          "name": "肝火上炎证",
+          "score": 16,
+          "matchScore": 52,
+          "confidence": null
+        },
+        {
+          "id": "syn_024",
+          "name": "肝胆湿热证",
+          "score": 10,
+          "matchScore": 33,
+          "confidence": null
+        },
+        {
+          "id": "syn_081",
+          "name": "少阳病证",
+          "score": 10,
+          "matchScore": 33,
+          "confidence": null
+        },
+        {
+          "id": "syn_102",
+          "name": "痰热扰心证",
+          "score": 10,
+          "matchScore": 33,
+          "confidence": 67
+        },
+        {
+          "id": "syn_050",
+          "name": "肾阴虚证",
+          "score": 8,
+          "matchScore": 26,
+          "confidence": null
+        },
+        {
+          "id": "syn_022",
+          "name": "肝阳上亢证",
+          "score": 7,
+          "matchScore": 23,
+          "confidence": null
+        }
+      ],
+      "top1": "syn_011",
+      "top1Score": 29
+    },
+    {
+      "name": "肾阳虚证",
+      "expect": "syn_051",
+      "input": {
+        "symptoms": [
+          "腰膝酸冷",
+          "畏寒肢冷",
+          "夜尿频多",
+          "下肢尤甚"
+        ]
+      },
+      "top8": [
+        {
+          "id": "syn_051",
+          "name": "肾阳虚证",
+          "score": 40,
+          "matchScore": 95,
+          "confidence": null
+        },
+        {
+          "id": "syn_101",
+          "name": "心阳虚证",
+          "score": 10,
+          "matchScore": 24,
+          "confidence": 50
+        },
+        {
+          "id": "syn_113",
+          "name": "肾阴阳两虚证",
+          "score": 10,
+          "matchScore": 24,
+          "confidence": 50
+        },
+        {
+          "id": "syn_115",
+          "name": "脾肾阳虚证",
+          "score": 10,
+          "matchScore": 24,
+          "confidence": 50
+        },
+        {
+          "id": "syn_053",
+          "name": "肾气不固证",
+          "score": 9,
+          "matchScore": 21,
+          "confidence": null
+        },
+        {
+          "id": "syn_004",
+          "name": "虚寒证",
+          "score": 8,
+          "matchScore": 19,
+          "confidence": null
+        }
+      ],
+      "top1": "syn_051",
+      "top1Score": 40
+    },
+    {
+      "name": "食滞胃脘证",
+      "expect": "syn_062",
+      "input": {
+        "symptoms": [
+          "脘腹胀满疼痛",
+          "嗳腐吞酸",
+          "厌食呕恶",
+          "大便不爽"
+        ]
+      },
+      "top8": [
+        {
+          "id": "syn_062",
+          "name": "食滞胃脘证",
+          "score": 40,
+          "matchScore": 95,
+          "confidence": null
+        }
+      ],
+      "top1": "syn_062",
+      "top1Score": 40
+    },
+    {
+      "name": "风寒犯肺证",
+      "expect": "syn_042",
+      "input": {
+        "symptoms": [
+          "咳嗽声重",
+          "痰白清稀",
+          "鼻塞流清涕",
+          "恶寒发热"
+        ]
+      },
+      "top8": [
+        {
+          "id": "syn_042",
+          "name": "风寒犯肺证",
+          "score": 40,
+          "matchScore": 95,
+          "confidence": null
+        },
+        {
+          "id": "syn_001",
+          "name": "风寒表实证",
+          "score": 10,
+          "matchScore": 24,
+          "confidence": null
+        }
+      ],
+      "top1": "syn_042",
+      "top1Score": 40
+    },
+    {
+      "name": "湿热下注证",
+      "expect": "syn_129",
+      "input": {
+        "symptoms": [
+          "下肢红肿热痛",
+          "局部灼热",
+          "皮肤湿疹",
+          "口苦"
+        ]
+      },
+      "top8": [
+        {
+          "id": "syn_129",
+          "name": "湿热下注证",
+          "score": 30,
+          "matchScore": 95,
+          "confidence": null
+        },
+        {
+          "id": "syn_024",
+          "name": "肝胆湿热证",
+          "score": 10,
+          "matchScore": 32,
+          "confidence": null
+        },
+        {
+          "id": "syn_081",
+          "name": "少阳病证",
+          "score": 10,
+          "matchScore": 32,
+          "confidence": null
+        },
+        {
+          "id": "syn_021",
+          "name": "肝火上炎证",
+          "score": 9,
+          "matchScore": 29,
+          "confidence": null
+        }
+      ],
+      "top1": "syn_129",
+      "top1Score": 30
+    },
+    {
+      "name": "四诊合参·阴虚心神",
+      "expect": "syn_011",
+      "input": {
+        "symptoms": [
+          "心悸",
+          "失眠",
+          "五心烦热"
+        ],
+        "tongue": {
+          "tongueColor": [
+            "红"
+          ],
+          "coatingQuality": [
+            "燥"
+          ]
+        },
+        "constitution": "阴虚质"
+      },
+      "top8": [
+        {
+          "id": "syn_011",
+          "name": "心阴虚证",
+          "score": 48,
+          "matchScore": 95,
+          "confidence": null
+        },
+        {
+          "id": "syn_050",
+          "name": "肾阴虚证",
+          "score": 37,
+          "matchScore": 73,
+          "confidence": null
+        },
+        {
+          "id": "syn_010",
+          "name": "心血虚证",
+          "score": 35,
+          "matchScore": 69,
+          "confidence": null
+        },
+        {
+          "id": "syn_041",
+          "name": "肺阴虚证",
+          "score": 29,
+          "matchScore": 57,
+          "confidence": null
+        },
+        {
+          "id": "syn_075",
+          "name": "津液亏虚证",
+          "score": 27,
+          "matchScore": 53,
+          "confidence": null
+        },
+        {
+          "id": "syn_022",
+          "name": "肝阳上亢证",
+          "score": 26,
+          "matchScore": 51,
+          "confidence": null
+        },
+        {
+          "id": "syn_071",
+          "name": "血虚证",
+          "score": 22,
+          "matchScore": 44,
+          "confidence": null
+        },
+        {
+          "id": "syn_060",
+          "name": "胃阴虚证",
+          "score": 19,
+          "matchScore": 38,
+          "confidence": null
+        }
+      ],
+      "top1": "syn_011",
+      "top1Score": 48
+    }
+  ]
+}
