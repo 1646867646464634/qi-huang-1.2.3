@@ -321,6 +321,44 @@ const symptomSyndromeMapping = {
 })();
 
 /**
+ * 症状同义词归一表（口语/俗称 → 症状映射规范主键，单向映射避免歧义）
+ * 目标主键必须存在于 symptomSyndromeMapping；validate-data.js 第 15 项会校验。
+ * 引擎在症状层查找映射前先经 normalizeSymptom 归一，未收录词原样返回。
+ */
+const symptomSynonyms = {
+    "倦怠": "乏力", "浑身没劲": "乏力", "没有力气": "乏力",
+    "周身酸痛": "身痛",
+    "大便稀": "大便溏薄", "大便不成形": "便溏", "拉肚子": "腹泻", "排便困难": "大便秘结",
+    "睡不着": "失眠", "睡眠差": "失眠", "多梦易醒": "失眠多梦",
+    "心慌": "心悸",
+    "胸口闷": "胸闷", "胸口痛": "胸痛", "胁下胀": "胁肋胀痛",
+    "胃胀": "脘腹胀满", "肚子胀": "腹胀",
+    "没胃口": "食欲不振", "吃不下饭": "食欲不振",
+    "怕冷": "畏寒", "手脚冰凉": "四肢不温", "手脚发凉": "四肢不温",
+    "出虚汗": "自汗", "夜里出汗": "盗汗", "午后潮热": "潮热盗汗",
+    "手心发热": "五心烦热", "口干舌燥": "口燥咽干", "嗓子干": "咽干",
+    "尿黄": "小便黄赤", "小便发黄": "小便黄赤", "尿频": "小便频数而清", "夜尿多": "夜尿频多",
+    "腰酸": "腰膝酸软", "腰酸腿软": "腰膝酸软",
+    "眼花": "头晕眼花", "站起来头晕": "头晕目眩", "头昏沉": "头晕", "耳朵响": "耳鸣",
+    "生闷气": "情绪抑郁", "爱叹气": "善太息", "打饱嗝": "嗳气", "反酸": "吞酸", "烧心": "胃脘灼痛",
+    "恶心想吐": "恶心", "想吐": "恶心",
+    "提不起精神": "神疲乏力", "手脚麻木": "手足发麻", "身体沉重": "肢体困重",
+    "痰多": "咳嗽痰多", "痰黄": "痰黄稠", "痰白": "痰白清稀", "流鼻涕": "流清涕",
+    "经期小腹痛": "痛经", "经量少": "月经量少",
+    "白带多": "带下量多", "白带发黄": "带下黄臭"
+};
+
+/**
+ * 症状同义词归一：返回规范主键；未收录词原样返回
+ * @param {string} sym - 用户输入/选择的症状词
+ * @returns {string} 归一后的症状词
+ */
+function normalizeSymptom(sym) {
+    if (!sym) return sym;
+    return symptomSynonyms[sym] || sym;
+}
+
+/**
  * 根据症状关键词搜索证型
  * @param {string} query - 搜索关键词
  * @returns {Array} 匹配的证型列表（按匹配分排序）
@@ -405,10 +443,12 @@ function multiSymptomDiagnosis(symptoms) {
 // 挂载到全局
 if (typeof window !== 'undefined') {
     window.symptomSyndromeMapping = symptomSyndromeMapping;
+    window.symptomSynonyms = symptomSynonyms;
+    window.normalizeSymptom = normalizeSymptom;
     window.searchSyndromes = searchSyndromes;
     window.multiSymptomDiagnosis = multiSymptomDiagnosis;
 }
 // Node 导出（供校验/测试脚本使用）
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { symptomSyndromeMapping, searchSyndromes, multiSymptomDiagnosis };
+    module.exports = { symptomSyndromeMapping, symptomSynonyms, normalizeSymptom, searchSyndromes, multiSymptomDiagnosis };
 }
