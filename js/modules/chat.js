@@ -71,10 +71,10 @@ class ChatModule {
                 </style>
 
                 <div class="page-header" style="margin-bottom:var(--space-sm);">
-                    <h2 class="page-title">
+                    <h1 class="page-title">
                         <span class="seal-stamp">问</span>
                         AI 在线问诊
-                    </h2>
+                    </h1>
                     <p class="page-subtitle">与 GLM 智能问诊助手对话，获取中医健康科普与调理参考</p>
                 </div>
 

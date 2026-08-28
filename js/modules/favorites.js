@@ -8,10 +8,10 @@ class FavoritesModule {
         container.innerHTML = `
             <div class="module-page favorites-page">
                 <div class="page-header">
-                    <h2 class="page-title">
+                    <h1 class="page-title">
                         <span class="seal-stamp">藏</span>
                         收藏夹与浏览历史
-                    </h2>
+                    </h1>
                     <p class="page-subtitle">收藏的重点知识与最近浏览记录，一键回到详情</p>
                 </div>
 

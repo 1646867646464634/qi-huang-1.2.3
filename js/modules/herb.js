@@ -14,16 +14,17 @@ class HerbModule {
         container.innerHTML = `
             <div class="module-page herb-page">
                 <div class="page-header">
-                    <h2 class="page-title">
+                    <h1 class="page-title">
                         <span class="seal-stamp">药</span>
                         中药百科
-                    </h2>
+                    </h1>
                     <p class="page-subtitle">收录${herbsDatabase.length}味常用中药材，按中医传统分类浏览</p>
                 </div>
 
                 <div class="search-wrapper">
                     <span class="search-icon">🔍</span>
                     <input type="text" class="search-input" id="herbSearchInput"
+                           aria-label="中药搜索"
                            placeholder="搜索中药名称、拼音、功效、关键词..."
                            value="${this.escapeHtml(this.searchQuery)}">
                 </div>

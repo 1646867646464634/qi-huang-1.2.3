@@ -19,10 +19,10 @@ class FormulaModule {
         container.innerHTML = `
             <div class="module-page formula-page">
                 <div class="page-header">
-                    <h2 class="page-title">
+                    <h1 class="page-title">
                         <span class="seal-stamp">方</span>
                         方剂推荐
-                    </h2>
+                    </h1>
                     <p class="page-subtitle">收录${formulasDatabase.length}首经典方剂，覆盖${Object.keys(formulaCategories).length}大类方剂学体系</p>
                 </div>
 
@@ -31,6 +31,7 @@ class FormulaModule {
                 <div class="search-wrapper">
                     <span class="search-icon">🔍</span>
                     <input type="text" class="search-input" id="formulaSearchInput"
+                           aria-label="方剂搜索"
                            placeholder="搜索方剂名称、功效、主治、关键词..."
                            value="${this.escapeHtml(this.searchQuery)}">
                 </div>

@@ -44,18 +44,18 @@ class ProfileModule {
         container.innerHTML = `
             <div class="module-page profile-page">
                 <div class="page-header">
-                    <h2 class="page-title">
+                    <h1 class="page-title">
                         <span class="seal-stamp">像</span>
                         我的画像
-                    </h2>
+                    </h1>
                     <p class="page-subtitle">完善个人背景，获得更贴合自身体质的调理与用药参考（数据仅存本机）</p>
                 </div>
 
                 <div class="card" style="margin-bottom: var(--space-lg);">
                     <h4 style="font-family:var(--font-heading);color:var(--color-vermillion-dark);margin-bottom: var(--space-md);">基本信息</h4>
 
-                    <div class="form-field-group" style="margin-bottom: var(--space-lg);">
-                        <label class="form-field-label">年龄段</label>
+                    <fieldset class="form-field-group" style="border:none;padding:0;margin:0 0 var(--space-lg);min-width:0;">
+                        <legend class="form-field-label">年龄段</legend>
                         <div class="form-option-grid" style="display:flex;flex-wrap:wrap;gap:8px;">
                             ${ageOptions.map(a => `
                                 <label class="form-option-chip" style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border:1px solid var(--color-line,#e2d9cc);border-radius:20px;cursor:pointer;font-size:var(--text-sm);">
@@ -64,10 +64,10 @@ class ProfileModule {
                                 </label>
                             `).join('')}
                         </div>
-                    </div>
+                    </fieldset>
 
-                    <div class="form-field-group" style="margin-bottom: var(--space-lg);">
-                        <label class="form-field-label">性别</label>
+                    <fieldset class="form-field-group" style="border:none;padding:0;margin:0 0 var(--space-lg);min-width:0;">
+                        <legend class="form-field-label">性别</legend>
                         <div class="form-option-grid" style="display:flex;flex-wrap:wrap;gap:8px;">
                             ${['男', '女', '其他'].map(g => `
                                 <label class="form-option-chip" style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border:1px solid var(--color-line,#e2d9cc);border-radius:20px;cursor:pointer;font-size:var(--text-sm);">
@@ -76,18 +76,18 @@ class ProfileModule {
                                 </label>
                             `).join('')}
                         </div>
-                    </div>
+                    </fieldset>
 
                     <div class="form-field-group" style="margin-bottom: var(--space-lg);">
-                        <label class="form-field-label">所在地区</label>
-                        <select class="search-input" name="pfRegion" style="max-width:300px;">
+                        <label class="form-field-label" for="pfRegion">所在地区</label>
+                        <select class="search-input" id="pfRegion" name="pfRegion" style="max-width:300px;">
                             <option value="">— 请选择 —</option>
                             ${regionOptions.map(r => `<option value="${r}" ${p.region === r ? 'selected' : ''}>${r}</option>`).join('')}
                         </select>
                     </div>
 
-                    <div class="form-field-group" style="margin-bottom: var(--space-lg);">
-                        <label class="form-field-label">孕产状态</label>
+                    <fieldset class="form-field-group" style="border:none;padding:0;margin:0 0 var(--space-lg);min-width:0;">
+                        <legend class="form-field-label">孕产状态</legend>
                         <div class="form-option-grid" style="display:flex;flex-wrap:wrap;gap:8px;">
                             ${pregOptions.map(o => `
                                 <label class="form-option-chip" style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border:1px solid var(--color-line,#e2d9cc);border-radius:20px;cursor:pointer;font-size:var(--text-sm);">
@@ -96,7 +96,7 @@ class ProfileModule {
                                 </label>
                             `).join('')}
                         </div>
-                    </div>
+                    </fieldset>
                 </div>
 
                 <div class="card" style="margin-bottom: var(--space-lg);">

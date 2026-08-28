@@ -155,7 +155,7 @@
             return `
                 <div class="contact-section">
                     <span class="contact-note">注 意</span>
-                    <h3 class="contact-title">联系我们</h3>
+                    <h2 class="contact-title">联系我们</h2>
                     <p style="font-size: var(--text-sm); color: var(--color-ink-light);">联系方式更新中，敬请期待</p>
                     <div class="contact-divider"></div>
                     <p style="font-size: var(--text-xs); color: var(--color-ink-pale);">
@@ -168,7 +168,7 @@
         return `
             <div class="contact-section">
                 <span class="contact-note">注 意</span>
-                <h3 class="contact-title">联系我们</h3>
+                <h2 class="contact-title">联系我们</h2>
                 ${!isPlaceholder(info.phone) ? `<div class="contact-item"><span class="icon">📱</span><span>电话：${info.phone}</span></div>` : ''}
                 ${!isPlaceholder(info.wechat) ? `<div class="contact-item"><span class="icon">💬</span><span>微信：${info.wechat}</span></div>` : ''}
                 ${!isPlaceholder(info.email) ? `<div class="contact-item"><span class="icon">📧</span><span>邮箱：${info.email}</span></div>` : ''}
@@ -240,7 +240,7 @@
 
                     ${guidance ? `
                         <div class="card" style="max-width:760px;margin:0 auto var(--space-2xl);padding:var(--space-md) var(--space-lg);background:rgba(184,134,11,0.06);border:1px solid rgba(184,134,11,0.2);text-align:left;">
-                            <h3 style="font-family:var(--font-heading);color:var(--color-bronze-dark);margin:0 0 var(--space-xs) 0;">💡 我该从哪开始</h3>
+                            <h2 style="font-family:var(--font-heading);color:var(--color-bronze-dark);margin:0 0 var(--space-xs) 0;">💡 我该从哪开始</h2>
                             <p style="font-size:var(--text-sm);color:var(--color-ink);line-height:2;margin:0;">${guidance}</p>
                         </div>
                     ` : ''}
@@ -249,7 +249,7 @@
                         ${cards.map(card => `
                             <a href="#/${card.path}" class="welcome-card ${card.top ? 'welcome-card-top' : ''}">
                                 <div class="welcome-card-icon">${card.icon}</div>
-                                <h3 class="welcome-card-title">${card.title}</h3>
+                                <h2 class="welcome-card-title">${card.title}</h2>
                                 <p class="welcome-card-desc">${card.desc}</p>
                                 ${card.top ? '<p style="font-size:var(--text-xs);color:var(--color-vermillion);margin-top:8px;font-weight:700;">推荐优先 →</p>' : ''}
                             </a>

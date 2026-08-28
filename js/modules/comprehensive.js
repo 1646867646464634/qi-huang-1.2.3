@@ -21,10 +21,10 @@ class ComprehensiveModule {
         container.innerHTML = `
             <div class="module-page comprehensive-page">
                 <div class="page-header">
-                    <h2 class="page-title">
+                    <h1 class="page-title">
                         <span class="seal-stamp">合</span>
                         四诊合参综合辨证
-                    </h2>
+                    </h1>
                     <p class="page-subtitle">症状 · 舌象 · 面象 · 体质 四步合参，本地规则引擎推演辨证参考</p>
                 </div>
 
@@ -58,11 +58,11 @@ class ComprehensiveModule {
         const selected = this.selection.symptoms;
         content.innerHTML = `
             <div class="card" style="margin-bottom: var(--space-lg);">
-                <h4 style="font-family:var(--font-heading);color:var(--color-vermillion-dark);margin-bottom: var(--space-sm);">
+                <h2 style="font-family:var(--font-heading);color:var(--color-vermillion-dark);margin-bottom: var(--space-sm);">
                     选择主要不适症状（最多 10 个）
-                </h4>
+                </h2>
                 <div class="qc-search-row" style="margin-bottom: var(--space-md);">
-                    <input type="text" id="compSymInput" class="qc-search-input" placeholder="🔍 输入并选择症状（如：头痛、失眠、乏力…）" autocomplete="off">
+                    <input type="text" id="compSymInput" class="qc-search-input" aria-label="症状输入选择" placeholder="🔍 输入并选择症状（如：头痛、失眠、乏力…）" autocomplete="off">
                     <div id="compSymAutocomplete" class="autocomplete-dropdown" style="display:none;"></div>
                 </div>
                 <div id="compSymTags" class="selected-symptoms-tags" style="display:${selected.length ? 'flex' : 'none'};"></div>
@@ -178,9 +178,9 @@ class ComprehensiveModule {
     renderRuleForm(content, container, rules, selKey, stepLabel, nextStep) {
         content.innerHTML = `
             <div class="card" style="margin-bottom: var(--space-lg);">
-                <h4 style="font-family:var(--font-heading);color:var(--color-vermillion-dark);margin-bottom: var(--space-md);">
+                <h2 style="font-family:var(--font-heading);color:var(--color-vermillion-dark);margin-bottom: var(--space-md);">
                     请选择${stepLabel}特征
-                </h4>
+                </h2>
                 ${rules.fields.map(field => `
                     <div class="form-field-group" style="margin-bottom: var(--space-lg);">
                         <label class="form-field-label" style="font-weight:600;display:block;margin-bottom:8px;">
@@ -258,9 +258,9 @@ class ComprehensiveModule {
 
         content.innerHTML = `
             <div class="card" style="margin-bottom: var(--space-lg);">
-                <h4 style="font-family:var(--font-heading);color:var(--color-vermillion-dark);margin-bottom: var(--space-sm);">
+                <h2 style="font-family:var(--font-heading);color:var(--color-vermillion-dark);margin-bottom: var(--space-sm);">
                     选择或确认您的体质
-                </h4>
+                </h2>
                 <p style="font-size:var(--text-sm);color:var(--color-ink-light);margin-bottom: var(--space-md);">
                     ${savedType ? `您已做过体质测评，当前为「${savedType}」，可直接使用，也可修改。` : '如未做过体质测评，可在「体质辨识」中测评；此处可选填。'}
                 </p>
@@ -314,7 +314,7 @@ class ComprehensiveModule {
                 content.innerHTML = `
                     <div class="empty-state card" style="text-align:center;padding: var(--space-2xl) var(--space-lg);">
                         <div style="font-size:48px;margin-bottom:var(--space-md);opacity:.3;">🩺</div>
-                        <h4 style="color:var(--color-ink-light);margin-bottom:var(--space-sm);">辨证引擎运行异常</h4>
+                        <h3 style="color:var(--color-ink-light);margin-bottom:var(--space-sm);">辨证引擎运行异常</h3>
                         <p style="color:var(--color-ink-pale);font-size:var(--text-sm);">数据加载可能不完整，请刷新页面重试。</p>
                         <button class="btn btn-outline" id="compRetry" style="margin-top:var(--space-md);">返回修改</button>
                     </div>
@@ -331,7 +331,7 @@ class ComprehensiveModule {
             content.innerHTML = `
                 <div class="empty-state card" style="text-align:center;padding: var(--space-2xl) var(--space-lg);">
                     <div style="font-size:48px;margin-bottom:var(--space-md);opacity:.3;">🩺</div>
-                    <h4 style="color:var(--color-ink-light);margin-bottom:var(--space-sm);">未能匹配到明确的证型</h4>
+                    <h3 style="color:var(--color-ink-light);margin-bottom:var(--space-sm);">未能匹配到明确的证型</h3>
                     <p style="color:var(--color-ink-pale);font-size:var(--text-sm);">请返回补充更多症状或舌面象信息，或咨询专业中医师。</p>
                     <button class="btn btn-outline" id="compRetry" style="margin-top:var(--space-md);">返回修改</button>
                 </div>
@@ -346,7 +346,7 @@ class ComprehensiveModule {
             ${dangerHTML}
             <div class="card" style="margin-bottom: var(--space-lg);">
                 <div class="page-header" style="margin-bottom: var(--space-sm);">
-                    <h4 style="font-family:var(--font-heading);color:var(--color-vermillion-dark);">综合辨证报告</h4>
+                    <h2 style="font-family:var(--font-heading);color:var(--color-vermillion-dark);">综合辨证报告</h2>
                 </div>
                 <p style="font-size:var(--text-sm);color:var(--color-ink-light);margin-bottom:var(--space-sm);">
                     输入：症状「${sel.symptoms.join('、') || '—'}」${sel.tongue && Object.keys(sel.tongue).length ? '；舌象已选' : ''}${sel.face && Object.keys(sel.face).length ? '；面象已选' : ''}${sel.constitution ? `；体质「${sel.constitution}」` : ''}
@@ -378,7 +378,7 @@ class ComprehensiveModule {
                 `).join('')}
                 ${primaryMeta ? `
                     <div class="card" style="margin-top:var(--space-md);padding:var(--space-md);background:rgba(91,139,59,.06);">
-                        <h5 style="font-family:var(--font-heading);color:var(--color-success);margin-bottom:var(--space-xs);">${sel.constitution}调理建议</h5>
+                        <h3 style="font-family:var(--font-heading);color:var(--color-success);margin-bottom:var(--space-xs);">${sel.constitution}调理建议</h3>
                         <p style="font-size:var(--text-sm);color:var(--color-ink-light);">${primaryMeta.description || ''}</p>
                         <p style="font-size:var(--text-sm);color:var(--color-ink-light);margin-top:6px;">饮食：${primaryMeta.dietAdvice || ''}</p>
                     </div>

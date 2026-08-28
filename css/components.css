@@ -206,7 +206,7 @@
 
 .tag-hot    { background: rgba(192, 64, 64, 0.1);    color: #C04040; }
 .tag-cold   { background: rgba(59, 94, 139, 0.1);    color: #3B5E8B; }
-.tag-warm   { background: rgba(184, 134, 11, 0.1);   color: #B8860B; }
+.tag-warm   { background: rgba(184, 134, 11, 0.1);   color: var(--color-bronze-text); }
 .tag-neutral{ background: rgba(44, 44, 44, 0.08);    color: #666666; }
 .tag-cool   { background: rgba(59, 94, 139, 0.08);   color: #5B7EB8; }
 .tag-plain  { background: rgba(44, 44, 44, 0.06);    color: #888888; }
@@ -515,3 +515,10 @@
     color: var(--color-vermillion-dark, #8E2A2A);
     font-weight: 600;
 }
+
+/* ---------- 触控/点击目标 ≥44px（WCAG 2.5.5 / Apple HCI） ---------- */
+.btn { min-height: 44px; }
+.btn-sm { min-height: 44px; padding-top: 10px; padding-bottom: 10px; }
+.category-tab { min-height: 44px; padding-top: 10px; padding-bottom: 10px; }
+.option-btn { min-height: 44px; }
+.form-option-chip { min-height: 44px; }

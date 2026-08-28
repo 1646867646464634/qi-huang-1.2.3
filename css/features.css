@@ -506,3 +506,10 @@ body.ui-collapsed .site-header {
     .site-nav { max-height: none; }
     body.ui-collapsed .site-header { padding-left: var(--space-md); padding-right: var(--space-md); }
 }
+
+/* ---------- 触控/点击目标 ≥44px ---------- */
+.qc-group-chips .symptom-chip { min-height: 44px; display: inline-flex; align-items: center; }
+.detail-modal-close { min-width: 44px; min-height: 44px; }
+.fav-section-tab { min-height: 44px; }
+.chat-chip { min-height: 44px; }
+.quick-chip { min-height: 44px; }

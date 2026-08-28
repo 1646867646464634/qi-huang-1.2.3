@@ -81,10 +81,10 @@ class RecordsModule {
         container.innerHTML = `
             <div class="module-page records-page">
                 <div class="page-header">
-                    <h2 class="page-title">
+                    <h1 class="page-title">
                         <span class="seal-stamp">录</span>
                         诊断记录
-                    </h2>
+                    </h1>
                     <p class="page-subtitle">历次辨证结果留存 · 对比复盘 · 导出健康档案</p>
                 </div>
 

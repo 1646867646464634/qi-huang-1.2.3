@@ -41,10 +41,10 @@ class ConstitutionModule {
         container.innerHTML = `
             <div class="module-page constitution-page">
                 <div class="page-header">
-                    <h2 class="page-title">
+                    <h1 class="page-title">
                         <span class="seal-stamp">辨</span>
                         中医体质辨识
-                    </h2>
+                    </h1>
                     <p class="page-subtitle">基于中华中医药学会《中医体质分类与判定》标准</p>
                 </div>
                 
@@ -256,10 +256,10 @@ class ConstitutionModule {
         container.innerHTML = `
             <div class="module-page constitution-result-page">
                 <div class="page-header">
-                    <h2 class="page-title">
+                    <h1 class="page-title">
                         <span class="seal-stamp">果</span>
                         体质辨识结果
-                    </h2>
+                    </h1>
                     <p class="page-subtitle">基于中华中医药学会标准量表计算</p>
                 </div>
                 
@@ -282,7 +282,7 @@ class ConstitutionModule {
                     ` : ''}
                     ${tendencyTypes.length > 0 ? `
                         <div style="margin-top: var(--space-sm);">
-                            <span style="color: var(--color-bronze); font-weight: 600;">倾向体质：</span>
+                            <span style="color: var(--color-bronze-text); font-weight: 600;">倾向体质：</span>
                             <span style="color: var(--color-ink-light);">${tendencyTypes.join('、')}</span>
                         </div>
                     ` : ''}

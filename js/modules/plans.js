@@ -51,10 +51,10 @@ class PlansModule {
         container.innerHTML = `
             <div class="module-page plans-page">
                 <div class="page-header">
-                    <h2 class="page-title">
+                    <h1 class="page-title">
                         <span class="seal-stamp">案</span>
                         常用方案
-                    </h2>
+                    </h1>
                     <p class="page-subtitle">保存体质调理、辨证结果与推荐方剂，随时回看与导出</p>
                 </div>
                 <div id="plansContent"></div>
@@ -137,11 +137,11 @@ class PlansModule {
             <div class="card" style="max-width:560px;margin:0 auto;padding:var(--space-lg);">
                 <h3 style="font-family:var(--font-heading);color:var(--color-vermillion-dark);margin-bottom:var(--space-md);">编辑方案</h3>
                 <div style="margin-bottom:var(--space-md);">
-                    <label class="form-field-label" style="display:block;margin-bottom:6px;">标题</label>
+                    <label class="form-field-label" for="planTitle" style="display:block;margin-bottom:6px;">标题</label>
                     <input type="text" class="search-input" id="planTitle" value="${this._esc(plan.title)}" style="width:100%;">
                 </div>
                 <div style="margin-bottom:var(--space-md);">
-                    <label class="form-field-label" style="display:block;margin-bottom:6px;">备注</label>
+                    <label class="form-field-label" for="planNote" style="display:block;margin-bottom:6px;">备注</label>
                     <textarea class="search-input" id="planNote" rows="3" style="width:100%;resize:vertical;">${this._esc(plan.note)}</textarea>
                 </div>
                 <div style="display:flex;gap:10px;">

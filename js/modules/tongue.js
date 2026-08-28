@@ -13,10 +13,10 @@ class TongueModule {
         container.innerHTML = `
             <div class="module-page tongue-page">
                 <div class="page-header">
-                    <h2 class="page-title">
+                    <h1 class="page-title">
                         <span class="seal-stamp">舌</span>
                         舌诊问诊分析
-                    </h2>
+                    </h1>
                     <p class="page-subtitle">按望诊要素逐项选择舌象特征，系统给出辨证参考（教学用途，可离线使用）</p>
                 </div>
 

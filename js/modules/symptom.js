@@ -41,10 +41,10 @@ class SymptomModule {
         container.innerHTML = `
             <div class="module-page symptom-page">
                 <div class="page-header">
-                    <h2 class="page-title">
+                    <h1 class="page-title">
                         <span class="seal-stamp">证</span>
                         症状辨证分析
-                    </h2>
+                    </h1>
                     <p class="page-subtitle">基于症状-证型映射知识库，本地规则引擎推演辨证参考</p>
                 </div>
 
@@ -62,6 +62,7 @@ class SymptomModule {
                     </div>
                     <div class="qc-search-row">
                         <input type="text" id="qcSearchInput" class="qc-search-input"
+                               aria-label="症状分类筛选"
                                placeholder="🔍 在分类树中筛选症状（如：头痛、苔黄）"
                                value="${this.escapeAttr(this.qcFilter)}">
                     </div>
@@ -77,6 +78,7 @@ class SymptomModule {
                                 type="text"
                                 id="symptomSearchInput"
                                 class="search-input"
+                                aria-label="症状搜索"
                                 placeholder="请输入症状关键词（如：头痛、失眠、乏力...）"
                                 value="${this.escapeAttr(initialQuery)}"
                                 autocomplete="off"
@@ -713,7 +715,7 @@ class SymptomModule {
                     : 0;
 
                 const scoreColor = matchPercentage >= 80 ? 'var(--color-vermillion)'
-                    : matchPercentage >= 60 ? 'var(--color-bronze)'
+                    : matchPercentage >= 60 ? 'var(--color-bronze-text)'
                     : 'var(--color-ink-light)';
 
                 return `

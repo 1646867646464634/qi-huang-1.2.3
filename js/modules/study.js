@@ -24,10 +24,10 @@ class StudyModule {
         container.innerHTML = `
             <div class="module-page study-page">
                 <div class="page-header">
-                    <h2 class="page-title">
+                    <h1 class="page-title">
                         <span class="seal-stamp">学</span>
                         学习中心
-                    </h2>
+                    </h1>
                     <p class="page-subtitle">记忆卡片 · 四科自测 · 错题沉淀 —— 数据自动从知识库生成</p>
                 </div>
 
