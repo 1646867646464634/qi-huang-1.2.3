@@ -26,6 +26,7 @@ const { symptomSyndromeMapping } = require(path.join(base, 'symptom-mapping.js')
 // 合并自动生成的症状映射扩展（浏览器端由 symptom-mapping.js 内 Object.assign 完成，此处手动合并保持一致）
 const { symptomMappingExtension } = require(path.join(base, 'symptom-mapping-extension.js'));
 Object.assign(symptomSyndromeMapping, symptomMappingExtension);
+const { FaceRules } = require(path.join(base, 'face-rules.js'));
 
 let errors = [];
 let warnings = [];
@@ -179,6 +180,42 @@ syndromesDatabase.forEach(s => {
 herbsDatabase.forEach(h => {
     if (h.toxicNote && typeof h.toxicNote === 'object' && !h.toxicNote.limit) {
         warnings.push(`中药「${h.name}」toxicNote 缺少 limit 字段`);
+    }
+});
+
+// ---------- 13. 证型 keySymptoms 全覆盖（errors 级） ----------
+syndromesDatabase.forEach(s => {
+    if (!(s.keySymptoms || []).length) {
+        errors.push(`证型「${s.name}」缺少 keySymptoms（辨证必见主症未配置）`);
+    } else if (s.keySymptoms.length > 4) {
+        warnings.push(`证型「${s.name}」keySymptoms 超过 4 条，建议精简主症`);
+    }
+});
+
+// ---------- 14. 证型 faceFeatures 取值合法性（warnings 级） ----------
+const faceKeywordSet = new Set();
+FaceRules.fields.forEach(f =>
+    f.options.forEach(o => (o.keywords || []).forEach(k => faceKeywordSet.add(k)))
+);
+syndromesDatabase.forEach(s => {
+    (s.faceFeatures || []).forEach(v => {
+        if (!faceKeywordSet.has(v)) warnings.push(`证型「${s.name}」faceFeatures「${v}」不在 FaceRules keywords 词表中`);
+    });
+});
+
+// ---------- 15. 同义词表取值合法性（warnings 级） ----------
+const synonymTable = (typeof symptomSynonyms !== 'undefined' && symptomSynonyms) ||
+    (typeof globalThis !== 'undefined' && globalThis.symptomSynonyms) || null;
+if (synonymTable) {
+    Object.entries(synonymTable).forEach(([alias, canonical]) => {
+        if (!mappedSymptomSet.has(canonical)) warnings.push(`同义词表「${alias} → ${canonical}」的目标主键不在症状映射中`);
+    });
+}
+
+// ---------- 16. 方剂 modifications 条数（warnings 级，针对新方剂） ----------
+formulasDatabase.forEach(f => {
+    if (Number(f.id.slice(8)) > 130 && (f.modifications || []).length < 2) {
+        warnings.push(`方剂「${f.name}」modifications 少于 2 条加减变化`);
     }
 });
 

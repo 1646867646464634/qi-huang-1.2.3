@@ -1344,6 +1344,112 @@ const syndromesDatabase = [
 if (typeof window !== 'undefined') {
     window.syndromesDatabase = syndromesDatabase;
 }
+
+// ============================================================================
+// 数据补齐批次 v3 — 证型辨证机制全覆盖补丁
+// 为全部 76 证型补齐 keySymptoms（必见主症）/ contradictions（矛盾互斥），
+// 并为面色有辨证意义的证型补充 faceFeatures（取值须来自 FaceRules keywords 词表），
+// 特禀质关联、新增方剂引用（数据扩充批次 v3 的 formula_131~170）。
+// 采用加载后合并方式，不改动上方原始条目，保证历史数据可追溯。
+// ============================================================================
+const syndromeEnhancements = {
+    "syn_001": { keySymptoms: ["恶寒重", "无汗"], contradictions: ["汗出", "发热重"] },
+    "syn_002": { keySymptoms: ["发热重", "咽痛"], contradictions: ["恶寒重", "无汗"] },
+    "syn_003": { keySymptoms: ["高热", "口渴喜冷饮"], contradictions: ["畏寒怕冷", "大便溏薄"], faceFeatures: ["面赤"], addFormulas: [{ id: "formula_141", name: "凉膈散", matchScore: 80 }] },
+    "syn_004": { keySymptoms: ["畏寒怕冷", "四肢不温"], contradictions: ["高热", "口渴喜冷饮"], faceFeatures: ["面色苍白"], addFormulas: [{ id: "formula_146", name: "黄芪建中汤", matchScore: 78 }] },
+    "syn_010": { keySymptoms: ["心悸", "失眠"], contradictions: ["心烦", "五心烦热"], faceFeatures: ["萎黄"], addFormulas: [{ id: "formula_154", name: "甘麦大枣汤", matchScore: 76 }] },
+    "syn_011": { keySymptoms: ["心悸", "五心烦热"], contradictions: ["畏寒肢冷", "面色白"], faceFeatures: ["两颧红"], addFormulas: [{ id: "formula_145", name: "黄连阿胶汤", matchScore: 88 }] },
+    "syn_020": { keySymptoms: ["胸胁胀痛", "情绪抑郁"], contradictions: ["高热"] },
+    "syn_021": { keySymptoms: ["面红目赤", "急躁易怒"], contradictions: ["畏寒怕冷", "面色苍白"], faceFeatures: ["面赤"] },
+    "syn_022": { keySymptoms: ["眩晕耳鸣", "头目胀痛"], contradictions: ["畏寒肢冷"], faceFeatures: ["面赤"] },
+    "syn_023": { keySymptoms: ["视物模糊", "爪甲不荣"], contradictions: ["面红目赤"], faceFeatures: ["无华"] },
+    "syn_024": { keySymptoms: ["胁肋胀痛", "口苦"], contradictions: ["畏寒怕冷"] },
+    "syn_030": { keySymptoms: ["食欲不振", "食后胀甚"], contradictions: ["高热", "口渴喜冷饮"], faceFeatures: ["萎黄"] },
+    "syn_031": { keySymptoms: ["腹痛喜温喜按", "大便溏薄清稀"], contradictions: ["身热不扬", "口渴喜冷饮"], faceFeatures: ["面色白"] },
+    "syn_032": { keySymptoms: ["脘腹痞闷", "口腻纳呆"], contradictions: ["口渴喜冷饮", "身热夜甚"], faceFeatures: ["面色黄"], addFormulas: [{ id: "formula_164", name: "胃苓汤", matchScore: 76 }] },
+    "syn_033": { keySymptoms: ["口黏而甜", "大便溏泄不爽"], contradictions: ["畏寒怕冷", "口淡不渴"] },
+    "syn_040": { keySymptoms: ["咳嗽无力", "自汗畏风"], contradictions: ["高热", "痰黄黏稠"], faceFeatures: ["面色白"], addConstitutions: ["特禀质"] },
+    "syn_041": { keySymptoms: ["干咳无痰", "口燥咽干"], contradictions: ["痰白清稀", "畏寒肢冷"], faceFeatures: ["两颧红"], addFormulas: [{ id: "formula_168", name: "贝母瓜蒌散", matchScore: 78 }] },
+    "syn_042": { keySymptoms: ["咳嗽声重", "鼻塞流清涕"], contradictions: ["痰黄黏稠", "咽痛"], addFormulas: [{ id: "formula_167", name: "射干麻黄汤", matchScore: 80 }] },
+    "syn_043": { keySymptoms: ["痰黄稠", "发热口渴"], contradictions: ["痰白清稀", "畏寒"], faceFeatures: ["面赤"], addFormulas: [{ id: "formula_144", name: "千金苇茎汤", matchScore: 85 }] },
+    "syn_050": { keySymptoms: ["腰膝酸软", "五心烦热"], contradictions: ["畏寒肢冷", "小便清长"], faceFeatures: ["两颧红"], addFormulas: [{ id: "formula_148", name: "知柏地黄丸", matchScore: 88 }] },
+    "syn_051": { keySymptoms: ["腰膝酸冷", "畏寒肢冷"], contradictions: ["五心烦热", "潮热盗汗"], faceFeatures: ["面色晄白"], addFormulas: [{ id: "formula_138", name: "济川煎", matchScore: 72 }] },
+    "syn_052": { keySymptoms: ["发脱齿摇", "小儿发育迟缓"], contradictions: ["高热"], faceFeatures: ["晦暗"] },
+    "syn_053": { keySymptoms: ["小便频数而清", "夜尿频多"], contradictions: ["小便短赤", "潮热盗汗"], addFormulas: [{ id: "formula_152", name: "桑螵蛸散", matchScore: 85 }, { id: "formula_165", name: "萆薢分清饮", matchScore: 76 }] },
+    "syn_060": { keySymptoms: ["饥不欲食", "口燥咽干"], contradictions: ["消谷善饥", "口臭"] },
+    "syn_061": { keySymptoms: ["消谷善饥", "胃脘灼痛"], contradictions: ["胃脘冷痛", "口淡不渴"], faceFeatures: ["面赤"] },
+    "syn_062": { keySymptoms: ["嗳腐吞酸", "厌食呕恶"], contradictions: ["口淡不渴"] },
+    "syn_070": { keySymptoms: ["少气懒言", "神疲乏力"], contradictions: ["高热", "烦躁"], faceFeatures: ["面色白"] },
+    "syn_071": { keySymptoms: ["面色淡白或萎黄", "头晕眼花"], contradictions: ["面红目赤"], faceFeatures: ["萎黄"] },
+    "syn_072": { keySymptoms: ["刺痛拒按", "痛处固定不移"], contradictions: ["面色苍白"], faceFeatures: ["晦暗"], addFormulas: [{ id: "formula_157", name: "桃核承气汤", matchScore: 80 }, { id: "formula_169", name: "复元活血汤", matchScore: 78 }] },
+    "syn_073": { keySymptoms: ["少气懒言", "神疲乏力"], contradictions: ["高热"], faceFeatures: ["面色白"] },
+    "syn_074": { keySymptoms: ["咳嗽痰多", "肢体困重"], contradictions: ["口渴喜冷饮", "干咳无痰"] },
+    "syn_075": { keySymptoms: ["口燥咽干", "唇焦舌燥"], contradictions: ["口淡不渴", "痰白清稀"], faceFeatures: ["少华"] },
+    "syn_080": { keySymptoms: ["汗出", "恶风"], contradictions: ["无汗", "恶寒重"] },
+    "syn_081": { keySymptoms: ["往来寒热", "胸胁苦满"], contradictions: ["恶寒重", "高热"] },
+    "syn_090": { keySymptoms: ["壮热", "烦渴"], contradictions: ["畏寒怕冷", "口淡不渴"], faceFeatures: ["面赤"], addFormulas: [{ id: "formula_140", name: "白虎加人参汤", matchScore: 82 }] },
+    "syn_100": { contradictions: ["五心烦热"], faceFeatures: ["面色白"] },
+    "syn_101": { faceFeatures: ["面色白"] },
+    "syn_102": { contradictions: ["畏寒肢冷", "痰白清稀"], faceFeatures: ["面赤"] },
+    "syn_103": { contradictions: ["五心烦热"] },
+    "syn_104": { contradictions: ["高热", "身热夜甚"], faceFeatures: ["萎黄"] },
+    "syn_105": { contradictions: ["高热"], faceFeatures: ["面色白"] },
+    "syn_106": { faceFeatures: ["面色白"] },
+    "syn_107": { addFormulas: [{ id: "formula_139", name: "增液承气汤", matchScore: 85 }] },
+    "syn_110": { contradictions: ["畏寒肢冷"] },
+    "syn_111": { contradictions: ["畏寒肢冷"] },
+    "syn_112": { contradictions: ["畏寒肢冷"] },
+    "syn_113": { contradictions: ["高热"] },
+    "syn_114": { contradictions: ["畏寒肢冷"], faceFeatures: ["两颧红"] },
+    "syn_115": { contradictions: ["身热夜甚", "口渴喜冷饮"], faceFeatures: ["面色白"], addFormulas: [{ id: "formula_153", name: "真人养脏汤", matchScore: 80 }] },
+    "syn_116": { contradictions: ["高热"], faceFeatures: ["萎黄"] },
+    "syn_117": { contradictions: ["畏寒怕冷"], faceFeatures: ["面赤"], addFormulas: [{ id: "formula_159", name: "槐花散", matchScore: 76 }], dangerSignals: ["大量出血"] },
+    "syn_118": { addFormulas: [{ id: "formula_162", name: "羌活胜湿汤", matchScore: 76 }] },
+    "syn_120": { contradictions: ["关节红肿热痛"], faceFeatures: ["青紫"] },
+    "syn_121": { contradictions: ["身热夜甚"], faceFeatures: ["面色白"] },
+    "syn_122": { contradictions: ["畏寒怕冷", "口淡不渴"], faceFeatures: ["面色黄"] },
+    "syn_123": { contradictions: ["口渴喜冷饮"], faceFeatures: ["晦暗"] },
+    "syn_124": { contradictions: ["口渴喜冷饮"], faceFeatures: ["浮肿"], addFormulas: [{ id: "formula_166", name: "五皮饮", matchScore: 82 }, { id: "formula_133", name: "越婢汤", matchScore: 70 }] },
+    "syn_125": { contradictions: ["高热", "突然抽搐"], addFormulas: [{ id: "formula_170", name: "大定风珠", matchScore: 90 }] },
+    "syn_126": { contradictions: ["畏寒怕冷", "面色苍白"], faceFeatures: ["面赤"], addFormulas: [{ id: "formula_142", name: "泻心汤", matchScore: 78 }] },
+    "syn_127": { contradictions: ["痰黄黏稠", "高热"], faceFeatures: ["面色白"] },
+    "syn_128": { keySymptoms: ["局部红肿热痛", "疮疡初起"], contradictions: ["畏寒怕冷"], faceFeatures: ["痤疮"] },
+    "syn_129": { keySymptoms: ["下肢红肿热痛", "皮肤湿疹"], contradictions: ["畏寒怕冷"], faceFeatures: ["痤疮"], addConstitutions: ["特禀质"] },
+    "syn_130": { keySymptoms: ["腹部积块", "固定不移"], contradictions: ["面色苍白"], faceFeatures: ["色斑"], addFormulas: [{ id: "formula_158", name: "大黄䗪虫丸", matchScore: 88 }] },
+    "syn_131": { keySymptoms: ["经前或经期小腹冷痛", "经色紫暗有块"], contradictions: ["带下黄臭"], faceFeatures: ["面色青"] },
+    "syn_132": { keySymptoms: ["月经后期", "经血量少色淡"], contradictions: ["经色紫暗有块"], faceFeatures: ["面色白"], addFormulas: [{ id: "formula_150", name: "当归芍药散", matchScore: 80 }] },
+    "syn_133": { keySymptoms: ["经血非时而下", "色淡质稀"], contradictions: ["经色紫暗有块"], faceFeatures: ["面色白"] },
+    "syn_134": { keySymptoms: ["带下量多", "色黄质稠"], contradictions: ["带下量多色白"] },
+    "syn_135": { keySymptoms: ["带下量多色白", "纳少便溏"], contradictions: ["带下黄臭"], faceFeatures: ["面色白"] },
+    "syn_136": { keySymptoms: ["高热不退", "突然抽搐"], contradictions: ["手足蠕动"], faceFeatures: ["面赤"], dangerSignals: ["高热不退", "神志昏迷"] },
+    "syn_137": { keySymptoms: ["久泻不止", "食后即泻"], contradictions: ["大便干结"], faceFeatures: ["萎黄"] },
+    "syn_138": { keySymptoms: ["嗳腐吞酸", "大便酸臭"], contradictions: ["口淡不渴"] },
+    "syn_139": { keySymptoms: ["咳嗽气粗", "痰黄黏稠"], contradictions: ["痰白清稀"], faceFeatures: ["面赤"] },
+    "syn_140": { keySymptoms: ["流黄稠涕", "前额头痛"], contradictions: ["流清涕"] },
+    "syn_141": { keySymptoms: ["目赤肿痛", "目眵多"], contradictions: ["两目干涩", "视物模糊"] },
+    "syn_142": { keySymptoms: ["干咳少痰", "潮热盗汗"], contradictions: ["痰白清稀", "畏寒肢冷"], faceFeatures: ["两颧红"], addFormulas: [{ id: "formula_148", name: "知柏地黄丸", matchScore: 80 }] }
+};
+
+// 合并补丁到证型数据（浏览器与 Node 加载后均生效，校验脚本可直接读取增强后的字段）
+syndromesDatabase.forEach(s => {
+    const e = syndromeEnhancements[s.id];
+    if (!e) return;
+    if (e.keySymptoms) s.keySymptoms = e.keySymptoms;
+    if (e.contradictions) s.contradictions = e.contradictions;
+    if (e.faceFeatures) s.faceFeatures = e.faceFeatures;
+    if (e.dangerSignals) s.dangerSignals = e.dangerSignals;
+    if (e.addConstitutions) {
+        s.relatedConstitutions = s.relatedConstitutions || [];
+        e.addConstitutions.forEach(c => { if (!s.relatedConstitutions.includes(c)) s.relatedConstitutions.push(c); });
+    }
+    if (e.addFormulas) {
+        s.recommendedFormulas = s.recommendedFormulas || [];
+        e.addFormulas.forEach(f => {
+            if (!s.recommendedFormulas.some(x => x.id === f.id)) s.recommendedFormulas.push(f);
+        });
+    }
+});
+
 // Node 导出（供校验/测试脚本使用）
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { syndromesDatabase };

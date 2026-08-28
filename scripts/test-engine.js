@@ -35,7 +35,7 @@ const cases = [
     { name: '脾气虚证', expect: 'syn_030', input: { symptoms: ['食欲不振', '腹胀', '食后胀甚', '大便溏薄'] } },
     { name: '肾阴虚证', expect: 'syn_050', input: { symptoms: ['腰膝酸软', '眩晕耳鸣', '失眠多梦', '五心烦热'] } },
     { name: '心脾两虚证', expect: 'syn_116', input: { symptoms: ['心悸怔忡', '失眠多梦', '食少腹胀', '头晕健忘'] } },
-    { name: '痰热扰心证（鉴别）', expect: 'syn_102', input: { symptoms: ['心悸', '失眠', '心烦', '口苦', '胸闷痰多'] } },
+    { name: '痰热扰心证（鉴别）', expect: 'syn_102', input: { symptoms: ['心悸', '失眠', '心烦', '口苦', '痰多黄稠'] } },
     { name: '肾阳虚证', expect: 'syn_051', input: { symptoms: ['腰膝酸冷', '畏寒肢冷', '夜尿频多', '下肢尤甚'] } },
     { name: '食滞胃脘证', expect: 'syn_062', input: { symptoms: ['脘腹胀满疼痛', '嗳腐吞酸', '厌食呕恶', '大便不爽'] } },
     { name: '风寒犯肺证', expect: 'syn_042', input: { symptoms: ['咳嗽声重', '痰白清稀', '鼻塞流清涕', '恶寒发热'] } },
