@@ -1,18 +1,37 @@
 // ===== 岐黄·辅助诊疗系统 - 通用导出工具 =====
 // 供 诊断记录/常用方案/学习中心 复用：文本下载、Markdown/JSON 序列化
 const ExportUtils = {
-    // 触发浏览器下载文本文件（Blob）
-    downloadText(filename, text, mime) {
-        const blob = new Blob([text], { type: mime || 'text/markdown;charset=utf-8' });
-        const a = document.createElement('a');
-        a.href = URL.createObjectURL(blob);
-        a.download = filename;
-        document.body.appendChild(a);
-        a.click();
-        setTimeout(() => {
-            URL.revokeObjectURL(a.href);
-            a.remove();
-        }, 200);
+    // 导出文本文件：APP 内走原生保存/分享，Web 端走 Blob 下载
+    // 说明：本方法永不 reject，8 处调用方不 await 也不会产生 unhandled rejection
+    async downloadText(filename, text, mime) {
+        if (typeof PlatformBridge !== 'undefined' && PlatformBridge.isNative) {
+            try {
+                const r = await PlatformBridge.files.saveText(filename, text, mime || 'text/markdown;charset=utf-8');
+                if (r && r.ok) {
+                    if (typeof Toast !== 'undefined') {
+                        Toast.show(r.path ? ('已保存：' + r.path) : '已导出', 'success');
+                    }
+                    return;
+                }
+                if (r && r.via === 'cancel') return; // 用户主动取消保存对话框
+            } catch (e) {
+                console.warn('[岐黄] 原生导出失败，回落浏览器下载', e);
+            }
+        }
+        try {
+            const blob = new Blob([text], { type: mime || 'text/markdown;charset=utf-8' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            setTimeout(() => {
+                URL.revokeObjectURL(a.href);
+                a.remove();
+            }, 200);
+        } catch (e) {
+            console.warn('[岐黄] 导出失败', e);
+        }
     },
 
     // 诊断记录 → Markdown
@@ -61,8 +80,8 @@ const ExportUtils = {
     },
 
     // 通用：对象 → JSON 下载
-    downloadJSON(filename, data) {
-        this.downloadText(filename, JSON.stringify(data, null, 2), 'application/json;charset=utf-8');
+    async downloadJSON(filename, data) {
+        return this.downloadText(filename, JSON.stringify(data, null, 2), 'application/json;charset=utf-8');
     }
 };
 

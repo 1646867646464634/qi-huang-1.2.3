@@ -198,10 +198,11 @@ class ConstitutionModule {
     }
     
     judgeConstitution(scores) {
-        const balancedScore = scores['平和质']?.convertedScore || 0;
+        // 注：原使用可选链 ?.，需 Chrome 80+；为兼容 Android 7+ WebView 改为等价写法
+        const balancedScore = (scores['平和质'] || {}).convertedScore || 0;
         const otherScores = CONSTANTS.CONSTITUTION_TYPES
             .filter(t => t !== '平和质')
-            .map(t => scores[t]?.convertedScore || 0);
+            .map(t => (scores[t] || {}).convertedScore || 0);
         
         const isBalanced = balancedScore >= CONSTANTS.SCORING.BALANCED_THRESHOLD
             && otherScores.every(s => s < CONSTANTS.SCORING.TENDENCY_THRESHOLD);
@@ -210,7 +211,7 @@ class ConstitutionModule {
         const tendencyTypes = [];
 
         CONSTANTS.CONSTITUTION_TYPES.filter(t => t !== '平和质').forEach(type => {
-            const score = scores[type]?.convertedScore || 0;
+            const score = (scores[type] || {}).convertedScore || 0;
             if (score >= CONSTANTS.SCORING.BIASED_THRESHOLD) {
                 biasedTypes.push(type);
             } else if (score >= CONSTANTS.SCORING.TENDENCY_THRESHOLD) {
@@ -239,7 +240,7 @@ class ConstitutionModule {
             tendencyTypes,
             allTypes: CONSTANTS.CONSTITUTION_TYPES.map(type => ({
                 type,
-                score: scores[type]?.convertedScore || 0,
+                score: (scores[type] || {}).convertedScore || 0,
                 meta: constitutionMeta[type] || null
             })).sort((a, b) => b.score - a.score)
         };

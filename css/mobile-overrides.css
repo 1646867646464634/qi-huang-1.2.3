@@ -21,17 +21,18 @@
 /* ---------- P1：AI 问诊页适配小屏与键盘弹出 ----------
  * 100vh 在 iOS Safari 不含地址栏；改用 100dvh（动态视口高度），
  * 并将 min-height:480px 改为 0，避免小屏首屏放不下。
+ * 减去 header(~56px) 和 env(safe-area-inset-*) 让内容不被状态栏/导航条遮挡。
  */
 @media (max-width: 768px) {
     .chat-page {
-        height: calc(100dvh - 150px);
+        height: calc(100dvh - 56px - env(safe-area-inset-top, 0) - env(safe-area-inset-bottom, 0));
         min-height: 0;
     }
 }
 @supports not (height: 100dvh) {
     @media (max-width: 768px) {
         .chat-page {
-            height: calc(100vh - 150px);
+            height: calc(100vh - 56px);
         }
     }
 }
@@ -126,3 +127,79 @@ html {
         font-size: var(--text-xs);
     }
 }
+
+/* ===== 原生端（APP）安全区与触摸体验适配 =====
+ * 仅在 body.qh-native 下生效 —— 该类由 js/app.js 在检测到原生壳时添加，
+ * 因此纯浏览器访问时以下规则全部不生效，Web 端零影响。
+ * 配合 index.html 的 viewport-fit=cover，解决刘海屏/状态栏/底部小白条遮挡。
+ * env(safe-area-inset-*) 在非刘海设备上恒为 0，故无需额外媒体查询。
+ */
+
+.qh-native .site-header {
+    padding-top: calc(var(--space-sm) + env(safe-area-inset-top));
+}
+
+.qh-native .site-footer {
+    padding-bottom: calc(var(--space-md) + env(safe-area-inset-bottom));
+}
+
+.qh-native .site-content {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+}
+
+/* 触摸设备点击反馈：项目全部使用 click 事件，补上按下态避免"点了没反应"的错觉 */
+@media (hover: none) {
+    .qh-native .nav-item:active,
+    .qh-native .welcome-card:active,
+    .qh-native .form-option-chip:active,
+    .qh-native .btn:active {
+        opacity: 0.75;
+    }
+}
+
+/* 去掉移动端点击时的半透明高亮块 */
+.qh-native * {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* ============================================================
+ * P3：AI 问诊聊天面板手机适配（针对截图反馈的"挤、太窄、字号小"问题）
+ * 选择器特意嵌套 .chat-page 以覆盖 chat.js 内联 <style> 的特异性。
+ * ============================================================ */
+
+/* ≤768：chips 横滚时禁用按压缩放（避免长按时跳动） */
+@media (max-width: 768px) {
+    .chat-page .chat-sessions { scrollbar-width: thin; }
+}
+
+/* ≤480：副标题不被压到换行、字号更适合 */
+@media (max-width: 480px) {
+    .chat-page .page-subtitle { font-size: 0.9rem; line-height: 1.65; overflow-wrap: anywhere; }
+    .chat-page .page-title { font-size: 1.4rem; gap: 10px; }
+    /* 输入区纵向堆叠：textarea 满宽 + 发送/停止按钮横排满宽；视觉上不再与操作按钮挤在一起 */
+    .chat-page .chat-input-row { flex-direction: column; align-items: stretch; gap: 8px; padding-top: 8px; }
+    .chat-page #chatInput { width: 100%; min-height: 64px; max-height: 120px; font-size: 16px; /* 防 iOS 键盘弹起时页面放大 */ }
+    .chat-page #chatSendBtn, .chat-page #chatStopBtn { width: 100%; min-height: 48px; padding: 12px; font-size: 1rem; }
+    /* 免责声明字号对小屏用户更友好 */
+    .chat-page .chat-disclaimer { font-size: 13px; line-height: 1.75; padding: 12px 14px; }
+    /* 操作按钮：网格 50/50，按钮触控高度 ≥44 */
+    .chat-page .chat-actions { grid-template-columns: 1fr 1fr; gap: 10px; margin: 10px 0; }
+    .chat-page .chat-actions .btn { min-height: 48px; padding: 12px 8px; font-size: 15px; }
+    /* 会话 chips：保证触控高度 + 完整可读 */
+    .chat-page .chat-chip { min-height: 40px; padding: 8px 14px; font-size: 14px; }
+    .chat-page .chat-chip-del { padding: 4px 8px; margin-left: 6px; }
+    /* 消息气泡在小屏更紧凑 */
+    .chat-page .msg-bubble { max-width: 90%; padding: 10px 12px; font-size: 15px; }
+}
+
+/* ≤360：极窄屏幕（iPhone SE 一代等） */
+@media (max-width: 360px) {
+    .chat-page .page-title { font-size: 1.25rem; }
+    .chat-page .chat-actions { gap: 8px; }
+    .chat-page .chat-actions .btn { font-size: 14px; padding: 12px 6px; }
+}
+
+/* 全局：禁用移动端按钮双击放大（聊天发送、芯片等高频点击区域） */
+button, .btn, .chat-chip, .quick-chip { touch-action: manipulation; }
+

@@ -45,13 +45,22 @@ class ChatModule {
         container.innerHTML = `
             <div class="module-page chat-page">
                 <style>
-                    .chat-page { display:flex; flex-direction:column; height:calc(100vh - 190px); min-height:480px; }
-                    .chat-sessions { display:flex; gap:8px; overflow-x:auto; padding:8px 2px; flex:0 0 auto; }
-                    .chat-chip { flex:0 0 auto; padding:6px 12px; border-radius:20px; border:1px solid var(--color-line); font-size:var(--text-sm); cursor:pointer; color:var(--color-ink); background:var(--color-card); max-width:160px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+                    /* —— 容器：高度考虑安全区，让 Web 内容不被状态栏/导航条遮挡 —— */
+                    .chat-page { display:flex; flex-direction:column; height:calc(100dvh - 160px); min-height:480px; box-sizing:border-box; padding-left:env(safe-area-inset-left,0); padding-right:env(safe-area-inset-right,0); padding-bottom:env(safe-area-inset-bottom,0); }
+                    /* 标题区不被压到第二行：让 subtitle 自适应宽度 */
+                    .chat-page .page-header { margin-bottom: var(--space-sm); }
+                    .chat-page .page-title { display:flex; align-items:center; gap:var(--space-sm); flex-wrap:nowrap; }
+                    .chat-page .page-title .seal-stamp { flex:0 0 auto; }
+                    .chat-page .page-title > span:last-child { white-space:nowrap; }
+                    .chat-page .page-subtitle { max-width:100%; word-break:break-word; line-height:1.6; }
+                    /* —— 会话 chips：可换行 + 横向滚动备份，触控 40px —— */
+                    .chat-sessions { display:flex; flex-wrap:wrap; gap:8px; padding:8px 2px; flex:0 0 auto; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+                    .chat-chip { flex:0 0 auto; min-height:40px; padding:8px 14px; border-radius:20px; border:1px solid var(--color-line); font-size:var(--text-sm); cursor:pointer; color:var(--color-ink); background:var(--color-card); max-width:160px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; display:inline-flex; align-items:center; }
                     .chat-chip.active { background:var(--color-vermillion); color:#fff; border-color:var(--color-vermillion); }
                     .chat-chip-new { background:var(--color-vermillion-pale); border-color:var(--color-vermillion); color:var(--color-vermillion-dark); font-weight:600; }
-                    .chat-chip .chat-chip-del { margin-left:4px; opacity:.6; cursor:pointer; padding:0 2px; }
-                    #chatMessages { flex:1; overflow-y:auto; padding:12px 2px; display:flex; flex-direction:column; gap:10px; }
+                    .chat-chip .chat-chip-del { margin-left:6px; opacity:.6; cursor:pointer; padding:2px 6px; border-radius:50%; }
+                    /* —— 消息区 —— */
+                    #chatMessages { flex:1 1 auto; overflow-y:auto; padding:12px 2px; display:flex; flex-direction:column; gap:10px; min-height:140px; }
                     .msg-bubble { max-width:82%; padding:10px 14px; border-radius:12px; line-height:1.8; white-space:pre-wrap; word-break:break-word; font-size:var(--text-sm); }
                     .msg-user { align-self:flex-end; background:rgba(192,64,64,0.1); border:1px solid rgba(192,64,64,0.25); }
                     .msg-ai { align-self:flex-start; background:rgba(255,252,248,0.92); border:1px solid rgba(184,134,11,0.2); }
@@ -61,19 +70,26 @@ class ChatModule {
                     .reasoning-content { display:none; font-size:var(--text-xs); color:var(--color-ink-soft); background:rgba(59,94,139,0.05); border-radius:6px; padding:6px 8px; margin-top:4px; white-space:pre-wrap; }
                     .reasoning-content.open { display:block; }
                     .msg-link { display:inline-block; margin-top:6px; font-size:var(--text-xs); color:var(--color-blue-porcelain); cursor:pointer; text-decoration:underline; }
-                    .chat-empty { text-align:center; color:var(--color-ink-pale); padding:30px 10px; font-size:var(--text-sm); line-height:2; }
-                    .chat-quick-chips { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:14px; }
-                    .quick-chip { padding:6px 12px; border-radius:20px; background:var(--color-bronze-pale); font-size:var(--text-sm); cursor:pointer; color:var(--color-bronze-dark); border:1px solid rgba(184,134,11,0.25); }
-                    .chat-input-row { display:flex; gap:8px; align-items:flex-end; flex:0 0 auto; padding-top:10px; }
-                    #chatInput { flex:1; resize:none; min-height:48px; max-height:120px; padding:10px 12px; border:1px solid var(--color-line); border-radius:10px; font-family:var(--font-body); font-size:var(--text-base); background:var(--color-card); }
+                    .chat-empty { text-align:center; color:var(--color-ink-pale); padding:28px 12px; font-size:var(--text-sm); line-height:1.9; }
+                    .chat-quick-chips { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:16px; }
+                    .quick-chip { min-height:40px; padding:8px 14px; border-radius:20px; background:var(--color-bronze-pale); font-size:var(--text-sm); cursor:pointer; color:var(--color-bronze-dark); border:1px solid rgba(184,134,11,0.25); display:inline-flex; align-items:center; }
+                    /* —— 操作按钮：50/50 网格，触控友好，与下方输入区视觉分离 —— */
+                    .chat-actions { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:12px 0 4px; }
+                    .chat-actions .btn { min-height:44px; padding:10px 8px; font-size:var(--text-sm); }
+                    /* —— 输入区：桌面横排，移动端小屏纵向堆叠（见 mobile-overrides.css） —— */
+                    .chat-input-row { display:flex; gap:10px; align-items:flex-end; flex:0 0 auto; padding-top:6px; }
+                    #chatInput { flex:1 1 auto; min-width:0; min-height:48px; max-height:140px; padding:10px 12px; border:1px solid var(--color-line); border-radius:10px; font-family:var(--font-body); font-size:var(--text-base); background:var(--color-card); }
+                    #chatSendBtn, #chatStopBtn { min-height:44px; padding:10px 18px; }
+                    /* —— 免责声明/提示：与聊天内容做视觉区分，字号对小屏用户友好 —— */
+                    .chat-disclaimer { margin-top:var(--space-md); padding:10px 12px; font-size:13px; color:var(--color-ink-pale); line-height:1.8; background:rgba(184,134,11,0.05); border-left:3px solid var(--color-bronze); border-radius:6px; }
+                    .chat-disclaimer p + p { margin-top:6px; }
                     .chat-danger-banner { background:rgba(192,64,64,0.12); border:1px solid rgba(192,64,64,0.4); color:var(--color-vermillion-dark); font-weight:700; padding:10px 14px; border-radius:10px; margin:8px 0; font-size:var(--text-sm); line-height:1.8; }
-                    .chat-actions { display:flex; gap:8px; margin-top:8px; }
                 </style>
 
-                <div class="page-header" style="margin-bottom:var(--space-sm);">
+                <div class="page-header">
                     <h1 class="page-title">
                         <span class="seal-stamp">问</span>
-                        AI 在线问诊
+                        <span>AI 在线问诊</span>
                     </h1>
                     <p class="page-subtitle">与 GLM 智能问诊助手对话，获取中医健康科普与调理参考</p>
                 </div>
@@ -81,8 +97,8 @@ class ChatModule {
                 <div class="chat-sessions" id="chatSessions"></div>
                 <div id="chatMessages"></div>
                 <div class="chat-actions">
-                    <button class="btn btn-outline btn-sm" id="chatClearBtn">🗑 清空会话</button>
-                    <button class="btn btn-outline btn-sm" id="chatExportBtn">📄 导出对话</button>
+                    <button class="btn btn-outline" id="chatClearBtn">🗑 清空会话</button>
+                    <button class="btn btn-outline" id="chatExportBtn">📄 导出对话</button>
                 </div>
                 <div class="chat-input-row">
                     <textarea id="chatInput" rows="2" placeholder="描述您的身体不适或想咨询的问题…（Enter 发送，Shift+Enter 换行）" aria-label="问诊输入框"></textarea>
@@ -90,7 +106,7 @@ class ChatModule {
                     <button class="btn btn-ghost" id="chatStopBtn" style="display:none;">⏹ 停止</button>
                 </div>
 
-                <div style="margin-top:var(--space-md); font-size:var(--text-xs); color:var(--color-ink-pale); line-height:1.9;">
+                <div class="chat-disclaimer">
                     <p><strong>免责声明：</strong>本系统仅供中医知识学习和健康参考，不构成医疗诊断或治疗建议。如有身体不适，请及时前往正规医疗机构就诊，遵循专业医师的指导。</p>
                     <p>⚠ 提示：对话内容将发送至第三方 AI 服务（智谱 GLM-4.7）处理，请勿输入手机号、身份证等隐私信息；对话记录仅保存在本机浏览器。</p>
                 </div>

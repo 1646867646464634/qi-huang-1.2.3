@@ -115,6 +115,38 @@
                 Storage.set(UI_COLLAPSED_KEY, collapsed);
             });
         }
+
+        // ===== 原生壳（Android / Windows）适配 =====
+        // 浏览器内 PlatformBridge.isNative 为 false，整段不执行，零副作用
+        if (typeof PlatformBridge !== 'undefined' && PlatformBridge.isNative) {
+            document.body.classList.add('qh-native');
+            PlatformBridge.ui.setBarStyle('dark');
+            PlatformBridge.ui.onBack(() => {
+                // 1) 移动端导航菜单展开时，先收起菜单
+                const nav = document.getElementById('siteNav');
+                if (nav && nav.classList.contains('open')) {
+                    nav.classList.remove('open');
+                    const toggle = document.getElementById('mobileToggle');
+                    if (toggle) toggle.classList.remove('open');
+                    return;
+                }
+                // 2) 首页直接退出
+                const h = (location.hash || '#/home').replace(/^#\/?/, '').split('?')[0];
+                if (h === 'home' || h === '') { PlatformBridge.ui.exit(); return; }
+                // 3) 其余页面回上一页；无历史记录则退出
+                if (history.length > 1) history.back();
+                else PlatformBridge.ui.exit();
+            });
+        }
+
+        // 外链图片（Wikimedia 等）加载失败时隐藏，避免出现裂图占位
+        document.addEventListener('error', (e) => {
+            const t = e.target;
+            if (t && t.tagName === 'IMG' && !t.dataset.imgErr) {
+                t.dataset.imgErr = '1';
+                t.style.display = 'none';
+            }
+        }, true);
     }
     
     function showWelcome() {

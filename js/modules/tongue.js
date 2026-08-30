@@ -146,7 +146,22 @@ class TongueModule {
         const fileInput = container.querySelector('#' + analysisType + 'UploadInput');
         if (!zone || !fileInput || typeof GLMVision === 'undefined') return; // 未加载时静默降级为纯手动表单
 
-        const openPicker = () => fileInput.click();
+        // 原生壳内走平台桥接（Android 唤起相册/相机，Windows 弹文件对话框）；
+        // Web 端保持原路径，页面上的隐藏 input 仍是回落通道
+        const openPicker = () => {
+            if (typeof PlatformBridge !== 'undefined' && PlatformBridge.isNative) {
+                PlatformBridge.files.pickImage({ accept: 'image/jpeg,image/jpg,image/png' })
+                    .then(f => this.handleImage(container, f, analysisType, rules))
+                    .catch(err => {
+                        if (err && err.code === 'CANCEL') return; // 用户主动取消
+                        const msg = (err && err.message) || '未获取到图片';
+                        if (typeof Toast !== 'undefined') Toast.show(msg, 'warning');
+                        else console.warn('[岐黄] 选图失败', msg);
+                    });
+                return;
+            }
+            fileInput.click();
+        };
         zone.addEventListener('click', openPicker);
         zone.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openPicker(); }
@@ -212,7 +227,9 @@ class TongueModule {
             if (spinner) spinner.style.display = 'none';
             if (diagnoseBtn) diagnoseBtn.disabled = false;
             // 注意：不再 revoke preview 的 blob URL，直到下次上传/清空时统一释放，避免预览图失效
-            const fileInput = container.querySelector('#' + analysisType + 'FileInput');
+            // 修正：原为 'FileInput'，与实际 id 'UploadInput' 不匹配导致重置失效
+            // （连续选择同一张图时不会触发 change 事件）
+            const fileInput = container.querySelector('#' + analysisType + 'UploadInput');
             if (fileInput) fileInput.value = ''; // 允许重新选择同一文件
         }
     }

@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>岐黄·辅助诊疗系统</title>
     <meta name="description" content="中医辅助诊疗系统 - 体质辨识、病症辨证、中药百科、方剂推荐、舌诊分析">
 
@@ -333,6 +333,9 @@
     </div>
     
     <!-- Scripts -->
+    <!-- 平台桥接层：必须在 storage.js 之前加载（浏览器内为 no-op 回落实现） -->
+    <script src="js/platform-bridge.js" defer></script>
+    <script src="js/native-init.js" defer></script>
     <script src="js/utils/constants.js" defer></script>
     <script src="js/utils/storage.js" defer></script>
     <script src="js/utils/dom.js" defer></script>
