@@ -1,6 +1,6 @@
 /**
  * 岐黄·辅助诊疗系统 — 中药数据库
- * 包含 300 味常用中药的完整信息（2026-08-31 按"十五五"《中药学》补充 50 味）
+ * 包含 334 味常用中药的完整信息（2026-08-31 按"十五五"《中药学》补充 84 味：批次①②③ 50 味 + 批次④ 34 味）
  * 按中医传统分类组织
  *
  * 导出:
@@ -5337,6 +5337,602 @@ const herbsDatabase = [
         contraindications: ["本品含马兜铃酸，可致肾损害，不宜过量、久服", "虚寒喘咳及脾虚便溏者忌用", "肾功能不全者禁用"],
         tags: ["肾毒性", "慎用"],
         keywords: ["肺热喘咳", "痔血", "马兜铃酸", "清肺降气"]
+    },
+
+    // —— 批次④ 祛风湿药（6味） ——
+    {
+        id: "herb_301",
+        name: "川乌",
+        pinyin: "Chuan Wu",
+        latinName: "Aconitum carmichaelii Debx.",
+        category: "祛风湿药",
+        subcategory: "祛风湿散寒药",
+        nature: "热",
+        tastes: ["辛", "苦"],
+        meridians: ["心经", "肝经", "肾经", "脾经"],
+        functions: ["祛风除湿", "温经止痛"],
+        indications: ["风寒湿痹", "关节疼痛", "心腹冷痛", "寒疝作痛", "麻醉止痛"],
+        usage: "一般炮制后用。煎服，1.5-3g，先煎、久煎。外用适量。",
+        contraindications: ["有大毒，必须严格炮制并控制剂量", "孕妇忌用", "不宜与半夏、瓜蒌、贝母、白蔹、白及同用（十八反）", "酒浸、酒煎服易致中毒，应慎用"],
+        tags: ["大毒", "止痛", "十八反"],
+        keywords: ["风寒湿痹", "寒疝", "心腹痛", "麻醉", "十八反", "乌头碱"]
+    },
+    {
+        id: "herb_302",
+        name: "草乌",
+        pinyin: "Cao Wu",
+        latinName: "Aconitum kusnezoffii Reichb.",
+        category: "祛风湿药",
+        subcategory: "祛风湿散寒药",
+        nature: "热",
+        tastes: ["辛", "苦"],
+        meridians: ["心经", "肝经", "肾经", "脾经"],
+        functions: ["祛风除湿", "温经止痛"],
+        indications: ["风寒湿痹", "关节疼痛", "心腹冷痛", "寒疝作痛", "跌扑伤痛", "麻醉止痛"],
+        usage: "一般炮制后用。煎服，1.5-3g，先煎、久煎。外用生品适量。",
+        contraindications: ["有大毒，毒性较川乌更强", "孕妇忌用", "不宜与半夏、瓜蒌、贝母、白蔹、白及同用（十八反）", "不宜生用、久服"],
+        tags: ["大毒", "止痛", "十八反"],
+        keywords: ["风寒湿痹", "寒疝", "跌打", "麻醉", "十八反"]
+    },
+    {
+        id: "herb_303",
+        name: "蕲蛇",
+        pinyin: "Qi She",
+        latinName: "Agkistrodon acutus (Guenther)",
+        category: "祛风湿药",
+        subcategory: "祛风湿散寒药",
+        nature: "温",
+        tastes: ["甘", "咸"],
+        meridians: ["肝经"],
+        functions: ["祛风", "通络", "止痉"],
+        indications: ["风湿顽痹", "麻木拘挛", "中风口眼歪斜", "半身不遂", "抽搐痉挛", "破伤风", "麻风疥癣"],
+        usage: "煎服，3-9g。研末吞服，1-1.5g，每日 2-3 次。或酒浸、熬膏、入丸散服。",
+        contraindications: ["阴虚内热者忌用", "血虚生风者慎用"],
+        tags: ["虫类药", "通络"],
+        keywords: ["顽痹", "半身不遂", "破伤风", "麻风", "白花蛇"]
+    },
+    {
+        id: "herb_304",
+        name: "乌梢蛇",
+        pinyin: "Wu Shao She",
+        latinName: "Zaocys dhumnades (Cantor)",
+        category: "祛风湿药",
+        subcategory: "祛风湿散寒药",
+        nature: "平",
+        tastes: ["甘"],
+        meridians: ["肝经"],
+        functions: ["祛风", "通络", "止痉"],
+        indications: ["风湿顽痹", "麻木拘挛", "中风口歪", "半身不遂", "抽搐痉挛", "破伤风", "麻风疥癣"],
+        usage: "煎服，6-12g。研末服 2-3g。或酒浸、焙干研末入丸散。",
+        contraindications: ["血虚生风者慎用"],
+        tags: ["虫类药", "通络"],
+        keywords: ["顽痹", "半身不遂", "破伤风", "疥癣", "祛风通络"]
+    },
+    {
+        id: "herb_305",
+        name: "豨莶草",
+        pinyin: "Xi Xian Cao",
+        latinName: "Siegesbeckia orientalis L.",
+        category: "祛风湿药",
+        subcategory: "祛风湿清热药",
+        nature: "寒",
+        tastes: ["辛", "苦"],
+        meridians: ["肝经", "肾经"],
+        functions: ["祛风湿", "利关节", "解毒", "降血压"],
+        indications: ["风湿痹痛", "筋骨无力", "腰膝酸软", "四肢麻痹", "半身不遂", "风疹湿疮", "疮痈肿毒", "高血压病"],
+        usage: "煎服，9-12g。治风湿痹痛宜制用（酒蒸），治痈肿、湿疹、风疹宜生用。",
+        contraindications: ["阴血不足者慎用", "生用或大剂量易致呕吐"],
+        tags: ["降血压"],
+        keywords: ["风湿痹痛", "半身不遂", "风疹", "疮痈", "高血压", "豨莶丸"]
+    },
+    {
+        id: "herb_306",
+        name: "雷公藤",
+        pinyin: "Lei Gong Teng",
+        latinName: "Tripterygium wilfordii Hook. f.",
+        category: "祛风湿药",
+        subcategory: "祛风湿清热药",
+        nature: "凉",
+        tastes: ["苦", "辛"],
+        meridians: ["肝经", "肾经"],
+        functions: ["祛风除湿", "活血通络", "消肿止痛", "杀虫解毒"],
+        indications: ["风湿顽痹", "关节肿痛", "类风湿关节炎", "疔疮肿毒", "腰带疮", "皮肤瘙痒"],
+        usage: "煎汤，去皮根木质部分 15-25g（文火煎 2 小时以上）。或制成糖浆、片剂服用。外用适量。",
+        contraindications: ["有大毒，内脏有器质性病变及肾功能不全者忌用", "孕妇、哺乳期妇女、儿童忌用", "白细胞减少者慎用", "须去皮根严格炮制，严格控制剂量"],
+        tags: ["大毒", "类风湿"],
+        keywords: ["类风湿", "顽痹", "肿痛", "免疫抑制", "雷公藤多苷"]
+    },
+
+    // —— 批次④ 利水渗湿药（4味） ——
+    {
+        id: "herb_307",
+        name: "木通",
+        pinyin: "Mu Tong",
+        latinName: "Akebia quinata (Thunb.) Decne.",
+        category: "利水渗湿药",
+        subcategory: "利尿通淋药",
+        nature: "寒",
+        tastes: ["苦"],
+        meridians: ["心经", "小肠经", "膀胱经"],
+        functions: ["利尿通淋", "清心除烦", "通经下乳"],
+        indications: ["热淋涩痛", "水肿", "口舌生疮", "心烦尿赤", "经闭乳少", "湿热痹痛"],
+        usage: "煎服，3-6g。",
+        contraindications: ["历史上关木通含马兜铃酸可致肾损害，现以木通科木通、川木通为正品", "肾功能不全者禁用", "孕妇慎用", "用量不宜过大"],
+        tags: ["肾毒性提示", "通乳"],
+        keywords: ["热淋", "口疮", "经闭", "乳少", "导赤散", "关木通"]
+    },
+    {
+        id: "herb_308",
+        name: "通草",
+        pinyin: "Tong Cao",
+        latinName: "Tetrapanax papyrifer (Hook.) K. Koch",
+        category: "利水渗湿药",
+        subcategory: "利尿通淋药",
+        nature: "微寒",
+        tastes: ["甘", "淡"],
+        meridians: ["肺经", "胃经"],
+        functions: ["清热利尿", "通气下乳"],
+        indications: ["湿热淋证", "水肿尿少", "乳汁不下"],
+        usage: "煎服，3-5g。",
+        contraindications: ["孕妇慎用", "气阴两虚者不宜"],
+        tags: ["下乳"],
+        keywords: ["淋证", "水肿", "乳汁不下", "通气下乳"]
+    },
+    {
+        id: "herb_309",
+        name: "石韦",
+        pinyin: "Shi Wei",
+        latinName: "Pyrrosia lingua (Thunb.) Farwell",
+        category: "利水渗湿药",
+        subcategory: "利尿通淋药",
+        nature: "微寒",
+        tastes: ["甘", "苦"],
+        meridians: ["肺经", "膀胱经"],
+        functions: ["利尿通淋", "清肺止咳", "凉血止血"],
+        indications: ["热淋", "血淋", "石淋", "小便不通", "肺热喘咳", "吐血", "衄血", "崩漏"],
+        usage: "煎服，6-12g。",
+        contraindications: ["阴虚及无湿热者慎用"],
+        tags: ["通淋", "止血"],
+        keywords: ["血淋", "石淋", "肺热咳嗽", "崩漏", "利尿通淋"]
+    },
+    {
+        id: "herb_310",
+        name: "垂盆草",
+        pinyin: "Chui Pen Cao",
+        latinName: "Sedum sarmentosum Bunge",
+        category: "利水渗湿药",
+        subcategory: "利湿退黄药",
+        nature: "凉",
+        tastes: ["甘", "淡"],
+        meridians: ["肝经", "胆经", "小肠经"],
+        functions: ["利湿退黄", "清热解毒"],
+        indications: ["湿热黄疸", "小便不利", "痈肿疮疡", "咽喉肿痛", "蛇虫咬伤"],
+        usage: "煎服，15-30g。鲜品 250g 捣汁服。外用适量捣敷。",
+        contraindications: ["脾胃虚寒者慎用"],
+        tags: ["退黄", "保肝"],
+        keywords: ["黄疸", "湿热", "痈肿", "蛇伤", "转氨酶"]
+    },
+
+    // —— 批次④ 温里药（1味） ——
+    {
+        id: "herb_311",
+        name: "荜茇",
+        pinyin: "Bi Bo",
+        latinName: "Piper longum L.",
+        category: "温里药",
+        subcategory: "温里药",
+        nature: "热",
+        tastes: ["辛"],
+        meridians: ["胃经", "大肠经"],
+        functions: ["温中散寒", "下气止痛"],
+        indications: ["脘腹冷痛", "呕吐泄泻", "寒凝气滞", "胸痹心痛", "头痛", "牙痛"],
+        usage: "煎服，1-3g。外用适量，研末塞龋齿孔中或搐鼻。",
+        contraindications: ["阴虚火旺者忌用", "实热郁火者忌用"],
+        tags: ["温中", "止痛"],
+        keywords: ["脘腹冷痛", "呕吐", "泄泻", "牙痛", "大已寒丸"]
+    },
+
+    // —— 批次④ 理气药（5味） ——
+    {
+        id: "herb_312",
+        name: "沉香",
+        pinyin: "Chen Xiang",
+        latinName: "Aquilaria sinensis (Lour.) Gilg",
+        category: "理气药",
+        subcategory: "理气药",
+        nature: "微温",
+        tastes: ["辛", "苦"],
+        meridians: ["脾经", "胃经", "肾经"],
+        functions: ["行气止痛", "温中止呕", "纳气平喘"],
+        indications: ["胸腹胀闷疼痛", "胃寒呕吐呃逆", "肾虚气逆喘急"],
+        usage: "煎服，1-5g，宜后下。或磨汁冲服、入丸散，每次 0.5-1g。",
+        contraindications: ["阴虚火旺者慎用", "气虚下陷者忌用"],
+        tags: ["名贵", "纳气"],
+        keywords: ["腹胀痛", "呕吐", "呃逆", "虚喘", "四磨汤", "黑锡丹"]
+    },
+    {
+        id: "herb_313",
+        name: "荔枝核",
+        pinyin: "Li Zhi He",
+        latinName: "Litchi chinensis Sonn.",
+        category: "理气药",
+        subcategory: "理气药",
+        nature: "温",
+        tastes: ["甘", "微苦"],
+        meridians: ["肝经", "肾经"],
+        functions: ["行气散结", "散寒止痛"],
+        indications: ["寒疝腹痛", "睾丸肿痛", "肝气郁滞之胃脘痛", "痛经", "产后腹痛"],
+        usage: "煎服，5-10g。或入丸散。",
+        contraindications: ["无寒湿滞气者勿服", "胃寒者慎用（本品性温燥）"],
+        tags: ["疝气"],
+        keywords: ["疝气", "睾丸肿痛", "痛经", "胃脘痛", "天台乌药散"]
+    },
+    {
+        id: "herb_314",
+        name: "玫瑰花",
+        pinyin: "Mei Gui Hua",
+        latinName: "Rosa rugosa Thunb.",
+        category: "理气药",
+        subcategory: "理气药",
+        nature: "温",
+        tastes: ["甘", "微苦"],
+        meridians: ["肝经", "脾经"],
+        functions: ["疏肝解郁", "和血止痛"],
+        indications: ["肝胃气痛", "食少呕恶", "月经不调", "经前乳房胀痛", "跌扑伤痛"],
+        usage: "煎服，3-6g。",
+        contraindications: ["阴虚火旺者慎用"],
+        tags: ["疏肝", "药食两用"],
+        keywords: ["肝胃气痛", "月经不调", "乳房胀痛", "疏肝解郁"]
+    },
+    {
+        id: "herb_315",
+        name: "大腹皮",
+        pinyin: "Da Fu Pi",
+        latinName: "Areca catechu L.",
+        category: "理气药",
+        subcategory: "理气药",
+        nature: "微温",
+        tastes: ["辛"],
+        meridians: ["脾经", "胃经", "大肠经", "小肠经"],
+        functions: ["行气宽中", "利水消肿"],
+        indications: ["湿阻气滞", "脘腹胀闷", "大便不爽", "水肿胀满", "脚气浮肿"],
+        usage: "煎服，5-10g。",
+        contraindications: ["气虚体弱者慎用"],
+        tags: ["宽中", "消肿"],
+        keywords: ["脘腹胀闷", "水肿", "脚气", "藿香正气散"]
+    },
+    {
+        id: "herb_316",
+        name: "九香虫",
+        pinyin: "Jiu Xiang Chong",
+        latinName: "Aspongopus chinensis Dallas",
+        category: "理气药",
+        subcategory: "理气药",
+        nature: "温",
+        tastes: ["咸"],
+        meridians: ["肝经", "脾经", "肾经"],
+        functions: ["理气止痛", "温肾助阳"],
+        indications: ["肝胃气痛", "脘腹胀满", "肾虚阳痿", "腰膝酸痛"],
+        usage: "煎服，3-9g。入丸散 0.6-1.2g。",
+        contraindications: ["阴虚阳亢者慎用"],
+        tags: ["虫类药", "止痛"],
+        keywords: ["肝胃气痛", "阳痿", "腰痛", "温肾助阳"]
+    },
+
+    // —— 批次④ 驱虫药（4味） ——
+    {
+        id: "herb_317",
+        name: "苦楝皮",
+        pinyin: "Ku Lian Pi",
+        latinName: "Melia azedarach L.",
+        category: "驱虫药",
+        subcategory: "驱虫药",
+        nature: "寒",
+        tastes: ["苦"],
+        meridians: ["肝经", "脾经", "胃经"],
+        functions: ["杀虫", "疗癣"],
+        indications: ["蛔虫病", "蛲虫病", "钩虫病", "虫积腹痛", "疥癣湿疮"],
+        usage: "煎服，3-6g（鲜品 15-30g）。外用适量，研末或煎水洗。",
+        contraindications: ["有毒，不宜过量或持续服用（苦楝素可致肝损害及心律失常）", "孕妇及肝肾功能不全者忌用", "体虚者慎用"],
+        tags: ["有毒", "杀虫"],
+        keywords: ["蛔虫", "蛲虫", "钩虫", "疥癣", "苦楝素"]
+    },
+    {
+        id: "herb_318",
+        name: "南瓜子",
+        pinyin: "Nan Gua Zi",
+        latinName: "Cucurbita moschata Duch.",
+        category: "驱虫药",
+        subcategory: "驱虫药",
+        nature: "平",
+        tastes: ["甘"],
+        meridians: ["胃经", "大肠经"],
+        functions: ["杀虫"],
+        indications: ["绦虫病", "血吸虫病（须与槟榔等配伍应用）"],
+        usage: "研末冷开水调服，60-120g（治绦虫常用量），2 小时后服硫酸镁导泻。",
+        contraindications: ["无明显禁忌，用量过大可有腹胀等不适"],
+        tags: ["药食两用", "绦虫"],
+        keywords: ["绦虫", "血吸虫", "杀虫", "配伍槟榔"]
+    },
+    {
+        id: "herb_319",
+        name: "鹤草芽",
+        pinyin: "He Cao Ya",
+        latinName: "Agrimonia pilosa Ledeb.",
+        category: "驱虫药",
+        subcategory: "驱虫药",
+        nature: "凉",
+        tastes: ["苦", "涩"],
+        meridians: ["肝经", "大肠经", "小肠经"],
+        functions: ["杀虫"],
+        indications: ["绦虫病（阴道滴虫病、血吸虫病亦有应用报道）"],
+        usage: "研粉吞服，30-45g/日（小儿 0.7-0.8g/kg），晨起空腹温开水送服。一般不入煎剂（有效成分鹤草酚几乎不溶于水）。",
+        contraindications: ["不宜入煎剂", "部分患者可有恶心呕吐等胃肠道反应", "忌与蓖麻油等油腻泻药同服"],
+        tags: ["绦虫"],
+        keywords: ["绦虫", "鹤草酚", "杀虫", "仙鹤草冬芽"]
+    },
+    {
+        id: "herb_320",
+        name: "雷丸",
+        pinyin: "Lei Wan",
+        latinName: "Omphalia lapidescens Schroeter",
+        category: "驱虫药",
+        subcategory: "驱虫药",
+        nature: "寒",
+        tastes: ["微苦"],
+        meridians: ["胃经", "大肠经"],
+        functions: ["杀虫消积"],
+        indications: ["绦虫病", "钩虫病", "蛔虫病", "虫积腹痛", "小儿疳积"],
+        usage: "15-21g，不宜入煎剂（有效成分雷丸素受热破坏），多研粉温开水冲服，饭后服，每日 2-3 次，连服 3 天。",
+        contraindications: ["不宜入煎剂", "脾胃虚寒者慎用", "无虫积者不宜服"],
+        tags: ["绦虫", "不入煎剂"],
+        keywords: ["绦虫", "钩虫", "蛔虫", "疳积", "雷丸素"]
+    },
+
+    // —— 批次④ 止血药（4味） ——
+    {
+        id: "herb_321",
+        name: "炮姜",
+        pinyin: "Pao Jiang",
+        latinName: "Zingiber officinale Rosc.（炮制加工品）",
+        category: "止血药",
+        subcategory: "温经止血药",
+        nature: "热",
+        tastes: ["辛"],
+        meridians: ["脾经", "胃经", "肾经"],
+        functions: ["温经止血", "温中止痛"],
+        indications: ["阳虚失血", "吐衄崩漏", "脾胃虚寒", "腹痛吐泻"],
+        usage: "煎服，3-9g。",
+        contraindications: ["阴虚内热及血热妄行者忌用", "孕妇慎用"],
+        tags: ["温经止血"],
+        keywords: ["虚寒性出血", "崩漏", "腹痛", "温中", "阳虚失血"]
+    },
+    {
+        id: "herb_322",
+        name: "降香",
+        pinyin: "Jiang Xiang",
+        latinName: "Dalbergia odorifera T. Chen",
+        category: "止血药",
+        subcategory: "化瘀止血药",
+        nature: "温",
+        tastes: ["辛"],
+        meridians: ["肝经", "脾经"],
+        functions: ["化瘀止血", "理气止痛"],
+        indications: ["吐血衄血", "外伤出血", "肝郁胁痛", "胸痹刺痛", "跌扑伤痛", "呕吐腹痛"],
+        usage: "煎服，9-15g，宜后下。研末服 1-2g。外用适量，研末敷患处。",
+        contraindications: ["血热妄行者慎用", "血瘀而无气滞者慎用"],
+        tags: ["化瘀", "理气"],
+        keywords: ["吐血", "外伤出血", "胸痹", "跌打", "冠心二号"]
+    },
+    {
+        id: "herb_323",
+        name: "紫珠叶",
+        pinyin: "Zi Zhu Ye",
+        latinName: "Callicarpa formosana Rolfe",
+        category: "止血药",
+        subcategory: "收敛止血药",
+        nature: "凉",
+        tastes: ["苦", "涩"],
+        meridians: ["肝经", "肺经", "胃经"],
+        functions: ["收敛止血", "散瘀", "解毒消肿"],
+        indications: ["衄血", "咯血", "吐血", "便血", "崩漏", "外伤出血", "热毒疮疡", "水火烫伤"],
+        usage: "煎服，3-15g。研末服 1.5-3g。外用适量，研末敷或煎水洗。",
+        contraindications: ["虚寒性出血者慎用"],
+        tags: ["止血", "外用"],
+        keywords: ["咯血", "崩漏", "外伤出血", "烫伤", "疮疡"]
+    },
+    {
+        id: "herb_324",
+        name: "藕节",
+        pinyin: "Ou Jie",
+        latinName: "Nelumbo nucifera Gaertn.",
+        category: "止血药",
+        subcategory: "收敛止血药",
+        nature: "平",
+        tastes: ["甘", "涩"],
+        meridians: ["肝经", "肺经", "胃经"],
+        functions: ["收敛止血", "化瘀"],
+        indications: ["吐血", "咯血", "衄血", "尿血", "崩漏"],
+        usage: "煎服，9-15g。鲜用捣汁可用 30-60g。止血宜炒炭用，化瘀宜生用。",
+        contraindications: ["本品味涩，能恋邪生瘀，单纯瘀血出血者不宜过量久服"],
+        tags: ["药食两用", "止血"],
+        keywords: ["吐血", "衄血", "尿血", "崩漏", "化瘀止血"]
+    },
+
+    // —— 批次④ 安神药（1味） ——
+    {
+        id: "herb_325",
+        name: "琥珀",
+        pinyin: "Hu Po",
+        latinName: "Succinum",
+        category: "安神药",
+        subcategory: "重镇安神药",
+        nature: "平",
+        tastes: ["甘"],
+        meridians: ["心经", "肝经", "膀胱经"],
+        functions: ["镇惊安神", "活血散瘀", "利尿通淋", "外用收敛生肌"],
+        indications: ["心悸失眠", "惊风癫痫", "血滞经闭", "癥瘕", "产后瘀阻", "淋证癃闭", "疮痈肿毒"],
+        usage: "2-3g，研末冲服，不入煎剂。外用适量。",
+        contraindications: ["阴虚内热及无瘀滞者慎用", "不宜入煎剂"],
+        tags: ["镇惊", "通淋"],
+        keywords: ["惊悸失眠", "惊风", "癫痫", "经闭", "淋证", "琥珀抱龙丸"]
+    },
+
+    // —— 批次④ 平肝息风药（3味） ——
+    {
+        id: "herb_326",
+        name: "羚羊角",
+        pinyin: "Ling Yang Jiao",
+        latinName: "Saiga tatarica Linnaeus",
+        category: "平肝息风药",
+        subcategory: "息风止痉药",
+        nature: "寒",
+        tastes: ["咸"],
+        meridians: ["肝经", "心经"],
+        functions: ["平肝息风", "清肝明目", "清热解毒"],
+        indications: ["肝风内动", "惊痫抽搐", "妊娠子痫", "高热痉厥", "癫痫发狂", "肝阳上亢", "头痛眩晕", "肝火目赤", "温毒发斑", "痈肿疮毒"],
+        usage: "煎服，1-3g，宜单煎 2 小时以上。磨汁或研粉服每次 0.3-0.6g。",
+        contraindications: ["脾虚慢惊者忌用", "本品性寒，脾虚便溏者慎用"],
+        tags: ["名贵", "息风"],
+        keywords: ["惊痫抽搐", "子痫", "高热痉厥", "目赤", "羚角钩藤汤", "紫雪"]
+    },
+    {
+        id: "herb_327",
+        name: "牛黄",
+        pinyin: "Niu Huang",
+        latinName: "Calculus Bovis",
+        category: "平肝息风药",
+        subcategory: "息风止痉药",
+        nature: "凉",
+        tastes: ["甘"],
+        meridians: ["心经", "肝经"],
+        functions: ["清心", "豁痰", "开窍", "凉肝", "息风", "解毒"],
+        indications: ["热病神昏", "中风痰迷", "惊痫抽搐", "癫痫发狂", "咽喉肿痛", "口舌生疮", "痈肿疔疮"],
+        usage: "0.15-0.35g，多入丸散用。外用适量，研末敷患处。人工牛黄、体外培育牛黄用量酌增。",
+        contraindications: ["非实热证不宜", "孕妇慎用", "脾虚便溏者慎用"],
+        tags: ["名贵", "开窍"],
+        keywords: ["神昏", "惊痫", "中风痰迷", "咽喉肿痛", "安宫牛黄丸"]
+    },
+    {
+        id: "herb_328",
+        name: "珍珠",
+        pinyin: "Zhen Zhu",
+        latinName: "Pinctada martensii (Dunker)",
+        category: "平肝息风药",
+        subcategory: "息风止痉药",
+        nature: "寒",
+        tastes: ["甘", "咸"],
+        meridians: ["心经", "肝经"],
+        functions: ["安神定惊", "明目消翳", "解毒生肌", "润肤祛斑"],
+        indications: ["惊悸失眠", "惊风癫痫", "目赤翳障", "口舌生疮", "咽喉溃烂", "疮疡不敛", "皮肤色斑"],
+        usage: "0.1-0.3g，多入丸散用。外用适量，研末水飞点眼或敷患处。",
+        contraindications: ["孕妇慎用", "疮疡内毒未净者不宜早用（敛邪）"],
+        tags: ["外用", "眼科"],
+        keywords: ["惊悸", "癫痫", "目翳", "口疮", "生肌", "珍珠母丸"]
+    },
+
+    // —— 批次④ 攻毒杀虫止痒药（6味） ——
+    {
+        id: "herb_329",
+        name: "硫黄",
+        pinyin: "Liu Huang",
+        latinName: "Sulfur",
+        category: "攻毒杀虫止痒药",
+        subcategory: "攻毒杀虫止痒药",
+        nature: "温",
+        tastes: ["酸"],
+        meridians: ["肾经", "大肠经"],
+        functions: ["外用解毒杀虫疗疮", "内服补火助阳通便"],
+        indications: ["外治疥癣", "秃疮", "阴疽恶疮;内服阳痿足冷", "虚喘冷哮", "虚寒便秘"],
+        usage: "外用适量，研末敷或加油调敷患处。内服炮制后入丸散，1.5-3g。",
+        contraindications: ["有毒", "内服须炮制，不宜过量久服", "孕妇忌用", "阴虚火旺者忌服", "忌与芒硝同用"],
+        tags: ["有毒", "杀虫"],
+        keywords: ["疥癣", "阴疽", "虚喘", "冷秘", "半硫丸"]
+    },
+    {
+        id: "herb_330",
+        name: "白矾",
+        pinyin: "Bai Fan",
+        latinName: "Alumen",
+        category: "攻毒杀虫止痒药",
+        subcategory: "攻毒杀虫止痒药",
+        nature: "寒",
+        tastes: ["酸", "涩"],
+        meridians: ["肺经", "脾经", "肝经", "大肠经"],
+        functions: ["外用解毒杀虫", "燥湿止痒;内服止血止泻", "祛除风痰"],
+        indications: ["外治湿疹瘙痒", "疥癣", "脱肛痔疮;内服久泻不止", "便血崩漏", "癫痫发狂"],
+        usage: "外用适量，研末敷或化水洗患处。内服入丸散，0.6-1.5g。",
+        contraindications: ["内服不宜过量久服", "体虚胃弱者慎用"],
+        tags: ["燥湿"],
+        keywords: ["湿疹", "疥癣", "脱肛", "久泻", "癫痫", "明矾"]
+    },
+    {
+        id: "herb_331",
+        name: "蟾酥",
+        pinyin: "Chan Su",
+        latinName: "Bufo bufo gargarizans Cantor",
+        category: "攻毒杀虫止痒药",
+        subcategory: "攻毒杀虫止痒药",
+        nature: "温",
+        tastes: ["辛"],
+        meridians: ["心经"],
+        functions: ["解毒", "止痛", "开窍醒神"],
+        indications: ["痈疽疔疮", "瘰疬", "咽喉肿痛", "中暑神昏", "腹痛吐泻", "龋齿疼痛"],
+        usage: "0.015-0.03g，多入丸散用。外用适量，研末调敷或掺膏药内贴患处。",
+        contraindications: ["有大毒", "内服切勿过量", "外用不可入目", "孕妇忌用", "体弱者慎用"],
+        tags: ["大毒", "强心"],
+        keywords: ["疔疮", "咽喉肿痛", "神昏", "牙痛", "六神丸", "蟾毒"]
+    },
+    {
+        id: "herb_332",
+        name: "樟脑",
+        pinyin: "Zhang Nao",
+        latinName: "Cinnamomum camphora (L.) Presl",
+        category: "攻毒杀虫止痒药",
+        subcategory: "攻毒杀虫止痒药",
+        nature: "热",
+        tastes: ["辛"],
+        meridians: ["心经", "脾经"],
+        functions: ["除湿杀虫", "温散止痛", "开窍辟秽"],
+        indications: ["疥癣瘙痒", "湿疮溃烂", "跌打伤痛", "牙痛", "痧胀腹痛吐泻", "神昏"],
+        usage: "外用适量，研末撒敷或调敷，或制成酊剂搽患处。内服 0.1-0.2g，入散剂或用酒溶化服。",
+        contraindications: ["有毒", "内服宜慎，不可过量", "孕妇忌用", "气虚者忌服", "外用偶可引起皮肤过敏"],
+        tags: ["有毒", "外用"],
+        keywords: ["疥癣", "湿疮", "跌打", "牙痛", "辟秽"]
+    },
+    {
+        id: "herb_333",
+        name: "土荆皮",
+        pinyin: "Tu Jing Pi",
+        latinName: "Pseudolarix amabilis (Nelson) Rehd.",
+        category: "攻毒杀虫止痒药",
+        subcategory: "攻毒杀虫止痒药",
+        nature: "温",
+        tastes: ["辛"],
+        meridians: ["肺经", "脾经"],
+        functions: ["杀虫", "疗癣", "止痒"],
+        indications: ["疥癣瘙痒（体癣、手足癣、头癣等多种皮肤病）"],
+        usage: "外用适量，醋或酒浸涂擦，或研末调涂。一般不作内服。",
+        contraindications: ["有毒，不宜内服"],
+        tags: ["外用", "癣"],
+        keywords: ["体癣", "手足癣", "头癣", "杀虫止痒", "土槿皮"]
+    },
+    {
+        id: "herb_334",
+        name: "蜂房",
+        pinyin: "Feng Fang",
+        latinName: "Polistes olivaceous (DeGeer) 等",
+        category: "攻毒杀虫止痒药",
+        subcategory: "攻毒杀虫止痒药",
+        nature: "平",
+        tastes: ["甘"],
+        meridians: ["胃经"],
+        functions: ["攻毒杀虫", "祛风止痛"],
+        indications: ["疮疡肿毒", "乳痈", "瘰疬", "皮肤顽癣", "鹅掌风", "牙痛", "风湿痹痛"],
+        usage: "外用适量，研末油调敷或煎水漱、洗。煎服，3-5g。",
+        contraindications: ["气血虚弱者慎服", "痈疽溃后不宜外敷（可能刺激创面）"],
+        tags: ["外用", "攻毒"],
+        keywords: ["疮疡", "乳痈", "瘰疬", "顽癣", "牙痛", "露蜂房"]
     }
 ];
 
@@ -5467,13 +6063,19 @@ const herbCategories = {
             { id: "herb_032", name: "独活" },
             { id: "herb_033", name: "威灵仙" },
             { id: "herb_132", name: "木瓜" },
-            { id: "herb_178", name: "海风藤" }
+            { id: "herb_178", name: "海风藤" },
+            { id: "herb_301", name: "川乌" },
+            { id: "herb_302", name: "草乌" },
+            { id: "herb_303", name: "蕲蛇" },
+            { id: "herb_304", name: "乌梢蛇" }
         ],
         "祛风湿清热药": [
             { id: "herb_034", name: "秦艽" },
             { id: "herb_035", name: "防己" },
             { id: "herb_213", name: "桑枝" },
-            { id: "herb_214", name: "络石藤" }
+            { id: "herb_214", name: "络石藤" },
+            { id: "herb_305", name: "豨莶草" },
+            { id: "herb_306", name: "雷公藤" }
         ],
         "祛风湿补益药": [
             { id: "herb_036", name: "桑寄生" },
@@ -5509,12 +6111,16 @@ const herbCategories = {
             { id: "herb_181", name: "海金沙" },
             { id: "herb_182", name: "地肤子" },
             { id: "herb_183", name: "萆薢" },
-            { id: "herb_218", name: "萹蓄" }
+            { id: "herb_218", name: "萹蓄" },
+            { id: "herb_307", name: "木通" },
+            { id: "herb_308", name: "通草" },
+            { id: "herb_309", name: "石韦" }
         ],
         "利湿退黄药": [
             { id: "herb_046", name: "茵陈" },
             { id: "herb_047", name: "金钱草" },
-            { id: "herb_220", name: "虎杖" }
+            { id: "herb_220", name: "虎杖" },
+            { id: "herb_310", name: "垂盆草" }
         ]
     },
     // 温里药
@@ -5527,7 +6133,8 @@ const herbCategories = {
             { id: "herb_184", name: "小茴香" },
             { id: "herb_185", name: "花椒" },
             { id: "herb_221", name: "丁香" },
-            { id: "herb_222", name: "高良姜" }
+            { id: "herb_222", name: "高良姜" },
+            { id: "herb_311", name: "荜茇" }
         ]
     },
     // 理气药
@@ -5543,7 +6150,12 @@ const herbCategories = {
             { id: "herb_187", name: "乌药" },
             { id: "herb_223", name: "青皮" },
             { id: "herb_224", name: "佛手" },
-            { id: "herb_225", name: "柿蒂" }
+            { id: "herb_225", name: "柿蒂" },
+            { id: "herb_312", name: "沉香" },
+            { id: "herb_313", name: "荔枝核" },
+            { id: "herb_314", name: "玫瑰花" },
+            { id: "herb_315", name: "大腹皮" },
+            { id: "herb_316", name: "九香虫" }
         ]
     },
     // 消食药
@@ -5561,7 +6173,11 @@ const herbCategories = {
     "驱虫药": {
         "驱虫药": [
             { id: "herb_059", name: "使君子" },
-            { id: "herb_227", name: "槟榔" }
+            { id: "herb_227", name: "槟榔" },
+            { id: "herb_317", name: "苦楝皮" },
+            { id: "herb_318", name: "南瓜子" },
+            { id: "herb_319", name: "鹤草芽" },
+            { id: "herb_320", name: "雷丸" }
         ]
     },
     // 止血药
@@ -5577,14 +6193,18 @@ const herbCategories = {
         "化瘀止血药": [
             { id: "herb_063", name: "三七" },
             { id: "herb_064", name: "蒲黄" },
-            { id: "herb_189", name: "茜草" }
+            { id: "herb_189", name: "茜草" },
+            { id: "herb_322", name: "降香" }
         ],
         "收敛止血药": [
             { id: "herb_065", name: "白及" },
-            { id: "herb_066", name: "仙鹤草" }
+            { id: "herb_066", name: "仙鹤草" },
+            { id: "herb_323", name: "紫珠叶" },
+            { id: "herb_324", name: "藕节" }
         ],
         "温经止血药": [
-            { id: "herb_067", name: "艾叶" }
+            { id: "herb_067", name: "艾叶" },
+            { id: "herb_321", name: "炮姜" }
         ]
     },
     // 活血化瘀药
@@ -5664,7 +6284,8 @@ const herbCategories = {
         "重镇安神药": [
             { id: "herb_086", name: "朱砂" },
             { id: "herb_087", name: "龙骨" },
-            { id: "herb_238", name: "磁石" }
+            { id: "herb_238", name: "磁石" },
+            { id: "herb_325", name: "琥珀" }
         ],
         "养心安神药": [
             { id: "herb_088", name: "酸枣仁" },
@@ -5690,7 +6311,10 @@ const herbCategories = {
             { id: "herb_096", name: "全蝎" },
             { id: "herb_148", name: "僵蚕" },
             { id: "herb_149", name: "地龙" },
-            { id: "herb_242", name: "蜈蚣" }
+            { id: "herb_242", name: "蜈蚣" },
+            { id: "herb_326", name: "羚羊角" },
+            { id: "herb_327", name: "牛黄" },
+            { id: "herb_328", name: "珍珠" }
         ]
     },
     // 开窍药
@@ -5788,7 +6412,13 @@ const herbCategories = {
     "攻毒杀虫止痒药": {
         "攻毒杀虫止痒药": [
             { id: "herb_119", name: "雄黄" },
-            { id: "herb_120", name: "蛇床子" }
+            { id: "herb_120", name: "蛇床子" },
+            { id: "herb_329", name: "硫黄" },
+            { id: "herb_330", name: "白矾" },
+            { id: "herb_331", name: "蟾酥" },
+            { id: "herb_332", name: "樟脑" },
+            { id: "herb_333", name: "土荆皮" },
+            { id: "herb_334", name: "蜂房" }
         ]
     },
     // 拔毒化腐生肌药

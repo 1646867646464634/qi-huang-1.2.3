@@ -1,6 +1,6 @@
 /**
  * 岐黄·辅助诊疗系统 — 方剂数据库
- * 包含170首经典中医方剂，覆盖17大类方剂
+ * 包含 223 首经典中医方剂，覆盖 17 大类方剂（2026-08-31 按"十五五"《方剂学》补充 53 首）
  * 数据来源：《方剂学》教材及相关经典医籍
  */
 
@@ -4930,8 +4930,1526 @@ const formulasDatabase = [
             { condition: "自汗者", modification: "加人参、龙骨、浮小麦以固表敛汗" }
         ],
         contraindications: ["实热动风者禁用", "阳虚者禁用", "痰热扰神者慎用"]
-    }
+    },
 
+    // ================================================================================
+    // 以下为"十五五"规划教材《方剂学》（李冀、许二平主编，中国中医药出版社 2026）补充正方
+    // 2026-08-31 批次补充，共 53 首（解表5/泻下4/和解1/清热4/温里3/补益5/固涩4/安神2/开窍2/理气5/理血4/治风3/治燥2/祛湿3/祛痰3/消食2/驱虫1）
+    // ================================================================================
+
+    // —— 解表剂（5首） ——
+    {
+        id: "formula_171",
+        name: "香薷散",
+        pinyin: "Xiang Ru San",
+        source: "《太平惠民和剂局方》",
+        category: "解表剂",
+        subcategory: "辛温解表剂",
+        composition: [
+            { herbName: "香薷", dosage: "12g", role: "君药" },
+            { herbName: "白扁豆", dosage: "9g", role: "佐药" },
+            { herbName: "厚朴", dosage: "9g", role: "臣药" },
+            { herbName: "酒", dosage: "适量", role: "引经" }
+        ],
+        functions: ["祛暑解表", "化湿和中"],
+        indications: ["阴暑证", "恶寒发热", "头痛身重", "无汗", "腹痛吐泻", "胸脘痞闷", "舌苔白腻", "脉浮紧"],
+        analysis: "本方为夏月乘凉饮冷、外感风寒、内伤于湿之阴暑证而设。香薷辛温芳香，解表散寒、祛暑化湿，为君药；厚朴苦辛而温，行气化湿、宽中除满，为臣药；白扁豆甘平，健脾和中、渗湿消暑，为佐药；少许酒煎，温通经脉、助药力布达，为使药。三药合用，共成祛暑解表、化湿和中之剂。",
+        keyPoints: ["恶寒发热", "头痛身重", "无汗", "腹痛吐泻", "苔白腻"],
+        relatedSyndromes: ["风寒表实证", "寒湿困脾证"],
+        relatedConstitutions: ["气虚质", "痰湿质"],
+        modifications: [
+            { condition: "暑热烦渴", modification: "去白扁豆之壅滞，加黄连以清暑热（四味香薷饮）" },
+            { condition: "湿盛于里、腹胀泄泻", modification: "加茯苓、甘草以健脾利湿（五物香薷饮）" }
+        ],
+        contraindications: ["表虚有汗者忌用", "中暑发热汗出、心烦口渴之阳暑证禁用"]
+    },
+    {
+        id: "formula_172",
+        name: "升麻葛根汤",
+        pinyin: "Sheng Ma Ge Gen Tang",
+        source: "《阎氏小儿方论》",
+        category: "解表剂",
+        subcategory: "辛凉解表剂",
+        composition: [
+            { herbName: "升麻", dosage: "6g", role: "君药" },
+            { herbName: "葛根", dosage: "9g", role: "君药" },
+            { herbName: "芍药", dosage: "6g", role: "臣药" },
+            { herbName: "炙甘草", dosage: "3g", role: "使药" }
+        ],
+        functions: ["解肌透疹"],
+        indications: ["麻疹初起", "疹发不出", "身热头痛", "咳嗽", "目赤流泪", "口渴", "舌红苔薄而干", "脉浮数"],
+        analysis: "麻疹为阳毒，宜透发不宜清解。方中升麻辛甘微寒，入肺胃经，善解肌透疹、清热解毒，为君药；葛根甘辛性凉，解肌透疹、生津除热，助升麻透发麻疹，为臣药；芍药和营泄热，使透疹而不伤阴血，为佐药；炙甘草调和诸药，为使药。四药合用，共奏解肌透疹之功。",
+        keyPoints: ["麻疹初起", "疹发不出", "身热", "目赤流泪"],
+        relatedSyndromes: ["风热表证", "实热证"],
+        relatedConstitutions: ["平和质", "湿热质"],
+        modifications: [
+            { condition: "麻疹欲出不出", modification: "加蝉蜕、薄荷、牛蒡子以增强透疹之力" },
+            { condition: "咽喉肿痛", modification: "加桔梗、玄参、马勃以利咽消肿" }
+        ],
+        contraindications: ["麻疹已透者禁用", "麻疹逆证（毒陷心肝）者不宜单用"]
+    },
+    {
+        id: "formula_173",
+        name: "再造散",
+        pinyin: "Zai Zao San",
+        source: "《伤寒六书》",
+        category: "解表剂",
+        subcategory: "扶正解表剂",
+        composition: [
+            { herbName: "黄芪", dosage: "6g", role: "君药" },
+            { herbName: "人参", dosage: "3g", role: "臣药" },
+            { herbName: "桂枝", dosage: "3g", role: "臣药" },
+            { herbName: "羌活", dosage: "3g", role: "佐药" },
+            { herbName: "防风", dosage: "3g", role: "佐药" },
+            { herbName: "细辛", dosage: "1.5g", role: "佐药" },
+            { herbName: "熟附子", dosage: "3g", role: "佐药" },
+            { herbName: "川芎", dosage: "3g", role: "佐药" },
+            { herbName: "煨生姜", dosage: "3g", role: "佐药" },
+            { herbName: "芍药", dosage: "3g", role: "佐药" },
+            { herbName: "大枣", dosage: "2枚", role: "佐药" },
+            { herbName: "甘草", dosage: "1.5g", role: "使药" }
+        ],
+        functions: ["助阳益气", "解表散寒"],
+        indications: ["阳气虚弱", "外感风寒", "恶寒发热", "热轻寒重", "无汗肢冷", "倦怠嗜卧", "面色苍白", "舌淡苔白", "脉沉无力或浮大无力"],
+        analysis: "本方为阳气虚弱、感邪无汗者设。若单纯发汗则汗出愈虚其阳，单纯扶正则表邪不去，故扶正与解表并投。方中以桂枝、羌活、防风、细辛、川芎、煨生姜发散风寒、解表止痛；黄芪、人参益气固表、助药力以鼓邪外出；熟附子温壮元阳，补阳以助解表；芍药和营，并制诸辛温药之燥；大枣、甘草和中益营，调和诸药。全方散不伤正、补不留邪。",
+        keyPoints: ["恶寒发热", "热轻寒重", "无汗肢冷", "倦怠嗜卧", "脉沉无力"],
+        relatedSyndromes: ["风寒表实证", "气虚证", "心阳虚证"],
+        relatedConstitutions: ["阳虚质", "气虚质"],
+        modifications: [
+            { condition: "阳虚气弱较甚、面色苍白", modification: "重用人参、黄芪以益气固表" },
+            { condition: "兼咳嗽有痰", modification: "加杏仁、半夏以化痰止咳" }
+        ],
+        contraindications: ["外感风热者忌用", "阴虚阳亢者禁用"]
+    },
+    {
+        id: "formula_174",
+        name: "加减葳蕤汤",
+        pinyin: "Jia Jian Wei Rui Tang",
+        source: "《重订通俗伤寒论》",
+        category: "解表剂",
+        subcategory: "扶正解表剂",
+        composition: [
+            { herbName: "玉竹", dosage: "9g", role: "君药" },
+            { herbName: "薄荷", dosage: "5g", role: "臣药" },
+            { herbName: "葱白", dosage: "3g", role: "臣药" },
+            { herbName: "淡豆豉", dosage: "6g", role: "臣药" },
+            { herbName: "桔梗", dosage: "5g", role: "佐药" },
+            { herbName: "白薇", dosage: "5g", role: "佐药" },
+            { herbName: "大枣", dosage: "2枚", role: "佐药" },
+            { herbName: "炙甘草", dosage: "1.5g", role: "使药" }
+        ],
+        functions: ["滋阴解表"],
+        indications: ["素体阴虚", "外感风热", "头痛身热", "微恶风寒", "无汗或有汗不多", "咳嗽心烦", "口渴咽干", "舌红脉数"],
+        analysis: "本方为素体阴虚、感受风热之证而设。葳蕤（玉竹）甘平柔润，滋阴益液而润燥，为君药；薄荷、葱白、淡豆豉疏散风热、发汗解表，为臣药；白薇清热而不伤阴，桔梗宣肺止咳祛痰，大枣甘润养血，共为佐药；甘草调和诸药，为使药。全方发汗不伤阴，滋阴不碍邪。",
+        keyPoints: ["身热微恶风寒", "口渴咽干", "心烦", "舌红脉数"],
+        relatedSyndromes: ["风热表证", "肺阴虚证"],
+        relatedConstitutions: ["阴虚质"],
+        modifications: [
+            { condition: "咳嗽咽干明显", modification: "加杏仁、瓜蒌皮、浙贝母以润肺化痰" },
+            { condition: "心烦较甚", modification: "加竹叶、天花粉以清热生津除烦" }
+        ],
+        contraindications: ["外感风寒表证者不宜", "无阴虚表现者慎用"]
+    },
+    {
+        id: "formula_175",
+        name: "葱白七味饮",
+        pinyin: "Cong Bai Qi Wei Yin",
+        source: "《外台秘要》",
+        category: "解表剂",
+        subcategory: "扶正解表剂",
+        composition: [
+            { herbName: "葱白", dosage: "9g", role: "君药" },
+            { herbName: "干葛", dosage: "9g", role: "臣药" },
+            { herbName: "淡豆豉", dosage: "6g", role: "臣药" },
+            { herbName: "生地黄", dosage: "15g", role: "君药" },
+            { herbName: "麦冬", dosage: "9g", role: "佐药" },
+            { herbName: "生姜", dosage: "3g", role: "佐药" },
+            { herbName: "劳水", dosage: "适量", role: "佐药" }
+        ],
+        functions: ["养血滋阴", "发汗解表"],
+        indications: ["血虚或阴液亏虚之人外感风寒", "头痛身热", "微恶风寒", "无汗", "面色无华", "唇甲色淡", "舌淡苔白", "脉浮细无力"],
+        analysis: "本方为血虚或阴亏之人复感风寒而设。生地黄、麦冬养血滋阴为君，使汗出有源而不伤正；葱白、淡豆豉、生姜辛散解表为臣，宣散风寒而不燥烈；干葛解肌发表、升津液为佐；劳水（再扬之水）助药力以行，为使。诸药合用，养血滋阴与解表散寒并行，标本兼顾。",
+        keyPoints: ["头痛身热", "微恶风寒", "无汗", "血虚阴亏见症"],
+        relatedSyndromes: ["风寒表实证", "血虚证"],
+        relatedConstitutions: ["气虚质", "阴虚质"],
+        modifications: [
+            { condition: "恶寒较重", modification: "加荆芥、防风以增强解表之力" },
+            { condition: "血虚明显", modification: "加当归、白芍以养血和营" }
+        ],
+        contraindications: ["湿热内蕴者禁用", "外感风热者不宜"]
+    },
+
+    // —— 泻下剂（4首） ——
+    {
+        id: "formula_176",
+        name: "大陷胸汤",
+        pinyin: "Da Xian Xiong Tang",
+        source: "《伤寒论》",
+        category: "泻下剂",
+        subcategory: "寒下剂",
+        composition: [
+            { herbName: "甘遂", dosage: "1g（研末冲服）", role: "君药" },
+            { herbName: "大黄", dosage: "12g", role: "臣药" },
+            { herbName: "芒硝", dosage: "9g（冲服）", role: "佐使" }
+        ],
+        functions: ["泻热逐水"],
+        indications: ["水热互结之结胸证", "心下硬满而痛", "拒按", "从心下至少腹硬满而痛不可近", "大便秘结", "日晡潮热", "短气烦躁", "舌上燥而渴", "脉沉紧有力"],
+        analysis: "本方为水热互结于胸腹之结胸证而设。甘遂苦寒峻下，攻逐水饮，为君药；大黄泻热通便，芒硝软坚泻热，二者与甘遂相伍，泻热与逐水并施，使水热之邪从大便而去。三药力专效宏，为泻热逐水之峻剂。",
+        keyPoints: ["心下硬满而痛拒按", "便秘", "潮热", "脉沉紧有力"],
+        relatedSyndromes: ["实热证", "湿热蕴结证"],
+        relatedConstitutions: ["湿热质"],
+        modifications: [
+            { condition: "结胸证轻而兼呕", modification: "去芒硝，加半夏、生姜以辛开散结（小陷胸汤化裁）" }
+        ],
+        contraindications: ["平素虚弱者慎用", "孕妇禁用", "中病即止，不可久服"]
+    },
+    {
+        id: "formula_177",
+        name: "十枣汤",
+        pinyin: "Shi Zao Tang",
+        source: "《伤寒论》",
+        category: "泻下剂",
+        subcategory: "逐水剂",
+        composition: [
+            { herbName: "甘遂", dosage: "等份（与大戟、芫花等份研末）", role: "君药" },
+            { herbName: "大戟", dosage: "等份", role: "君药" },
+            { herbName: "芫花", dosage: "等份", role: "君药" },
+            { herbName: "大枣", dosage: "10枚（煎汤送服）", role: "佐使" }
+        ],
+        functions: ["攻逐水饮"],
+        indications: ["悬饮", "咳唾胸胁引痛", "心下痞硬", "干呕短气", "头痛目眩", "或胸背掣痛不得息", "脉沉弦；亦治水肿腹胀属实者"],
+        analysis: "本方为水饮壅盛于里之实证而设。甘遂善行经隧水湿，大戟善泻脏腑水湿，芫花善消胸胁伏饮痰癖，三药相须，峻下逐水之力尤强；然三药俱峻猛有毒，易伤正气，故以肥大枣十枚煎汤送服，益脾护胃、缓和诸药之毒，使逐水而不伤正。",
+        keyPoints: ["咳唾胸胁引痛", "心下痞硬", "干呕短气", "脉沉弦"],
+        relatedSyndromes: ["水饮内停证", "实热证"],
+        relatedConstitutions: ["痰湿质"],
+        modifications: [
+            { condition: "体虚邪实非攻不可者", modification: "与人参、黄芪等扶正药间隔使用，先攻后补" }
+        ],
+        contraindications: ["孕妇禁用", "体虚者慎用", "三药均峻猛有毒，须研末空腹枣汤送服，剂量由小渐增，中病即止", "服后泻下不止者可进冷粥止之"]
+    },
+    {
+        id: "formula_178",
+        name: "黄龙汤",
+        pinyin: "Huang Long Tang",
+        source: "《伤寒六书》",
+        category: "泻下剂",
+        subcategory: "寒下剂",
+        composition: [
+            { herbName: "大黄", dosage: "9g", role: "君药" },
+            { herbName: "芒硝", dosage: "6g（冲服）", role: "臣药" },
+            { herbName: "枳实", dosage: "6g", role: "臣药" },
+            { herbName: "厚朴", dosage: "6g", role: "臣药" },
+            { herbName: "当归", dosage: "9g", role: "佐药" },
+            { herbName: "人参", dosage: "6g", role: "佐药" },
+            { herbName: "甘草", dosage: "3g", role: "使药" },
+            { herbName: "生姜", dosage: "3片", role: "佐药" },
+            { herbName: "大枣", dosage: "2枚", role: "佐药" },
+            { herbName: "桔梗", dosage: "3g", role: "佐药" }
+        ],
+        functions: ["攻下通便", "补气养血"],
+        indications: ["阳明腑实", "气血不足", "自利清水", "色纯青", "或大便秘结", "腹痛拒按", "身热口渴", "神倦少气", "谵语，甚则循衣撮空", "舌苔焦黄或黑", "脉虚"],
+        analysis: "本方为阳明腑实兼气血不足者设。大黄、芒硝、枳实、厚朴（大承气汤）攻下热结，荡涤肠胃实热积滞；人参、当归益气养血，扶正以助攻下，使攻不伤正；桔梗开宣肺气以通降大肠，生姜、大枣和胃助运，甘草调和诸药。全方攻补兼施，为攻下热结与补益气血并行之代表方。",
+        keyPoints: ["自利清水或便秘", "腹痛拒按", "身热口渴", "神倦少气", "苔焦黄"],
+        relatedSyndromes: ["实热证", "气血两虚证"],
+        relatedConstitutions: ["湿热质", "气虚质"],
+        modifications: [
+            { condition: "年老气血虚甚者", modification: "去芒硝，减缓攻下之力" },
+            { condition: "热结液亏、口燥咽干", modification: "加生地黄、玄参、麦冬以增液通便" }
+        ],
+        contraindications: ["孕妇禁用", "无气血虚弱者不宜滥用"]
+    },
+    {
+        id: "formula_179",
+        name: "五仁丸",
+        pinyin: "Wu Ren Wan",
+        source: "《世医得效方》",
+        category: "泻下剂",
+        subcategory: "润下剂",
+        composition: [
+            { herbName: "桃仁", dosage: "30g", role: "君药" },
+            { herbName: "杏仁", dosage: "30g", role: "臣药" },
+            { herbName: "柏子仁", dosage: "15g", role: "佐药" },
+            { herbName: "郁李仁", dosage: "6g", role: "佐药" },
+            { herbName: "松子仁", dosage: "15g", role: "佐药" },
+            { herbName: "陈皮", dosage: "120g", role: "佐药" }
+        ],
+        functions: ["润肠通便"],
+        indications: ["津枯肠燥证", "大便艰难", "老年人或产后血虚便秘", "习惯性便秘", "舌燥少津", "脉细涩"],
+        analysis: "本方为津枯肠燥、大便艰难者设。方中五仁皆富含油脂，以润燥滑肠为用：桃仁、杏仁质润多脂，润肠通便且能降肺气，为君臣；柏子仁养心安神、润肠，郁李仁润肠利水，松子仁润五脏，共为佐；重用陈皮理气行滞，使润而不腻。全方润下与行气相合，用治津枯便秘。",
+        keyPoints: ["大便艰难", "老年或产后便秘", "舌燥少津"],
+        relatedSyndromes: ["肠燥津亏证"],
+        relatedConstitutions: ["阴虚质", "气虚质"],
+        modifications: [
+            { condition: "津亏较甚", modification: "加生地黄、玄参以增液润燥" },
+            { condition: "兼气滞腹胀", modification: "加枳壳、莱菔子以行气导滞" }
+        ],
+        contraindications: ["实热积滞之便秘禁用", "孕妇慎用"]
+    },
+
+    // —— 和解剂（1首） ——
+    {
+        id: "formula_180",
+        name: "达原饮",
+        pinyin: "Da Yuan Yin",
+        source: "《温疫论》",
+        category: "和解剂",
+        subcategory: "和解少阳剂",
+        composition: [
+            { herbName: "槟榔", dosage: "6g", role: "君药" },
+            { herbName: "厚朴", dosage: "3g", role: "臣药" },
+            { herbName: "草果", dosage: "2g", role: "臣药" },
+            { herbName: "知母", dosage: "3g", role: "佐药" },
+            { herbName: "芍药", dosage: "3g", role: "佐药" },
+            { herbName: "黄芩", dosage: "3g", role: "佐药" },
+            { herbName: "甘草", dosage: "1.5g", role: "使药" }
+        ],
+        functions: ["开达膜原", "辟秽化浊"],
+        indications: ["温疫或疟疾", "邪伏膜原", "憎寒壮热", "或一日二三次发热", "胸闷呕恶", "头痛烦躁", "舌边深红", "舌苔白厚如积粉", "脉数"],
+        analysis: "本方为温疫邪伏膜原而设。槟榔辛散湿邪、化痰破结，厚朴芳香化浊、理气祛湿，草果辛香辟秽、宣透伏邪，三药协力直达膜原、逐邪外出，为君臣；热易伤津，以知母清热滋阴，黄芩清热燥湿，芍药敛阴和营，共为佐；甘草清热和中，调和诸药，为使。全方透邪与清热滋阴并投，开达膜原、辟秽化浊。",
+        keyPoints: ["憎寒壮热", "胸闷呕恶", "苔白厚如积粉", "舌边深红"],
+        relatedSyndromes: ["少阳病证", "湿热蕴结证"],
+        relatedConstitutions: ["痰湿质", "湿热质"],
+        modifications: [
+            { condition: "胁痛耳聋", modification: "加柴胡以疏肝胆" },
+            { condition: "腰背项痛", modification: "加羌活以疏散太阳经邪" },
+            { condition: "目痛眉棱骨痛", modification: "加葛根以解肌升津" }
+        ],
+        contraindications: ["温疫已传入胃、大渴大汗者不宜单用", "阴虚火旺者慎用"]
+    },
+
+    // —— 清热剂（4首） ——
+    {
+        id: "formula_181",
+        name: "栀子豉汤",
+        pinyin: "Zhi Zi Chi Tang",
+        source: "《伤寒论》",
+        category: "清热剂",
+        subcategory: "清气分热剂",
+        composition: [
+            { herbName: "栀子", dosage: "9g", role: "君药" },
+            { herbName: "淡豆豉", dosage: "9g", role: "臣药" }
+        ],
+        functions: ["清宣郁热"],
+        indications: ["发汗吐下后", "虚烦不得眠", "反复颠倒", "心中懊憹", "甚则烦闷窒塞", "舌苔薄黄", "脉数"],
+        analysis: "本方为汗吐下后余热留扰胸膈、气机不宣之虚烦证而设。栀子苦寒，清泻心胸郁热而除烦，为君药；淡豆豉辛凉宣散，既解表除烦，又宣散胸中郁结，助栀子清宣胸膈郁热，为臣药。二药一清一宣，郁热得散，虚烦自除。",
+        keyPoints: ["虚烦不得眠", "心中懊憹", "苔薄黄"],
+        relatedSyndromes: ["心火亢盛证", "实热证"],
+        relatedConstitutions: ["湿热质", "平和质"],
+        modifications: [
+            { condition: "兼少气者", modification: "加炙甘草（栀子甘草豉汤）以益气和中" },
+            { condition: "兼呕者", modification: "加生姜（栀子生姜豉汤）以降逆止呕" }
+        ],
+        contraindications: ["脾胃虚寒、大便溏者慎用（栀子苦寒伤中）"]
+    },
+    {
+        id: "formula_182",
+        name: "清瘟败毒饮",
+        pinyin: "Qing Wen Bai Du Yin",
+        source: "《疫疹一得》",
+        category: "清热剂",
+        subcategory: "清热解毒剂",
+        composition: [
+            { herbName: "生石膏", dosage: "大剂180-240g/中剂60-120g/小剂24-36g", role: "君药" },
+            { herbName: "水牛角（犀角代）", dosage: "大剂24-30g/中剂9-15g/小剂6-12g", role: "臣药" },
+            { herbName: "生地黄", dosage: "大剂30g/中剂15g/小剂9g", role: "臣药" },
+            { herbName: "黄连", dosage: "大剂18g/中剂9g/小剂3-6g", role: "臣药" },
+            { herbName: "栀子", dosage: "9g", role: "佐药" },
+            { herbName: "黄芩", dosage: "9g", role: "佐药" },
+            { herbName: "连翘", dosage: "9g", role: "佐药" },
+            { herbName: "知母", dosage: "9g", role: "佐药" },
+            { herbName: "牡丹皮", dosage: "9g", role: "佐药" },
+            { herbName: "赤芍", dosage: "9g", role: "佐药" },
+            { herbName: "玄参", dosage: "9g", role: "佐药" },
+            { herbName: "桔梗", dosage: "6g", role: "佐药" },
+            { herbName: "竹叶", dosage: "6g", role: "佐药" },
+            { herbName: "甘草", dosage: "6g", role: "使药" }
+        ],
+        functions: ["清热解毒", "凉血泻火"],
+        indications: ["温疫热毒", "气血两燔证", "大热渴饮", "头痛如劈", "干呕狂躁", "谵语神昏", "视物昏瞀", "或发斑疹", "或吐血衄血", "四肢抽搐", "舌绛唇焦", "脉沉数或浮大而数"],
+        analysis: "本方由白虎汤、犀角地黄汤、黄连解毒汤三方加减合并而成，主治温疫热毒、气血两燔之证。生石膏、知母清气分之热而保津；水牛角、生地黄、牡丹皮、赤芍、玄参凉血救阴、解毒化斑；黄连、黄芩、栀子、连翘泻火解毒；桔梗、竹叶载药上行宣透，甘草调和诸药。全方气血两清，为十二经泻火之剂。",
+        keyPoints: ["大热渴饮", "头痛如劈", "谵语神昏", "发斑吐衄", "舌绛唇焦"],
+        relatedSyndromes: ["实热证", "血热证", "热毒蕴肤证"],
+        relatedConstitutions: ["湿热质"],
+        modifications: [
+            { condition: "头痛欲裂", modification: "重用石膏，加菊花、蔓荆子以清利头目" },
+            { condition: "斑疹显露", modification: "加大青叶、青黛以凉血化斑" }
+        ],
+        contraindications: ["素体阳虚者禁用", "脾胃虚寒者忌用"]
+    },
+    {
+        id: "formula_183",
+        name: "当归六黄汤",
+        pinyin: "Dang Gui Liu Huang Tang",
+        source: "《兰室秘藏》",
+        category: "清热剂",
+        subcategory: "清虚热剂",
+        composition: [
+            { herbName: "当归", dosage: "9g", role: "君药" },
+            { herbName: "生地黄", dosage: "15g", role: "君药" },
+            { herbName: "熟地黄", dosage: "15g", role: "君药" },
+            { herbName: "黄芩", dosage: "9g", role: "臣药" },
+            { herbName: "黄连", dosage: "9g", role: "臣药" },
+            { herbName: "黄柏", dosage: "9g", role: "臣药" },
+            { herbName: "黄芪", dosage: "18g", role: "佐使" }
+        ],
+        functions: ["滋阴泻火", "固表止汗"],
+        indications: ["阴虚火旺之盗汗", "发热盗汗", "面赤心烦", "口干唇燥", "大便干结", "小便黄赤", "舌红苔黄", "脉数"],
+        analysis: "本方为阴虚火旺之盗汗而设。当归、生地黄、熟地黄滋阴养血，使阴血充则虚火自降，为君药；黄连、黄芩、黄柏三黄泻火除烦、清热坚阴，为臣药；倍用黄芪益气实卫、固表止汗，为佐使。全方养血育阴与泻火清热并进，益气固表与育阴泻火相配，标本兼顾。",
+        keyPoints: ["发热盗汗", "面赤心烦", "口干唇燥", "舌红苔黄"],
+        relatedSyndromes: ["肾阴虚证", "心火亢盛证"],
+        relatedConstitutions: ["阴虚质"],
+        modifications: [
+            { condition: "阴虚实火不太甚、汗出多", modification: "减三黄之量，加煅牡蛎、浮小麦以增强固表敛汗" },
+            { condition: "潮热咽干明显", modification: "加知母、龟甲以滋阴退热" }
+        ],
+        contraindications: ["脾胃虚弱、纳减便溏者不宜", "阳虚发热之汗出禁用"]
+    },
+    {
+        id: "formula_184",
+        name: "清骨散",
+        pinyin: "Qing Gu San",
+        source: "《证治准绳》",
+        category: "清热剂",
+        subcategory: "清虚热剂",
+        composition: [
+            { herbName: "银柴胡", dosage: "6g", role: "君药" },
+            { herbName: "胡黄连", dosage: "3g", role: "臣药" },
+            { herbName: "秦艽", dosage: "3g", role: "佐药" },
+            { herbName: "鳖甲", dosage: "9g（先煎）", role: "佐药" },
+            { herbName: "地骨皮", dosage: "3g", role: "佐药" },
+            { herbName: "青蒿", dosage: "3g", role: "佐药" },
+            { herbName: "知母", dosage: "3g", role: "佐药" },
+            { herbName: "甘草", dosage: "2g", role: "使药" }
+        ],
+        functions: ["清虚热", "退骨蒸"],
+        indications: ["阴虚内热之骨蒸潮热", "或低热日久不退", "唇红颧赤", "形体消瘦", "困倦盗汗", "或五心烦热", "舌红少苔", "脉细数"],
+        analysis: "本方为阴虚骨蒸劳热而设。银柴胡甘苦微寒，清虚热、退骨蒸，为君药；胡黄连、知母、地骨皮助银柴胡退骨蒸劳热，为臣药；青蒿、秦艽清虚热并透伏热于外，鳖甲滋阴潜阳、引药入阴分，共为佐药；甘草调和诸药，为使药。全方集退热除蒸之品于一方，重在清透伏热，兼以滋养阴分。",
+        keyPoints: ["骨蒸潮热", "五心烦热", "盗汗消瘦", "舌红少苔"],
+        relatedSyndromes: ["肾阴虚证", "肺肾阴虚证"],
+        relatedConstitutions: ["阴虚质"],
+        modifications: [
+            { condition: "血虚甚者", modification: "加当归、白芍以养血" },
+            { condition: "咳嗽", modification: "加阿胶、五味子以养阴敛肺" }
+        ],
+        contraindications: ["外感发热者禁用", "脾胃虚寒者忌用"]
+    },
+
+    // —— 温里剂（3首） ——
+    {
+        id: "formula_185",
+        name: "大建中汤",
+        pinyin: "Da Jian Zhong Tang",
+        source: "《金匮要略》",
+        category: "温里剂",
+        subcategory: "温中祛寒剂",
+        composition: [
+            { herbName: "花椒", dosage: "6g", role: "君药" },
+            { herbName: "干姜", dosage: "12g", role: "君药" },
+            { herbName: "人参", dosage: "9g", role: "臣药" },
+            { herbName: "饴糖", dosage: "30g（烊化）", role: "佐使" }
+        ],
+        functions: ["温中补虚", "降逆止痛"],
+        indications: ["中阳衰弱", "阴寒内盛之脘腹剧痛", "腹痛连及胸脘", "痛势剧烈", "上下攻冲", "呕不能食", "或腹中漉漉有声", "手足厥冷", "舌质淡苔白滑", "脉沉紧或沉迟"],
+        analysis: "本方为脾胃阳衰、中焦寒盛之腹痛呕吐而设。花椒温脾胃、助命火、散寒止痛，为君药；干姜温中散寒、助花椒温中，为君药之辅；人参补益中气、扶助中阳，为臣药；重用饴糖温补中虚、缓急止痛，且缓和椒、姜之燥烈，为佐使。全方纯用辛甘温热之品，温中与降逆并施，急建中阳。",
+        keyPoints: ["脘腹剧痛", "上下攻冲", "呕不能食", "手足厥冷"],
+        relatedSyndromes: ["虚寒证", "寒凝胃脘证"],
+        relatedConstitutions: ["阳虚质"],
+        modifications: [
+            { condition: "兼呕吐清水", modification: "加半夏、生姜以温胃降逆" },
+            { condition: "寒甚肢冷", modification: "加附子以温阳祛寒" }
+        ],
+        contraindications: ["热性腹痛者禁用", "阴虚火旺者忌用"]
+    },
+    {
+        id: "formula_186",
+        name: "回阳救急汤",
+        pinyin: "Hui Yang Jiu Ji Tang",
+        source: "《伤寒六书》",
+        category: "温里剂",
+        subcategory: "回阳救逆剂",
+        composition: [
+            { herbName: "熟附子", dosage: "9g", role: "君药" },
+            { herbName: "干姜", dosage: "6g", role: "君药" },
+            { herbName: "肉桂", dosage: "3g", role: "臣药" },
+            { herbName: "人参", dosage: "6g", role: "臣药" },
+            { herbName: "白术", dosage: "9g", role: "佐药" },
+            { herbName: "茯苓", dosage: "9g", role: "佐药" },
+            { herbName: "陈皮", dosage: "6g", role: "佐药" },
+            { herbName: "半夏", dosage: "9g", role: "佐药" },
+            { herbName: "五味子", dosage: "3g", role: "佐药" },
+            { herbName: "甘草", dosage: "6g", role: "使药" },
+            { herbName: "麝香", dosage: "0.1g（冲服）", role: "佐药" },
+            { herbName: "生姜", dosage: "3片", role: "佐药" }
+        ],
+        functions: ["回阳救逆", "益气生脉"],
+        indications: ["寒邪直中三阴", "真阳衰微", "四肢厥冷", "神衰欲寐", "恶寒蜷卧", "吐泻腹痛", "口不渴", "或指甲口唇青紫", "舌淡苔白滑", "脉沉微甚则无脉"],
+        analysis: "本方为真阳衰微、阴寒极盛之危重证而设，由四逆汤合六君子汤加味。附子、干姜、肉桂温壮元阳、祛寒救逆，为君臣；人参大补元气，五味子敛气生津，白术、茯苓健脾益气渗湿，陈皮、半夏理气化痰、和胃降逆，共为佐药；麝香辛香走窜、通行十二经，引导诸药布达周身，为佐使；甘草调和诸药。全方回阳与益气并施，峻补元气以挽垂绝之阳。",
+        keyPoints: ["四肢厥冷", "神衰欲寐", "吐泻腹痛", "脉沉微"],
+        relatedSyndromes: ["虚寒证", "心阳虚证", "脾肾阳虚证"],
+        relatedConstitutions: ["阳虚质"],
+        modifications: [
+            { condition: "呕吐涎沫或少腹痛", modification: "加盐炒吴茱萸以温肝散寒" },
+            { condition: "泄泻不止", modification: "加升麻、黄芪以升阳止泻" },
+            { condition: "无脉者", modification: "加猪胆汁以反佐通脉" }
+        ],
+        contraindications: ["热厥者禁用", "阴虚阳衰欲脱者慎用（须防燥烈伤阴）"]
+    },
+    {
+        id: "formula_187",
+        name: "阳和汤",
+        pinyin: "Yang He Tang",
+        source: "《外科证治全生集》",
+        category: "温里剂",
+        subcategory: "温经散寒剂",
+        composition: [
+            { herbName: "熟地黄", dosage: "30g", role: "君药" },
+            { herbName: "鹿角胶", dosage: "9g（烊化）", role: "君药" },
+            { herbName: "肉桂", dosage: "3g", role: "臣药" },
+            { herbName: "麻黄", dosage: "2g", role: "臣药" },
+            { herbName: "白芥子", dosage: "6g", role: "佐药" },
+            { herbName: "姜炭", dosage: "2g", role: "佐药" },
+            { herbName: "生甘草", dosage: "3g", role: "使药" }
+        ],
+        functions: ["温阳补血", "散寒通滞"],
+        indications: ["阴疽", "漫肿无头", "皮色不变", "酸痛无热", "口淡不渴", "贴骨疽（流注）", "脱疽", "痰核", "鹤膝风", "舌淡苔白", "脉沉细或迟细"],
+        analysis: "本方为阳虚血弱、寒凝痰滞之阴疽而设。重用熟地黄温补营血、填精益髓，鹿角胶温肾助阳、益精养血，二药相伍补精血、壮元阳，为君药；肉桂、姜炭温阳散寒、通利血脉，为臣药；少量麻黄辛温达卫，开腠理以逐寒外出，白芥子祛除皮里膜外之痰，二者一散一化，使补而不滞、温而能通，为佐药；甘草生用解毒和中，为使药。全方温阳补血以治本，散寒通滞以治标，如离照当空、阴霾自散。",
+        keyPoints: ["阴疽漫肿无头", "皮色不变", "酸痛无热", "脉沉细"],
+        relatedSyndromes: ["虚寒证", "寒凝血瘀证"],
+        relatedConstitutions: ["阳虚质"],
+        modifications: [
+            { condition: "寒甚痛剧", modification: "加熟附子以温阳散寒" },
+            { condition: "兼气虚", modification: "加人参、黄芪以益气托毒" }
+        ],
+        contraindications: ["阳证疮疡（红肿热痛）禁用", "阴虚有热及破溃日久阴血亏耗者慎用"]
+    },
+
+    // —— 补益剂（5首） ——
+    {
+        id: "formula_188",
+        name: "大补阴丸",
+        pinyin: "Da Bu Yin Wan",
+        source: "《丹溪心法》",
+        category: "补益剂",
+        subcategory: "补阴剂",
+        composition: [
+            { herbName: "熟地黄", dosage: "120g", role: "君药" },
+            { herbName: "龟甲", dosage: "120g", role: "君药" },
+            { herbName: "黄柏", dosage: "90g", role: "臣药" },
+            { herbName: "知母", dosage: "90g", role: "臣药" },
+            { herbName: "猪脊髓", dosage: "适量（炼蜜为丸）", role: "佐使" }
+        ],
+        functions: ["滋阴降火"],
+        indications: ["阴虚火旺证", "骨蒸潮热", "盗汗遗精", "咳嗽咯血", "心烦易怒", "足膝疼热酸软", "舌红少苔", "尺脉数而有力"],
+        analysis: "本方为阴虚火旺、真阴不足之证而设，为培本清源之剂。熟地黄、龟甲滋阴潜阳、峻补真阴，以制相火，为君药；黄柏、知母苦寒泻相火而坚阴，并保阴津，为臣药；猪脊髓、蜂蜜为血肉甘润之品，填精补髓、兼制知柏之苦燥，为佐使。全方滋阴与降火并重，阴平阳秘，虚火自敛。",
+        keyPoints: ["骨蒸潮热", "盗汗遗精", "咳嗽咯血", "足膝疼热"],
+        relatedSyndromes: ["肾阴虚证", "肝肾阴虚证", "肺肾阴虚证"],
+        relatedConstitutions: ["阴虚质"],
+        modifications: [
+            { condition: "咳嗽咯血", modification: "加天冬、麦冬、旱莲草以润肺止血" },
+            { condition: "遗精盗汗甚", modification: "加牡蛎、金樱子以固涩精关" }
+        ],
+        contraindications: ["脾胃虚弱、食少便溏者慎用", "阳虚火衰者禁用"]
+    },
+    {
+        id: "formula_189",
+        name: "泰山磐石散",
+        pinyin: "Tai Shan Pan Shi San",
+        source: "《古今医统大全》",
+        category: "补益剂",
+        subcategory: "补气剂",
+        composition: [
+            { herbName: "人参", dosage: "3g", role: "君药" },
+            { herbName: "黄芪", dosage: "6g", role: "君药" },
+            { herbName: "白术", dosage: "6g", role: "臣药" },
+            { herbName: "当归", dosage: "6g", role: "臣药" },
+            { herbName: "白芍", dosage: "6g", role: "佐药" },
+            { herbName: "熟地黄", dosage: "9g", role: "佐药" },
+            { herbName: "川芎", dosage: "3g", role: "佐药" },
+            { herbName: "续断", dosage: "6g", role: "佐药" },
+            { herbName: "黄芩", dosage: "3g", role: "佐药" },
+            { herbName: "砂仁", dosage: "3g", role: "佐药" },
+            { herbName: "糯米", dosage: "一撮", role: "佐药" },
+            { herbName: "炙甘草", dosage: "3g", role: "使药" }
+        ],
+        functions: ["益气健脾", "养血安胎"],
+        indications: ["妇人妊娠", "气血两虚", "胎动不安", "或屡有滑胎史", "面色淡白", "倦怠乏力", "不思饮食", "舌淡苔薄白", "脉滑无力或沉弱"],
+        analysis: "本方为气血两虚、冲任不固之胎动不安而设，由八珍汤去茯苓加黄芪、续断、黄芩、砂仁、糯米而成。人参、黄芪、白术、炙甘草益气健脾，使气固而胎有所载；当归、白芍、熟地黄、川芎养血和血，使血足而胎有所养；续断补肝肾、强腰膝以固冲任，为安胎要药；砂仁理气安胎、醒脾开胃；黄芩清热，与诸甘温药相配防其化热；糯米养胃。全方补气养血、固肾安胎，使胎元如泰山磐石之固。",
+        keyPoints: ["妊娠胎动不安", "面色淡白", "倦怠乏力", "屡有滑胎史"],
+        relatedSyndromes: ["气血两虚证", "冲任不固崩漏证"],
+        relatedConstitutions: ["气虚质"],
+        modifications: [
+            { condition: "呕恶不食", modification: "加陈皮、竹茹以和胃降逆" },
+            { condition: "腰酸下坠", modification: "重用续断，加杜仲、桑寄生以固肾安胎" }
+        ],
+        contraindications: ["胎漏因血热或外伤者非本方所宜"]
+    },
+    {
+        id: "formula_190",
+        name: "龟鹿二仙胶",
+        pinyin: "Gui Lu Er Xian Jiao",
+        source: "《医便》",
+        category: "补益剂",
+        subcategory: "阴阳双补剂",
+        composition: [
+            { herbName: "鹿角", dosage: "5000g", role: "君药" },
+            { herbName: "龟甲", dosage: "2500g", role: "君药" },
+            { herbName: "人参", dosage: "450g", role: "臣药" },
+            { herbName: "枸杞子", dosage: "900g", role: "臣药" }
+        ],
+        functions: ["填阴补精", "益气壮阳"],
+        indications: ["肾中阴阳两虚", "任督精血亏虚", "瘦弱少气", "梦遗泄精", "阳痿早泄", "目视不明", "腰膝酸软", "神疲乏力", "久不孕育"],
+        analysis: "本方为真元虚拟、精血亏耗之证而设。鹿角胶通督脉而补阳，龟甲胶通任脉而补阴，二味血肉有情之品峻补阴阳、填精补髓，共为君药；人参大补元气以生精，枸杞子滋补肾阴以助阳，为臣药。四药合用，阴阳并补、气血兼顾，故名二仙胶。",
+        keyPoints: ["瘦弱少气", "梦遗阳痿", "目视不明", "腰膝酸软"],
+        relatedSyndromes: ["肾阴阳两虚证", "肾精不足证"],
+        relatedConstitutions: ["阳虚质", "阴虚质"],
+        modifications: [
+            { condition: "遗精频作", modification: "加芡实、莲须以固涩精关" },
+            { condition: "目视昏花", modification: "加菊花、女贞子以养肝明目" }
+        ],
+        contraindications: ["脾胃虚弱、食少便溏者慎用（胶质滋腻碍胃）", "感冒发热时停服"]
+    },
+    {
+        id: "formula_191",
+        name: "七宝美髯丹",
+        pinyin: "Qi Bao Mei Ran Dan",
+        source: "《积善堂方》（录于《本草纲目》）",
+        category: "补益剂",
+        subcategory: "补阳剂",
+        composition: [
+            { herbName: "何首乌", dosage: "1000g（制）", role: "君药" },
+            { herbName: "茯苓", dosage: "250g", role: "佐药" },
+            { herbName: "牛膝", dosage: "250g", role: "佐药" },
+            { herbName: "当归", dosage: "250g", role: "佐药" },
+            { herbName: "枸杞子", dosage: "250g", role: "佐药" },
+            { herbName: "菟丝子", dosage: "250g", role: "佐药" },
+            { herbName: "补骨脂", dosage: "120g", role: "佐药" }
+        ],
+        functions: ["补益肝肾", "乌发壮骨"],
+        indications: ["肝肾不足", "须发早白", "脱发", "齿牙动摇", "腰膝酸软", "梦遗滑精", "肾虚不育"],
+        analysis: "本方为肝肾不足、精血亏虚之证而设。重用制何首乌补肝肾、益精血、乌须发，为君药；枸杞子、菟丝子、补骨脂补肾阳、益肾精，牛膝补肝肾、强筋骨，共为臣佐；当归养血活血，茯苓健脾渗湿以助运化，防滋腻碍胃。全方七药相合，精血同补、阴阳兼顾，以乌须发、固齿、壮骨为著效。",
+        keyPoints: ["须发早白", "齿牙动摇", "腰膝酸软", "梦遗滑精"],
+        relatedSyndromes: ["肾精不足证", "肾气不固证"],
+        relatedConstitutions: ["阳虚质", "气虚质"],
+        modifications: [
+            { condition: "须发早白甚", modification: "加黑芝麻、桑椹以养血乌发" },
+            { condition: "遗精滑泄", modification: "加金樱子、芡实以固精止遗" }
+        ],
+        contraindications: ["脾虚便溏者慎用", "湿滞中焦者不宜"]
+    },
+    {
+        id: "formula_192",
+        name: "人参蛤蚧散",
+        pinyin: "Ren Shen Ge Jie San",
+        source: "《卫生宝鉴》",
+        category: "补益剂",
+        subcategory: "补气剂",
+        composition: [
+            { herbName: "蛤蚧", dosage: "1对（酥炙）", role: "君药" },
+            { herbName: "人参", dosage: "60g", role: "臣药" },
+            { herbName: "茯苓", dosage: "60g", role: "佐药" },
+            { herbName: "贝母", dosage: "60g", role: "佐药" },
+            { herbName: "桑白皮", dosage: "90g", role: "佐药" },
+            { herbName: "知母", dosage: "60g", role: "佐药" },
+            { herbName: "杏仁", dosage: "90g", role: "佐药" },
+            { herbName: "炙甘草", dosage: "150g", role: "使药" }
+        ],
+        functions: ["补肺益肾", "止咳定喘"],
+        indications: ["肺肾气虚", "痰热内蕴之喘咳", "咳嗽气喘", "呼多吸少", "声音低怯", "痰稠色黄", "或咳吐脓血", "胸中烦热", "身体羸瘦", "或遍身浮肿", "脉浮虚"],
+        analysis: "本方为肺肾两虚、痰热内蕴之久咳虚喘而设。蛤蚧补肺益肾、定喘止嗽，为君药；人参大补肺气以固根本，为臣药；茯苓健脾渗湿以绝生痰之源，贝母、杏仁润肺化痰止咳，桑白皮、知母泻肺清热，共为佐药；炙甘草补肺益气、调和诸药，为使药。全方补虚与清化并用，标本同治。",
+        keyPoints: ["咳嗽气喘", "呼多吸少", "痰稠色黄", "身体羸瘦"],
+        relatedSyndromes: ["肺肾阴虚证", "肾气不固证"],
+        relatedConstitutions: ["气虚质", "阴虚质"],
+        modifications: [
+            { condition: "虚喘甚者", modification: "加胡桃肉、五味子以纳气归肾" },
+            { condition: "咳吐脓血", modification: "加苇茎、薏苡仁以清肺排脓" }
+        ],
+        contraindications: ["外感喘咳者禁用", "痰热壅盛而无虚象者不宜"]
+    },
+
+    // —— 固涩剂（4首） ——
+    {
+        id: "formula_193",
+        name: "九仙散",
+        pinyin: "Jiu Xian San",
+        source: "《医学正传》引《卫生宝鉴》",
+        category: "固涩剂",
+        subcategory: "敛肺止咳剂",
+        composition: [
+            { herbName: "人参", dosage: "9g", role: "君药" },
+            { herbName: "罂粟壳", dosage: "6g", role: "臣药" },
+            { herbName: "五味子", dosage: "6g", role: "佐药" },
+            { herbName: "乌梅", dosage: "6g", role: "佐药" },
+            { herbName: "款冬花", dosage: "9g", role: "佐药" },
+            { herbName: "桑白皮", dosage: "9g", role: "佐药" },
+            { herbName: "桔梗", dosage: "9g", role: "佐药" },
+            { herbName: "阿胶", dosage: "9g（烊化）", role: "佐药" },
+            { herbName: "贝母", dosage: "6g", role: "佐药" }
+        ],
+        functions: ["敛肺止咳", "益气养阴"],
+        indications: ["久咳肺虚", "咳嗽不已", "咳甚则气喘自汗", "痰少而黏", "或痰中带血", "脉虚数"],
+        analysis: "本方为久咳不已、肺气耗散之证而设。重用罂粟壳敛肺止咳，为君药；五味子、乌梅助其敛肺，人参益气生津补肺，为臣药；阿胶养阴润肺，贝母、款冬花润肺止咳化痰，桑白皮泻肺平喘，桔梗宣肺载药上行，为佐药。诸药合用，敛中有宣、补中有泻，敛肺而不留邪。",
+        keyPoints: ["久咳不已", "气喘自汗", "痰少而黏", "脉虚"],
+        relatedSyndromes: ["肺气虚证", "肺阴虚证"],
+        relatedConstitutions: ["气虚质", "阴虚质"],
+        modifications: [
+            { condition: "虚热明显", modification: "加地骨皮、知母以清虚热" },
+            { condition: "自汗多", modification: "加煅牡蛎、浮小麦以敛汗固表" }
+        ],
+        contraindications: ["外感咳嗽及痰多者禁用（关门留寇）", "罂粟壳有成瘾性，不宜久服"]
+    },
+    {
+        id: "formula_194",
+        name: "桃花汤",
+        pinyin: "Tao Hua Tang",
+        source: "《伤寒论》",
+        category: "固涩剂",
+        subcategory: "涩肠止泻剂",
+        composition: [
+            { herbName: "赤石脂", dosage: "30g（一半入煎、一半冲服）", role: "君药" },
+            { herbName: "干姜", dosage: "9g", role: "臣药" },
+            { herbName: "粳米", dosage: "30g", role: "佐药" }
+        ],
+        functions: ["温中涩肠止痢"],
+        indications: ["虚寒血痢", "下痢不止", "便脓血", "色暗不鲜", "腹痛喜温喜按", "小便不利", "舌淡苔白", "脉迟弱或微细"],
+        analysis: "本方为脾肾阳虚、统摄无权之久痢滑脱而设。重用赤石脂涩肠固脱、止血止痢，为君药；干姜温中散寒、温运脾阳，为臣药；粳米养胃和中，助赤石脂、干姜厚肠胃，为佐药。三药合用，涩肠止泻与温中散寒并施，为温涩止痢之代表方。",
+        keyPoints: ["下痢脓血", "腹痛喜温喜按", "舌淡苔白", "脉迟弱"],
+        relatedSyndromes: ["虚寒证", "脾虚泄泻证"],
+        relatedConstitutions: ["阳虚质"],
+        modifications: [
+            { condition: "脾肾阳虚甚、腹痛肢冷", modification: "加人参、附子以温阳益气" },
+            { condition: "久痢滑脱不禁", modification: "加诃子、罂粟壳以增强涩肠固脱之力" }
+        ],
+        contraindications: ["热痢便脓血者禁用", "实邪未去者忌用（防留邪）"]
+    },
+    {
+        id: "formula_195",
+        name: "缩泉丸",
+        pinyin: "Suo Quan Wan",
+        source: "《魏氏家藏方》",
+        category: "固涩剂",
+        subcategory: "固精止遗剂",
+        composition: [
+            { herbName: "益智仁", dosage: "9g", role: "君药" },
+            { herbName: "乌药", dosage: "9g", role: "臣药" },
+            { herbName: "山药", dosage: "12g", role: "佐药" }
+        ],
+        functions: ["温肾祛寒", "缩尿止遗"],
+        indications: ["膀胱虚寒证", "小便频数", "或遗尿不禁", "色清白", "舌淡苔白", "脉沉弱"],
+        analysis: "本方为下元虚寒、膀胱失约之小便频数而设。益智仁温肾散寒、缩尿止遗，为君药；乌药温肾散寒、行气，助益智仁温暖下元，为臣药；山药健脾补肾、固涩精微，为佐药。三药合用，温而不燥，肾气得温、膀胱得约，尿频遗尿自止。",
+        keyPoints: ["小便频数", "遗尿", "尿色清白", "舌淡脉沉弱"],
+        relatedSyndromes: ["肾气不固证", "肾阳虚证"],
+        relatedConstitutions: ["阳虚质"],
+        modifications: [
+            { condition: "肾阳虚甚、腰膝冷痛", modification: "加菟丝子、补骨脂以温补肾阳" },
+            { condition: "夜遗尿频甚", modification: "加桑螵蛸、覆盆子以固涩缩尿" }
+        ],
+        contraindications: ["湿热下注之尿频涩痛者禁用"]
+    },
+    {
+        id: "formula_196",
+        name: "固经丸",
+        pinyin: "Gu Jing Wan",
+        source: "《医学入门》",
+        category: "固涩剂",
+        subcategory: "固崩止带剂",
+        composition: [
+            { herbName: "龟甲", dosage: "30g", role: "君药" },
+            { herbName: "白芍", dosage: "30g", role: "臣药" },
+            { herbName: "黄芩", dosage: "30g", role: "臣药" },
+            { herbName: "椿根皮", dosage: "21g", role: "佐药" },
+            { herbName: "黄柏", dosage: "9g", role: "佐药" },
+            { herbName: "香附", dosage: "7.5g", role: "佐药" }
+        ],
+        functions: ["滋阴清热", "固经止血"],
+        indications: ["阴虚血热之崩漏", "经水过期不止", "或下血量多", "色深红或紫黑稠黏", "手足心热", "腰膝酸软", "舌红苔少", "脉弦数"],
+        analysis: "本方为阴虚血热、迫血妄行之崩漏而设。龟甲滋阴降火、益肾固冲任，为君药；白芍敛阴养血柔肝，黄芩、黄柏清热泻火坚阴，共为臣药；椿根皮固经止血，香附理气调经（气顺则血调），为佐药。全方滋阴清热与固经止血并施，热去血安而崩漏自止。",
+        keyPoints: ["经水过期不止", "下血色深红", "手足心热", "舌红少苔"],
+        relatedSyndromes: ["冲任不固崩漏证", "肝肾阴虚证"],
+        relatedConstitutions: ["阴虚质"],
+        modifications: [
+            { condition: "出血量多", modification: "加棕榈炭、侧柏叶以收涩止血" },
+            { condition: "阴虚甚", modification: "加生地黄、麦冬以滋阴凉血" }
+        ],
+        contraindications: ["气虚不摄之崩漏禁用", "寒凝血瘀之崩漏禁用"]
+    },
+
+    // —— 安神剂（2首） ——
+    {
+        id: "formula_197",
+        name: "磁朱丸",
+        pinyin: "Ci Zhu Wan",
+        source: "《备急千金要方》",
+        category: "安神剂",
+        subcategory: "重镇安神剂",
+        composition: [
+            { herbName: "磁石", dosage: "60g（煅）", role: "君药" },
+            { herbName: "朱砂", dosage: "30g", role: "臣药" },
+            { herbName: "神曲", dosage: "120g", role: "佐药" }
+        ],
+        functions: ["重镇安神", "潜阳明目"],
+        indications: ["心肾不交之失眠心悸", "耳鸣耳聋", "视物昏花", "癫痫"],
+        analysis: "本方为心肾不交、浮阳上扰之证而设。磁石入肾，重镇潜阳、益阴明目，使肾水上济于心，为君药；朱砂入心，重镇安神、清心降火，使心火下通于肾，为臣药；二药相配，交通心肾、水火既济。神曲健脾胃、助运化，防金石药碍胃，且利于药力运化，为佐药。诸药合用则心悸失眠、耳鸣目昏诸症自安。",
+        keyPoints: ["心悸失眠", "耳鸣耳聋", "视物昏花"],
+        relatedSyndromes: ["心火亢盛证", "肾阴虚证"],
+        relatedConstitutions: ["阴虚质"],
+        modifications: [
+            { condition: "阴血不足", modification: "配伍熟地黄、当归等滋养阴血之品同用" }
+        ],
+        contraindications: ["朱砂有毒、汞剂不可久服，肝肾功能不全者禁用", "脾胃虚弱者慎用"]
+    },
+    {
+        id: "formula_198",
+        name: "珍珠母丸",
+        pinyin: "Zhen Zhu Mu Wan",
+        source: "《普济本事方》",
+        category: "安神剂",
+        subcategory: "滋养安神剂",
+        composition: [
+            { herbName: "珍珠母", dosage: "22.5g", role: "君药" },
+            { herbName: "当归", dosage: "45g", role: "臣药" },
+            { herbName: "熟地黄", dosage: "45g", role: "臣药" },
+            { herbName: "人参", dosage: "30g", role: "佐药" },
+            { herbName: "酸枣仁", dosage: "30g", role: "佐药" },
+            { herbName: "柏子仁", dosage: "30g", role: "佐药" },
+            { herbName: "水牛角浓缩粉（犀角代）", dosage: "15g", role: "佐药" },
+            { herbName: "茯苓", dosage: "15g", role: "佐药" },
+            { herbName: "沉香", dosage: "15g", role: "佐药" },
+            { herbName: "龙齿", dosage: "15g", role: "佐药" },
+            { herbName: "朱砂", dosage: "15g（研细水飞，少许为衣）", role: "佐药" }
+        ],
+        functions: ["滋阴养血", "镇心安神"],
+        indications: ["阴血不足", "肝阳偏亢", "神志不宁", "入夜少寐", "时而惊悸", "头目眩晕", "脉细弦"],
+        analysis: "本方为阴血不足、肝阳偏亢之神志不宁而设。珍珠母、龙齿平肝潜阳、镇惊安神，为君药；当归、熟地黄补血养阴，人参、茯苓益气安神，酸枣仁、柏子仁养心安神，共为臣佐；水牛角粉清心定惊，沉香摄纳浮阳，朱砂为衣重镇安神。全方以滋养阴血治本，镇心平肝治标，养心与镇心并行。",
+        keyPoints: ["少寐惊悸", "头目眩晕", "脉细弦"],
+        relatedSyndromes: ["心阴虚证", "肝阳上亢证"],
+        relatedConstitutions: ["阴虚质"],
+        modifications: [
+            { condition: "肝阳上亢眩晕甚", modification: "加天麻、钩藤以平肝息风" },
+            { condition: "心悸甚", modification: "加龙眼肉、炙甘草以养心定悸" }
+        ],
+        contraindications: ["朱砂有毒不可久服", "痰火扰心之失眠不宜"]
+    },
+
+    // —— 开窍剂（2首） ——
+    {
+        id: "formula_199",
+        name: "至宝丹",
+        pinyin: "Zhi Bao Dan",
+        source: "《灵苑方》引《指南方》（通行于《太平惠民和剂局方》）",
+        category: "开窍剂",
+        subcategory: "凉开剂",
+        composition: [
+            { herbName: "水牛角（犀角代）", dosage: "30g", role: "君药" },
+            { herbName: "麝香", dosage: "0.3g", role: "君药" },
+            { herbName: "牛黄", dosage: "0.3g", role: "君药" },
+            { herbName: "安息香", dosage: "0.3g", role: "臣药" },
+            { herbName: "玳瑁", dosage: "30g", role: "臣药" },
+            { herbName: "冰片", dosage: "0.3g", role: "臣药" },
+            { herbName: "朱砂", dosage: "30g", role: "佐药" },
+            { herbName: "雄黄", dosage: "30g", role: "佐药" },
+            { herbName: "琥珀", dosage: "30g", role: "佐药" },
+            { herbName: "金银箔", dosage: "各50片", role: "佐药" }
+        ],
+        functions: ["化浊开窍", "清热解毒"],
+        indications: ["痰热内扰心包", "神昏谵语", "身热烦躁", "痰盛气粗", "舌绛苔黄垢腻", "脉滑数；亦治中风、中暑、小儿惊厥属于痰热内闭者"],
+        analysis: "本方为痰热内闭心包之证而设，与安宫牛黄丸、紫雪合称凉开三宝。水牛角、牛黄、玳瑁清热凉血解毒，麝香、安息香、冰片芳香开窍、辟秽化浊，两组相配为君臣，突出化浊开窍之力；朱砂、琥珀、金银箔重镇安神，雄黄祛痰解毒，共为佐药。本方长于化浊辟秽开窍，清热之力不及安宫牛黄丸，息风之效逊于紫雪。",
+        keyPoints: ["神昏谵语", "痰盛气粗", "舌绛苔黄垢腻"],
+        relatedSyndromes: ["痰蒙清窍证", "痰热扰心证"],
+        relatedConstitutions: ["痰湿质", "湿热质"],
+        modifications: [
+            { condition: "痰热壅盛", modification: "配竹沥、天竺黄以涤痰开窍" }
+        ],
+        contraindications: ["寒闭与脱证禁用", "孕妇慎用", "中病即止，不可久服"]
+    },
+    {
+        id: "formula_200",
+        name: "紫金锭",
+        pinyin: "Zi Jin Ding",
+        source: "《百一选方》（王璆）",
+        category: "开窍剂",
+        subcategory: "温开剂",
+        composition: [
+            { herbName: "山慈菇", dosage: "90g", role: "君药" },
+            { herbName: "五倍子", dosage: "90g", role: "臣药" },
+            { herbName: "千金子霜", dosage: "30g", role: "佐药" },
+            { herbName: "红大戟", dosage: "45g", role: "佐药" },
+            { herbName: "麝香", dosage: "9g", role: "佐药" },
+            { herbName: "雄黄", dosage: "30g", role: "佐药" },
+            { herbName: "朱砂", dosage: "30g", role: "佐药" }
+        ],
+        functions: ["化痰开窍", "辟秽解毒", "消肿止痛"],
+        indications: ["暑令时疫", "脘腹胀闷疼痛", "恶心呕吐", "泄泻", "痢疾", "或小儿痰厥惊风", "咽喉肿痛；外敷治疔疮疖肿", "痄腮", "乳痈", "无名肿毒"],
+        analysis: "本方为暑令感秽浊之气或疫毒之证而设。山慈菇清热解毒、化痰散结消肿，为君药；麝香芳香开窍、辟秽化浊、行气止痛，为臣药；红大戟攻毒消肿、泻下逐秽，千金子霜导滞通肠、逐痰利水，五倍子涩肠解毒，雄黄、朱砂辟秽解毒、镇心安神，共为佐药。内服辟秽化浊开窍，外用消肿散结止痛。",
+        keyPoints: ["脘腹胀闷疼痛", "恶心呕吐泄泻", "疔疮疖肿"],
+        relatedSyndromes: ["湿热蕴结证", "痰蒙清窍证"],
+        relatedConstitutions: ["痰湿质"],
+        modifications: [
+            { condition: "霍乱吐泻腹痛", modification: "以姜汤送服以温中止呕" }
+        ],
+        contraindications: ["孕妇忌服", "千金子霜、大戟、雄黄均有毒性，不可过量或久服", "气血虚弱者慎用"]
+    },
+
+    // —— 理气剂（5首） ——
+    {
+        id: "formula_201",
+        name: "四磨汤",
+        pinyin: "Si Mo Tang",
+        source: "《济生方》",
+        category: "理气剂",
+        subcategory: "行气剂",
+        composition: [
+            { herbName: "槟榔", dosage: "9g", role: "君药" },
+            { herbName: "沉香", dosage: "6g", role: "臣药" },
+            { herbName: "乌药", dosage: "6g", role: "臣药" },
+            { herbName: "人参", dosage: "3g", role: "佐药" }
+        ],
+        functions: ["行气降逆", "宽胸散结"],
+        indications: ["肝气郁结之胸膈烦闷", "上气喘急", "心下痞满", "不思饮食", "苔白脉弦"],
+        analysis: "本方为肝气郁结、气逆不降之证而设。乌药行气疏肝解郁，为君药；沉香降气平喘，槟榔行气化滞破结，共为臣佐，三药行气降逆之力甚捷；人参益气扶正，使郁开而气不耗伤，为佐药。四药磨汁服取其味厚气全，功专力速，行气而不伤正。",
+        keyPoints: ["胸膈烦闷", "上气喘急", "心下痞满"],
+        relatedSyndromes: ["肝气郁结证"],
+        relatedConstitutions: ["气郁质"],
+        modifications: [
+            { condition: "体壮气实而气结甚者", modification: "人参可改用党参或减量（六磨汤加枳实、木香）" },
+            { condition: "兼大便秘结", modification: "加枳实、大黄以通腑导滞" }
+        ],
+        contraindications: ["气虚体弱者慎用（本方行气破滞力强）"]
+    },
+    {
+        id: "formula_202",
+        name: "枳实薤白桂枝汤",
+        pinyin: "Zhi Shi Xie Bai Gui Zhi Tang",
+        source: "《金匮要略》",
+        category: "理气剂",
+        subcategory: "行气剂",
+        composition: [
+            { herbName: "枳实", dosage: "12g", role: "君药" },
+            { herbName: "薤白", dosage: "9g", role: "君药" },
+            { herbName: "厚朴", dosage: "12g", role: "臣药" },
+            { herbName: "瓜蒌", dosage: "12g", role: "臣药" },
+            { herbName: "桂枝", dosage: "3g", role: "佐药" }
+        ],
+        functions: ["通阳散结", "祛痰下气"],
+        indications: ["胸痹", "气从胁下上逆抢心", "胸满腹胀", "或胸痛彻背", "苔白腻", "脉沉弦或紧"],
+        analysis: "本方为胸痹气结在胸、水气胁下逆而抢心之实证而设。枳实下气破结、消痞除满，厚朴燥湿行气、宽胸除满，共开痞塞之气；薤白、瓜蒌通阳散结、宽胸涤痰；桂枝通阳散寒、降逆平冲。五药相合，使胸阳振、痰浊消、气逆降，则胸痹诸症自除。",
+        keyPoints: ["胸满腹胀", "气从胁下上逆抢心", "苔白腻"],
+        relatedSyndromes: ["心脉痹阻证", "痰湿内阻证"],
+        relatedConstitutions: ["痰湿质"],
+        modifications: [
+            { condition: "寒甚胸痛彻背", modification: "加干姜、附子以温阳散寒" },
+            { condition: "痰浊盛", modification: "加半夏、陈皮以燥湿化痰" }
+        ],
+        contraindications: ["胸痹属中气虚者慎用（本方破气之力较峻）"]
+    },
+    {
+        id: "formula_203",
+        name: "旋覆代赭汤",
+        pinyin: "Xuan Fu Dai Zhe Tang",
+        source: "《伤寒论》",
+        category: "理气剂",
+        subcategory: "降气剂",
+        composition: [
+            { herbName: "旋覆花", dosage: "9g（包煎）", role: "君药" },
+            { herbName: "代赭石", dosage: "6g（先煎）", role: "臣药" },
+            { herbName: "人参", dosage: "6g", role: "佐药" },
+            { herbName: "生姜", dosage: "15g", role: "佐药" },
+            { herbName: "半夏", dosage: "9g", role: "佐药" },
+            { herbName: "炙甘草", dosage: "9g", role: "使药" },
+            { herbName: "大枣", dosage: "4枚", role: "佐药" }
+        ],
+        functions: ["降逆化痰", "益气和胃"],
+        indications: ["胃气虚弱", "痰浊内阻", "心下痞硬", "噫气频作（嗳气）不除", "或反胃呕逆", "吐涎沫", "舌淡苔白滑", "脉弦而虚"],
+        analysis: "本方为胃气虚弱、痰浊内阻之噫气痞硬而设。旋覆花下气消痰、降逆除噫，为君药；代赭石质重沉降、平肝降逆，助旋覆花镇逆止噫，为臣药；生姜、半夏和胃降逆、化痰散结，人参、大枣、炙甘草益气补虚、和中护胃，共为佐使。全方降逆与补虚并行，使痰浊降、胃气复，痞硬噫气自除。",
+        keyPoints: ["心下痞硬", "噫气频作不除", "舌淡苔白滑", "脉弦虚"],
+        relatedSyndromes: ["肝胃不和证", "痰湿内阻证"],
+        relatedConstitutions: ["气郁质", "痰湿质"],
+        modifications: [
+            { condition: "胃气不虚", modification: "去人参、大枣，加重代赭石以增强降逆之力" },
+            { condition: "痰多者", modification: "加茯苓、陈皮以化痰和胃" }
+        ],
+        contraindications: ["胃热呕吐者慎用（方中姜、夏偏温）"]
+    },
+    {
+        id: "formula_204",
+        name: "橘皮竹茹汤",
+        pinyin: "Ju Pi Zhu Ru Tang",
+        source: "《金匮要略》",
+        category: "理气剂",
+        subcategory: "降气剂",
+        composition: [
+            { herbName: "橘皮", dosage: "15g", role: "君药" },
+            { herbName: "竹茹", dosage: "15g", role: "臣药" },
+            { herbName: "人参", dosage: "3g", role: "佐药" },
+            { herbName: "生姜", dosage: "9g", role: "佐药" },
+            { herbName: "甘草", dosage: "9g", role: "使药" },
+            { herbName: "大枣", dosage: "5枚", role: "佐药" }
+        ],
+        functions: ["降逆止呃", "益气清热"],
+        indications: ["胃虚有热之呃逆", "呃逆或干呕", "虚烦少气", "口干", "舌红嫩", "脉虚数"],
+        analysis: "本方为胃虚有热、气逆不降之呃逆而设。橘皮行气和胃以止呃，竹茹清热安中而止呕，二者相配降逆与清热并行，共为君臣；人参益气补虚，与橘皮合用行中有补，生姜和胃止呕，为佐药；甘草、大枣益气和胃、调和诸药，为佐使。全方补而不滞、清而不寒，为胃虚有热呃逆之良方。",
+        keyPoints: ["呃逆干呕", "虚烦少气", "口干", "舌红嫩脉虚数"],
+        relatedSyndromes: ["胃阴虚证", "肝胃不和证"],
+        relatedConstitutions: ["气虚质", "阴虚质"],
+        modifications: [
+            { condition: "胃热明显、口苦烦渴", modification: "加黄连、麦冬以清胃生津" },
+            { condition: "呃逆频频", modification: "加丁香、柿蒂以增降逆止呃之力（虚寒者宜）" }
+        ],
+        contraindications: ["实热或虚寒性呃逆非本方所宜"]
+    },
+    {
+        id: "formula_205",
+        name: "丁香柿蒂汤",
+        pinyin: "Ding Xiang Shi Di Tang",
+        source: "《症因脉治》",
+        category: "理气剂",
+        subcategory: "降气剂",
+        composition: [
+            { herbName: "丁香", dosage: "6g", role: "君药" },
+            { herbName: "柿蒂", dosage: "9g", role: "君药" },
+            { herbName: "人参", dosage: "3g", role: "佐药" },
+            { herbName: "生姜", dosage: "6g", role: "佐药" }
+        ],
+        functions: ["降逆止呃", "温中益气"],
+        indications: ["胃气虚寒之呃逆", "呃逆不已", "胸脘痞闷", "舌淡苔白", "脉沉迟"],
+        analysis: "本方为胃气虚寒、气逆不降之呃逆而设。丁香温中散寒、降逆止呃，柿蒂降逆止呃，二味相须为用为君药，为止呃之要药对；人参益气补虚、温中助阳，为佐药；生姜温胃降逆，助丁香、柿蒂止呃之力，为佐使。四药合用，温中与降逆并行，胃气得复，呃逆自止。",
+        keyPoints: ["呃逆不已", "胸脘痞闷", "舌淡苔白", "脉沉迟"],
+        relatedSyndromes: ["虚寒证", "寒凝胃脘证"],
+        relatedConstitutions: ["阳虚质"],
+        modifications: [
+            { condition: "寒重腹痛", modification: "加高良姜、香附以温中行气" },
+            { condition: "兼气滞痰阻", modification: "加半夏、陈皮以化痰降逆" }
+        ],
+        contraindications: ["胃热呃逆者禁用"]
+    },
+
+    // —— 理血剂（4首） ——
+    {
+        id: "formula_206",
+        name: "通窍活血汤",
+        pinyin: "Tong Qiao Huo Xue Tang",
+        source: "《医林改错》",
+        category: "理血剂",
+        subcategory: "活血化瘀剂",
+        composition: [
+            { herbName: "赤芍", dosage: "3g", role: "臣药" },
+            { herbName: "川芎", dosage: "3g", role: "臣药" },
+            { herbName: "桃仁", dosage: "9g", role: "臣药" },
+            { herbName: "红花", dosage: "9g", role: "臣药" },
+            { herbName: "麝香", dosage: "0.15g（绢包）", role: "君药" },
+            { herbName: "老葱", dosage: "3根", role: "佐药" },
+            { herbName: "鲜姜", dosage: "9g", role: "佐药" },
+            { herbName: "大枣", dosage: "7枚", role: "佐药" },
+            { herbName: "黄酒", dosage: "250g", role: "佐药" }
+        ],
+        functions: ["活血通窍", "行气止痛"],
+        indications: ["瘀阻头面之头痛昏晕", "或耳聋年久", "脱发", "面色青紫", "或酒渣鼻", "白癜风", "妇女干血痨", "小儿疳积见肌肉消瘦、腹大青筋、潮热等"],
+        analysis: "本方为王清任以逐瘀法治疗瘀阻头面之方。赤芍、川芎、桃仁、红花活血化瘀，行血分之瘀滞；麝香辛香走窜，开窍通闭、引药上行头面，为君药；老葱、鲜姜辛散升腾，通阳开窍，黄酒温通血脉、助药力上达巅顶；大枣缓和芳香药之辛散。全方活血与通窍并用，使瘀去窍通，诸症得愈。",
+        keyPoints: ["头痛昏晕", "面色青紫", "耳聋年久", "脱发"],
+        relatedSyndromes: ["气滞血瘀证", "心脉痹阻证"],
+        relatedConstitutions: ["血瘀质"],
+        modifications: [
+            { condition: "头痛剧烈", modification: "加全蝎、蜈蚣以通络止痛" },
+            { condition: "瘀阻目疾", modification: "加菊花、决明子以清肝明目" }
+        ],
+        contraindications: ["孕妇禁用", "麝香稀缺可代以人工麝香或白芷、冰片少量"]
+    },
+    {
+        id: "formula_207",
+        name: "七厘散",
+        pinyin: "Qi Li San",
+        source: "《同寿录》",
+        category: "理血剂",
+        subcategory: "活血化瘀剂",
+        composition: [
+            { herbName: "血竭", dosage: "30g", role: "君药" },
+            { herbName: "麝香", dosage: "0.36g", role: "佐药" },
+            { herbName: "冰片", dosage: "0.36g", role: "佐药" },
+            { herbName: "乳香", dosage: "4.5g", role: "臣药" },
+            { herbName: "没药", dosage: "4.5g", role: "臣药" },
+            { herbName: "红花", dosage: "4.5g", role: "臣药" },
+            { herbName: "朱砂", dosage: "3.6g", role: "佐药" },
+            { herbName: "儿茶", dosage: "7.2g", role: "佐药" }
+        ],
+        functions: ["散瘀消肿", "定痛止血"],
+        indications: ["跌打损伤", "筋断骨折之瘀血肿痛", "或刀伤出血", "无名肿毒", "烧烫伤（外用）"],
+        analysis: "本方为跌打损伤、瘀滞肿痛之常用方。血竭散瘀消肿、定痛止血，为君药；红花、乳香、没药活血行气、消肿止痛，为臣药；麝香、冰片辛香走窜、行气通络、散瘀止痛，儿茶收敛止血生肌，朱砂镇心安神，共为佐药。内服外用皆可，散瘀与止血并行，消肿与生肌兼顾。",
+        keyPoints: ["跌打损伤", "瘀血肿痛", "刀伤出血"],
+        relatedSyndromes: ["气滞血瘀证"],
+        relatedConstitutions: ["血瘀质"],
+        modifications: [
+            { condition: "筋断骨折", modification: "配伍续断、自然铜等接骨续筋之品" }
+        ],
+        contraindications: ["孕妇禁用", "朱砂为汞剂不宜久服"]
+    },
+    {
+        id: "formula_208",
+        name: "胶艾汤",
+        pinyin: "Jiao Ai Tang",
+        source: "《金匮要略》（一名芎归胶艾汤）",
+        category: "理血剂",
+        subcategory: "止血剂",
+        composition: [
+            { herbName: "阿胶", dosage: "9g（烊化）", role: "君药" },
+            { herbName: "艾叶", dosage: "9g", role: "君药" },
+            { herbName: "当归", dosage: "9g", role: "臣药" },
+            { herbName: "白芍", dosage: "12g", role: "臣药" },
+            { herbName: "干地黄", dosage: "18g", role: "臣药" },
+            { herbName: "川芎", dosage: "6g", role: "佐药" },
+            { herbName: "甘草", dosage: "6g", role: "使药" }
+        ],
+        functions: ["养血止血", "调经安胎"],
+        indications: ["冲任虚损", "阴血不能内守之崩漏", "月经过多", "淋漓不止", "产后或半产后下血不绝", "或妊娠下血", "腹中疼痛", "舌淡苔白", "脉沉细"],
+        analysis: "本方为冲任虚损、阴血不能内守之崩漏下血而设。阿胶补血止血、艾叶温经止血，二者相配止血而有温养之功，共为君药；当归、白芍、干地黄、川芎（四物汤）养血和血、调补冲任，使补血而不滞瘀，为臣药；甘草调和诸药，为使药。全方止血之中寓以补血，温而不燥，为治冲任虚损下血之要方。",
+        keyPoints: ["崩漏下血", "月经过多", "妊娠下血", "腹中疼痛"],
+        relatedSyndromes: ["冲任不固崩漏证", "气血两虚证", "脾不统血证"],
+        relatedConstitutions: ["气虚质"],
+        modifications: [
+            { condition: "气虚下陷", modification: "加党参、黄芪以益气摄血" },
+            { condition: "腹痛明显", modification: "加香附、延胡索以理气止痛" }
+        ],
+        contraindications: ["血热妄行之崩漏禁用", "瘀血未尽者慎用"]
+    },
+    {
+        id: "formula_209",
+        name: "丹参饮",
+        pinyin: "Dan Shen Yin",
+        source: "《时方歌括》",
+        category: "理血剂",
+        subcategory: "活血化瘀剂",
+        composition: [
+            { herbName: "丹参", dosage: "30g", role: "君药" },
+            { herbName: "檀香", dosage: "3g", role: "臣药" },
+            { herbName: "砂仁", dosage: "3g", role: "佐药" }
+        ],
+        functions: ["活血祛瘀", "行气止痛"],
+        indications: ["血瘀气滞之心胃诸痛", "胸闷脘痞", "痛有定处", "舌质暗红或有瘀斑", "脉弦涩"],
+        analysis: "本方为血瘀气滞之心胃疼痛而设。重用丹参活血祛瘀、通利血脉，为君药；檀香、砂仁行气宽中、温胃止痛，气行则血行，共为臣佐。药仅三味，药性平和而气血并治，为化瘀行气止痛之轻剂，冠心病心绞痛属气滞血瘀者常用之。",
+        keyPoints: ["心胃疼痛", "痛有定处", "舌暗有瘀斑"],
+        relatedSyndromes: ["气滞血瘀证", "心脉痹阻证"],
+        relatedConstitutions: ["血瘀质", "气郁质"],
+        modifications: [
+            { condition: "瘀痛甚", modification: "加川芎、郁金以增强活血止痛之力" },
+            { condition: "寒痛", modification: "加桂枝、荜茇以温通止痛" }
+        ],
+        contraindications: ["孕妇慎用", "血虚无瘀者不宜"]
+    },
+
+    // —— 治风剂（3首） ——
+    {
+        id: "formula_210",
+        name: "小活络丹",
+        pinyin: "Xiao Huo Luo Dan",
+        source: "《太平惠民和剂局方》",
+        category: "治风剂",
+        subcategory: "疏散外风剂",
+        composition: [
+            { herbName: "川乌", dosage: "18g（炮）", role: "君药" },
+            { herbName: "草乌", dosage: "18g（炮）", role: "君药" },
+            { herbName: "地龙", dosage: "18g", role: "臣药" },
+            { herbName: "天南星", dosage: "18g（炮）", role: "臣药" },
+            { herbName: "乳香", dosage: "6g", role: "佐药" },
+            { herbName: "没药", dosage: "6g", role: "佐药" }
+        ],
+        functions: ["祛风除湿", "化痰通络", "活血止痛"],
+        indications: ["风寒湿痹", "肢体筋脉疼痛麻木", "关节屈伸不利", "疼痛游走不定", "或中风后手足不仁", "日久不愈", "经络中有湿痰死血", "腿臂间一二点作痛"],
+        analysis: "本方为风寒湿邪与痰瘀交阻经络之痹证而设。川乌、草乌大辛大热，祛风除湿、温经散寒、通络止痛，为君药；天南星祛风除湿化痰，地龙通经活络，为臣药；乳香、没药行气活血、化瘀止痛，为佐药。全方风寒湿与痰瘀同治，使风寒湿邪与痰浊瘀血俱去，经络通而痹痛止。",
+        keyPoints: ["肢体疼痛麻木", "关节屈伸不利", "腿臂局部作痛"],
+        relatedSyndromes: ["风寒湿痹证", "气滞血瘀证"],
+        relatedConstitutions: ["阳虚质", "痰湿质"],
+        modifications: [
+            { condition: "痹痛以寒为主", modification: "重用川乌、草乌，加桂枝以温经散寒" },
+            { condition: "血瘀明显", modification: "加当归、鸡血藤以养血活血" }
+        ],
+        contraindications: ["孕妇禁用（川乌、草乌有毒）", "阴虚有热者及血虚痹痛者慎用", "不宜过量久服"]
+    },
+    {
+        id: "formula_211",
+        name: "玉真散",
+        pinyin: "Yu Zhen San",
+        source: "《外科正宗》",
+        category: "治风剂",
+        subcategory: "疏散外风剂",
+        composition: [
+            { herbName: "白附子", dosage: "6g（生用）", role: "君药" },
+            { herbName: "天南星", dosage: "6g（生用）", role: "君药" },
+            { herbName: "防风", dosage: "6g", role: "臣药" },
+            { herbName: "白芷", dosage: "6g", role: "佐药" },
+            { herbName: "天麻", dosage: "6g", role: "佐药" },
+            { herbName: "羌活", dosage: "6g", role: "佐药" }
+        ],
+        functions: ["祛风化痰", "定搐止痉"],
+        indications: ["破伤风", "牙关紧急", "身体强直", "角弓反张", "甚则咬牙缩舌", "苦笑面容", "脉弦紧"],
+        analysis: "本方为破伤风（风毒入络）而设。白附子、天南星祛风化痰、定搐解痉，为君药；羌活、防风、白芷疏散经络中风邪，导邪外出，为臣佐；天麻息风止痉，助君药定搐之力，为佐药。全方以祛风止痉为主，化痰与发散并行，使风散搐定。亦可用于破伤风之预防及风毒肿痛外用。",
+        keyPoints: ["牙关紧急", "角弓反张", "苦笑面容"],
+        relatedSyndromes: ["急惊风痰热证"],
+        relatedConstitutions: ["平和质"],
+        modifications: [
+            { condition: "抽搐甚", modification: "加全蝎、蜈蚣以增强息风止痉之力" },
+            { condition: "兼发热", modification: "加金银花、连翘以清热解毒" }
+        ],
+        contraindications: ["孕妇忌用（生南星、生白附子有毒）", "血虚发痉者禁用"]
+    },
+    {
+        id: "formula_212",
+        name: "阿胶鸡子黄汤",
+        pinyin: "E Jiao Zi Huang Tang",
+        source: "《通俗伤寒论》",
+        category: "治风剂",
+        subcategory: "平息内风剂",
+        composition: [
+            { herbName: "阿胶", dosage: "9g（烊化）", role: "君药" },
+            { herbName: "鸡子黄", dosage: "2枚（冲入）", role: "君药" },
+            { herbName: "生地黄", dosage: "15g", role: "臣药" },
+            { herbName: "生白芍", dosage: "12g", role: "臣药" },
+            { herbName: "生牡蛎", dosage: "15g（先煎）", role: "佐药" },
+            { herbName: "石决明", dosage: "15g（先煎）", role: "佐药" },
+            { herbName: "钩藤", dosage: "9g", role: "佐药" },
+            { herbName: "茯神木", dosage: "12g", role: "佐药" },
+            { herbName: "络石藤", dosage: "9g", role: "佐药" },
+            { herbName: "生甘草", dosage: "2g", role: "使药" }
+        ],
+        functions: ["滋阴养血", "柔肝息风"],
+        indications: ["温病后期", "阴血亏虚之虚风内动", "筋脉拘急", "手足蠕动", "头晕目眩", "舌绛苔少", "脉细数"],
+        analysis: "本方为温病后期邪去正伤、阴血大亏之虚风内动而设。阿胶、鸡子黄为血肉有情之品，滋阴养血以息风，为君药；生地黄、白芍滋阴养血、柔肝缓急，为臣药；石决明、生牡蛎潜阳镇逆，钩藤、茯神木平肝息风、宁心安神，络石藤通络舒筋，共为佐药；甘草调和诸药。全方滋阴养血以固本，平肝潜阳以息风，与大定风珠相比，兼有清泄余热、通络之用。",
+        keyPoints: ["手足蠕动", "筋脉拘急", "舌绛苔少", "脉细数"],
+        relatedSyndromes: ["虚风内动证", "肝肾阴虚证"],
+        relatedConstitutions: ["阴虚质"],
+        modifications: [
+            { condition: "阴伤甚、五心烦热", modification: "加龟甲、麦冬以滋阴清热" },
+            { condition: "抽搐明显", modification: "加羚羊角以凉肝息风" }
+        ],
+        contraindications: ["实热动风者禁用"]
+    },
+
+    // —— 治燥剂（2首） ——
+    {
+        id: "formula_213",
+        name: "玉液汤",
+        pinyin: "Yu Ye Tang",
+        source: "《医学衷中参西录》",
+        category: "治燥剂",
+        subcategory: "滋润内燥剂",
+        composition: [
+            { herbName: "生山药", dosage: "30g", role: "君药" },
+            { herbName: "生黄芪", dosage: "15g", role: "君药" },
+            { herbName: "知母", dosage: "18g", role: "臣药" },
+            { herbName: "天花粉", dosage: "9g", role: "臣药" },
+            { herbName: "鸡内金", dosage: "6g", role: "佐药" },
+            { herbName: "葛根", dosage: "4.5g", role: "佐药" },
+            { herbName: "五味子", dosage: "9g", role: "佐药" }
+        ],
+        functions: ["益气滋阴", "固肾止渴"],
+        indications: ["消渴气阴两虚证", "口渴引饮", "饮水不解", "小便频数量多", "或小便浑浊", "困倦气短", "脉虚细无力"],
+        analysis: "本方为消渴日久、气阴两虚之证而设。生山药、黄芪补脾固肾、益气升阳，使脾气健运、津液得升，为君药；知母、天花粉滋阴清热、生津止渴，为臣药；葛根升发津液，鸡内金助运化，五味子固肾生津、敛阴缩尿，共为佐药。全方益气与滋阴并举，为治疗消渴气阴两虚之常用方。",
+        keyPoints: ["口渴引饮", "小便频数量多", "困倦气短", "脉虚细"],
+        relatedSyndromes: ["肾阴虚证", "气虚证"],
+        relatedConstitutions: ["阴虚质", "气虚质"],
+        modifications: [
+            { condition: "烦热甚", modification: "加生石膏以清肺胃之热" },
+            { condition: "遗尿频多", modification: "加山茱萸、桑螵蛸以固肾缩尿" }
+        ],
+        contraindications: ["实热消渴者不宜单用"]
+    },
+    {
+        id: "formula_214",
+        name: "琼玉膏",
+        pinyin: "Qiong Yu Gao",
+        source: "《洪氏集验方》（引自申铁瓮方）",
+        category: "治燥剂",
+        subcategory: "滋润内燥剂",
+        composition: [
+            { herbName: "生地黄", dosage: "4000g（取汁）", role: "君药" },
+            { herbName: "人参", dosage: "750g", role: "臣药" },
+            { herbName: "茯苓", dosage: "1500g", role: "佐药" },
+            { herbName: "白蜜", dosage: "2000g", role: "佐使" }
+        ],
+        functions: ["滋阴润肺", "益气补脾"],
+        indications: ["肺肾阴亏之肺痨干咳", "咽燥咯血", "肌肉消瘦", "气短乏力", "舌红少苔", "脉细数"],
+        analysis: "本方为肺肾阴亏、虚劳干咳而设。生地黄滋阴壮水、养肺肾之阴，为君药；人参益气补脾生津，使气旺则津生，为臣药；白蜜补中润肺，茯苓健脾益气以杜生痰之源，为佐使。四药合用，肺肾同滋、脾肺兼顾，填精补髓、开胃壮神，为虚劳咳嗽之缓补剂。",
+        keyPoints: ["干咳咯血", "咽燥消瘦", "气短乏力", "舌红少苔"],
+        relatedSyndromes: ["肺肾阴虚证", "肺阴虚证"],
+        relatedConstitutions: ["阴虚质"],
+        modifications: [
+            { condition: "咯血不止", modification: "加白及、藕节以敛肺止血" }
+        ],
+        contraindications: ["脾虚便溏者慎用（地黄、白蜜滋腻）", "外感咳嗽者禁用"]
+    },
+
+    // —— 祛湿剂（3首） ——
+    {
+        id: "formula_215",
+        name: "连朴饮",
+        pinyin: "Lian Pu Yin",
+        source: "《霍乱论》",
+        category: "祛湿剂",
+        subcategory: "清热祛湿剂",
+        composition: [
+            { herbName: "黄连", dosage: "3g（姜汁炒）", role: "君药" },
+            { herbName: "制厚朴", dosage: "6g", role: "臣药" },
+            { herbName: "焦栀子", dosage: "9g", role: "臣药" },
+            { herbName: "石菖蒲", dosage: "3g", role: "佐药" },
+            { herbName: "制半夏", dosage: "3g", role: "佐药" },
+            { herbName: "香豉", dosage: "9g", role: "佐药" },
+            { herbName: "芦根", dosage: "60g", role: "佐药" }
+        ],
+        functions: ["清热化湿", "理气和中"],
+        indications: ["湿热霍乱", "上吐下泻", "胸脘痞闷", "心烦躁扰", "小便短赤", "舌苔黄腻", "脉濡数"],
+        analysis: "本方为湿热蕴伏、清浊相干之霍乱吐泻而设。黄连清热燥湿、厚朴理气化湿辟秽，共为君药；栀子、香豉清宣郁热除烦，为臣药；半夏、石菖蒲燥湿化浊、降逆和胃，芦根清热生津、止呕除烦，共为佐药。全方湿热同治、升降并调，使吐泻止而烦渴除。",
+        keyPoints: ["上吐下泻", "胸脘痞闷", "舌苔黄腻"],
+        relatedSyndromes: ["脾胃湿热证", "湿热蕴结证"],
+        relatedConstitutions: ["湿热质"],
+        modifications: [
+            { condition: "吐泻频繁", modification: "加藿香、佩兰以芳香化浊辟秽" },
+            { condition: "小便短赤甚", modification: "加滑石、甘草梢以清热利尿" }
+        ],
+        contraindications: ["寒湿霍乱（吐泻清水、肢冷舌淡）禁用"]
+    },
+    {
+        id: "formula_216",
+        name: "当归拈痛汤",
+        pinyin: "Dang Gui Nian Tong Tang",
+        source: "《医学启源》（又名拈痛汤）",
+        category: "祛湿剂",
+        subcategory: "清热祛湿剂",
+        composition: [
+            { herbName: "羌活", dosage: "15g", role: "君药" },
+            { herbName: "防风", dosage: "9g", role: "臣药" },
+            { herbName: "升麻", dosage: "9g", role: "臣药" },
+            { herbName: "葛根", dosage: "9g", role: "臣药" },
+            { herbName: "茵陈", dosage: "15g", role: "佐药" },
+            { herbName: "苍术", dosage: "9g", role: "佐药" },
+            { herbName: "白术", dosage: "4.5g", role: "佐药" },
+            { herbName: "苦参", dosage: "6g", role: "佐药" },
+            { herbName: "黄芩", dosage: "3g", role: "佐药" },
+            { herbName: "知母", dosage: "9g", role: "佐药" },
+            { herbName: "猪苓", dosage: "9g", role: "佐药" },
+            { herbName: "泽泻", dosage: "9g", role: "佐药" },
+            { herbName: "当归", dosage: "9g", role: "佐药" },
+            { herbName: "人参", dosage: "6g", role: "佐药" },
+            { herbName: "甘草", dosage: "15g", role: "使药" }
+        ],
+        functions: ["利湿清热", "疏风止痛"],
+        indications: ["湿热相搏", "外受风邪之周身肢节肿痛", "肩背沉重", "或脚气肿痛", "或一身尽痛", "或遍身疮疡", "苔黄腻", "脉滑数"],
+        analysis: "本方为湿热痹阻、外感风邪之肢节疼痛而设。羌活祛风胜湿、通利关节而止上半身之痛，为君药；防风、升麻、葛根助羌活疏风胜湿，苍术、白术健脾燥湿，苦参、黄芩、知母、茵陈清利湿热，猪苓、泽泻渗湿泄热，使湿热从小便而去，共为臣佐；当归养血活血，治风先治血，人参、甘草益气扶正，为佐使。全方清利湿热与疏风止痛并行，邪正兼顾。",
+        keyPoints: ["周身肢节肿痛", "肩背沉重", "苔黄腻"],
+        relatedSyndromes: ["风湿热痹证", "湿热蕴结证"],
+        relatedConstitutions: ["湿热质"],
+        modifications: [
+            { condition: "痛处游走不定", modification: "重用羌活、防风并加威灵仙以祛风止痛" },
+            { condition: "下肢肿痛甚", modification: "加木瓜、防己以利湿消肿" }
+        ],
+        contraindications: ["寒湿痹痛者禁用"]
+    },
+    {
+        id: "formula_217",
+        name: "鸡鸣散",
+        pinyin: "Ji Ming San",
+        source: "《证治准绳》",
+        category: "祛湿剂",
+        subcategory: "温化寒湿剂",
+        composition: [
+            { herbName: "槟榔", dosage: "12g", role: "君药" },
+            { herbName: "陈皮", dosage: "9g", role: "臣药" },
+            { herbName: "木瓜", dosage: "9g", role: "臣药" },
+            { herbName: "吴茱萸", dosage: "3g", role: "佐药" },
+            { herbName: "桔梗", dosage: "4.5g", role: "佐药" },
+            { herbName: "生姜", dosage: "5g", role: "佐药" },
+            { herbName: "紫苏茎叶", dosage: "9g", role: "佐药" }
+        ],
+        functions: ["行气降浊", "宣化寒湿"],
+        indications: ["湿脚气", "足胫肿重无力", "麻木冷痛", "或挛急上冲", "胸闷泛恶", "舌苔白腻", "脉沉细；亦治风湿流注之脚气腿足肿痛"],
+        analysis: "本方为寒湿壅滞、流注于脚之湿脚气而设。槟榔质重下达，行气逐湿，为君药；木瓜祛湿舒筋，陈皮理气健脾，共为臣药；紫苏叶、桔梗宣通气机，吴茱萸、生姜温化寒湿、降逆止呕，共为佐药。诸药以冷服，五更鸡鸣时服，取其鸡鸣则阳升，使药力直达病所，故名鸡鸣散。",
+        keyPoints: ["足胫肿重无力", "麻木冷痛", "胸闷泛恶", "苔白腻"],
+        relatedSyndromes: ["寒湿困脾证", "寒凝血瘀证"],
+        relatedConstitutions: ["阳虚质", "痰湿质"],
+        modifications: [
+            { condition: "寒甚足冷", modification: "加附子、干姜以温阳散寒" },
+            { condition: "小便不利", modification: "加茯苓、泽泻以渗湿消肿" }
+        ],
+        contraindications: ["湿热脚气（红肿热痛）禁用", "孕妇慎用"]
+    },
+
+    // —— 祛痰剂（3首） ——
+    {
+        id: "formula_218",
+        name: "小陷胸汤",
+        pinyin: "Xiao Xian Xiong Tang",
+        source: "《伤寒论》",
+        category: "祛痰剂",
+        subcategory: "清热化痰剂",
+        composition: [
+            { herbName: "瓜蒌", dosage: "30g", role: "君药" },
+            { herbName: "黄连", dosage: "3g", role: "臣药" },
+            { herbName: "半夏", dosage: "12g（洗）", role: "臣药" }
+        ],
+        functions: ["清热化痰", "宽胸散结"],
+        indications: ["痰热互结之小结胸证", "心下痞闷", "按之则痛", "或咳吐黄痰", "胸脘烦热", "舌苔黄腻", "脉浮滑或滑数"],
+        analysis: "本方为痰热互结心下之小结胸证而设。瓜蒌甘寒，清热涤痰、宽胸散结，为君药；黄连苦寒，清热降火、开痞散结，为臣药；半夏辛温，化痰散结、和胃降逆，与黄连相伍一辛一苦、一温一寒，辛开苦降，共奏清热化痰、宽胸散结之效，为佐使。三药相合，痰去热除，结开痛止。",
+        keyPoints: ["心下痞闷", "按之则痛", "咳吐黄痰", "苔黄腻", "脉浮滑"],
+        relatedSyndromes: ["痰热壅肺证", "痰热扰心证", "脾胃湿热证"],
+        relatedConstitutions: ["湿热质", "痰湿质"],
+        modifications: [
+            { condition: "痰热甚、咳吐黄稠痰", modification: "加胆南星、黄芩以清热化痰" },
+            { condition: "胁痛", modification: "加郁金、柴胡以疏肝理气" }
+        ],
+        contraindications: ["寒痰结胸者禁用", "脾胃虚寒者慎用"]
+    },
+    {
+        id: "formula_219",
+        name: "苓甘五味姜辛汤",
+        pinyin: "Ling Gan Wu Wei Jiang Xin Tang",
+        source: "《金匮要略》",
+        category: "祛痰剂",
+        subcategory: "温化寒痰剂",
+        composition: [
+            { herbName: "茯苓", dosage: "12g", role: "君药" },
+            { herbName: "干姜", dosage: "9g", role: "君药" },
+            { herbName: "细辛", dosage: "5g", role: "臣药" },
+            { herbName: "五味子", dosage: "5g", role: "佐药" },
+            { herbName: "甘草", dosage: "9g", role: "使药" }
+        ],
+        functions: ["温肺化饮"],
+        indications: ["寒饮咳嗽", "咳痰清稀色白量多", "胸膈痞满", "舌苔白滑", "脉弦滑"],
+        analysis: "本方为痰饮停留、寒饮犯肺之咳嗽而设。干姜温肺散寒以化饮，茯苓健脾渗湿以杜生痰之源，共为君药；细辛温肺散寒、助干姜温化寒饮，为臣药；五味子敛肺止咳，与细辛配伍一散一收，散不伤正、收不留邪，为佐药；甘草和中调药，为使药。五药合用，开合相济、温散并行，为温化寒饮之良方。",
+        keyPoints: ["咳痰清稀色白量多", "胸膈痞满", "苔白滑"],
+        relatedSyndromes: ["痰湿内阻证", "风寒犯肺证"],
+        relatedConstitutions: ["阳虚质", "痰湿质"],
+        modifications: [
+            { condition: "痰多欲呕", modification: "加半夏以化痰降逆" },
+            { condition: "咳甚", modification: "加杏仁、紫菀以止咳化痰" }
+        ],
+        contraindications: ["肺热咳喘及阴虚干咳者禁用", "细辛有小毒，用量不宜过大"]
+    },
+    {
+        id: "formula_220",
+        name: "定痫丸",
+        pinyin: "Ding Xian Wan",
+        source: "《医学心悟》",
+        category: "祛痰剂",
+        subcategory: "息风化痰剂",
+        composition: [
+            { herbName: "竹沥", dosage: "适量（冲服）", role: "君药" },
+            { herbName: "石菖蒲", dosage: "9g", role: "臣药" },
+            { herbName: "胆南星", dosage: "9g", role: "臣药" },
+            { herbName: "半夏", dosage: "9g", role: "佐药" },
+            { herbName: "陈皮", dosage: "9g", role: "佐药" },
+            { herbName: "茯苓", dosage: "9g", role: "佐药" },
+            { herbName: "天麻", dosage: "9g", role: "佐药" },
+            { herbName: "全蝎", dosage: "3g", role: "佐药" },
+            { herbName: "僵蚕", dosage: "9g", role: "佐药" },
+            { herbName: "琥珀", dosage: "6g（冲服）", role: "佐药" },
+            { herbName: "远志", dosage: "9g", role: "佐药" },
+            { herbName: "朱砂", dosage: "3g（冲服）", role: "佐药" },
+            { herbName: "人参", dosage: "6g", role: "佐药" },
+            { herbName: "茯神", dosage: "9g", role: "佐药" },
+            { herbName: "丹参", dosage: "9g", role: "佐药" },
+            { herbName: "麦冬", dosage: "12g", role: "佐药" },
+            { herbName: "甘草", dosage: "6g", role: "使药" }
+        ],
+        functions: ["涤痰息风", "开窍安神"],
+        indications: ["痫证", "突然发作", "眩晕跌仆", "昏不知人", "口吐白沫", "两目上视", "四肢抽搐", "发出异声", "苔白腻", "脉弦滑"],
+        analysis: "本方为痰浊内扰、肝风内动之痫证而设。竹沥、胆南星清热涤痰，石菖蒲芳香开窍醒神，共为君臣；半夏、陈皮、茯苓燥湿化痰、理气和中，天麻、全蝎、僵蚕平肝息风止痉，为佐药；琥珀、朱砂、茯神、远志镇惊安神，丹参活血通脑窍，麦冬养阴护心，人参补虚益智，共为佐药；甘草调和诸药为使。全方痰风并治、标本兼顾。",
+        keyPoints: ["昏不知人", "口吐白沫", "四肢抽搐", "苔白腻脉弦滑"],
+        relatedSyndromes: ["痰蒙清窍证", "胆郁痰扰证", "急惊风痰热证"],
+        relatedConstitutions: ["痰湿质"],
+        modifications: [
+            { condition: "痰火偏盛", modification: "加黄芩、瓜蒌以清化热痰" },
+            { condition: "抽搐频繁", modification: "加钩藤、蜈蚣以增强息风止痉之力" }
+        ],
+        contraindications: ["朱砂有毒不宜久服", "虚证痫厥者慎用"]
+    },
+
+    // —— 消食剂（2首） ——
+    {
+        id: "formula_221",
+        name: "木香槟榔丸",
+        pinyin: "Mu Xiang Bin Lang Wan",
+        source: "《儒门事亲》（《卫生宝鉴》方增味）",
+        category: "消食剂",
+        subcategory: "消食导滞剂",
+        composition: [
+            { herbName: "槟榔", dosage: "30g", role: "君药" },
+            { herbName: "大黄", dosage: "30g", role: "臣药" },
+            { herbName: "木香", dosage: "30g", role: "臣药" },
+            { herbName: "牵牛子", dosage: "60g", role: "佐药" },
+            { herbName: "青皮", dosage: "30g", role: "佐药" },
+            { herbName: "陈皮", dosage: "30g", role: "佐药" },
+            { herbName: "莪术", dosage: "30g", role: "佐药" },
+            { herbName: "香附", dosage: "30g", role: "佐药" },
+            { herbName: "黄连", dosage: "30g", role: "佐药" },
+            { herbName: "黄柏", dosage: "30g", role: "佐药" }
+        ],
+        functions: ["行气导滞", "攻积泄热"],
+        indications: ["积滞内停", "湿蕴生热之痢疾", "脘腹痞满胀痛", "赤白痢疾", "里急后重", "或大便秘结", "舌苔黄腻", "脉沉实"],
+        analysis: "本方为湿热积滞内停肠胃之证而设。槟榔、牵牛子导滞通便、行气消积，为君药；大黄攻积泄热，木香、香附、青皮、陈皮、莪术行气活血化积，共为臣佐；黄连、黄柏清热燥湿，厚肠止痢，为佐药。全方以行气导滞为主，配以攻积泄热，气行则积消、热清则痢止，通则不痛。",
+        keyPoints: ["脘腹胀痛", "赤白痢疾", "里急后重", "便秘", "苔黄腻"],
+        relatedSyndromes: ["食积证", "脾胃湿热证"],
+        relatedConstitutions: ["湿热质"],
+        modifications: [
+            { condition: "积滞较轻", modification: "减牵牛子、大黄之量，防攻伐太过" },
+            { condition: "痢下赤多", modification: "加白芍、当归以和血止痛" }
+        ],
+        contraindications: ["孕妇禁用", "虚证积滞（脾虚食积）不宜", "中病即止，不宜久服"]
+    },
+    {
+        id: "formula_222",
+        name: "枳实消痞丸",
+        pinyin: "Zhi Shi Xiao Pi Wan",
+        source: "《兰室秘藏》（又名失笑丸）",
+        category: "消食剂",
+        subcategory: "健脾消食剂",
+        composition: [
+            { herbName: "干姜", dosage: "3g", role: "君药" },
+            { herbName: "枳实", dosage: "15g", role: "臣药" },
+            { herbName: "厚朴", dosage: "12g", role: "臣药" },
+            { herbName: "黄连", dosage: "15g", role: "佐药" },
+            { herbName: "麦芽曲", dosage: "6g", role: "佐药" },
+            { herbName: "半夏曲", dosage: "9g", role: "佐药" },
+            { herbName: "人参", dosage: "9g", role: "佐药" },
+            { herbName: "白术", dosage: "6g", role: "佐药" },
+            { herbName: "茯苓", dosage: "6g", role: "佐药" },
+            { herbName: "炙甘草", dosage: "6g", role: "使药" }
+        ],
+        functions: ["消痞除满", "健脾和胃"],
+        indications: ["脾虚气滞", "寒热互结之心下痞满", "不欲饮食", "倦怠乏力", "大便不畅", "苔腻微黄", "脉弦"],
+        analysis: "本方由枳术丸合半夏泻心汤加减而成，为脾虚气滞、寒热互结之心下痞满而设。枳实行气消痞，为臣药；黄连清热燥湿以除痞，配少量干姜温中散寒，辛开苦降、寒热同调，共为君佐；厚朴行气除满，麦芽曲、半夏曲消食和胃化痰，人参、白术、茯苓、炙甘草（四君子）益气健脾，使消补兼施，共为佐；炙甘草调和诸药为使。全方消痞与扶正并行，为消补兼施之剂。",
+        keyPoints: ["心下痞满", "不欲饮食", "倦怠乏力", "苔腻微黄"],
+        relatedSyndromes: ["食积证", "肝胃不和证", "寒湿困脾证"],
+        relatedConstitutions: ["气虚质", "痰湿质"],
+        modifications: [
+            { condition: "痞满甚", modification: "重用枳实、厚朴以行气消痞" },
+            { condition: "脾虚甚", modification: "重用人参、白术以健脾益气" }
+        ],
+        contraindications: ["纯实证痞满（无脾虚）者慎用"]
+    },
+
+    // —— 驱虫剂（1首） ——
+    {
+        id: "formula_223",
+        name: "化虫丸",
+        pinyin: "Hua Chong Wan",
+        source: "《太平惠民和剂局方》",
+        category: "驱虫剂",
+        subcategory: "杀虫消积剂",
+        composition: [
+            { herbName: "鹤虱", dosage: "15g", role: "君药" },
+            { herbName: "苦楝皮", dosage: "15g", role: "臣药" },
+            { herbName: "槟榔", dosage: "15g", role: "臣药" },
+            { herbName: "枯矾", dosage: "3g", role: "佐药" },
+            { herbName: "铅粉（现多以使君子、芜荑替代）", dosage: "15g", role: "佐药" }
+        ],
+        functions: ["杀肠中诸虫"],
+        indications: ["肠中诸虫", "发作时腹中疼痛", "往来上下", "或呕吐清水涎沫", "或多食善饥", "或不思饮食", "面色萎黄", "形体消瘦"],
+        analysis: "本方为肠道诸虫之通用方。鹤虱、苦楝皮、槟榔、铅粉皆具杀虫之功，其中鹤虱、苦楝皮专杀蛔虫，槟榔杀绦虫并能导滞下虫，铅粉（胡粉）杀诸虫，共为君臣佐使；枯矾燥湿辟秽。诸药合用，使虫得辛则伏、得苦则下，虫去则腹痛自止、饮食渐安。",
+        keyPoints: ["腹中疼痛往来上下", "呕吐清水", "面色萎黄消瘦"],
+        relatedSyndromes: ["食积证"],
+        relatedConstitutions: ["气虚质"],
+        modifications: [
+            { condition: "腹痛剧", modification: "加延胡索以行气止痛" },
+            { condition: "虫积日久脾虚", modification: "虫下后服健脾之剂（异功散之类）以善其后" }
+        ],
+        contraindications: ["铅粉有毒，现代临床多用使君子、芜荑等替代，不可过量或久服", "孕妇禁用", "脾虚体弱者慎用"]
+    }
 ];
 
 // ============================================================================
@@ -4941,320 +6459,369 @@ const formulasDatabase = [
 const formulaCategories = {
     "解表剂": {
         "辛温解表剂": [
-            "formula_001",  // 麻黄汤
-            "formula_002",  // 桂枝汤
-            "formula_003",  // 小青龙汤
-            "formula_004",  // 九味羌活汤
-            "formula_101"   // 止嗽散
-        ,
-            "formula_127"],
+            "formula_001",
+            "formula_002",
+            "formula_003",
+            "formula_004",
+            "formula_101",
+            "formula_127",
+            "formula_131",
+            "formula_171"
+        ],
         "辛凉解表剂": [
-            "formula_005",  // 银翘散
-            "formula_006",  // 桑菊饮
-            "formula_007",   // 麻黄杏仁甘草石膏汤
-            "formula_131",   // 葛根汤
-            "formula_132",   // 柴葛解肌汤
-            "formula_133"   // 越婢汤
-        ]
-    ,
+            "formula_005",
+            "formula_006",
+            "formula_007",
+            "formula_132",
+            "formula_133",
+            "formula_172"
+        ],
         "扶正解表剂": [
-            "formula_129",
-            "formula_135",   // 人参败毒散
-            "formula_136"   // 麻黄细辛附子汤
-        ]},
+            "formula_129",
+            "formula_135",
+            "formula_136",
+            "formula_173",
+            "formula_174",
+            "formula_175"
+        ]
+    },
     "泻下剂": {
         "寒下剂": [
-            "formula_008",  // 大承气汤
-            "formula_009"   // 大黄牡丹汤
+            "formula_008",
+            "formula_009",
+            "formula_176",
+            "formula_178"
         ],
         "温下剂": [
-            "formula_010",   // 温脾汤
-            "formula_137"   // 大黄附子汤
+            "formula_010",
+            "formula_137"
         ],
         "润下剂": [
-            "formula_011",   // 麻子仁丸
-            "formula_138",   // 济川煎
-            "formula_139"   // 增液承气汤
+            "formula_011",
+            "formula_138",
+            "formula_139",
+            "formula_179"
+        ],
+        "逐水剂": [
+            "formula_177"
         ]
     },
     "和解剂": {
         "和解少阳剂": [
-            "formula_012",  // 小柴胡汤
-            "formula_013",  // 蒿芩清胆汤
-            "formula_069"   // 大柴胡汤
+            "formula_012",
+            "formula_013",
+            "formula_069",
+            "formula_180"
         ],
         "调和肝脾剂": [
-            "formula_014",  // 逍遥散
-            "formula_015",  // 痛泻要方
-            "formula_070",  // 四逆散
-            "formula_102"   // 柴胡疏肝散
+            "formula_014",
+            "formula_015",
+            "formula_070",
+            "formula_102"
         ],
         "调和肠胃剂": [
-            "formula_016"   // 半夏泻心汤
+            "formula_016"
         ]
     },
     "清热剂": {
         "清气分热剂": [
-            "formula_017",  // 白虎汤
-            "formula_018",   // 竹叶石膏汤
-            "formula_140",   // 白虎加人参汤
-            "formula_141"   // 凉膈散
+            "formula_017",
+            "formula_018",
+            "formula_140",
+            "formula_141",
+            "formula_181"
         ],
         "清营凉血剂": [
-            "formula_019",  // 清营汤
-            "formula_020"   // 犀角地黄汤
+            "formula_019",
+            "formula_020"
         ],
         "清热解毒剂": [
-            "formula_021",  // 黄连解毒汤
-            "formula_022",  // 普济消毒饮
-            "formula_074",  // 白头翁汤
-            "formula_075"   // 芍药汤
-        ,
+            "formula_021",
+            "formula_022",
+            "formula_074",
+            "formula_075",
             "formula_114",
-            "formula_115"],
+            "formula_115",
+            "formula_142",
+            "formula_143",
+            "formula_182"
+        ],
         "清脏腑热剂": [
-            "formula_023",  // 龙胆泻肝汤
-            "formula_071",  // 导赤散
-            "formula_072",  // 清胃散
-            "formula_073",  // 玉女煎
-            "formula_103"   // 左金丸
-        ,
-            "formula_123"],
+            "formula_023",
+            "formula_071",
+            "formula_072",
+            "formula_073",
+            "formula_103",
+            "formula_123",
+            "formula_144"
+        ],
         "清虚热剂": [
-            "formula_024",   // 青蒿鳖甲汤
-            "formula_142",   // 泻心汤
-            "formula_143",   // 四妙勇安汤
-            "formula_144",   // 千金苇茎汤
-            "formula_145"   // 黄连阿胶汤
+            "formula_024",
+            "formula_145",
+            "formula_183",
+            "formula_184"
         ]
     },
     "温里剂": {
         "温中祛寒剂": [
-            "formula_025",  // 理中丸
-            "formula_026",  // 小建中汤
-            "formula_076",   // 吴茱萸汤
-            "formula_146"   // 黄芪建中汤
+            "formula_025",
+            "formula_026",
+            "formula_076",
+            "formula_146",
+            "formula_185"
         ],
         "回阳救逆剂": [
-            "formula_027"   // 四逆汤
+            "formula_027",
+            "formula_186"
         ],
         "温经散寒剂": [
-            "formula_028"   // 当归四逆汤
+            "formula_028",
+            "formula_187"
         ]
     },
     "补益剂": {
         "补气剂": [
-            "formula_029",  // 四君子汤
-            "formula_030",  // 补中益气汤
-            "formula_077",  // 参苓白术散
-            "formula_079",  // 生脉散
-            "formula_125",  // 
-            "formula_037"   // 玉屏风散（2026-08-31 自固涩剂移入）
+            "formula_029",
+            "formula_030",
+            "formula_037",
+            "formula_077",
+            "formula_079",
+            "formula_125",
+            "formula_189",
+            "formula_192"
         ],
         "补血剂": [
-            "formula_031",  // 四物汤
-            "formula_032",  // 当归补血汤
-            "formula_078",  // 归脾汤
-            "formula_080"   // 炙甘草汤
+            "formula_031",
+            "formula_032",
+            "formula_078",
+            "formula_080"
         ],
         "气血双补剂": [
-            "formula_033"   // 八珍汤
-        ,
-            "formula_120"],
+            "formula_033",
+            "formula_120"
+        ],
         "补阴剂": [
-            "formula_034",  // 六味地黄丸
-            "formula_087",  // 麦门冬汤（兼滋养肺胃之阴）
-            "formula_104"   // 左归丸
-        ,
+            "formula_034",
+            "formula_104",
             "formula_107",
             "formula_108",
-            "formula_130"],
+            "formula_130",
+            "formula_148",
+            "formula_188"
+        ],
         "补阳剂": [
-            "formula_035",  // 肾气丸
-            "formula_105",   // 右归丸
-            "formula_148",   // 知柏地黄丸
-            "formula_149"   // 二仙汤
+            "formula_035",
+            "formula_105",
+            "formula_149",
+            "formula_191"
         ],
         "阴阳双补剂": [
-            "formula_036"   // 地黄饮子
+            "formula_036",
+            "formula_190"
         ]
     },
     "固涩剂": {
-        "固表止汗剂": [
-            "formula_151"   // 牡蛎散
-        ],
         "涩肠止泻剂": [
-            "formula_038",   // 四神丸
-            "formula_153"   // 真人养脏汤
+            "formula_038",
+            "formula_153",
+            "formula_194"
         ],
         "固精止遗剂": [
-            "formula_039",   // 金锁固精丸
-            "formula_152"   // 桑螵蛸散
-        ]
-    ,
+            "formula_039",
+            "formula_152",
+            "formula_195"
+        ],
         "固崩止带剂": [
-            "formula_119"
-        ]},
+            "formula_119",
+            "formula_196"
+        ],
+        "固表止汗剂": [
+            "formula_151"
+        ],
+        "敛肺止咳剂": [
+            "formula_193"
+        ]
+    },
     "安神剂": {
         "重镇安神剂": [
-            "formula_040"   // 朱砂安神丸
+            "formula_040",
+            "formula_197"
         ],
         "滋养安神剂": [
-            "formula_041",  // 酸枣仁汤
-            "formula_042",   // 天王补心丹
-            "formula_154"   // 甘麦大枣汤
+            "formula_041",
+            "formula_042",
+            "formula_154",
+            "formula_198"
         ]
     },
     "开窍剂": {
         "凉开剂": [
-            "formula_043",  // 安宫牛黄丸
-            "formula_044"   // 紫雪
-        ,
-            "formula_126"],
+            "formula_043",
+            "formula_044",
+            "formula_126",
+            "formula_199"
+        ],
         "温开剂": [
-            "formula_045"   // 苏合香丸
+            "formula_045",
+            "formula_200"
         ]
     },
     "理气剂": {
         "行气剂": [
-            "formula_046",  // 越鞠丸
-            "formula_047",  // 半夏厚朴汤
-            "formula_081"   // 瓜蒌薤白白酒汤
-        ,
-            "formula_128"],
+            "formula_046",
+            "formula_047",
+            "formula_081",
+            "formula_128",
+            "formula_155",
+            "formula_156",
+            "formula_201",
+            "formula_202"
+        ],
         "降气剂": [
-            "formula_048",  // 苏子降气汤
-            "formula_049",   // 定喘汤
-            "formula_155",   // 天台乌药散
-            "formula_156"   // 暖肝煎
+            "formula_048",
+            "formula_049",
+            "formula_203",
+            "formula_204",
+            "formula_205"
         ]
     },
     "理血剂": {
         "活血化瘀剂": [
-            "formula_050",  // 血府逐瘀汤
-            "formula_051",  // 补阳还五汤
-            "formula_052",  // 生化汤
-            "formula_082",  // 桂枝茯苓丸
-            "formula_083"   // 温经汤
-        ,
+            "formula_050",
+            "formula_051",
+            "formula_052",
+            "formula_082",
+            "formula_083",
             "formula_109",
             "formula_110",
             "formula_111",
             "formula_112",
-            "formula_113"],
+            "formula_113",
+            "formula_150",
+            "formula_157",
+            "formula_158",
+            "formula_169",
+            "formula_206",
+            "formula_207",
+            "formula_209"
+        ],
         "止血剂": [
-            "formula_053",  // 十灰散
-            "formula_054",  // 小蓟饮子
-            "formula_084",   // 黄土汤
-            "formula_150",   // 当归芍药散
-            "formula_157",   // 桃核承气汤
-            "formula_158",   // 大黄䗪虫丸
-            "formula_169",   // 复元活血汤
-            "formula_159"   // 槐花散
+            "formula_053",
+            "formula_054",
+            "formula_084",
+            "formula_159",
+            "formula_208"
         ]
     },
     "治风剂": {
         "疏散外风剂": [
-            "formula_055",  // 川芎茶调散
-            "formula_056"   // 消风散
-        ,
-            "formula_121"],
+            "formula_055",
+            "formula_056",
+            "formula_121",
+            "formula_160",
+            "formula_161",
+            "formula_210",
+            "formula_211"
+        ],
         "平息内风剂": [
-            "formula_057",  // 羚角钩藤汤
-            "formula_058",  // 镇肝熄风汤
-            "formula_085",  // 天麻钩藤饮
-            "formula_099"   // 半夏白术天麻汤（兼息风化痰）
-        ,
-            "formula_122"]
+            "formula_057",
+            "formula_058",
+            "formula_085",
+            "formula_122",
+            "formula_170",
+            "formula_212"
+        ]
     },
     "治燥剂": {
         "轻宣外燥剂": [
-            "formula_059",  // 杏苏散
-            "formula_060",  // 清燥救肺汤
-            "formula_086",   // 桑杏汤
-            "formula_160",   // 牵正散
-            "formula_161",   // 大秦艽汤
-            "formula_170"   // 大定风珠
+            "formula_059",
+            "formula_060",
+            "formula_086"
         ],
         "滋润内燥剂": [
-            "formula_061",  // 增液汤
-            "formula_087",  // 麦门冬汤
-            "formula_088",  // 养阴清肺汤
-            "formula_089"   // 百合固金汤
+            "formula_061",
+            "formula_087",
+            "formula_088",
+            "formula_089",
+            "formula_213",
+            "formula_214"
         ]
     },
     "祛湿剂": {
         "和胃化湿剂": [
-            "formula_062",  // 藿香正气散
-            "formula_090",   // 平胃散
-            "formula_164"   // 胃苓汤
+            "formula_062",
+            "formula_090",
+            "formula_164"
         ],
         "清热祛湿剂": [
-            "formula_063",  // 茵陈蒿汤
-            "formula_091",  // 三仁汤
-            "formula_092",  // 八正散
-            "formula_093",  // 二妙散
-            "formula_094"   // 甘露消毒丹
-        ,
+            "formula_063",
+            "formula_091",
+            "formula_092",
+            "formula_093",
+            "formula_094",
             "formula_116",
             "formula_117",
-            "formula_118"],
+            "formula_118",
+            "formula_215",
+            "formula_216"
+        ],
         "利水渗湿剂": [
-            "formula_064",   // 五苓散
-            "formula_134",   // 防己黄芪汤
-            "formula_147",   // 猪苓汤
-            "formula_166"   // 五皮饮
+            "formula_064",
+            "formula_134",
+            "formula_147",
+            "formula_166"
         ],
         "温化寒湿剂": [
-            "formula_065",  // 苓桂术甘汤
-            "formula_095",   // 真武汤
-            "formula_163",   // 实脾饮
-            "formula_165"   // 萆薢分清饮
+            "formula_065",
+            "formula_095",
+            "formula_163",
+            "formula_165",
+            "formula_217"
         ],
         "祛风胜湿剂": [
-            "formula_096",   // 独活寄生汤
-            "formula_162"   // 羌活胜湿汤
+            "formula_096",
+            "formula_162"
         ]
     },
     "祛痰剂": {
         "燥湿化痰剂": [
-            "formula_066"   // 二陈汤
-        ,
-            "formula_106"],
+            "formula_066",
+            "formula_106"
+        ],
         "清热化痰剂": [
-            "formula_049",  // 定喘汤（兼清热化痰）
-            "formula_023",  // 龙胆泻肝汤（清肝泻火兼化痰，贝母等化裁）
-            "formula_097",  // 温胆汤
-            "formula_098"   // 清气化痰丸
-        ],
-        "润燥化痰剂": [
-            "formula_060",   // 清燥救肺汤（兼润燥化痰）
-            "formula_168"   // 贝母瓜蒌散
-        ],
-        "温化寒痰剂": [
-            "formula_003",   // 小青龙汤（兼温化寒痰）
-            "formula_167"   // 射干麻黄汤
+            "formula_097",
+            "formula_098",
+            "formula_218"
         ],
         "息风化痰剂": [
-            "formula_057",  // 羚角钩藤汤（兼息风化痰）
-            "formula_099"   // 半夏白术天麻汤
+            "formula_099",
+            "formula_220"
+        ],
+        "温化寒痰剂": [
+            "formula_167",
+            "formula_219"
+        ],
+        "润燥化痰剂": [
+            "formula_168"
         ]
     },
     "消食剂": {
         "消食导滞剂": [
-            "formula_067",  // 保和丸
-            "formula_046",  // 越鞠丸（兼消食）
-            "formula_100"   // 枳实导滞丸
+            "formula_067",
+            "formula_100",
+            "formula_221"
         ],
         "健脾消食剂": [
-            "formula_015",  // 痛泻要方（加味用）
-            "formula_029"   // 四君子汤（健脾基础，加神曲山楂以消食）
-        ,
-            "formula_124"]
+            "formula_124",
+            "formula_222"
+        ]
     },
     "驱虫剂": {
         "安蛔止痛剂": [
-            "formula_068"   // 乌梅丸
+            "formula_068"
+        ],
+        "杀虫消积剂": [
+            "formula_223"
         ]
     }
 };
