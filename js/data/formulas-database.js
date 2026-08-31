@@ -4199,8 +4199,9 @@ const formulasDatabase = [
         name: "黄连阿胶汤",
         pinyin: "Huang Lian E Jiao Tang",
         source: "《伤寒论》",
-        category: "清热剂",
-        subcategory: "清虚热剂",
+        // 注：原归清热剂·清虚热剂；2026-08-31 按教材《方剂学》移至安神剂·交通心肾剂（保持原位置）
+        category: "安神剂",
+        subcategory: "交通心肾剂",
         composition: [
             { herbName: "黄连", dosage: "12g", role: "君药" },
             { herbName: "黄芩", dosage: "6g", role: "臣药" },
@@ -6557,7 +6558,6 @@ const formulaCategories = {
         ],
         "清虚热剂": [
             "formula_024",
-            "formula_145",
             "formula_183",
             "formula_184"
         ]
@@ -6652,6 +6652,9 @@ const formulaCategories = {
             "formula_042",
             "formula_154",
             "formula_198"
+        ],
+        "交通心肾剂": [
+            "formula_145"   // 黄连阿胶汤（2026-08-31 自清热剂移入）
         ]
     },
     "开窍剂": {
