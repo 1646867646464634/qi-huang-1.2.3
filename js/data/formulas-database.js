@@ -1068,8 +1068,9 @@ const formulasDatabase = [
         name: "玉屏风散",
         pinyin: "Yu Ping Feng San",
         source: "《究原方》",
-        category: "固涩剂",
-        subcategory: "固表止汗剂",
+        // 注：原归固涩剂·固表止汗剂；2026-08-31 按教材《方剂学》移至补益剂·补气剂（保持原位置）
+        category: "补益剂",
+        subcategory: "补气剂",
         composition: [
             { herbName: "黄芪", dosage: "30g", role: "君药" },
             { herbName: "白术", dosage: "30g", role: "臣药" },
@@ -5046,9 +5047,10 @@ const formulaCategories = {
             "formula_029",  // 四君子汤
             "formula_030",  // 补中益气汤
             "formula_077",  // 参苓白术散
-            "formula_079"   // 生脉散
-        ,
-            "formula_125"],
+            "formula_079",  // 生脉散
+            "formula_125",  // 
+            "formula_037"   // 玉屏风散（2026-08-31 自固涩剂移入）
+        ],
         "补血剂": [
             "formula_031",  // 四物汤
             "formula_032",  // 当归补血汤
@@ -5079,7 +5081,6 @@ const formulaCategories = {
     },
     "固涩剂": {
         "固表止汗剂": [
-            "formula_037",   // 玉屏风散
             "formula_151"   // 牡蛎散
         ],
         "涩肠止泻剂": [
