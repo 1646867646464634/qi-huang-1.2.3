@@ -11,7 +11,11 @@ const symptomMappingExtension = {
         { syndromeId: "syn_020", keyword: "嗳气", weight: 7 }
     ],
     "斑疹隐隐": [
-        { syndromeId: "syn_117", keyword: "斑疹隐隐", weight: 10 }
+        { syndromeId: "syn_117", keyword: "斑疹隐隐", weight: 10 },
+        { syndromeId: "syn_157", keyword: "斑疹隐隐", weight: 10 }
+    ],
+    "半身不遂": [
+        { syndromeId: "syn_153", keyword: "半身不遂", weight: 10 }
     ],
     "崩漏": [
         { syndromeId: "syn_121", keyword: "崩漏", weight: 8 }
@@ -30,8 +34,12 @@ const symptomMappingExtension = {
     "鼻塞流清涕": [
         { syndromeId: "syn_042", keyword: "鼻塞流清涕", weight: 10 }
     ],
+    "鼻咽干燥": [
+        { syndromeId: "syn_154", keyword: "鼻咽干燥", weight: 10 }
+    ],
     "便溏": [
-        { syndromeId: "syn_127", keyword: "便溏", weight: 8 }
+        { syndromeId: "syn_156", keyword: "便溏", weight: 10 },
+        { syndromeId: "syn_127", keyword: "便溏", weight: 7 }
     ],
     "便血": [
         { syndromeId: "syn_104", keyword: "便血", weight: 6 },
@@ -40,6 +48,9 @@ const symptomMappingExtension = {
     ],
     "不思饮食": [
         { syndromeId: "syn_138", keyword: "不思饮食", weight: 8 }
+    ],
+    "肠鸣矢气": [
+        { syndromeId: "syn_156", keyword: "肠鸣矢气", weight: 8 }
     ],
     "潮热盗汗": [
         { syndromeId: "syn_142", keyword: "潮热盗汗", weight: 10 },
@@ -54,8 +65,17 @@ const symptomMappingExtension = {
     "齿衄": [
         { syndromeId: "syn_104", keyword: "齿衄", weight: 8 }
     ],
+    "疮口久不收敛": [
+        { syndromeId: "syn_159", keyword: "疮口久不收敛", weight: 10 }
+    ],
     "疮疡初起": [
         { syndromeId: "syn_128", keyword: "疮疡初起", weight: 10 }
+    ],
+    "疮疡肿毒": [
+        { syndromeId: "syn_159", keyword: "疮疡肿毒", weight: 8 }
+    ],
+    "唇甲青紫": [
+        { syndromeId: "syn_150", keyword: "唇甲青紫", weight: 8 }
     ],
     "唇焦舌燥": [
         { syndromeId: "syn_075", keyword: "唇焦舌燥", weight: 10 }
@@ -69,7 +89,8 @@ const symptomMappingExtension = {
     ],
     "刺痛拒按": [
         { syndromeId: "syn_072", keyword: "刺痛拒按", weight: 10 },
-        { syndromeId: "syn_120", keyword: "刺痛拒按", weight: 10 }
+        { syndromeId: "syn_120", keyword: "刺痛拒按", weight: 10 },
+        { syndromeId: "syn_150", keyword: "刺痛拒按", weight: 10 }
     ],
     "大便不爽": [
         { syndromeId: "syn_062", keyword: "大便不爽", weight: 8 }
@@ -142,6 +163,9 @@ const symptomMappingExtension = {
         { syndromeId: "syn_010", keyword: "多梦", weight: 10 },
         { syndromeId: "syn_011", keyword: "多梦", weight: 9 }
     ],
+    "多梦遗精": [
+        { syndromeId: "syn_151", keyword: "多梦遗精", weight: 8 }
+    ],
     "呃逆": [
         { syndromeId: "syn_110", keyword: "呃逆", weight: 8 }
     ],
@@ -186,11 +210,17 @@ const symptomMappingExtension = {
     "发热轻": [
         { syndromeId: "syn_001", keyword: "发热轻", weight: 8 }
     ],
+    "发热微恶风寒": [
+        { syndromeId: "syn_154", keyword: "发热微恶风寒", weight: 8 }
+    ],
     "发热重": [
         { syndromeId: "syn_002", keyword: "发热重", weight: 10 }
     ],
     "发脱齿摇": [
         { syndromeId: "syn_052", keyword: "发脱齿摇", weight: 10 }
+    ],
+    "发作有时": [
+        { syndromeId: "syn_160", keyword: "发作有时", weight: 10 }
     ],
     "烦渴": [
         { syndromeId: "syn_090", keyword: "烦渴", weight: 10 }
@@ -236,10 +266,12 @@ const symptomMappingExtension = {
         { syndromeId: "syn_031", keyword: "腹胀纳少", weight: 8 }
     ],
     "干咳少痰": [
-        { syndromeId: "syn_142", keyword: "干咳少痰", weight: 10 }
+        { syndromeId: "syn_142", keyword: "干咳少痰", weight: 10 },
+        { syndromeId: "syn_158", keyword: "干咳少痰", weight: 7 }
     ],
     "干咳无痰": [
-        { syndromeId: "syn_041", keyword: "干咳无痰", weight: 10 }
+        { syndromeId: "syn_041", keyword: "干咳无痰", weight: 10 },
+        { syndromeId: "syn_154", keyword: "干咳无痰", weight: 10 }
     ],
     "干呕": [
         { syndromeId: "syn_080", keyword: "干呕", weight: 8 }
@@ -252,6 +284,12 @@ const symptomMappingExtension = {
     ],
     "高热不退": [
         { syndromeId: "syn_136", keyword: "高热不退", weight: 10 }
+    ],
+    "咯痰不爽": [
+        { syndromeId: "syn_154", keyword: "咯痰不爽", weight: 8 }
+    ],
+    "咯吐不出": [
+        { syndromeId: "syn_152", keyword: "咯吐不出", weight: 8 }
     ],
     "固定不移": [
         { syndromeId: "syn_130", keyword: "固定不移", weight: 10 }
@@ -283,11 +321,15 @@ const symptomMappingExtension = {
         { syndromeId: "syn_040", keyword: "咳嗽无力", weight: 10 }
     ],
     "汗出": [
-        { syndromeId: "syn_080", keyword: "汗出", weight: 10 }
+        { syndromeId: "syn_080", keyword: "汗出", weight: 10 },
+        { syndromeId: "syn_155", keyword: "汗出", weight: 7 }
     ],
     "汗出不解": [
         { syndromeId: "syn_033", keyword: "汗出不解", weight: 7 },
         { syndromeId: "syn_119", keyword: "汗出不解", weight: 7 }
+    ],
+    "汗多口渴": [
+        { syndromeId: "syn_158", keyword: "汗多口渴", weight: 10 }
     ],
     "喉间痰鸣": [
         { syndromeId: "syn_136", keyword: "喉间痰鸣", weight: 8 }
@@ -304,6 +346,24 @@ const symptomMappingExtension = {
     "活动时诸症加剧": [
         { syndromeId: "syn_070", keyword: "活动时诸症加剧", weight: 8 }
     ],
+    "或腹痛泄泻": [
+        { syndromeId: "syn_156", keyword: "或腹痛泄泻", weight: 8 }
+    ],
+    "或见衄血": [
+        { syndromeId: "syn_157", keyword: "或见衄血", weight: 8 }
+    ],
+    "或见疼痛拒按": [
+        { syndromeId: "syn_153", keyword: "或见疼痛拒按", weight: 8 }
+    ],
+    "或见瘿瘤瘰疬": [
+        { syndromeId: "syn_152", keyword: "或见瘿瘤瘰疬", weight: 8 }
+    ],
+    "或见肿块": [
+        { syndromeId: "syn_150", keyword: "或见肿块", weight: 8 }
+    ],
+    "或溃后脓水清稀": [
+        { syndromeId: "syn_159", keyword: "或溃后脓水清稀", weight: 8 }
+    ],
     "或淋漓不尽": [
         { syndromeId: "syn_133", keyword: "或淋漓不尽", weight: 8 }
     ],
@@ -314,10 +374,14 @@ const symptomMappingExtension = {
         { syndromeId: "syn_024", keyword: "或身目发黄", weight: 8 }
     ],
     "或痰少而黏": [
-        { syndromeId: "syn_041", keyword: "或痰少而黏", weight: 8 }
+        { syndromeId: "syn_041", keyword: "或痰少而黏", weight: 7 },
+        { syndromeId: "syn_154", keyword: "或痰少而黏", weight: 7 }
     ],
     "或痰中带血": [
         { syndromeId: "syn_142", keyword: "或痰中带血", weight: 8 }
+    ],
+    "或泄泻": [
+        { syndromeId: "syn_155", keyword: "或泄泻", weight: 8 }
     ],
     "或肢体浮肿": [
         { syndromeId: "syn_031", keyword: "或肢体浮肿", weight: 8 }
@@ -325,8 +389,12 @@ const symptomMappingExtension = {
     "饥不欲食": [
         { syndromeId: "syn_060", keyword: "饥不欲食", weight: 10 }
     ],
+    "肌肤不仁": [
+        { syndromeId: "syn_153", keyword: "肌肤不仁", weight: 8 }
+    ],
     "肌肤甲错": [
-        { syndromeId: "syn_072", keyword: "肌肤甲错", weight: 8 }
+        { syndromeId: "syn_072", keyword: "肌肤甲错", weight: 7 },
+        { syndromeId: "syn_150", keyword: "肌肤甲错", weight: 7 }
     ],
     "肌衄": [
         { syndromeId: "syn_104", keyword: "肌衄", weight: 8 }
@@ -398,11 +466,15 @@ const symptomMappingExtension = {
     "口干": [
         { syndromeId: "syn_107", keyword: "口干", weight: 8 }
     ],
+    "口干反不甚渴饮": [
+        { syndromeId: "syn_157", keyword: "口干反不甚渴饮", weight: 8 }
+    ],
     "口干咽燥": [
         { syndromeId: "syn_111", keyword: "口干咽燥", weight: 7 },
         { syndromeId: "syn_114", keyword: "口干咽燥", weight: 7 }
     ],
     "口渴": [
+        { syndromeId: "syn_154", keyword: "口渴", weight: 10 },
         { syndromeId: "syn_002", keyword: "口渴", weight: 5 },
         { syndromeId: "syn_119", keyword: "口渴", weight: 5 },
         { syndromeId: "syn_128", keyword: "口渴", weight: 5 },
@@ -442,7 +514,8 @@ const symptomMappingExtension = {
         { syndromeId: "syn_041", keyword: "口燥咽干", weight: 10 },
         { syndromeId: "syn_060", keyword: "口燥咽干", weight: 10 },
         { syndromeId: "syn_075", keyword: "口燥咽干", weight: 10 },
-        { syndromeId: "syn_011", keyword: "口燥咽干", weight: 5 }
+        { syndromeId: "syn_011", keyword: "口燥咽干", weight: 5 },
+        { syndromeId: "syn_151", keyword: "口燥咽干", weight: 5 }
     ],
     "口中黏腻": [
         { syndromeId: "syn_074", keyword: "口中黏腻", weight: 8 }
@@ -576,12 +649,18 @@ const symptomMappingExtension = {
         { syndromeId: "syn_003", keyword: "面红目赤", weight: 6 },
         { syndromeId: "syn_022", keyword: "面红目赤", weight: 6 }
     ],
+    "面黄体瘦": [
+        { syndromeId: "syn_160", keyword: "面黄体瘦", weight: 8 }
+    ],
     "面色苍白": [
         { syndromeId: "syn_004", keyword: "面色苍白", weight: 10 },
         { syndromeId: "syn_132", keyword: "面色苍白", weight: 7 }
     ],
     "面色苍白或黧黑": [
         { syndromeId: "syn_051", keyword: "面色苍白或黧黑", weight: 8 }
+    ],
+    "面色潮红或淡白": [
+        { syndromeId: "syn_158", keyword: "面色潮红或淡白", weight: 8 }
     ],
     "面色淡白": [
         { syndromeId: "syn_040", keyword: "面色淡白", weight: 5 },
@@ -608,6 +687,9 @@ const symptomMappingExtension = {
     "面色晦黄": [
         { syndromeId: "syn_032", keyword: "面色晦黄", weight: 8 }
     ],
+    "面色黧黑": [
+        { syndromeId: "syn_150", keyword: "面色黧黑", weight: 8 }
+    ],
     "面色青白": [
         { syndromeId: "syn_131", keyword: "面色青白", weight: 8 }
     ],
@@ -616,7 +698,8 @@ const symptomMappingExtension = {
         { syndromeId: "syn_104", keyword: "面色萎黄", weight: 5 },
         { syndromeId: "syn_116", keyword: "面色萎黄", weight: 5 },
         { syndromeId: "syn_133", keyword: "面色萎黄", weight: 5 },
-        { syndromeId: "syn_137", keyword: "面色萎黄", weight: 5 }
+        { syndromeId: "syn_137", keyword: "面色萎黄", weight: 5 },
+        { syndromeId: "syn_159", keyword: "面色萎黄", weight: 5 }
     ],
     "面色无华": [
         { syndromeId: "syn_023", keyword: "面色无华", weight: 8 }
@@ -639,6 +722,9 @@ const symptomMappingExtension = {
     "纳呆": [
         { syndromeId: "syn_024", keyword: "纳呆", weight: 7 },
         { syndromeId: "syn_122", keyword: "纳呆", weight: 7 }
+    ],
+    "纳呆腹胀": [
+        { syndromeId: "syn_156", keyword: "纳呆腹胀", weight: 10 }
     ],
     "纳呆呕恶": [
         { syndromeId: "syn_033", keyword: "纳呆呕恶", weight: 8 }
@@ -663,6 +749,9 @@ const symptomMappingExtension = {
         { syndromeId: "syn_117", keyword: "尿血", weight: 6 },
         { syndromeId: "syn_121", keyword: "尿血", weight: 6 }
     ],
+    "脓成难溃": [
+        { syndromeId: "syn_159", keyword: "脓成难溃", weight: 10 }
+    ],
     "女子带下清稀": [
         { syndromeId: "syn_053", keyword: "女子带下清稀", weight: 8 }
     ],
@@ -677,13 +766,17 @@ const symptomMappingExtension = {
         { syndromeId: "syn_121", keyword: "衄血", weight: 7 }
     ],
     "呕吐清水": [
-        { syndromeId: "syn_106", keyword: "呕吐清水", weight: 8 }
+        { syndromeId: "syn_106", keyword: "呕吐清水", weight: 7 },
+        { syndromeId: "syn_160", keyword: "呕吐清水", weight: 7 }
     ],
     "呕吐酸腐": [
         { syndromeId: "syn_138", keyword: "呕吐酸腐", weight: 8 }
     ],
     "皮肤干枯": [
         { syndromeId: "syn_075", keyword: "皮肤干枯", weight: 8 }
+    ],
+    "皮肤干燥": [
+        { syndromeId: "syn_154", keyword: "皮肤干燥", weight: 8 }
     ],
     "皮肤湿疹": [
         { syndromeId: "syn_129", keyword: "皮肤湿疹", weight: 10 }
@@ -702,7 +795,9 @@ const symptomMappingExtension = {
     ],
     "气短懒言": [
         { syndromeId: "syn_121", keyword: "气短懒言", weight: 10 },
-        { syndromeId: "syn_133", keyword: "气短懒言", weight: 7 }
+        { syndromeId: "syn_153", keyword: "气短懒言", weight: 10 },
+        { syndromeId: "syn_158", keyword: "气短懒言", weight: 10 },
+        { syndromeId: "syn_133", keyword: "气短懒言", weight: 5 }
     ],
     "气味腥臭": [
         { syndromeId: "syn_134", keyword: "气味腥臭", weight: 8 }
@@ -718,6 +813,10 @@ const symptomMappingExtension = {
     ],
     "情志不遂则加重": [
         { syndromeId: "syn_110", keyword: "情志不遂则加重", weight: 8 }
+    ],
+    "情志抑郁": [
+        { syndromeId: "syn_152", keyword: "情志抑郁", weight: 10 },
+        { syndromeId: "syn_156", keyword: "情志抑郁", weight: 7 }
     ],
     "屈伸不利": [
         { syndromeId: "syn_118", keyword: "屈伸不利", weight: 7 },
@@ -739,7 +838,9 @@ const symptomMappingExtension = {
         { syndromeId: "syn_134", keyword: "色黄质稠", weight: 10 }
     ],
     "善太息": [
-        { syndromeId: "syn_020", keyword: "善太息", weight: 8 }
+        { syndromeId: "syn_020", keyword: "善太息", weight: 6 },
+        { syndromeId: "syn_152", keyword: "善太息", weight: 6 },
+        { syndromeId: "syn_156", keyword: "善太息", weight: 6 }
     ],
     "少气懒言": [
         { syndromeId: "syn_070", keyword: "少气懒言", weight: 10 },
@@ -779,6 +880,9 @@ const symptomMappingExtension = {
     "舌淡苔薄": [
         { syndromeId: "syn_132", keyword: "舌淡苔薄", weight: 8 }
     ],
+    "舌淡紫或有瘀斑": [
+        { syndromeId: "syn_153", keyword: "舌淡紫或有瘀斑", weight: 8 }
+    ],
     "舌红": [
         { syndromeId: "syn_102", keyword: "舌红", weight: 6 },
         { syndromeId: "syn_119", keyword: "舌红", weight: 6 },
@@ -810,6 +914,9 @@ const symptomMappingExtension = {
         { syndromeId: "syn_134", keyword: "舌红苔黄腻", weight: 6 },
         { syndromeId: "syn_136", keyword: "舌红苔黄腻", weight: 6 }
     ],
+    "舌红苔腻": [
+        { syndromeId: "syn_155", keyword: "舌红苔腻", weight: 8 }
+    ],
     "舌尖红": [
         { syndromeId: "syn_126", keyword: "舌尖红", weight: 8 }
     ],
@@ -832,6 +939,9 @@ const symptomMappingExtension = {
         { syndromeId: "syn_072", keyword: "舌质紫暗或有瘀斑", weight: 7 },
         { syndromeId: "syn_103", keyword: "舌质紫暗或有瘀斑", weight: 7 }
     ],
+    "舌质紫暗或有瘀点瘀斑": [
+        { syndromeId: "syn_150", keyword: "舌质紫暗或有瘀点瘀斑", weight: 10 }
+    ],
     "舌紫暗有瘀斑": [
         { syndromeId: "syn_130", keyword: "舌紫暗有瘀斑", weight: 8 }
     ],
@@ -839,11 +949,18 @@ const symptomMappingExtension = {
         { syndromeId: "syn_033", keyword: "身热不扬", weight: 7 },
         { syndromeId: "syn_122", keyword: "身热不扬", weight: 7 }
     ],
+    "身热烦渴": [
+        { syndromeId: "syn_155", keyword: "身热烦渴", weight: 10 }
+    ],
     "身热夜甚": [
-        { syndromeId: "syn_117", keyword: "身热夜甚", weight: 10 }
+        { syndromeId: "syn_117", keyword: "身热夜甚", weight: 10 },
+        { syndromeId: "syn_157", keyword: "身热夜甚", weight: 10 }
     ],
     "身痛": [
         { syndromeId: "syn_001", keyword: "身痛", weight: 8 }
+    ],
+    "神倦食少": [
+        { syndromeId: "syn_159", keyword: "神倦食少", weight: 10 }
     ],
     "神疲乏力": [
         { syndromeId: "syn_070", keyword: "神疲乏力", weight: 10 },
@@ -852,6 +969,8 @@ const symptomMappingExtension = {
         { syndromeId: "syn_105", keyword: "神疲乏力", weight: 10 },
         { syndromeId: "syn_121", keyword: "神疲乏力", weight: 10 },
         { syndromeId: "syn_127", keyword: "神疲乏力", weight: 10 },
+        { syndromeId: "syn_153", keyword: "神疲乏力", weight: 10 },
+        { syndromeId: "syn_158", keyword: "神疲乏力", weight: 10 },
         { syndromeId: "syn_004", keyword: "神疲乏力", weight: 5 },
         { syndromeId: "syn_030", keyword: "神疲乏力", weight: 5 },
         { syndromeId: "syn_040", keyword: "神疲乏力", weight: 5 },
@@ -896,6 +1015,9 @@ const symptomMappingExtension = {
     ],
     "时发时止": [
         { syndromeId: "syn_103", keyword: "时发时止", weight: 8 }
+    ],
+    "时有谵语": [
+        { syndromeId: "syn_157", keyword: "时有谵语", weight: 8 }
     ],
     "食后即泻": [
         { syndromeId: "syn_137", keyword: "食后即泻", weight: 10 }
@@ -1010,7 +1132,8 @@ const symptomMappingExtension = {
         { syndromeId: "syn_130", keyword: "疼痛拒按", weight: 8 }
     ],
     "痛处固定": [
-        { syndromeId: "syn_120", keyword: "痛处固定", weight: 8 }
+        { syndromeId: "syn_150", keyword: "痛处固定", weight: 10 },
+        { syndromeId: "syn_120", keyword: "痛处固定", weight: 7 }
     ],
     "痛处固定不移": [
         { syndromeId: "syn_072", keyword: "痛处固定不移", weight: 10 }
@@ -1018,21 +1141,31 @@ const symptomMappingExtension = {
     "痛处游走": [
         { syndromeId: "syn_118", keyword: "痛处游走", weight: 8 }
     ],
+    "痛剧时四肢厥冷": [
+        { syndromeId: "syn_160", keyword: "痛剧时四肢厥冷", weight: 8 }
+    ],
     "痛引肩背": [
         { syndromeId: "syn_103", keyword: "痛引肩背", weight: 8 }
+    ],
+    "痛止则安": [
+        { syndromeId: "syn_160", keyword: "痛止则安", weight: 8 }
     ],
     "头目胀痛": [
         { syndromeId: "syn_022", keyword: "头目胀痛", weight: 10 }
     ],
     "头身困重": [
-        { syndromeId: "syn_032", keyword: "头身困重", weight: 7 },
-        { syndromeId: "syn_122", keyword: "头身困重", weight: 7 }
+        { syndromeId: "syn_155", keyword: "头身困重", weight: 10 },
+        { syndromeId: "syn_032", keyword: "头身困重", weight: 6 },
+        { syndromeId: "syn_122", keyword: "头身困重", weight: 6 }
     ],
     "头痛": [
         { syndromeId: "syn_001", keyword: "头痛", weight: 10 },
         { syndromeId: "syn_002", keyword: "头痛", weight: 10 },
         { syndromeId: "syn_080", keyword: "头痛", weight: 8 },
         { syndromeId: "syn_141", keyword: "头痛", weight: 5 }
+    ],
+    "头痛少汗": [
+        { syndromeId: "syn_154", keyword: "头痛少汗", weight: 8 }
     ],
     "头痛身痛": [
         { syndromeId: "syn_042", keyword: "头痛身痛", weight: 8 }
@@ -1044,7 +1177,8 @@ const symptomMappingExtension = {
         { syndromeId: "syn_010", keyword: "头晕", weight: 8 }
     ],
     "头晕耳鸣": [
-        { syndromeId: "syn_111", keyword: "头晕耳鸣", weight: 8 }
+        { syndromeId: "syn_111", keyword: "头晕耳鸣", weight: 7 },
+        { syndromeId: "syn_151", keyword: "头晕耳鸣", weight: 7 }
     ],
     "头晕健忘": [
         { syndromeId: "syn_116", keyword: "头晕健忘", weight: 8 }
@@ -1069,12 +1203,18 @@ const symptomMappingExtension = {
     "突然抽搐": [
         { syndromeId: "syn_136", keyword: "突然抽搐", weight: 10 }
     ],
+    "吐蛔或便蛔": [
+        { syndromeId: "syn_160", keyword: "吐蛔或便蛔", weight: 10 }
+    ],
     "吐血": [
         { syndromeId: "syn_117", keyword: "吐血", weight: 7 },
         { syndromeId: "syn_121", keyword: "吐血", weight: 7 }
     ],
     "吞酸": [
         { syndromeId: "syn_110", keyword: "吞酸", weight: 8 }
+    ],
+    "吞咽不下": [
+        { syndromeId: "syn_152", keyword: "吞咽不下", weight: 8 }
     ],
     "脱肛": [
         { syndromeId: "syn_105", keyword: "脱肛", weight: 8 }
@@ -1146,7 +1286,8 @@ const symptomMappingExtension = {
         { syndromeId: "syn_113", keyword: "五心烦热", weight: 5 },
         { syndromeId: "syn_114", keyword: "五心烦热", weight: 5 },
         { syndromeId: "syn_125", keyword: "五心烦热", weight: 5 },
-        { syndromeId: "syn_142", keyword: "五心烦热", weight: 5 }
+        { syndromeId: "syn_142", keyword: "五心烦热", weight: 5 },
+        { syndromeId: "syn_151", keyword: "五心烦热", weight: 5 }
     ],
     "下肢红肿热痛": [
         { syndromeId: "syn_129", keyword: "下肢红肿热痛", weight: 10 }
@@ -1159,8 +1300,9 @@ const symptomMappingExtension = {
     ],
     "小便不利": [
         { syndromeId: "syn_124", keyword: "小便不利", weight: 10 },
-        { syndromeId: "syn_031", keyword: "小便不利", weight: 6 },
-        { syndromeId: "syn_115", keyword: "小便不利", weight: 6 }
+        { syndromeId: "syn_155", keyword: "小便不利", weight: 10 },
+        { syndromeId: "syn_031", keyword: "小便不利", weight: 5 },
+        { syndromeId: "syn_115", keyword: "小便不利", weight: 5 }
     ],
     "小便短赤": [
         { syndromeId: "syn_061", keyword: "小便短赤", weight: 7 },
@@ -1206,16 +1348,22 @@ const symptomMappingExtension = {
     "胁痛": [
         { syndromeId: "syn_114", keyword: "胁痛", weight: 8 }
     ],
+    "泻后痛减": [
+        { syndromeId: "syn_156", keyword: "泻后痛减", weight: 8 }
+    ],
     "心烦": [
-        { syndromeId: "syn_011", keyword: "心烦", weight: 6 },
-        { syndromeId: "syn_102", keyword: "心烦", weight: 6 },
-        { syndromeId: "syn_119", keyword: "心烦", weight: 6 }
+        { syndromeId: "syn_011", keyword: "心烦", weight: 5 },
+        { syndromeId: "syn_102", keyword: "心烦", weight: 5 },
+        { syndromeId: "syn_119", keyword: "心烦", weight: 5 },
+        { syndromeId: "syn_158", keyword: "心烦", weight: 5 }
     ],
     "心烦不寐": [
-        { syndromeId: "syn_117", keyword: "心烦不寐", weight: 8 }
+        { syndromeId: "syn_157", keyword: "心烦不寐", weight: 10 },
+        { syndromeId: "syn_117", keyword: "心烦不寐", weight: 7 }
     ],
     "心烦失眠": [
-        { syndromeId: "syn_126", keyword: "心烦失眠", weight: 10 }
+        { syndromeId: "syn_126", keyword: "心烦失眠", weight: 10 },
+        { syndromeId: "syn_151", keyword: "心烦失眠", weight: 10 }
     ],
     "心烦喜呕": [
         { syndromeId: "syn_081", keyword: "心烦喜呕", weight: 8 }
@@ -1225,6 +1373,9 @@ const symptomMappingExtension = {
         { syndromeId: "syn_100", keyword: "心悸", weight: 10 },
         { syndromeId: "syn_102", keyword: "心悸", weight: 10 },
         { syndromeId: "syn_011", keyword: "心悸", weight: 9 }
+    ],
+    "心悸健忘": [
+        { syndromeId: "syn_151", keyword: "心悸健忘", weight: 10 }
     ],
     "心悸失眠": [
         { syndromeId: "syn_071", keyword: "心悸失眠", weight: 7 },
@@ -1267,8 +1418,17 @@ const symptomMappingExtension = {
     "胸痛": [
         { syndromeId: "syn_043", keyword: "胸痛", weight: 8 }
     ],
+    "胸脘痞闷": [
+        { syndromeId: "syn_155", keyword: "胸脘痞闷", weight: 8 }
+    ],
     "胸胁苦满": [
         { syndromeId: "syn_081", keyword: "胸胁苦满", weight: 10 }
+    ],
+    "胸胁满闷": [
+        { syndromeId: "syn_152", keyword: "胸胁满闷", weight: 10 }
+    ],
+    "胸胁胀满疼痛": [
+        { syndromeId: "syn_156", keyword: "胸胁胀满疼痛", weight: 10 }
     ],
     "胸胁胀闷疼痛": [
         { syndromeId: "syn_072", keyword: "胸胁胀闷疼痛", weight: 8 }
@@ -1307,6 +1467,9 @@ const symptomMappingExtension = {
     "咽干颧红": [
         { syndromeId: "syn_050", keyword: "咽干颧红", weight: 8 }
     ],
+    "咽干舌燥": [
+        { syndromeId: "syn_158", keyword: "咽干舌燥", weight: 8 }
+    ],
     "咽痛": [
         { syndromeId: "syn_002", keyword: "咽痛", weight: 10 },
         { syndromeId: "syn_139", keyword: "咽痛", weight: 6 },
@@ -1314,6 +1477,9 @@ const symptomMappingExtension = {
     ],
     "咽痒": [
         { syndromeId: "syn_042", keyword: "咽痒", weight: 8 }
+    ],
+    "咽中如有物梗阻": [
+        { syndromeId: "syn_152", keyword: "咽中如有物梗阻", weight: 10 }
     ],
     "腰膝酸冷": [
         { syndromeId: "syn_051", keyword: "腰膝酸冷", weight: 10 },
@@ -1323,11 +1489,15 @@ const symptomMappingExtension = {
         { syndromeId: "syn_050", keyword: "腰膝酸软", weight: 10 },
         { syndromeId: "syn_113", keyword: "腰膝酸软", weight: 10 },
         { syndromeId: "syn_114", keyword: "腰膝酸软", weight: 10 },
+        { syndromeId: "syn_151", keyword: "腰膝酸软", weight: 10 },
         { syndromeId: "syn_052", keyword: "腰膝酸软", weight: 9 },
         { syndromeId: "syn_053", keyword: "腰膝酸软", weight: 8 },
         { syndromeId: "syn_022", keyword: "腰膝酸软", weight: 5 },
         { syndromeId: "syn_125", keyword: "腰膝酸软", weight: 5 },
         { syndromeId: "syn_142", keyword: "腰膝酸软", weight: 5 }
+    ],
+    "夜间痛甚": [
+        { syndromeId: "syn_150", keyword: "夜间痛甚", weight: 8 }
     ],
     "夜尿频多": [
         { syndromeId: "syn_051", keyword: "夜尿频多", weight: 10 },
@@ -1389,6 +1559,9 @@ const symptomMappingExtension = {
     "爪甲不荣": [
         { syndromeId: "syn_023", keyword: "爪甲不荣", weight: 10 }
     ],
+    "阵发腹痛": [
+        { syndromeId: "syn_160", keyword: "阵发腹痛", weight: 10 }
+    ],
     "肢体浮肿": [
         { syndromeId: "syn_124", keyword: "肢体浮肿", weight: 10 },
         { syndromeId: "syn_032", keyword: "肢体浮肿", weight: 7 }
@@ -1405,7 +1578,8 @@ const symptomMappingExtension = {
         { syndromeId: "syn_031", keyword: "肢体困重", weight: 6 }
     ],
     "肢体麻木": [
-        { syndromeId: "syn_023", keyword: "肢体麻木", weight: 10 }
+        { syndromeId: "syn_023", keyword: "肢体麻木", weight: 10 },
+        { syndromeId: "syn_153", keyword: "肢体麻木", weight: 7 }
     ],
     "重着肿胀": [
         { syndromeId: "syn_118", keyword: "重着肿胀", weight: 8 }

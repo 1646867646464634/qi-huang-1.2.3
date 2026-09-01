@@ -36,6 +36,7 @@ class StudyModule {
                     <button class="study-tab ${this.activeTab === 'quiz' ? 'active' : ''}" data-tab="quiz">✍️ 自测练习</button>
                     <button class="study-tab ${this.activeTab === 'wrong' ? 'active' : ''}" data-tab="wrong">📕 错题本</button>
                     <button class="study-tab ${this.activeTab === 'stats' ? 'active' : ''}" data-tab="stats">📊 学习数据</button>
+                    <button class="study-tab ${this.activeTab === 'general' ? 'active' : ''}" data-tab="general">📖 教材总论</button>
                     <button class="study-tab ${this.activeTab === 'path' ? 'active' : ''}" data-tab="path">🗺 学习路径</button>
                 </div>
 
@@ -66,6 +67,7 @@ class StudyModule {
             case 'quiz': this.renderQuiz(content, container); break;
             case 'wrong': this.renderWrong(content, container); break;
             case 'stats': this.renderStats(content, container); break;
+            case 'general': this.renderGeneral(content); break;
             case 'path': this.renderPath(content, container); break;
         }
     }
@@ -610,6 +612,41 @@ class StudyModule {
             setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 200);
         }
         Toast.show('已导出错题本（Markdown）', 'success');
+    }
+
+    // ================= 教材总论 =================
+    renderGeneral(content) {
+        const data = window.textbookGeneral || [];
+        if (!data.length) {
+            content.innerHTML = '<p style="text-align:center;color:var(--color-ink-light);padding:40px 0;">总论内容加载中…</p>';
+            return;
+        }
+        const subjects = [...new Set(data.map(d => d.subject))];
+        const bySubject = s => data.filter(d => d.subject === s);
+        const groupHtml = subjects.map(sub => {
+            const chapters = bySubject(sub);
+            const cards = chapters.map((d, i) => `
+                <div class="card" style="padding:var(--space-md);margin-bottom:var(--space-md);">
+                    <h4 style="margin:0;font-family:var(--font-heading);color:var(--color-vermillion-dark);">${d.chapter}</h4>
+                    <p style="font-size:var(--text-sm);color:var(--color-ink-light);margin:8px 0 10px 0;">${d.summary}</p>
+                    <ul style="margin:0;padding-left:1.2em;font-size:var(--text-sm);line-height:1.9;">
+                        ${d.points.map(p => `<li>${p}</li>`).join('')}
+                    </ul>
+                </div>
+            `).join('');
+            return `
+                <h3 style="font-family:var(--font-heading);color:var(--color-bronze-dark);margin:var(--space-lg) 0 var(--space-sm) 0;padding-bottom:6px;border-bottom:2px solid var(--color-gold,#C8A96A);">《${sub}》总论（${chapters.length} 章）</h3>
+                ${cards}
+            `;
+        }).join('');
+        content.innerHTML = `
+            <div class="general-intro card" style="padding:var(--space-md);margin-bottom:var(--space-md);background:linear-gradient(135deg,rgba(200,169,106,.08),transparent);">
+                <p style="margin:0;font-size:var(--text-sm);color:var(--color-ink-light);">
+                    依据"十五五"规划教材《中药学》（钟赣生/杨柏灿）总论 7 章与《方剂学》（李冀/许二平）总论 6 章整理，覆盖四气五味、七情配伍、十八反十九畏、君臣佐使、八法等考试高频基础理论。
+                </p>
+            </div>
+            ${groupHtml}
+        `;
     }
 
     // ================= 学习路径 =================

@@ -153,7 +153,7 @@ const herbImages = {
         yinpianUrl: "",
         note: "桑寄生（替代图：槲寄生 Viscum album，同属寄生植物）"
     },
-    "herb_037": { // 藿香        originalUrl: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Pogostemon_cablin.jpg",
+    "herb_037": { // 广藿香        originalUrl: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Pogostemon_cablin.jpg",
         yinpianUrl: "",
         note: "原貌图已填充"
     },

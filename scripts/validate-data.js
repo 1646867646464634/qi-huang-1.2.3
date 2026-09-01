@@ -103,13 +103,17 @@ if (syndromeRefBad === 0) console.log(`✅ 证候库 ${syndromeRefTotal} 处方�
 
 // ---------- 6. 组成药名匹配率（仅提示） ----------
 const herbNameSet = new Set(herbNames);
+// 别名索引：别名 → 正名（供组成药名解析跳转，对应报告 D16）
+const herbAliasMap = {};
+herbsDatabase.forEach(h => (h.aliases || []).forEach(a => { herbAliasMap[a] = h.name; }));
 let totalComp = 0, matchedComp = 0;
 const notFoundHerbs = new Set();
 formulasDatabase.forEach(f => {
     (f.composition || []).forEach(c => {
         totalComp++;
         const plain = c.herbName.replace(/^(炙|炒|煅|生|制|焦|蜜炙|盐|醋|酒|姜|水飞)/, '');
-        if (herbNameSet.has(c.herbName) || herbNameSet.has(plain)) matchedComp++;
+        if (herbNameSet.has(c.herbName) || herbNameSet.has(plain) ||
+            herbAliasMap[c.herbName] || herbAliasMap[plain]) matchedComp++;
         else notFoundHerbs.add(c.herbName);
     });
 });
