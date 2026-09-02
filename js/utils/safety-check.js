@@ -2,12 +2,17 @@
 // 十八反、十九畏、有毒药材限量、妊娠哺乳禁忌 检查
 // 仅供学习参考，不构成用药建议。
 const SAFETY = {
-    // 十八反：每行三药（乌头类含 川乌/草乌/附子）
+    // 十八反：每行三药（乌头类：古方"乌头"经 ALIAS_NORM 归一为"川乌"后参与匹配）
     INCOMPATIBILITY: [
         { group: '甘草反', herbs: ['甘草'], against: ['甘遂', '京大戟', '海藻', '芫花'], detail: '甘草反甘遂、京大戟、海藻、芫花' },
-        { group: '乌头反', herbs: ['乌头', '川乌', '草乌', '附子'], against: ['半夏', '瓜蒌', '贝母', '白蔹', '白及'], detail: '乌头（含附子）反半夏、瓜蒌、贝母、白蔹、白及' },
+        { group: '乌头反', herbs: ['川乌', '草乌', '附子'], against: ['半夏', '瓜蒌', '贝母', '白蔹', '白及'], detail: '乌头类（川乌、草乌、附子）反半夏、瓜蒌、贝母、白蔹、白及' },
         { group: '藜芦反', herbs: ['藜芦'], against: ['人参', '沙参', '丹参', '玄参', '细辛', '芍药'], detail: '藜芦反人参、沙参、丹参、玄参、细辛、芍药' }
     ],
+
+    // 药名归一映射：古方用名 → 药材库正名（保证告警项可跳转药材百科）
+    ALIAS_NORM: {
+        '乌头': '川乌'
+    },
 
     // 十九畏（歌诀：硫黄原是火中精，朴硝一见便相争…）
     FEAR: [
@@ -59,7 +64,10 @@ const SAFETY = {
         const herbs = Array.isArray(formulaOrHerbs)
             ? formulaOrHerbs
             : (formulaOrHerbs && formulaOrHerbs.composition ? formulaOrHerbs.composition.map(c => c.herbName) : []);
-        const plainNames = herbs.map(h => this._plain(h)).filter(Boolean);
+        const plainNames = herbs.map(h => {
+            const p = this._plain(h);
+            return this.ALIAS_NORM[p] || p;
+        }).filter(Boolean);
         const nameSet = new Set(plainNames);
         const out = { pairs: [], toxic: [], pregnancy: [], all: [] };
 

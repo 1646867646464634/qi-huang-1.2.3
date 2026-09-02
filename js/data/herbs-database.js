@@ -1476,27 +1476,10 @@ const herbsDatabase = [
         tags: ["有毒", "化痰", "止痉"],
         keywords: ["顽痰", "风痰", "眩晕", "癫痫", "祛风", "胆南星"]
     },
-    {
-        id: "herb_079",
-        name: "白芥子",
-        pinyin: "Bai Jie Zi",
-        latinName: "Sinapis alba L.",
-        category: "化痰止咳平喘药",
-        subcategory: "温化寒痰药",
-        nature: "温",
-        tastes: ["辛"],
-        meridians: ["肺经"],
-        functions: ["温肺豁痰利气", "散结通络止痛"],
-        indications: ["寒痰咳嗽", "胸胁胀痛", "痰滞经络", "关节麻木疼痛", "痰湿流注", "阴疽肿毒"],
-        usage: "煎服，3-9g。外用适量，研末调敷。",
-        contraindications: ["肺虚久咳者忌服", "皮肤过敏者外用慎用"],
-        tags: ["化痰", "散结"],
-        keywords: ["寒痰", "咳嗽", "通络", "痹痛", "流注", "芥子"]
-    },
 
     // 13.2 清化热痰药 (3味)
     {
-        id: "herb_080",
+        id: "herb_079",
         name: "川贝母",
         pinyin: "Chuan Bei Mu",
         aliases: ["贝母"],
@@ -1514,7 +1497,7 @@ const herbsDatabase = [
         keywords: ["燥咳", "阴虚", "止咳", "化痰", "肺热", "贝母"]
     },
     {
-        id: "herb_081",
+        id: "herb_080",
         name: "瓜蒌",
         pinyin: "Gua Lou",
         aliases: ["瓜蒌仁"],
@@ -1532,7 +1515,7 @@ const herbsDatabase = [
         keywords: ["痰热", "胸痹", "便秘", "散结", "咳嗽", "瓜蒌薤白"]
     },
     {
-        id: "herb_082",
+        id: "herb_081",
         name: "竹茹",
         pinyin: "Zhu Ru",
         latinName: "Bambusa tuldoides Munro",
@@ -1551,7 +1534,7 @@ const herbsDatabase = [
 
     // 13.3 止咳平喘药 (3味)
     {
-        id: "herb_083",
+        id: "herb_082",
         name: "苦杏仁",
         pinyin: "Ku Xing Ren",
         aliases: ["杏仁", "苦杏仁霜"],
@@ -1570,7 +1553,7 @@ const herbsDatabase = [
         keywords: ["咳嗽", "气喘", "便秘", "平喘", "止咳", "杏仁"]
     },
     {
-        id: "herb_084",
+        id: "herb_083",
         name: "百部",
         pinyin: "Bai Bu",
         latinName: "Stemona sessilifolia (Miq.) Miq.",
@@ -1587,7 +1570,7 @@ const herbsDatabase = [
         keywords: ["咳嗽", "肺痨", "百日咳", "杀虫", "止咳", "润肺"]
     },
     {
-        id: "herb_085",
+        id: "herb_084",
         name: "桑白皮",
         pinyin: "Sang Bai Pi",
         latinName: "Morus alba L.",
@@ -1610,7 +1593,7 @@ const herbsDatabase = [
 
     // 14.1 重镇安神药 (2味)
     {
-        id: "herb_086",
+        id: "herb_085",
         name: "朱砂",
         pinyin: "Zhu Sha",
         latinName: "Cinnabaris",
@@ -1629,7 +1612,7 @@ const herbsDatabase = [
         keywords: ["心悸", "失眠", "惊风", "癫痫", "安神", "镇心"]
     },
     {
-        id: "herb_087",
+        id: "herb_086",
         name: "龙骨",
         pinyin: "Long Gu",
         latinName: "Os Draconis",
@@ -1648,7 +1631,7 @@ const herbsDatabase = [
 
     // 14.2 养心安神药 (3味)
     {
-        id: "herb_088",
+        id: "herb_087",
         name: "酸枣仁",
         aliases: ["枣仁", "炒酸枣仁"],
         pinyin: "Suan Zao Ren",
@@ -1666,7 +1649,7 @@ const herbsDatabase = [
         keywords: ["失眠", "多梦", "虚烦", "安神", "酸枣仁汤", "助眠"]
     },
     {
-        id: "herb_089",
+        id: "herb_088",
         name: "远志",
         pinyin: "Yuan Zhi",
         latinName: "Polygala tenuifolia Willd.",
@@ -1683,7 +1666,7 @@ const herbsDatabase = [
         keywords: ["失眠", "健忘", "心肾不交", "安神", "益智", "定志"]
     },
     {
-        id: "herb_090",
+        id: "herb_089",
         name: "合欢皮",
         pinyin: "He Huan Pi",
         latinName: "Albizia julibrissin Durazz.",
@@ -1706,7 +1689,7 @@ const herbsDatabase = [
 
     // 15.1 平抑肝阳药 (3味)
     {
-        id: "herb_091",
+        id: "herb_090",
         name: "石决明",
         pinyin: "Shi Jue Ming",
         latinName: "Haliotis diversicolor Reeve",
@@ -1723,7 +1706,7 @@ const herbsDatabase = [
         keywords: ["肝阳", "眩晕", "目赤", "明目", "潜阳", "高血压"]
     },
     {
-        id: "herb_092",
+        id: "herb_091",
         name: "牡蛎",
         pinyin: "Mu Li",
         aliases: ["生牡蛎", "煅牡蛎"],
@@ -1741,7 +1724,7 @@ const herbsDatabase = [
         keywords: ["肝阳", "眩晕", "瘰疬", "固涩", "自汗", "盗汗"]
     },
     {
-        id: "herb_093",
+        id: "herb_092",
         name: "代赭石",
         pinyin: "Dai Zhe Shi",
         latinName: "Haematitum",
@@ -1760,7 +1743,7 @@ const herbsDatabase = [
 
     // 15.2 息风止痉药 (3味)
     {
-        id: "herb_094",
+        id: "herb_093",
         name: "天麻",
         pinyin: "Tian Ma",
         latinName: "Gastrodia elata Bl.",
@@ -1777,7 +1760,7 @@ const herbsDatabase = [
         keywords: ["眩晕", "头痛", "抽搐", "麻木", "息风", "天麻钩藤饮"]
     },
     {
-        id: "herb_095",
+        id: "herb_094",
         name: "钩藤",
         pinyin: "Gou Teng",
         latinName: "Uncaria rhynchophylla (Miq.) Miq. ex Havil.",
@@ -1794,7 +1777,7 @@ const herbsDatabase = [
         keywords: ["抽搐", "眩晕", "头痛", "惊风", "息风", "钩藤"]
     },
     {
-        id: "herb_096",
+        id: "herb_095",
         name: "全蝎",
         pinyin: "Quan Xie",
         latinName: "Buthus martensii Karsch",
@@ -1818,7 +1801,7 @@ const herbsDatabase = [
     // ================================================================================
 
     {
-        id: "herb_097",
+        id: "herb_096",
         name: "麝香",
         pinyin: "She Xiang",
         latinName: "Moschus berezovskii Flerov",
@@ -1836,7 +1819,7 @@ const herbsDatabase = [
         keywords: ["神昏", "中风", "开窍", "活血", "急救", "麝香"]
     },
     {
-        id: "herb_098",
+        id: "herb_097",
         name: "冰片",
         pinyin: "Bing Pian",
         latinName: "Borneolum Syntheticum",
@@ -1859,7 +1842,7 @@ const herbsDatabase = [
 
     // 17.1 补气药 (4味)
     {
-        id: "herb_099",
+        id: "herb_098",
         name: "人参",
         aliases: ["生晒参", "红参", "野山参", "白参"],
         pinyin: "Ren Shen",
@@ -1877,7 +1860,7 @@ const herbsDatabase = [
         keywords: ["气虚", "元气", "补气", "脱证", "虚劳", "独参汤"]
     },
     {
-        id: "herb_100",
+        id: "herb_099",
         name: "黄芪",
         aliases: ["炙黄芪", "生黄芪", "绵黄芪", "北芪"],
         pinyin: "Huang Qi",
@@ -1895,7 +1878,7 @@ const herbsDatabase = [
         keywords: ["气虚", "补气", "固表", "水肿", "疮疡", "玉屏风散"]
     },
     {
-        id: "herb_101",
+        id: "herb_100",
         name: "白术",
         aliases: ["生白术", "炒白术", "焦白术", "麸炒白术"],
         pinyin: "Bai Zhu",
@@ -1913,7 +1896,7 @@ const herbsDatabase = [
         keywords: ["脾虚", "泄泻", "水肿", "健脾", "安胎", "白术"]
     },
     {
-        id: "herb_102",
+        id: "herb_101",
         name: "甘草",
         pinyin: "Gan Cao",
         aliases: ["甘草梢","炙甘草梢", "炙甘草", "生甘草", "粉甘草", "甘草片"],
@@ -1933,7 +1916,7 @@ const herbsDatabase = [
 
     // 17.2 补血药 (3味)
     {
-        id: "herb_103",
+        id: "herb_102",
         name: "当归",
         pinyin: "Dang Gui",
         aliases: ["当归尾", "全当归", "酒当归", "秦归"],
@@ -1951,7 +1934,7 @@ const herbsDatabase = [
         keywords: ["血虚", "调经", "补血", "活血", "痛经", "四物汤"]
     },
     {
-        id: "herb_104",
+        id: "herb_103",
         name: "熟地黄",
         aliases: ["熟地", "大熟地"],
         pinyin: "Shu Di Huang",
@@ -1969,7 +1952,7 @@ const herbsDatabase = [
         keywords: ["血虚", "滋阴", "补血", "肝肾", "腰膝", "四物汤"]
     },
     {
-        id: "herb_105",
+        id: "herb_104",
         name: "白芍",
         pinyin: "Bai Shao",
         aliases: ["芍药", "白芍药", "杭芍", "炒白芍", "生白芍", "酒白芍"],
@@ -1989,7 +1972,7 @@ const herbsDatabase = [
 
     // 17.3 补阴药 (4味)
     {
-        id: "herb_106",
+        id: "herb_105",
         name: "北沙参",
         pinyin: "Bei Sha Shen",
         aliases: ["沙参"],
@@ -2007,7 +1990,7 @@ const herbsDatabase = [
         keywords: ["阴虚", "燥咳", "胃阴", "生津", "沙参", "润肺"]
     },
     {
-        id: "herb_107",
+        id: "herb_106",
         name: "麦冬",
         pinyin: "Mai Dong",
         aliases: ["麦门冬"],
@@ -2025,7 +2008,7 @@ const herbsDatabase = [
         keywords: ["阴虚", "心烦", "失眠", "消渴", "生脉散", "麦冬"]
     },
     {
-        id: "herb_108",
+        id: "herb_107",
         name: "枸杞子",
         pinyin: "Gou Qi Zi",
         latinName: "Lycium barbarum L.",
@@ -2042,7 +2025,7 @@ const herbsDatabase = [
         keywords: ["肝肾", "明目", "补肾", "益精", "枸杞", "菊花枸杞"]
     },
     {
-        id: "herb_109",
+        id: "herb_108",
         name: "龟甲",
         pinyin: "Gui Jia",
         latinName: "Chinemys reevesii (Gray)",
@@ -2061,7 +2044,7 @@ const herbsDatabase = [
 
     // 17.4 补阳药 (3味)
     {
-        id: "herb_110",
+        id: "herb_109",
         name: "鹿茸",
         pinyin: "Lu Rong",
         latinName: "Cervus nippon Temminck",
@@ -2078,7 +2061,7 @@ const herbsDatabase = [
         keywords: ["肾阳", "精血", "阳痿", "不孕", "腰脊", "鹿茸"]
     },
     {
-        id: "herb_111",
+        id: "herb_110",
         name: "杜仲",
         pinyin: "Du Zhong",
         latinName: "Eucommia ulmoides Oliv.",
@@ -2095,7 +2078,7 @@ const herbsDatabase = [
         keywords: ["腰痛", "补肾", "安胎", "强筋骨", "高血压", "杜仲"]
     },
     {
-        id: "herb_112",
+        id: "herb_111",
         name: "补骨脂",
         pinyin: "Bu Gu Zhi",
         latinName: "Psoralea corylifolia L.",
@@ -2118,7 +2101,7 @@ const herbsDatabase = [
 
     // 18.1 固表止汗药 (1味)
     {
-        id: "herb_113",
+        id: "herb_112",
         name: "麻黄根",
         pinyin: "Ma Huang Gen",
         latinName: "Ephedra sinica Stapf",
@@ -2137,7 +2120,7 @@ const herbsDatabase = [
 
     // 18.2 涩肠止泻药 (2味)
     {
-        id: "herb_114",
+        id: "herb_113",
         name: "五味子",
         pinyin: "Wu Wei Zi",
         latinName: "Schisandra chinensis (Turcz.) Baill.",
@@ -2154,7 +2137,7 @@ const herbsDatabase = [
         keywords: ["久咳", "遗精", "盗汗", "失眠", "补肾", "生脉散"]
     },
     {
-        id: "herb_115",
+        id: "herb_114",
         name: "乌梅",
         pinyin: "Wu Mei",
         latinName: "Prunus mume (Sieb.) Sieb. et Zucc.",
@@ -2173,7 +2156,7 @@ const herbsDatabase = [
 
     // 18.3 固精缩尿止带药 (2味)
     {
-        id: "herb_116",
+        id: "herb_115",
         name: "山茱萸",
         pinyin: "Shan Zhu Yu",
         latinName: "Cornus officinalis Sieb. et Zucc.",
@@ -2190,7 +2173,7 @@ const herbsDatabase = [
         keywords: ["遗精", "腰痛", "补肾", "固脱", "六味地黄丸", "山茱萸"]
     },
     {
-        id: "herb_117",
+        id: "herb_116",
         name: "金樱子",
         pinyin: "Jin Ying Zi",
         latinName: "Rosa laevigata Michx.",
@@ -2212,7 +2195,7 @@ const herbsDatabase = [
     // ================================================================================
 
     {
-        id: "herb_118",
+        id: "herb_117",
         name: "常山",
         pinyin: "Chang Shan",
         latinName: "Dichroa febrifuga Lour.",
@@ -2235,7 +2218,7 @@ const herbsDatabase = [
     // ================================================================================
 
     {
-        id: "herb_119",
+        id: "herb_118",
         name: "雄黄",
         pinyin: "Xiong Huang",
         latinName: "Realgar",
@@ -2254,7 +2237,7 @@ const herbsDatabase = [
         keywords: ["疮痈", "蛇伤", "疥癣", "虫积", "解毒"]
     },
     {
-        id: "herb_120",
+        id: "herb_119",
         name: "蛇床子",
         pinyin: "She Chuang Zi",
         latinName: "Cnidium monnieri (L.) Cuss.",
@@ -2278,7 +2261,7 @@ const herbsDatabase = [
 
     // 4.3 解表药扩充（葛根/升麻/桑叶/细辛）
     {
-        id: "herb_121",
+        id: "herb_120",
         name: "葛根",
         pinyin: "Ge Gen",
         aliases: ["干葛", "粉葛根", "甘葛"],
@@ -2296,7 +2279,7 @@ const herbsDatabase = [
         keywords: ["外感", "项背强痛", "生津", "止泻", "透疹", "消渴", "葛根汤"]
     },
     {
-        id: "herb_122",
+        id: "herb_121",
         name: "升麻",
         pinyin: "Sheng Ma",
         latinName: "Cimicifuga foetida L.",
@@ -2313,7 +2296,7 @@ const herbsDatabase = [
         keywords: ["透疹", "升举阳气", "脱肛", "胃火牙痛", "清胃散"]
     },
     {
-        id: "herb_123",
+        id: "herb_122",
         name: "桑叶",
         pinyin: "Sang Ye",
         latinName: "Morus alba L.",
@@ -2330,7 +2313,7 @@ const herbsDatabase = [
         keywords: ["风热", "燥咳", "清肝", "明目", "桑菊饮", "桑杏汤"]
     },
     {
-        id: "herb_124",
+        id: "herb_123",
         name: "细辛",
         pinyin: "Xi Xin",
         latinName: "Asarum heterotropoides Fr. Schmidt var. mandshuricum (Maxim.) Kitag.",
@@ -2350,7 +2333,7 @@ const herbsDatabase = [
 
     // 4.4 清热药扩充（芦根/天花粉/赤芍/青蒿/地骨皮/白头翁/秦皮）
     {
-        id: "herb_125",
+        id: "herb_124",
         name: "芦根",
         pinyin: "Lu Gen",
         latinName: "Phragmites communis Trin.",
@@ -2367,7 +2350,7 @@ const herbsDatabase = [
         keywords: ["烦渴", "呕哕", "肺痈", "生津", "银翘散", "桑菊饮"]
     },
     {
-        id: "herb_126",
+        id: "herb_125",
         name: "天花粉",
         pinyin: "Tian Hua Fen",
         latinName: "Trichosanthes kirilowii Maxim.",
@@ -2384,7 +2367,7 @@ const herbsDatabase = [
         keywords: ["消渴", "排脓", "疮疡", "生津", "栝楼根"]
     },
     {
-        id: "herb_127",
+        id: "herb_126",
         name: "赤芍",
         aliases: ["赤芍药"],
         pinyin: "Chi Shao",
@@ -2402,7 +2385,7 @@ const herbsDatabase = [
         keywords: ["凉血", "散瘀", "发斑", "痛经", "癥瘕"]
     },
     {
-        id: "herb_128",
+        id: "herb_127",
         name: "青蒿",
         pinyin: "Qing Hao",
         latinName: "Artemisia annua L.",
@@ -2419,7 +2402,7 @@ const herbsDatabase = [
         keywords: ["虚热", "骨蒸", "截疟", "夜热早凉", "青蒿鳖甲汤"]
     },
     {
-        id: "herb_129",
+        id: "herb_128",
         name: "地骨皮",
         pinyin: "Di Gu Pi",
         latinName: "Lycium chinense Mill.",
@@ -2436,7 +2419,7 @@ const herbsDatabase = [
         keywords: ["骨蒸", "盗汗", "肺热", "泻白散"]
     },
     {
-        id: "herb_130",
+        id: "herb_129",
         name: "白头翁",
         pinyin: "Bai Tou Weng",
         latinName: "Pulsatilla chinensis (Bge.) Regel",
@@ -2453,7 +2436,7 @@ const herbsDatabase = [
         keywords: ["血痢", "热毒", "里急后重", "白头翁汤"]
     },
     {
-        id: "herb_131",
+        id: "herb_130",
         name: "秦皮",
         pinyin: "Qin Pi",
         latinName: "Fraxinus rhynchophylla Hance",
@@ -2472,7 +2455,7 @@ const herbsDatabase = [
 
     // 4.5 祛风湿药扩充（木瓜）
     {
-        id: "herb_132",
+        id: "herb_131",
         name: "木瓜",
         pinyin: "Mu Gua",
         latinName: "Chaenomeles speciosa (Sweet) Nakai",
@@ -2491,7 +2474,7 @@ const herbsDatabase = [
 
     // 4.6 化湿药扩充（佩兰）
     {
-        id: "herb_133",
+        id: "herb_132",
         name: "佩兰",
         pinyin: "Pei Lan",
         latinName: "Eupatorium fortunei Turcz.",
@@ -2510,7 +2493,7 @@ const herbsDatabase = [
 
     // 4.7 利水渗湿药扩充（薏苡仁/瞿麦）
     {
-        id: "herb_134",
+        id: "herb_133",
         name: "薏苡仁",
         aliases: ["薏米", "苡仁", "薏仁"],
         pinyin: "Yi Yi Ren",
@@ -2528,7 +2511,7 @@ const herbsDatabase = [
         keywords: ["水肿", "健脾", "排脓", "除痹", "三仁汤", "参苓白术散"]
     },
     {
-        id: "herb_135",
+        id: "herb_134",
         name: "瞿麦",
         pinyin: "Qu Mai",
         latinName: "Dianthus superbus L.",
@@ -2547,7 +2530,7 @@ const herbsDatabase = [
 
     // 4.8 温里药扩充（吴茱萸）
     {
-        id: "herb_136",
+        id: "herb_135",
         name: "吴茱萸",
         pinyin: "Wu Zhu Yu",
         latinName: "Euodia rutaecarpa (Juss.) Benth.",
@@ -2567,7 +2550,7 @@ const herbsDatabase = [
 
     // 4.9 理气药扩充（川楝子）
     {
-        id: "herb_137",
+        id: "herb_136",
         name: "川楝子",
         pinyin: "Chuan Lian Zi",
         latinName: "Melia toosendan Sieb. et Zucc.",
@@ -2587,7 +2570,7 @@ const herbsDatabase = [
 
     // 4.10 消食药扩充（莱菔子）
     {
-        id: "herb_138",
+        id: "herb_137",
         name: "莱菔子",
         pinyin: "Lai Fu Zi",
         latinName: "Raphanus sativus L.",
@@ -2606,7 +2589,7 @@ const herbsDatabase = [
 
     // 4.11 止血药扩充（大蓟）
     {
-        id: "herb_139",
+        id: "herb_138",
         name: "大蓟",
         pinyin: "Da Ji",
         latinName: "Cirsium japonicum Fisch. ex DC.",
@@ -2625,7 +2608,7 @@ const herbsDatabase = [
 
     // 4.12 活血化瘀药扩充（牛膝/鸡血藤）
     {
-        id: "herb_140",
+        id: "herb_139",
         name: "牛膝",
         pinyin: "Niu Xi",
         aliases: ["怀牛膝"],
@@ -2643,7 +2626,7 @@ const herbsDatabase = [
         keywords: ["通经", "强筋骨", "引血下行", "天麻钩藤饮", "独活寄生汤", "玉女煎"]
     },
     {
-        id: "herb_141",
+        id: "herb_140",
         name: "鸡血藤",
         pinyin: "Ji Xue Teng",
         latinName: "Spatholobus suberectus Dunn",
@@ -2662,7 +2645,7 @@ const herbsDatabase = [
 
     // 4.13 化痰止咳平喘药扩充（桔梗/旋覆花/紫菀/款冬花/浙贝母）
     {
-        id: "herb_142",
+        id: "herb_141",
         name: "桔梗",
         pinyin: "Jie Geng",
         latinName: "Platycodon grandiflorum (Jacq.) A. DC.",
@@ -2679,7 +2662,7 @@ const herbsDatabase = [
         keywords: ["宣肺", "祛痰", "利咽", "排脓", "银翘散", "参苓白术散"]
     },
     {
-        id: "herb_143",
+        id: "herb_142",
         name: "旋覆花",
         pinyin: "Xuan Fu Hua",
         latinName: "Inula japonica Thunb.",
@@ -2696,7 +2679,7 @@ const herbsDatabase = [
         keywords: ["降气", "消痰", "止呕", "噫气", "旋覆代赭汤"]
     },
     {
-        id: "herb_144",
+        id: "herb_143",
         name: "紫菀",
         pinyin: "Zi Wan",
         latinName: "Aster tataricus L. f.",
@@ -2713,7 +2696,7 @@ const herbsDatabase = [
         keywords: ["止咳", "化痰", "下气", "久咳"]
     },
     {
-        id: "herb_145",
+        id: "herb_144",
         name: "款冬花",
         pinyin: "Kuan Dong Hua",
         latinName: "Tussilago farfara L.",
@@ -2730,7 +2713,7 @@ const herbsDatabase = [
         keywords: ["止咳", "润肺", "下气", "久咳", "射干麻黄汤"]
     },
     {
-        id: "herb_146",
+        id: "herb_145",
         name: "浙贝母",
         aliases: ["象贝母", "象贝", "大贝"],
         pinyin: "Zhe Bei Mu",
@@ -2750,7 +2733,7 @@ const herbsDatabase = [
 
     // 4.14 安神药扩充（柏子仁）
     {
-        id: "herb_147",
+        id: "herb_146",
         name: "柏子仁",
         pinyin: "Bai Zi Ren",
         latinName: "Platycladus orientalis (L.) Franco",
@@ -2769,7 +2752,7 @@ const herbsDatabase = [
 
     // 4.15 平肝息风药扩充（僵蚕/地龙）
     {
-        id: "herb_148",
+        id: "herb_147",
         name: "僵蚕",
         pinyin: "Jiang Can",
         latinName: "Bombyx mori Linnaeus (4-5龄幼虫感染白僵菌而致死的干燥体)",
@@ -2786,7 +2769,7 @@ const herbsDatabase = [
         keywords: ["息风止痉", "散结", "瘰疬", "牵正散"]
     },
     {
-        id: "herb_149",
+        id: "herb_148",
         name: "地龙",
         pinyin: "Di Long",
         latinName: "Pheretima aspergillum (E. Perrier)",
@@ -2805,7 +2788,7 @@ const herbsDatabase = [
 
     // 4.16 开窍药扩充（石菖蒲）
     {
-        id: "herb_150",
+        id: "herb_149",
         name: "石菖蒲",
         pinyin: "Shi Chang Pu",
         latinName: "Acorus tatarinowii Schott",
@@ -2824,7 +2807,7 @@ const herbsDatabase = [
 
     // 4.17 补虚药扩充（山药/白扁豆/龙眼肉/阿胶/何首乌/女贞子/墨旱莲/百合/鳖甲/菟丝子）
     {
-        id: "herb_151",
+        id: "herb_150",
         name: "山药",
         aliases: ["怀山药", "淮山药", "薯蓣", "炒山药", "生山药"],
         pinyin: "Shan Yao",
@@ -2842,7 +2825,7 @@ const herbsDatabase = [
         keywords: ["补脾", "养胃", "益肺", "补肾", "参苓白术散"]
     },
     {
-        id: "herb_152",
+        id: "herb_151",
         name: "白扁豆",
         pinyin: "Bai Bian Dou",
         latinName: "Dolichos lablab L.",
@@ -2859,7 +2842,7 @@ const herbsDatabase = [
         keywords: ["健脾", "化湿", "消暑", "参苓白术散"]
     },
     {
-        id: "herb_153",
+        id: "herb_152",
         name: "龙眼肉",
         pinyin: "Long Yan Rou",
         latinName: "Dimocarpus longan Lour.",
@@ -2876,7 +2859,7 @@ const herbsDatabase = [
         keywords: ["补益心脾", "养血安神", "失眠", "归脾汤"]
     },
     {
-        id: "herb_154",
+        id: "herb_153",
         name: "阿胶",
         aliases: ["阿胶珠", "驴皮胶"],
         pinyin: "E Jiao",
@@ -2894,7 +2877,7 @@ const herbsDatabase = [
         keywords: ["补血", "滋阴", "止血", "烊化", "炙甘草汤", "温经汤", "黄土汤"]
     },
     {
-        id: "herb_155",
+        id: "herb_154",
         name: "何首乌",
         pinyin: "He Shou Wu",
         latinName: "Polygonum multiflorum Thunb.",
@@ -2911,7 +2894,7 @@ const herbsDatabase = [
         keywords: ["补肝肾", "益精血", "乌须发", "制首乌"]
     },
     {
-        id: "herb_156",
+        id: "herb_155",
         name: "女贞子",
         pinyin: "Nv Zhen Zi",
         latinName: "Ligustrum lucidum Ait.",
@@ -2928,7 +2911,7 @@ const herbsDatabase = [
         keywords: ["滋补肝肾", "明目", "乌发", "二至丸"]
     },
     {
-        id: "herb_157",
+        id: "herb_156",
         name: "墨旱莲",
         pinyin: "Mo Han Lian",
         latinName: "Eclipta prostrata L.",
@@ -2945,7 +2928,7 @@ const herbsDatabase = [
         keywords: ["滋补肝肾", "凉血止血", "须发早白", "二至丸"]
     },
     {
-        id: "herb_158",
+        id: "herb_157",
         name: "百合",
         pinyin: "Bai He",
         latinName: "Lilium lancifolium Thunb.",
@@ -2962,7 +2945,7 @@ const herbsDatabase = [
         keywords: ["养阴", "润肺", "清心安神", "百合固金汤", "百合地黄汤"]
     },
     {
-        id: "herb_159",
+        id: "herb_158",
         name: "鳖甲",
         pinyin: "Bie Jia",
         latinName: "Trionyx sinensis Wiegmann (鳖科动物鳖的背甲)",
@@ -2979,7 +2962,7 @@ const herbsDatabase = [
         keywords: ["滋阴潜阳", "除蒸", "软坚散结", "青蒿鳖甲汤"]
     },
     {
-        id: "herb_160",
+        id: "herb_159",
         name: "菟丝子",
         pinyin: "Tu Si Zi",
         latinName: "Cuscuta chinensis Lam.",
@@ -2997,7 +2980,7 @@ const herbsDatabase = [
     }
 ,
     {
-        id: "herb_161",
+        id: "herb_160",
         name: "羌活",
         pinyin: "Qiang Huo",
         latinName: "Notopterygium incisum Ting ex H.T.Chang",
@@ -3014,7 +2997,7 @@ const herbsDatabase = [
         keywords: ["解表散寒", "祛风湿", "止痛", "风寒感冒"]
     },
     {
-        id: "herb_162",
+        id: "herb_161",
         name: "苍耳子",
         pinyin: "Cang Er Zi",
         latinName: "Xanthium sibiricum Patr.",
@@ -3032,7 +3015,7 @@ const herbsDatabase = [
         keywords: ["鼻渊", "通鼻窍", "散风寒", "祛风湿"]
     },
     {
-        id: "herb_163",
+        id: "herb_162",
         name: "辛夷",
         pinyin: "Xin Yi",
         latinName: "Magnolia biondii Pamp.",
@@ -3049,7 +3032,7 @@ const herbsDatabase = [
         keywords: ["鼻渊", "通鼻窍", "散风寒"]
     },
     {
-        id: "herb_164",
+        id: "herb_163",
         name: "藁本",
         pinyin: "Gao Ben",
         latinName: "Ligusticum sinense Oliv.",
@@ -3066,7 +3049,7 @@ const herbsDatabase = [
         keywords: ["巅顶头痛", "散寒", "祛风湿", "止痛"]
     },
     {
-        id: "herb_165",
+        id: "herb_164",
         name: "浮萍",
         pinyin: "Fu Ping",
         latinName: "Lemna minor L.",
@@ -3083,7 +3066,7 @@ const herbsDatabase = [
         keywords: ["风热", "透疹", "止痒", "利尿消肿"]
     },
     {
-        id: "herb_166",
+        id: "herb_165",
         name: "蔓荆子",
         pinyin: "Man Jing Zi",
         latinName: "Vitex trifolia L.",
@@ -3100,7 +3083,7 @@ const herbsDatabase = [
         keywords: ["风热头痛", "清利头目", "祛风止痛"]
     },
     {
-        id: "herb_167",
+        id: "herb_166",
         name: "决明子",
         pinyin: "Jue Ming Zi",
         latinName: "Cassia obtusifolia L.",
@@ -3117,7 +3100,7 @@ const herbsDatabase = [
         keywords: ["清肝明目", "润肠通便", "目赤", "便秘"]
     },
     {
-        id: "herb_168",
+        id: "herb_167",
         name: "青葙子",
         pinyin: "Qing Xiang Zi",
         latinName: "Celosia argentea L.",
@@ -3134,7 +3117,7 @@ const herbsDatabase = [
         keywords: ["清肝火", "明目退翳", "目赤"]
     },
     {
-        id: "herb_169",
+        id: "herb_168",
         name: "谷精草",
         pinyin: "Gu Jing Cao",
         latinName: "Eriocaulon buergerianum Koern.",
@@ -3151,7 +3134,7 @@ const herbsDatabase = [
         keywords: ["明目退翳", "疏散风热", "目赤"]
     },
     {
-        id: "herb_170",
+        id: "herb_169",
         name: "密蒙花",
         pinyin: "Mi Meng Hua",
         latinName: "Buddleja officinalis Maxim.",
@@ -3168,7 +3151,7 @@ const herbsDatabase = [
         keywords: ["养肝明目", "退翳", "目赤"]
     },
     {
-        id: "herb_171",
+        id: "herb_170",
         name: "苦参",
         pinyin: "Ku Shen",
         latinName: "Sophora flavescens Ait.",
@@ -3185,7 +3168,7 @@ const herbsDatabase = [
         keywords: ["清热燥湿", "杀虫", "利尿", "湿疹"]
     },
     {
-        id: "herb_172",
+        id: "herb_171",
         name: "山慈菇",
         pinyin: "Shan Ci Gu",
         latinName: "Cremastra appendiculata (D.Don) Makino",
@@ -3202,7 +3185,7 @@ const herbsDatabase = [
         keywords: ["清热解毒", "化痰散结", "痈疽", "瘰疬"]
     },
     {
-        id: "herb_173",
+        id: "herb_172",
         name: "马齿苋",
         pinyin: "Ma Chi Xian",
         latinName: "Portulaca oleracea L.",
@@ -3219,7 +3202,7 @@ const herbsDatabase = [
         keywords: ["清热解毒", "凉血止血", "痢疾", "疮疡"]
     },
     {
-        id: "herb_174",
+        id: "herb_173",
         name: "半边莲",
         pinyin: "Ban Bian Lian",
         latinName: "Lobelia chinensis Lour.",
@@ -3236,7 +3219,7 @@ const herbsDatabase = [
         keywords: ["清热解毒", "利水消肿", "蛇伤"]
     },
     {
-        id: "herb_175",
+        id: "herb_174",
         name: "白花蛇舌草",
         pinyin: "Bai Hua She She Cao",
         latinName: "Hedyotis diffusa Willd.",
@@ -3253,7 +3236,7 @@ const herbsDatabase = [
         keywords: ["清热解毒", "利湿通淋", "疮疡", "热淋"]
     },
     {
-        id: "herb_176",
+        id: "herb_175",
         name: "贯众",
         pinyin: "Guan Zhong",
         latinName: "Cyrtomium fortunei J. Sm.",
@@ -3270,7 +3253,7 @@ const herbsDatabase = [
         keywords: ["清热解毒", "杀虫", "止血"]
     },
     {
-        id: "herb_177",
+        id: "herb_176",
         name: "紫草",
         pinyin: "Zi Cao",
         latinName: "Arnebia euchroma (Royle) Johnst.",
@@ -3287,7 +3270,7 @@ const herbsDatabase = [
         keywords: ["凉血活血", "解毒透疹", "斑疹"]
     },
     {
-        id: "herb_178",
+        id: "herb_177",
         name: "海风藤",
         pinyin: "Hai Feng Teng",
         latinName: "Piper kadsura (Choisy) Ohwi",
@@ -3304,7 +3287,7 @@ const herbsDatabase = [
         keywords: ["祛风湿", "通经络", "痹痛"]
     },
     {
-        id: "herb_179",
+        id: "herb_178",
         name: "草果",
         pinyin: "Cao Guo",
         latinName: "Amomum tsaoko Crevost et Lem.",
@@ -3321,7 +3304,7 @@ const herbsDatabase = [
         keywords: ["燥湿温中", "截疟", "脘腹胀痛"]
     },
     {
-        id: "herb_180",
+        id: "herb_179",
         name: "茯苓皮",
         pinyin: "Fu Ling Pi",
         latinName: "Poria cocos (Schw.) Wolf",
@@ -3338,7 +3321,7 @@ const herbsDatabase = [
         keywords: ["利水消肿", "水肿"]
     },
     {
-        id: "herb_181",
+        id: "herb_180",
         name: "海金沙",
         pinyin: "Hai Jin Sha",
         latinName: "Lygodium japonicum (Thunb.) Sw.",
@@ -3355,7 +3338,7 @@ const herbsDatabase = [
         keywords: ["利尿通淋", "热淋", "石淋", "尿道涩痛"]
     },
     {
-        id: "herb_182",
+        id: "herb_181",
         name: "地肤子",
         pinyin: "Di Fu Zi",
         latinName: "Kochia scoparia (L.) Schrad.",
@@ -3372,7 +3355,7 @@ const herbsDatabase = [
         keywords: ["利湿通淋", "祛风止痒", "湿疹"]
     },
     {
-        id: "herb_183",
+        id: "herb_182",
         name: "萆薢",
         pinyin: "Bi Xie",
         latinName: "Dioscorea hypoglauca Palibin",
@@ -3389,7 +3372,7 @@ const herbsDatabase = [
         keywords: ["利湿去浊", "祛风除痹", "膏淋"]
     },
     {
-        id: "herb_184",
+        id: "herb_183",
         name: "小茴香",
         pinyin: "Xiao Hui Xiang",
         latinName: "Foeniculum vulgare Mill.",
@@ -3406,7 +3389,7 @@ const herbsDatabase = [
         keywords: ["散寒止痛", "理气和胃", "寒疝"]
     },
     {
-        id: "herb_185",
+        id: "herb_184",
         name: "花椒",
         pinyin: "Hua Jiao",
         aliases: ["蜀椒"],
@@ -3424,7 +3407,7 @@ const herbsDatabase = [
         keywords: ["温中止痛", "杀虫", "止痒"]
     },
     {
-        id: "herb_186",
+        id: "herb_185",
         name: "枳壳",
         aliases: ["炒枳壳", "江枳壳"],
         pinyin: "Zhi Qiao",
@@ -3442,7 +3425,7 @@ const herbsDatabase = [
         keywords: ["理气宽中", "行滞消胀", "胸胁胀满"]
     },
     {
-        id: "herb_187",
+        id: "herb_186",
         name: "乌药",
         aliases: ["台乌药", "天台乌药", "乌药片"],
         pinyin: "Wu Yao",
@@ -3460,7 +3443,7 @@ const herbsDatabase = [
         keywords: ["行气止痛", "温肾散寒", "寒疝", "痛经"]
     },
     {
-        id: "herb_188",
+        id: "herb_187",
         name: "鸡内金",
         pinyin: "Ji Nei Jin",
         latinName: "Gallus gallus domesticus Brisson",
@@ -3477,7 +3460,7 @@ const herbsDatabase = [
         keywords: ["健胃消食", "涩精止遗", "通淋化石", "食积"]
     },
     {
-        id: "herb_189",
+        id: "herb_188",
         name: "茜草",
         pinyin: "Qian Cao",
         aliases: ["茜草根"],
@@ -3495,7 +3478,7 @@ const herbsDatabase = [
         keywords: ["凉血止血", "化瘀通经", "崩漏"]
     },
     {
-        id: "herb_190",
+        id: "herb_189",
         name: "海螵蛸",
         pinyin: "Hai Piao Xiao",
         latinName: "Sepia esculenta Hoyle",
@@ -3513,7 +3496,7 @@ const herbsDatabase = [
         keywords: ["收敛止血", "涩精止带", "制酸", "胃痛"]
     },
     {
-        id: "herb_191",
+        id: "herb_190",
         name: "乳香",
         pinyin: "Ru Xiang",
         latinName: "Boswellia carterii Birdw.",
@@ -3530,7 +3513,7 @@ const herbsDatabase = [
         keywords: ["活血止痛", "消肿生肌", "瘀痛"]
     },
     {
-        id: "herb_192",
+        id: "herb_191",
         name: "没药",
         pinyin: "Mo Yao",
         latinName: "Commiphora myrrha Engl.",
@@ -3547,7 +3530,7 @@ const herbsDatabase = [
         keywords: ["活血止痛", "消肿生肌", "瘀痛"]
     },
     {
-        id: "herb_193",
+        id: "herb_192",
         name: "五灵脂",
         pinyin: "Wu Ling Zhi",
         latinName: "Trogopterus xanthipes Milne-Edwards",
@@ -3564,7 +3547,7 @@ const herbsDatabase = [
         keywords: ["活血止痛", "化瘀止血", "痛经"]
     },
     {
-        id: "herb_194",
+        id: "herb_193",
         name: "泽兰",
         pinyin: "Ze Lan",
         latinName: "Lycopus lucidus Turcz.",
@@ -3581,7 +3564,7 @@ const herbsDatabase = [
         keywords: ["活血调经", "利水消肿", "经闭"]
     },
     {
-        id: "herb_195",
+        id: "herb_194",
         name: "三棱",
         pinyin: "San Leng",
         latinName: "Sparganium stoloniferum Buch.-Ham.",
@@ -3599,7 +3582,7 @@ const herbsDatabase = [
         keywords: ["破血行气", "消积止痛", "癥瘕"]
     },
     {
-        id: "herb_196",
+        id: "herb_195",
         name: "白前",
         pinyin: "Bai Qian",
         latinName: "Cynanchum glaucescens (Decne.) Hand.-Mazz.",
@@ -3616,7 +3599,7 @@ const herbsDatabase = [
         keywords: ["降气化痰", "止咳", "痰多"]
     },
     {
-        id: "herb_197",
+        id: "herb_196",
         name: "前胡",
         pinyin: "Qian Hu",
         latinName: "Peucedanum praeruptorum Dunn",
@@ -3633,7 +3616,7 @@ const herbsDatabase = [
         keywords: ["降气化痰", "疏散风热", "咳喘"]
     },
     {
-        id: "herb_198",
+        id: "herb_197",
         name: "海蛤壳",
         pinyin: "Hai Ge Qiao",
         latinName: "Meretrix meretrix Linnaeus",
@@ -3650,7 +3633,7 @@ const herbsDatabase = [
         keywords: ["清肺化痰", "软坚散结", "制酸"]
     },
     {
-        id: "herb_199",
+        id: "herb_198",
         name: "昆布",
         aliases: ["海带", "鹅掌菜"],
         pinyin: "Kun Bu",
@@ -3668,7 +3651,7 @@ const herbsDatabase = [
         keywords: ["消痰软坚", "利水消肿", "瘿瘤"]
     },
     {
-        id: "herb_200",
+        id: "herb_199",
         name: "首乌藤",
         pinyin: "Shou Wu Teng",
         aliases: ["夜交藤", "何首乌藤"],
@@ -3691,7 +3674,7 @@ const herbsDatabase = [
     // ================================================================================
 
     {
-        id: "herb_201",
+        id: "herb_200",
         name: "香薷",
         pinyin: "Xiang Ru",
         latinName: "Mosla chinensis Maxim.",
@@ -3708,7 +3691,7 @@ const herbsDatabase = [
         keywords: ["暑湿", "夏季感冒", "阴暑", "化湿", "解表"]
     },
     {
-        id: "herb_202",
+        id: "herb_201",
         name: "蝉蜕",
         pinyin: "Chan Tui",
         latinName: "Cryptotympana pustulata Fabricius",
@@ -3725,7 +3708,7 @@ const herbsDatabase = [
         keywords: ["风热", "咽痛", "音哑", "麻疹", "退翳", "解痉"]
     },
     {
-        id: "herb_203",
+        id: "herb_202",
         name: "淡豆豉",
         aliases: ["豆豉", "香豉", "淡豉"],
         pinyin: "Dan Dou Chi",
@@ -3743,7 +3726,7 @@ const herbsDatabase = [
         keywords: ["解表", "除烦", "虚烦不眠", "栀子豉汤"]
     },
     {
-        id: "herb_204",
+        id: "herb_203",
         name: "淡竹叶",
         pinyin: "Dan Zhu Ye",
         latinName: "Lophatherum gracile Brongn.",
@@ -3760,7 +3743,7 @@ const herbsDatabase = [
         keywords: ["清热", "除烦", "利尿", "口舌生疮", "凉膈散"]
     },
     {
-        id: "herb_205",
+        id: "herb_204",
         name: "射干",
         pinyin: "She Gan",
         latinName: "Belamcanda chinensis (L.) DC.",
@@ -3777,7 +3760,7 @@ const herbsDatabase = [
         keywords: ["咽喉肿痛", "痰盛咳喘", "利咽", "射干麻黄汤"]
     },
     {
-        id: "herb_206",
+        id: "herb_205",
         name: "山豆根",
         pinyin: "Shan Dou Gen",
         latinName: "Sophora tonkinensis Gagnep.",
@@ -3795,7 +3778,7 @@ const herbsDatabase = [
         keywords: ["咽喉肿痛", "火毒", "利咽消肿", "山豆根汤"]
     },
     {
-        id: "herb_207",
+        id: "herb_206",
         name: "马勃",
         pinyin: "Ma Bo",
         latinName: "Lasiosphaera fenzlii Reich.",
@@ -3812,7 +3795,7 @@ const herbsDatabase = [
         keywords: ["咽痛", "音哑", "止血", "清肺"]
     },
     {
-        id: "herb_208",
+        id: "herb_207",
         name: "紫花地丁",
         pinyin: "Zi Hua Di Ding",
         latinName: "Viola yedoensis Makino",
@@ -3829,7 +3812,7 @@ const herbsDatabase = [
         keywords: ["疔疮", "痈肿", "丹毒", "五味消毒饮"]
     },
     {
-        id: "herb_209",
+        id: "herb_208",
         name: "土茯苓",
         pinyin: "Tu Fu Ling",
         latinName: "Smilax glabra Roxb.",
@@ -3846,7 +3829,7 @@ const herbsDatabase = [
         keywords: ["梅毒", "淋浊", "疮毒", "通利关节"]
     },
     {
-        id: "herb_210",
+        id: "herb_209",
         name: "胡黄连",
         pinyin: "Hu Huang Lian",
         latinName: "Picrorhiza scrophulariiflora Pennell",
@@ -3863,7 +3846,7 @@ const herbsDatabase = [
         keywords: ["骨蒸潮热", "小儿疳热", "湿热泻痢", "清虚热"]
     },
     {
-        id: "herb_211",
+        id: "herb_210",
         name: "番泻叶",
         pinyin: "Fan Xie Ye",
         latinName: "Cassia angustifolia Vahl",
@@ -3880,7 +3863,7 @@ const herbsDatabase = [
         keywords: ["热结便秘", "泻下", "行滞", "通便"]
     },
     {
-        id: "herb_212",
+        id: "herb_211",
         name: "牵牛子",
         pinyin: "Qian Niu Zi",
         latinName: "Pharbitis nil (L.) Choisy",
@@ -3899,7 +3882,7 @@ const herbsDatabase = [
         keywords: ["逐水", "水肿", "痰饮", "杀虫", "攻积"]
     },
     {
-        id: "herb_213",
+        id: "herb_212",
         name: "桑枝",
         pinyin: "Sang Zhi",
         latinName: "Morus alba L.",
@@ -3916,7 +3899,7 @@ const herbsDatabase = [
         keywords: ["痹证", "上肢痹痛", "关节酸痛", "祛风", "利关节"]
     },
     {
-        id: "herb_214",
+        id: "herb_213",
         name: "络石藤",
         pinyin: "Luo Shi Teng",
         latinName: "Trachelospermum jasminoides (Lindl.) Lem.",
@@ -3933,7 +3916,7 @@ const herbsDatabase = [
         keywords: ["风湿热痹", "筋脉拘挛", "凉血", "消肿"]
     },
     {
-        id: "herb_215",
+        id: "herb_214",
         name: "五加皮",
         pinyin: "Wu Jia Pi",
         latinName: "Acanthopanax gracilistylus W. W. Smith",
@@ -3950,7 +3933,7 @@ const herbsDatabase = [
         keywords: ["痹证", "腰膝酸痛", "筋骨痿软", "强筋骨", "水肿"]
     },
     {
-        id: "herb_216",
+        id: "herb_215",
         name: "狗脊",
         pinyin: "Gou Ji",
         latinName: "Cibotium barometz (L.) J. Sm.",
@@ -3967,7 +3950,7 @@ const herbsDatabase = [
         keywords: ["痹证", "腰膝酸软", "强腰膝", "补肝肾"]
     },
     {
-        id: "herb_217",
+        id: "herb_216",
         name: "豆蔻",
         aliases: ["白豆蔻", "白蔻仁", "白蔻", "蔻仁"],
         pinyin: "Dou Kou",
@@ -3985,7 +3968,7 @@ const herbsDatabase = [
         keywords: ["化湿", "行气", "温中", "呕逆", "湿温"]
     },
     {
-        id: "herb_218",
+        id: "herb_217",
         name: "萹蓄",
         pinyin: "Bian Xu",
         latinName: "Polygonum aviculare L.",
@@ -4002,7 +3985,7 @@ const herbsDatabase = [
         keywords: ["热淋", "小便短赤", "杀虫", "止痒", "湿疹"]
     },
     {
-        id: "herb_219",
+        id: "herb_218",
         name: "淫羊藿",
         pinyin: "Yin Yang Huo",
         latinName: "Epimedium brevicornum Maxim.",
@@ -4019,7 +4002,7 @@ const herbsDatabase = [
         keywords: ["补肾阳", "强筋骨", "祛风湿", "阳痿", "二仙汤"]
     },
     {
-        id: "herb_220",
+        id: "herb_219",
         name: "虎杖",
         pinyin: "Hu Zhang",
         latinName: "Polygonum cuspidatum Sieb. et Zucc.",
@@ -4036,7 +4019,7 @@ const herbsDatabase = [
         keywords: ["黄疸", "利湿", "散瘀", "止咳", "烫伤"]
     },
     {
-        id: "herb_221",
+        id: "herb_220",
         name: "丁香",
         pinyin: "Ding Xiang",
         latinName: "Eugenia caryophyllata Thunb.",
@@ -4053,7 +4036,7 @@ const herbsDatabase = [
         keywords: ["呃逆", "呕吐", "温中", "降逆", "暖肾"]
     },
     {
-        id: "herb_222",
+        id: "herb_221",
         name: "高良姜",
         pinyin: "Gao Liang Jiang",
         latinName: "Alpinia officinarum Hance",
@@ -4070,7 +4053,7 @@ const herbsDatabase = [
         keywords: ["胃寒", "冷痛", "呕吐", "散寒", "温胃"]
     },
     {
-        id: "herb_223",
+        id: "herb_222",
         name: "青皮",
         aliases: ["小青皮", "醋青皮"],
         pinyin: "Qing Pi",
@@ -4088,7 +4071,7 @@ const herbsDatabase = [
         keywords: ["疏肝", "破气", "胸胁胀痛", "疝气", "食积"]
     },
     {
-        id: "herb_224",
+        id: "herb_223",
         name: "佛手",
         pinyin: "Fo Shou",
         latinName: "Citrus medica L. var. sarcodactylis Swingle",
@@ -4105,7 +4088,7 @@ const herbsDatabase = [
         keywords: ["疏肝", "理气", "和胃", "止痛", "化痰"]
     },
     {
-        id: "herb_225",
+        id: "herb_224",
         name: "柿蒂",
         pinyin: "Shi Di",
         latinName: "Diospyros kaki Thunb.",
@@ -4122,7 +4105,7 @@ const herbsDatabase = [
         keywords: ["呃逆", "降逆", "止呃", "柿蒂汤"]
     },
     {
-        id: "herb_226",
+        id: "herb_225",
         name: "谷芽",
         pinyin: "Gu Ya",
         latinName: "Setaria italica (L.) Beauv.",
@@ -4139,7 +4122,7 @@ const herbsDatabase = [
         keywords: ["消食", "和中", "健脾", "开胃", "食积"]
     },
     {
-        id: "herb_227",
+        id: "herb_226",
         name: "槟榔",
         aliases: ["大腹槟榔", "花槟榔", "大白"],
         pinyin: "Bing Lang",
@@ -4157,7 +4140,7 @@ const herbsDatabase = [
         keywords: ["杀虫", "消积", "行气", "利水", "截疟", "绦虫"]
     },
     {
-        id: "herb_228",
+        id: "herb_227",
         name: "肉苁蓉",
         pinyin: "Rou Cong Rong",
         latinName: "Cistanche deserticola Y.C.Ma",
@@ -4174,7 +4157,7 @@ const herbsDatabase = [
         keywords: ["补肾阳", "益精血", "润肠", "阳痿", "便秘", "济川煎"]
     },
     {
-        id: "herb_229",
+        id: "herb_228",
         name: "槐花",
         pinyin: "Huai Hua",
         latinName: "Sophora japonica L.",
@@ -4191,7 +4174,7 @@ const herbsDatabase = [
         keywords: ["便血", "痔血", "凉血", "清肝", "槐花散"]
     },
     {
-        id: "herb_230",
+        id: "herb_229",
         name: "侧柏叶",
         pinyin: "Ce Bai Ye",
         latinName: "Platycladus orientalis (L.) Franco",
@@ -4208,7 +4191,7 @@ const herbsDatabase = [
         keywords: ["凉血", "止血", "化痰", "生发", "乌发", "槐花散"]
     },
     {
-        id: "herb_231",
+        id: "herb_230",
         name: "仙茅",
         pinyin: "Xian Mao",
         latinName: "Curculigo orchioides Gaertn.",
@@ -4226,7 +4209,7 @@ const herbsDatabase = [
         keywords: ["温肾", "壮阳", "祛寒", "除湿", "二仙汤"]
     },
     {
-        id: "herb_232",
+        id: "herb_231",
         name: "王不留行",
         pinyin: "Wang Bu Liu Xing",
         latinName: "Vaccaria segetalis (Neck.) Garcke",
@@ -4243,7 +4226,7 @@ const herbsDatabase = [
         keywords: ["活血", "通经", "下乳", "消肿", "利尿"]
     },
     {
-        id: "herb_233",
+        id: "herb_232",
         name: "苏木",
         pinyin: "Su Mu",
         latinName: "Caesalpinia sappan L.",
@@ -4260,7 +4243,7 @@ const herbsDatabase = [
         keywords: ["活血", "祛瘀", "消肿", "止痛", "跌打"]
     },
     {
-        id: "herb_234",
+        id: "herb_233",
         name: "胖大海",
         pinyin: "Pang Da Hai",
         latinName: "Sterculia lychnophora Hance",
@@ -4277,7 +4260,7 @@ const herbsDatabase = [
         keywords: ["利咽", "开音", "声哑", "润肠", "通便"]
     },
     {
-        id: "herb_235",
+        id: "herb_234",
         name: "紫苏子",
         pinyin: "Zi Su Zi",
         aliases: ["苏子"],
@@ -4295,7 +4278,7 @@ const herbsDatabase = [
         keywords: ["降气", "化痰", "平喘", "润肠", "三子养亲汤"]
     },
     {
-        id: "herb_236",
+        id: "herb_235",
         name: "枇杷叶",
         pinyin: "Pi Pa Ye",
         latinName: "Eriobotrya japonica (Thunb.) Lindl.",
@@ -4312,7 +4295,7 @@ const herbsDatabase = [
         keywords: ["清肺", "止咳", "降逆", "止呕", "化痰"]
     },
     {
-        id: "herb_237",
+        id: "herb_236",
         name: "白附子",
         pinyin: "Bai Fu Zi",
         latinName: "Typhonium giganteum Engl.",
@@ -4330,7 +4313,7 @@ const herbsDatabase = [
         keywords: ["祛风痰", "定惊", "口眼歪斜", "破伤风", "牵正散"]
     },
     {
-        id: "herb_238",
+        id: "herb_237",
         name: "磁石",
         pinyin: "Ci Shi",
         latinName: "Magnetitum",
@@ -4347,7 +4330,7 @@ const herbsDatabase = [
         keywords: ["镇惊", "安神", "平肝", "潜阳", "聪耳", "纳气"]
     },
     {
-        id: "herb_239",
+        id: "herb_238",
         name: "灵芝",
         pinyin: "Ling Zhi",
         latinName: "Ganoderma lucidum (Leyss. ex Fr.) Karst.",
@@ -4364,7 +4347,7 @@ const herbsDatabase = [
         keywords: ["安神", "补气", "止咳", "平喘", "虚劳"]
     },
     {
-        id: "herb_240",
+        id: "herb_239",
         name: "珍珠母",
         pinyin: "Zhen Zhu Mu",
         latinName: "Concha Margaritifera Usta",
@@ -4381,7 +4364,7 @@ const herbsDatabase = [
         keywords: ["平肝", "潜阳", "安神", "明目", "退翳"]
     },
     {
-        id: "herb_241",
+        id: "herb_240",
         name: "刺蒺藜",
         pinyin: "Ci Ji Li",
         latinName: "Tribulus terrestris L.",
@@ -4398,7 +4381,7 @@ const herbsDatabase = [
         keywords: ["平肝", "解郁", "祛风", "明目", "止痒"]
     },
     {
-        id: "herb_242",
+        id: "herb_241",
         name: "蜈蚣",
         pinyin: "Wu Gong",
         latinName: "Scolopendra subspinipes mutilans L. Koch",
@@ -4417,7 +4400,7 @@ const herbsDatabase = [
         keywords: ["息风", "镇痉", "通络", "止痛", "攻毒", "牵正散"]
     },
     {
-        id: "herb_243",
+        id: "herb_242",
         name: "苏合香",
         pinyin: "Su He Xiang",
         latinName: "Liquidambar orientalis Mill.",
@@ -4434,7 +4417,7 @@ const herbsDatabase = [
         keywords: ["开窍", "辟秽", "温开", "痰厥", "苏合香丸"]
     },
     {
-        id: "herb_244",
+        id: "herb_243",
         name: "党参",
         aliases: ["潞党参", "台党参"],
         pinyin: "Dang Shen",
@@ -4452,7 +4435,7 @@ const herbsDatabase = [
         keywords: ["补气", "健脾", "益肺", "养血", "生津", "气虚"]
     },
     {
-        id: "herb_245",
+        id: "herb_244",
         name: "西洋参",
         pinyin: "Xi Yang Shen",
         latinName: "Panax quinquefolium L.",
@@ -4469,7 +4452,7 @@ const herbsDatabase = [
         keywords: ["补气", "养阴", "清热", "生津", "气阴两虚"]
     },
     {
-        id: "herb_246",
+        id: "herb_245",
         name: "大枣",
         pinyin: "Da Zao",
         latinName: "Ziziphus jujuba Mill.",
@@ -4486,7 +4469,7 @@ const herbsDatabase = [
         keywords: ["补中", "益气", "养血", "安神", "脏躁", "甘麦大枣汤"]
     },
     {
-        id: "herb_247",
+        id: "herb_246",
         name: "巴戟天",
         pinyin: "Ba Ji Tian",
         latinName: "Morinda officinalis How",
@@ -4503,7 +4486,7 @@ const herbsDatabase = [
         keywords: ["补肾阳", "强筋骨", "祛风湿", "阳痿", "宫冷"]
     },
     {
-        id: "herb_248",
+        id: "herb_247",
         name: "浮小麦",
         pinyin: "Fu Xiao Mai",
         latinName: "Triticum aestivum L.",
@@ -4520,7 +4503,7 @@ const herbsDatabase = [
         keywords: ["止汗", "自汗", "盗汗", "除热", "牡蛎散"]
     },
     {
-        id: "herb_249",
+        id: "herb_248",
         name: "诃子",
         pinyin: "He Zi",
         latinName: "Terminalia chebula Retz.",
@@ -4537,7 +4520,7 @@ const herbsDatabase = [
         keywords: ["涩肠", "止泻", "敛肺", "利咽", "久泻"]
     },
     {
-        id: "herb_250",
+        id: "herb_249",
         name: "芡实",
         pinyin: "Qian Shi",
         latinName: "Euryale ferox Salisb.",
@@ -4561,7 +4544,7 @@ const herbsDatabase = [
 
     // —— 批次① 清热药（16味） ——
     {
-        id: "herb_251",
+        id: "herb_250",
         name: "竹叶",
         pinyin: "Zhu Ye",
         aliases: ["淡竹叶"],
@@ -4579,7 +4562,7 @@ const herbsDatabase = [
         keywords: ["烦渴", "口疮", "小便短赤", "清热除烦", "导赤散"]
     },
     {
-        id: "herb_252",
+        id: "herb_251",
         name: "龙胆",
         pinyin: "Long Dan",
         aliases: ["龙胆草"],
@@ -4597,7 +4580,7 @@ const herbsDatabase = [
         keywords: ["黄疸", "阴痒", "带下", "肝火", "惊风", "龙胆泻肝汤", "湿热"]
     },
     {
-        id: "herb_253",
+        id: "herb_252",
         name: "白鲜皮",
         pinyin: "Bai Xian Pi",
         latinName: "Dictamnus dasycarpus Turcz.",
@@ -4614,7 +4597,7 @@ const herbsDatabase = [
         keywords: ["湿疹", "疥癣", "疮毒", "风湿热痹", "黄疸"]
     },
     {
-        id: "herb_254",
+        id: "herb_253",
         name: "大青叶",
         pinyin: "Da Qing Ye",
         latinName: "Isatis indigotica Fort.",
@@ -4631,7 +4614,7 @@ const herbsDatabase = [
         keywords: ["温病", "发斑", "痄腮", "喉痹", "丹毒", "热毒"]
     },
     {
-        id: "herb_255",
+        id: "herb_254",
         name: "青黛",
         pinyin: "Qing Dai",
         latinName: "Indigo Naturalis",
@@ -4648,7 +4631,7 @@ const herbsDatabase = [
         keywords: ["发斑", "吐血", "痄腮", "惊痫", "肝火犯肺", "黛蛤散"]
     },
     {
-        id: "herb_256",
+        id: "herb_255",
         name: "穿心莲",
         pinyin: "Chuan Xin Lian",
         latinName: "Andrographis paniculata (Burm. f.) Nees",
@@ -4665,7 +4648,7 @@ const herbsDatabase = [
         keywords: ["风热感冒", "肺痈", "泻痢", "热淋", "咽喉肿痛", "痈肿"]
     },
     {
-        id: "herb_257",
+        id: "herb_256",
         name: "野菊花",
         pinyin: "Ye Ju Hua",
         latinName: "Chrysanthemum indicum L.",
@@ -4682,7 +4665,7 @@ const herbsDatabase = [
         keywords: ["疔疮", "痈肿", "目赤", "咽喉肿痛", "肝火"]
     },
     {
-        id: "herb_258",
+        id: "herb_257",
         name: "重楼",
         pinyin: "Chong Lou",
         latinName: "Paris polyphylla Smith var. chinensis (Franch.) Hara",
@@ -4700,7 +4683,7 @@ const herbsDatabase = [
         keywords: ["疔疮", "蛇伤", "跌打", "惊风", "清热解毒", "云南白药"]
     },
     {
-        id: "herb_259",
+        id: "herb_258",
         name: "大血藤",
         pinyin: "Da Xue Teng",
         latinName: "Sargentodoxa cuneata (Oliv.) Rehd. et Wils.",
@@ -4717,7 +4700,7 @@ const herbsDatabase = [
         keywords: ["肠痈", "疮痈", "痛经", "跌打", "风湿痹痛", "红藤"]
     },
     {
-        id: "herb_260",
+        id: "herb_259",
         name: "败酱草",
         pinyin: "Bai Jiang Cao",
         latinName: "Patrinia scabiosifolia Fisch. ex Trevir.",
@@ -4734,7 +4717,7 @@ const herbsDatabase = [
         keywords: ["肠痈", "肺痈", "疮毒", "产后腹痛", "薏苡附子败酱散"]
     },
     {
-        id: "herb_261",
+        id: "herb_260",
         name: "鸦胆子",
         pinyin: "Ya Dan Zi",
         latinName: "Brucea javanica (L.) Merr.",
@@ -4752,7 +4735,7 @@ const herbsDatabase = [
         keywords: ["血痢", "疟疾", "赘疣", "鸡眼", "阿米巴痢疾"]
     },
     {
-        id: "herb_262",
+        id: "herb_261",
         name: "白蔹",
         pinyin: "Bai Lian",
         latinName: "Ampelopsis japonica (Thunb.) Makino",
@@ -4769,7 +4752,7 @@ const herbsDatabase = [
         keywords: ["疮痈", "烫伤", "皲裂", "瘰疬", "十八反"]
     },
     {
-        id: "herb_263",
+        id: "herb_262",
         name: "四季青",
         pinyin: "Si Ji Qing",
         latinName: "Ilex chinensis Sims",
@@ -4786,7 +4769,7 @@ const herbsDatabase = [
         keywords: ["烫伤", "溃疡", "湿疹", "出血", "咽喉肿痛"]
     },
     {
-        id: "herb_264",
+        id: "herb_263",
         name: "水牛角",
         pinyin: "Shui Niu Jiao",
         aliases: ["犀角代用品", "水牛角浓缩粉"],
@@ -4804,7 +4787,7 @@ const herbsDatabase = [
         keywords: ["神昏", "发斑", "吐血", "定惊", "犀角地黄汤", "清营汤"]
     },
     {
-        id: "herb_265",
+        id: "herb_264",
         name: "白薇",
         pinyin: "Bai Wei",
         latinName: "Cynanchum atratum Bge.",
@@ -4821,7 +4804,7 @@ const herbsDatabase = [
         keywords: ["虚热", "产后虚热", "热淋", "疮痈", "阴虚外感"]
     },
     {
-        id: "herb_266",
+        id: "herb_265",
         name: "银柴胡",
         pinyin: "Yin Chai Hu",
         latinName: "Stellaria dichotoma L. var. lanceolata Bge.",
@@ -4840,7 +4823,7 @@ const herbsDatabase = [
 
     // —— 批次① 拔毒化腐生肌药（6味，整章新增；均了解级、多剧毒，仅供外用参考） ——
     {
-        id: "herb_267",
+        id: "herb_266",
         name: "红粉",
         pinyin: "Hong Fen",
         latinName: "Hydrargyri Oxydum Rubrum",
@@ -4859,7 +4842,7 @@ const herbsDatabase = [
         keywords: ["恶疮", "去腐", "生肌", "窦道", "升药"]
     },
     {
-        id: "herb_268",
+        id: "herb_267",
         name: "轻粉",
         pinyin: "Qing Fen",
         latinName: "Calomelas",
@@ -4878,7 +4861,7 @@ const herbsDatabase = [
         keywords: ["疥癣", "梅毒", "痰积", "水肿", "汞中毒"]
     },
     {
-        id: "herb_269",
+        id: "herb_268",
         name: "砒石",
         pinyin: "Pi Shi",
         latinName: "Arsenolitum",
@@ -4895,7 +4878,7 @@ const herbsDatabase = [
         keywords: ["恶疮", "顽癣", "牙疳", "疟疾", "砒霜", "砷中毒"]
     },
     {
-        id: "herb_270",
+        id: "herb_269",
         name: "铅丹",
         pinyin: "Qian Dan",
         latinName: "Minium",
@@ -4912,7 +4895,7 @@ const herbsDatabase = [
         keywords: ["恶疮", "溃疡", "湿疹", "惊痫", "铅中毒", "黑锡丹"]
     },
     {
-        id: "herb_271",
+        id: "herb_270",
         name: "炉甘石",
         pinyin: "Lu Gan Shi",
         latinName: "Calamina",
@@ -4929,7 +4912,7 @@ const herbsDatabase = [
         keywords: ["目赤", "翳膜", "湿疮", "溃疡", "收湿敛疮"]
     },
     {
-        id: "herb_272",
+        id: "herb_271",
         name: "硼砂",
         pinyin: "Peng Sha",
         latinName: "Borax",
@@ -4948,7 +4931,7 @@ const herbsDatabase = [
 
     // —— 批次② 补虚药（9味） ——
     {
-        id: "herb_273",
+        id: "herb_272",
         name: "太子参",
         pinyin: "Tai Zi Shen",
         latinName: "Pseudostellaria heterophylla (Miq.) Pax ex Pax et Hoffm.",
@@ -4965,7 +4948,7 @@ const herbsDatabase = [
         keywords: ["脾虚", "倦怠", "口渴", "干咳", "气阴不足", "儿童体虚"]
     },
     {
-        id: "herb_274",
+        id: "herb_273",
         name: "蛤蚧",
         pinyin: "Ge Jie",
         latinName: "Gekko gecko Linnaeus",
@@ -4982,7 +4965,7 @@ const herbsDatabase = [
         keywords: ["虚喘", "劳嗽", "阳痿", "肾不纳气", "人参蛤蚧散"]
     },
     {
-        id: "herb_275",
+        id: "herb_274",
         name: "冬虫夏草",
         pinyin: "Dong Chong Xia Cao",
         latinName: "Cordyceps sinensis (BerK.) Sacc.",
@@ -4999,7 +4982,7 @@ const herbsDatabase = [
         keywords: ["虚喘", "劳嗽", "腰膝酸痛", "病后体虚", "补肾益肺"]
     },
     {
-        id: "herb_276",
+        id: "herb_275",
         name: "胡桃仁",
         pinyin: "Hu Tao Ren",
         latinName: "Juglans regia L.",
@@ -5016,7 +4999,7 @@ const herbsDatabase = [
         keywords: ["腰痛", "虚喘", "便秘", "补肾温肺", "青娥丸"]
     },
     {
-        id: "herb_277",
+        id: "herb_276",
         name: "沙苑子",
         aliases: ["沙苑蒺藜", "潼蒺藜", "沙苑"],
         pinyin: "Sha Yuan Zi",
@@ -5034,7 +5017,7 @@ const herbsDatabase = [
         keywords: ["遗精", "早泄", "目暗", "腰痛", "带下", "沙苑蒺藜"]
     },
     {
-        id: "herb_278",
+        id: "herb_277",
         name: "天冬",
         pinyin: "Tian Dong",
         latinName: "Asparagus cochinchinensis (Lour.) Merr.",
@@ -5051,7 +5034,7 @@ const herbsDatabase = [
         keywords: ["干咳", "消渴", "潮热", "便秘", "养阴润燥", "二冬膏"]
     },
     {
-        id: "herb_279",
+        id: "herb_278",
         name: "玉竹",
         pinyin: "Yu Zhu",
         latinName: "Polygonatum odoratum (Mill.) Druce",
@@ -5068,7 +5051,7 @@ const herbsDatabase = [
         keywords: ["燥咳", "口渴", "消渴", "阴虚外感", "加减葳蕤汤", "葳蕤"]
     },
     {
-        id: "herb_280",
+        id: "herb_279",
         name: "黄精",
         pinyin: "Huang Jing",
         latinName: "Polygonatum sibiricum Red.",
@@ -5085,7 +5068,7 @@ const herbsDatabase = [
         keywords: ["体倦", "燥咳", "消渴", "须发早白", "气阴双补"]
     },
     {
-        id: "herb_281",
+        id: "herb_280",
         name: "黑芝麻",
         pinyin: "Hei Zhi Ma",
         aliases: ["胡麻","胡麻仁"],
@@ -5105,7 +5088,7 @@ const herbsDatabase = [
 
     // —— 批次② 收涩药（7味） ——
     {
-        id: "herb_282",
+        id: "herb_281",
         name: "五倍子",
         pinyin: "Wu Bei Zi",
         latinName: "Rhus chinensis Mill.",
@@ -5122,7 +5105,7 @@ const herbsDatabase = [
         keywords: ["久咳", "久泻", "盗汗", "出血", "湿疮", "收敛"]
     },
     {
-        id: "herb_283",
+        id: "herb_282",
         name: "罂粟壳",
         pinyin: "Ying Su Qiao",
         latinName: "Papaver somniferum L.",
@@ -5141,7 +5124,7 @@ const herbsDatabase = [
         keywords: ["久咳", "久泻", "脘腹痛", "成瘾", "麻醉药品"]
     },
     {
-        id: "herb_284",
+        id: "herb_283",
         name: "肉豆蔻",
         pinyin: "Rou Dou Kou",
         latinName: "Myristica fragrans Houtt.",
@@ -5158,7 +5141,7 @@ const herbsDatabase = [
         keywords: ["久泻", "五更泻", "脘腹胀痛", "呕吐", "四神丸"]
     },
     {
-        id: "herb_285",
+        id: "herb_284",
         name: "赤石脂",
         pinyin: "Chi Shi Zhi",
         latinName: "Halloysitum Rubrum",
@@ -5175,7 +5158,7 @@ const herbsDatabase = [
         keywords: ["久痢", "滑脱", "崩漏", "溃疡", "桃花汤", "十九畏"]
     },
     {
-        id: "herb_286",
+        id: "herb_285",
         name: "覆盆子",
         pinyin: "Fu Pen Zi",
         latinName: "Rubus chingii Hu",
@@ -5192,7 +5175,7 @@ const herbsDatabase = [
         keywords: ["遗精", "遗尿", "阳痿", "目暗", "益肾固精", "五子衍宗丸"]
     },
     {
-        id: "herb_287",
+        id: "herb_286",
         name: "桑螵蛸",
         pinyin: "Sang Piao Xiao",
         latinName: "Mantis religiosa Linnaeus 等",
@@ -5209,7 +5192,7 @@ const herbsDatabase = [
         keywords: ["遗尿", "尿频", "遗精", "阳痿", "固精缩尿", "桑螵蛸散"]
     },
     {
-        id: "herb_288",
+        id: "herb_287",
         name: "莲子",
         aliases: ["莲子肉", "莲肉"],
         pinyin: "Lian Zi",
@@ -5229,7 +5212,7 @@ const herbsDatabase = [
 
     // —— 批次③ 活血化瘀药（8味） ——
     {
-        id: "herb_289",
+        id: "herb_288",
         name: "姜黄",
         pinyin: "Jiang Huang",
         latinName: "Curcuma longa L.",
@@ -5246,7 +5229,7 @@ const herbsDatabase = [
         keywords: ["胸胁刺痛", "肩臂痹痛", "痛经", "癥瘕", "破血行气"]
     },
     {
-        id: "herb_290",
+        id: "herb_289",
         name: "土鳖虫",
         aliases: ["䗪虫", "地鳖虫", "土元", "廑虫"],
         pinyin: "Tu Bie Chong",
@@ -5266,7 +5249,7 @@ const herbsDatabase = [
         keywords: ["跌打", "骨折", "经闭", "癥瘕", "破血逐瘀", "大黄䗪虫丸"]
     },
     {
-        id: "herb_291",
+        id: "herb_290",
         name: "自然铜",
         pinyin: "Zi Ran Tong",
         latinName: "Pyritum",
@@ -5283,7 +5266,7 @@ const herbsDatabase = [
         keywords: ["跌打", "骨折", "瘀肿", "续筋接骨", "八厘散"]
     },
     {
-        id: "herb_292",
+        id: "herb_291",
         name: "马钱子",
         pinyin: "Ma Qian Zi",
         latinName: "Strychnos nux-vomica L.",
@@ -5302,7 +5285,7 @@ const herbsDatabase = [
         keywords: ["跌打", "顽痹", "瘫痪", "肿痛", "番木鳖", "士的宁"]
     },
     {
-        id: "herb_293",
+        id: "herb_292",
         name: "血竭",
         pinyin: "Xue Jie",
         latinName: "Daemonorops draco Bl.",
@@ -5319,7 +5302,7 @@ const herbsDatabase = [
         keywords: ["跌打", "出血", "疮疡", "心腹痛", "七厘散"]
     },
     {
-        id: "herb_294",
+        id: "herb_293",
         name: "刘寄奴",
         pinyin: "Liu Ji Nu",
         latinName: "Artemisia anomala S. Moore",
@@ -5336,7 +5319,7 @@ const herbsDatabase = [
         keywords: ["跌打", "经闭", "产后瘀阻", "创伤出血", "食积"]
     },
     {
-        id: "herb_295",
+        id: "herb_294",
         name: "水蛭",
         pinyin: "Shui Zhi",
         latinName: "Whitmania pigra Whitman",
@@ -5355,7 +5338,7 @@ const herbsDatabase = [
         keywords: ["经闭", "癥瘕", "跌打", "破血逐瘀", "抵当汤"]
     },
     {
-        id: "herb_296",
+        id: "herb_295",
         name: "斑蝥",
         pinyin: "Ban Mao",
         latinName: "Mylabris phalerata Pallas",
@@ -5376,7 +5359,7 @@ const herbsDatabase = [
 
     // —— 批次③ 化痰止咳平喘药（4味） ——
     {
-        id: "herb_297",
+        id: "herb_296",
         name: "海藻",
         pinyin: "Hai Zao",
         latinName: "Sargassum pallidum (Turn.) C. Ag.",
@@ -5393,7 +5376,7 @@ const herbsDatabase = [
         keywords: ["瘿瘤", "瘰疬", "水肿", "软坚散结", "海藻玉壶汤", "十八反"]
     },
     {
-        id: "herb_298",
+        id: "herb_297",
         name: "葶苈子",
         pinyin: "Ting Li Zi",
         latinName: "Descurainia sophia (L.) Webb. ex Prantl",
@@ -5410,7 +5393,7 @@ const herbsDatabase = [
         keywords: ["痰壅喘咳", "胸腹积水", "水肿", "泻肺", "葶苈大枣泻肺汤"]
     },
     {
-        id: "herb_299",
+        id: "herb_298",
         name: "白果",
         pinyin: "Bai Guo",
         latinName: "Ginkgo biloba L.",
@@ -5428,7 +5411,7 @@ const herbsDatabase = [
         keywords: ["喘咳", "带下", "遗尿", "敛肺定喘", "定喘汤", "银杏"]
     },
     {
-        id: "herb_300",
+        id: "herb_299",
         name: "马兜铃",
         pinyin: "Ma Dou Ling",
         latinName: "Aristolochia debilis Sieb. et Zucc.",
@@ -5447,7 +5430,7 @@ const herbsDatabase = [
 
     // —— 批次④ 祛风湿药（6味） ——
     {
-        id: "herb_301",
+        id: "herb_300",
         name: "川乌",
         pinyin: "Chuan Wu",
         latinName: "Aconitum carmichaelii Debx.",
@@ -5466,7 +5449,7 @@ const herbsDatabase = [
         keywords: ["风寒湿痹", "寒疝", "心腹痛", "麻醉", "十八反", "乌头碱"]
     },
     {
-        id: "herb_302",
+        id: "herb_301",
         name: "草乌",
         pinyin: "Cao Wu",
         latinName: "Aconitum kusnezoffii Reichb.",
@@ -5485,7 +5468,7 @@ const herbsDatabase = [
         keywords: ["风寒湿痹", "寒疝", "跌打", "麻醉", "十八反"]
     },
     {
-        id: "herb_303",
+        id: "herb_302",
         name: "蕲蛇",
         pinyin: "Qi She",
         latinName: "Agkistrodon acutus (Guenther)",
@@ -5503,7 +5486,7 @@ const herbsDatabase = [
         keywords: ["顽痹", "半身不遂", "破伤风", "麻风", "白花蛇"]
     },
     {
-        id: "herb_304",
+        id: "herb_303",
         name: "乌梢蛇",
         pinyin: "Wu Shao She",
         latinName: "Zaocys dhumnades (Cantor)",
@@ -5520,7 +5503,7 @@ const herbsDatabase = [
         keywords: ["顽痹", "半身不遂", "破伤风", "疥癣", "祛风通络"]
     },
     {
-        id: "herb_305",
+        id: "herb_304",
         name: "豨莶草",
         pinyin: "Xi Xian Cao",
         latinName: "Siegesbeckia orientalis L.",
@@ -5537,7 +5520,7 @@ const herbsDatabase = [
         keywords: ["风湿痹痛", "半身不遂", "风疹", "疮痈", "高血压", "豨莶丸"]
     },
     {
-        id: "herb_306",
+        id: "herb_305",
         name: "雷公藤",
         pinyin: "Lei Gong Teng",
         latinName: "Tripterygium wilfordii Hook. f.",
@@ -5556,7 +5539,7 @@ const herbsDatabase = [
 
     // —— 批次④ 利水渗湿药（4味） ——
     {
-        id: "herb_307",
+        id: "herb_306",
         name: "木通",
         pinyin: "Mu Tong",
         latinName: "Akebia quinata (Thunb.) Decne.",
@@ -5573,7 +5556,7 @@ const herbsDatabase = [
         keywords: ["热淋", "口疮", "经闭", "乳少", "导赤散", "关木通"]
     },
     {
-        id: "herb_308",
+        id: "herb_307",
         name: "通草",
         pinyin: "Tong Cao",
         latinName: "Tetrapanax papyrifer (Hook.) K. Koch",
@@ -5590,7 +5573,7 @@ const herbsDatabase = [
         keywords: ["淋证", "水肿", "乳汁不下", "通气下乳"]
     },
     {
-        id: "herb_309",
+        id: "herb_308",
         name: "石韦",
         pinyin: "Shi Wei",
         latinName: "Pyrrosia lingua (Thunb.) Farwell",
@@ -5607,7 +5590,7 @@ const herbsDatabase = [
         keywords: ["血淋", "石淋", "肺热咳嗽", "崩漏", "利尿通淋"]
     },
     {
-        id: "herb_310",
+        id: "herb_309",
         name: "垂盆草",
         pinyin: "Chui Pen Cao",
         latinName: "Sedum sarmentosum Bunge",
@@ -5626,7 +5609,7 @@ const herbsDatabase = [
 
     // —— 批次④ 温里药（1味） ——
     {
-        id: "herb_311",
+        id: "herb_310",
         name: "荜茇",
         pinyin: "Bi Bo",
         latinName: "Piper longum L.",
@@ -5645,7 +5628,7 @@ const herbsDatabase = [
 
     // —— 批次④ 理气药（5味） ——
     {
-        id: "herb_312",
+        id: "herb_311",
         name: "沉香",
         pinyin: "Chen Xiang",
         latinName: "Aquilaria sinensis (Lour.) Gilg",
@@ -5662,7 +5645,7 @@ const herbsDatabase = [
         keywords: ["腹胀痛", "呕吐", "呃逆", "虚喘", "四磨汤", "黑锡丹"]
     },
     {
-        id: "herb_313",
+        id: "herb_312",
         name: "荔枝核",
         pinyin: "Li Zhi He",
         latinName: "Litchi chinensis Sonn.",
@@ -5679,7 +5662,7 @@ const herbsDatabase = [
         keywords: ["疝气", "睾丸肿痛", "痛经", "胃脘痛", "天台乌药散"]
     },
     {
-        id: "herb_314",
+        id: "herb_313",
         name: "玫瑰花",
         pinyin: "Mei Gui Hua",
         latinName: "Rosa rugosa Thunb.",
@@ -5696,7 +5679,7 @@ const herbsDatabase = [
         keywords: ["肝胃气痛", "月经不调", "乳房胀痛", "疏肝解郁"]
     },
     {
-        id: "herb_315",
+        id: "herb_314",
         name: "大腹皮",
         aliases: ["大腹毛", "槟榔皮", "腹皮"],
         pinyin: "Da Fu Pi",
@@ -5714,7 +5697,7 @@ const herbsDatabase = [
         keywords: ["脘腹胀闷", "水肿", "脚气", "藿香正气散"]
     },
     {
-        id: "herb_316",
+        id: "herb_315",
         name: "九香虫",
         pinyin: "Jiu Xiang Chong",
         latinName: "Aspongopus chinensis Dallas",
@@ -5733,7 +5716,7 @@ const herbsDatabase = [
 
     // —— 批次④ 驱虫药（4味） ——
     {
-        id: "herb_317",
+        id: "herb_316",
         name: "苦楝皮",
         pinyin: "Ku Lian Pi",
         latinName: "Melia azedarach L.",
@@ -5751,7 +5734,7 @@ const herbsDatabase = [
         keywords: ["蛔虫", "蛲虫", "钩虫", "疥癣", "苦楝素"]
     },
     {
-        id: "herb_318",
+        id: "herb_317",
         name: "南瓜子",
         pinyin: "Nan Gua Zi",
         latinName: "Cucurbita moschata Duch.",
@@ -5768,7 +5751,7 @@ const herbsDatabase = [
         keywords: ["绦虫", "血吸虫", "杀虫", "配伍槟榔"]
     },
     {
-        id: "herb_319",
+        id: "herb_318",
         name: "鹤草芽",
         pinyin: "He Cao Ya",
         latinName: "Agrimonia pilosa Ledeb.",
@@ -5785,7 +5768,7 @@ const herbsDatabase = [
         keywords: ["绦虫", "鹤草酚", "杀虫", "仙鹤草冬芽"]
     },
     {
-        id: "herb_320",
+        id: "herb_319",
         name: "雷丸",
         pinyin: "Lei Wan",
         latinName: "Omphalia lapidescens Schroeter",
@@ -5804,7 +5787,7 @@ const herbsDatabase = [
 
     // —— 批次④ 止血药（4味） ——
     {
-        id: "herb_321",
+        id: "herb_320",
         name: "炮姜",
         pinyin: "Pao Jiang",
         aliases: ["姜炭"],
@@ -5822,7 +5805,7 @@ const herbsDatabase = [
         keywords: ["虚寒性出血", "崩漏", "腹痛", "温中", "阳虚失血"]
     },
     {
-        id: "herb_322",
+        id: "herb_321",
         name: "降香",
         pinyin: "Jiang Xiang",
         latinName: "Dalbergia odorifera T. Chen",
@@ -5839,7 +5822,7 @@ const herbsDatabase = [
         keywords: ["吐血", "外伤出血", "胸痹", "跌打", "冠心二号"]
     },
     {
-        id: "herb_323",
+        id: "herb_322",
         name: "紫珠叶",
         aliases: ["紫珠", "止血草"],
         pinyin: "Zi Zhu Ye",
@@ -5857,7 +5840,7 @@ const herbsDatabase = [
         keywords: ["咯血", "崩漏", "外伤出血", "烫伤", "疮疡"]
     },
     {
-        id: "herb_324",
+        id: "herb_323",
         name: "藕节",
         pinyin: "Ou Jie",
         latinName: "Nelumbo nucifera Gaertn.",
@@ -5876,7 +5859,7 @@ const herbsDatabase = [
 
     // —— 批次④ 安神药（1味） ——
     {
-        id: "herb_325",
+        id: "herb_324",
         name: "琥珀",
         pinyin: "Hu Po",
         latinName: "Succinum",
@@ -5895,7 +5878,7 @@ const herbsDatabase = [
 
     // —— 批次④ 平肝息风药（3味） ——
     {
-        id: "herb_326",
+        id: "herb_325",
         name: "羚羊角",
         pinyin: "Ling Yang Jiao",
         latinName: "Saiga tatarica Linnaeus",
@@ -5912,7 +5895,7 @@ const herbsDatabase = [
         keywords: ["惊痫抽搐", "子痫", "高热痉厥", "目赤", "羚角钩藤汤", "紫雪"]
     },
     {
-        id: "herb_327",
+        id: "herb_326",
         name: "牛黄",
         pinyin: "Niu Huang",
         latinName: "Calculus Bovis",
@@ -5929,7 +5912,7 @@ const herbsDatabase = [
         keywords: ["神昏", "惊痫", "中风痰迷", "咽喉肿痛", "安宫牛黄丸"]
     },
     {
-        id: "herb_328",
+        id: "herb_327",
         name: "珍珠",
         pinyin: "Zhen Zhu",
         latinName: "Pinctada martensii (Dunker)",
@@ -5948,7 +5931,7 @@ const herbsDatabase = [
 
     // —— 批次④ 攻毒杀虫止痒药（6味） ——
     {
-        id: "herb_329",
+        id: "herb_328",
         name: "硫黄",
         pinyin: "Liu Huang",
         latinName: "Sulfur",
@@ -5966,7 +5949,7 @@ const herbsDatabase = [
         keywords: ["疥癣", "阴疽", "虚喘", "冷秘", "半硫丸"]
     },
     {
-        id: "herb_330",
+        id: "herb_329",
         name: "白矾",
         pinyin: "Bai Fan",
         aliases: ["枯矾"],
@@ -5984,7 +5967,7 @@ const herbsDatabase = [
         keywords: ["湿疹", "疥癣", "脱肛", "久泻", "癫痫", "明矾"]
     },
     {
-        id: "herb_331",
+        id: "herb_330",
         name: "蟾酥",
         pinyin: "Chan Su",
         latinName: "Bufo bufo gargarizans Cantor",
@@ -6002,7 +5985,7 @@ const herbsDatabase = [
         keywords: ["疔疮", "咽喉肿痛", "神昏", "牙痛", "六神丸", "蟾毒"]
     },
     {
-        id: "herb_332",
+        id: "herb_331",
         name: "樟脑",
         pinyin: "Zhang Nao",
         latinName: "Cinnamomum camphora (L.) Presl",
@@ -6019,7 +6002,7 @@ const herbsDatabase = [
         keywords: ["疥癣", "湿疮", "跌打", "牙痛", "辟秽"]
     },
     {
-        id: "herb_333",
+        id: "herb_332",
         name: "土荆皮",
         pinyin: "Tu Jing Pi",
         latinName: "Pseudolarix amabilis (Nelson) Rehd.",
@@ -6037,7 +6020,7 @@ const herbsDatabase = [
         keywords: ["体癣", "手足癣", "头癣", "杀虫止痒", "土槿皮"]
     },
     {
-        id: "herb_334",
+        id: "herb_333",
         name: "蜂房",
         pinyin: "Feng Fang",
         latinName: "Polistes olivaceous (DeGeer) 等",
@@ -6056,7 +6039,7 @@ const herbsDatabase = [
 
     // —— 批次⑤ 教材核心药补齐（26味，2026-09-01，按差异报告 v2 第3.4节缺漏清单） ——
     {
-        id: "herb_335",
+        id: "herb_334",
         name: "京大戟",
         pinyin: "Jing Da Ji",
         latinName: "Euphorbia pekinensis Rupr.",
@@ -6075,7 +6058,7 @@ const herbsDatabase = [
         keywords: ["水肿", "胸水", "腹水", "痰饮", "十八反", "甘草反"]
     },
     {
-        id: "herb_336",
+        id: "herb_335",
         name: "芫花",
         pinyin: "Yuan Hua",
         latinName: "Daphne genkwa Sieb. et Zucc.",
@@ -6094,7 +6077,7 @@ const herbsDatabase = [
         keywords: ["胸水", "腹水", "水肿", "十八反", "甘草反"]
     },
     {
-        id: "herb_337",
+        id: "herb_336",
         name: "商陆",
         pinyin: "Shang Lu",
         latinName: "Phytolacca acinosa Roxb.",
@@ -6113,7 +6096,7 @@ const herbsDatabase = [
         keywords: ["水肿", "腹水", "二便不利", "疮毒"]
     },
     {
-        id: "herb_338",
+        id: "herb_337",
         name: "巴豆",
         pinyin: "Ba Dou",
         latinName: "Croton tiglium L.",
@@ -6132,7 +6115,7 @@ const herbsDatabase = [
         keywords: ["寒积", "便秘", "腹水", "喉痹", "十九畏", "巴豆畏牵牛"]
     },
     {
-        id: "herb_339",
+        id: "herb_338",
         name: "续断",
         pinyin: "Xu Duan",
         latinName: "Dipsacus japonicus Miq.",
@@ -6149,7 +6132,7 @@ const herbsDatabase = [
         keywords: ["腰痛", "骨折", "崩漏", "安胎", "续折伤"]
     },
     {
-        id: "herb_340",
+        id: "herb_339",
         name: "石斛",
         pinyin: "Shi Hu",
         latinName: "Dendrobium nobile Lindl.",
@@ -6166,7 +6149,7 @@ const herbsDatabase = [
         keywords: ["胃阴虚", "口干", "伤津", "明目", "鲜石斛"]
     },
     {
-        id: "herb_341",
+        id: "herb_340",
         name: "益智仁",
         pinyin: "Yi Zhi Ren",
         latinName: "Alpinia oxyphylla Miq.",
@@ -6183,7 +6166,7 @@ const herbsDatabase = [
         keywords: ["遗尿", "尿频", "遗精", "泄泻", "流涎"]
     },
     {
-        id: "herb_342",
+        id: "herb_341",
         name: "锁阳",
         pinyin: "Suo Yang",
         latinName: "Cynomorium songaricum Rupr.",
@@ -6200,7 +6183,7 @@ const herbsDatabase = [
         keywords: ["阳痿", "腰膝酸软", "便秘", "精亏"]
     },
     {
-        id: "herb_343",
+        id: "herb_342",
         name: "核桃仁",
         pinyin: "He Tao Ren",
         latinName: "Juglans regia L.",
@@ -6217,7 +6200,7 @@ const herbsDatabase = [
         keywords: ["腰痛", "虚喘", "久咳", "便秘"]
     },
     {
-        id: "herb_344",
+        id: "herb_343",
         name: "韭菜子",
         pinyin: "Jiu Cai Zi",
         latinName: "Allium tuberosum Rottl. ex Spreng.",
@@ -6234,7 +6217,7 @@ const herbsDatabase = [
         keywords: ["阳痿", "遗精", "遗尿", "腰冷"]
     },
     {
-        id: "herb_345",
+        id: "herb_344",
         name: "南沙参",
         pinyin: "Nan Sha Shen",
         latinName: "Adenophora stricta Miq.",
@@ -6251,7 +6234,7 @@ const herbsDatabase = [
         keywords: ["燥咳", "肺阴虚", "胃阴虚", "口干", "反藜芦"]
     },
     {
-        id: "herb_346",
+        id: "herb_345",
         name: "桑椹",
         pinyin: "Sang Shen",
         latinName: "Morus alba L.",
@@ -6268,7 +6251,7 @@ const herbsDatabase = [
         keywords: ["眩晕", "耳鸣", "白发", "口渴", "便秘"]
     },
     {
-        id: "herb_347",
+        id: "herb_346",
         name: "蜂蜜",
         pinyin: "Feng Mi",
         aliases: ["白蜜"],
@@ -6286,7 +6269,7 @@ const herbsDatabase = [
         keywords: ["脘腹痛", "干咳", "便秘", "解乌头毒", "蜜炙"]
     },
     {
-        id: "herb_348",
+        id: "herb_347",
         name: "皂荚",
         aliases: ["猪牙皂", "大皂角", "皂角"],
         pinyin: "Zao Jia",
@@ -6305,7 +6288,7 @@ const herbsDatabase = [
         keywords: ["顽痰", "中风", "痰厥", "喉痹", "皂角刺"]
     },
     {
-        id: "herb_349",
+        id: "herb_348",
         name: "竹沥",
         pinyin: "Zhu Li",
         latinName: "Phyllostachys nigra（淡竹等竹竿烤沥之汁）",
@@ -6322,7 +6305,7 @@ const herbsDatabase = [
         keywords: ["痰热", "中风", "惊痫", "咳喘"]
     },
     {
-        id: "herb_350",
+        id: "herb_349",
         name: "天竺黄",
         pinyin: "Tian Zhu Huang",
         latinName: "Bambusa textilis McClure（青皮竹等分泌液干燥块）",
@@ -6339,7 +6322,7 @@ const herbsDatabase = [
         keywords: ["惊风", "痰热", "中风", "神昏"]
     },
     {
-        id: "herb_351",
+        id: "herb_350",
         name: "黄药子",
         pinyin: "Huang Yao Zi",
         latinName: "Dioscorea bulbifera L.",
@@ -6357,7 +6340,7 @@ const herbsDatabase = [
         keywords: ["瘿瘤", "瘰疬", "甲状腺肿", "解毒", "肝损伤风险"]
     },
     {
-        id: "herb_352",
+        id: "herb_351",
         name: "冬瓜皮",
         pinyin: "Dong Gua Pi",
         latinName: "Benincasa hispida (Thunb.) Cogn.",
@@ -6374,7 +6357,7 @@ const herbsDatabase = [
         keywords: ["水肿", "小便不利", "暑热", "冬瓜"]
     },
     {
-        id: "herb_353",
+        id: "herb_352",
         name: "玉米须",
         pinyin: "Yu Mi Xu",
         latinName: "Zea mays L.",
@@ -6391,7 +6374,7 @@ const herbsDatabase = [
         keywords: ["水肿", "黄疸", "淋证", "消渴", "高血压辅助"]
     },
     {
-        id: "herb_354",
+        id: "herb_353",
         name: "穿山甲",
         pinyin: "Chuan Shan Jia",
         latinName: "Manis pentadactyla Linnaeus（鳞甲）",
@@ -6409,7 +6392,7 @@ const herbsDatabase = [
         keywords: ["癥瘕", "经闭", "下乳", "排脓", "保护动物"]
     },
     {
-        id: "herb_355",
+        id: "herb_354",
         name: "凌霄花",
         pinyin: "Ling Xiao Hua",
         latinName: "Campsis grandiflora (Thunb.) K. Schum.",
@@ -6427,7 +6410,7 @@ const herbsDatabase = [
         keywords: ["经闭", "癥瘕", "瘙痒", "风疹"]
     },
     {
-        id: "herb_356",
+        id: "herb_355",
         name: "血余炭",
         pinyin: "Xue Yu Tan",
         latinName: "Homo sapiens Linnaeus（人发煅炭）",
@@ -6444,7 +6427,7 @@ const herbsDatabase = [
         keywords: ["吐血", "衄血", "崩漏", "血尿", "发炭"]
     },
     {
-        id: "herb_357",
+        id: "herb_356",
         name: "瓜蒂",
         pinyin: "Gua Di",
         latinName: "Cucumis melo L.（甜瓜果蒂）",
@@ -6462,7 +6445,7 @@ const herbsDatabase = [
         keywords: ["痰涎", "宿食", "黄疸", "癫痫", "催吐"]
     },
     {
-        id: "herb_358",
+        id: "herb_357",
         name: "檀香",
         pinyin: "Tan Xiang",
         aliases: ["白檀香"],
@@ -6480,7 +6463,7 @@ const herbsDatabase = [
         keywords: ["胸腹痛", "心绞痛", "胃寒", "呕吐"]
     },
     {
-        id: "herb_359",
+        id: "herb_358",
         name: "稻芽",
         pinyin: "Dao Ya",
         latinName: "Oryza sativa L.（稻米发芽）",
@@ -6497,7 +6480,7 @@ const herbsDatabase = [
         keywords: ["食积", "腹胀", "食欲不振", "谷芽"]
     },
     {
-        id: "herb_360",
+        id: "herb_359",
         name: "升药",
         pinyin: "Sheng Yao",
         latinName: "Hydrargyrum Oxydatum Crudum（水银与火硝、白矾炼制）",
@@ -6516,7 +6499,7 @@ const herbsDatabase = [
         keywords: ["痈疽", "去腐", "排脓", "窦道", "升丹"]
     },
     {
-        id: "herb_361",
+        id: "herb_360",
         name: "葱白",
         pinyin: "Cong Bai",
         aliases: ["老葱", "葱白头"],
@@ -6534,7 +6517,7 @@ const herbsDatabase = [
         keywords: ["风寒感冒", "通阳", "葱豉汤"]
     },
     {
-        id: "herb_362",
+        id: "herb_361",
         name: "木贼",
         pinyin: "Mu Zei",
         latinName: "Equisetum hiemale L.",
@@ -6551,7 +6534,7 @@ const herbsDatabase = [
         keywords: ["目赤", "翳障", "风热"]
     },
     {
-        id: "herb_363",
+        id: "herb_362",
         name: "葛花",
         pinyin: "Ge Hua",
         latinName: "Pueraria lobata (Willd.) Ohwi",
@@ -6568,7 +6551,7 @@ const herbsDatabase = [
         keywords: ["解酒", "葛花解酲汤"]
     },
     {
-        id: "herb_364",
+        id: "herb_363",
         name: "千金子",
         pinyin: "Qian Jin Zi",
         aliases: ["千金子霜"],
@@ -6588,7 +6571,7 @@ const herbsDatabase = [
         keywords: ["水肿", "逐水", "千金子霜"]
     },
     {
-        id: "herb_365",
+        id: "herb_364",
         name: "红大戟",
         pinyin: "Hong Da Ji",
         latinName: "Knoxia valerianoides Thorel",
@@ -6607,7 +6590,7 @@ const herbsDatabase = [
         keywords: ["水肿", "胸腹水", "红大戟"]
     },
     {
-        id: "herb_366",
+        id: "herb_365",
         name: "寒水石",
         pinyin: "Han Shui Shi",
         latinName: "CaSO4·2H2O",
@@ -6624,7 +6607,7 @@ const herbsDatabase = [
         keywords: ["烦渴", "口疮", "石膏"]
     },
     {
-        id: "herb_367",
+        id: "herb_366",
         name: "天葵子",
         pinyin: "Tian Kui Zi",
         aliases: ["紫背天葵子"],
@@ -6642,7 +6625,7 @@ const herbsDatabase = [
         keywords: ["痈肿", "乳痈", "瘰疬"]
     },
     {
-        id: "herb_368",
+        id: "herb_367",
         name: "冬瓜子",
         pinyin: "Dong Gua Zi",
         aliases: ["冬瓜仁"],
@@ -6660,7 +6643,7 @@ const herbsDatabase = [
         keywords: ["肺痈", "肠痈", "化痰"]
     },
     {
-        id: "herb_369",
+        id: "herb_368",
         name: "赤小豆",
         pinyin: "Chi Xiao Dou",
         latinName: "Vigna umbellata (Thunb.) Ohwi et Ohashi",
@@ -6677,7 +6660,7 @@ const herbsDatabase = [
         keywords: ["水肿", "排脓", "脚气"]
     },
     {
-        id: "herb_370",
+        id: "herb_369",
         name: "椒目",
         pinyin: "Jiao Mu",
         latinName: "Zanthoxylum bungeanum Maxim.",
@@ -6694,7 +6677,7 @@ const herbsDatabase = [
         keywords: ["水肿", "痰饮喘逆", "椒目"]
     },
     {
-        id: "herb_371",
+        id: "herb_370",
         name: "橘核",
         pinyin: "Ju He",
         latinName: "Citrus reticulata Blanco",
@@ -6711,7 +6694,7 @@ const herbsDatabase = [
         keywords: ["疝气", "睾丸肿痛", "橘核丸"]
     },
     {
-        id: "herb_372",
+        id: "herb_371",
         name: "橘红",
         pinyin: "Ju Hong",
         latinName: "Citrus reticulata Blanco",
@@ -6728,7 +6711,7 @@ const herbsDatabase = [
         keywords: ["化痰", "咳嗽", "橘红"]
     },
     {
-        id: "herb_373",
+        id: "herb_372",
         name: "青木香",
         pinyin: "Qing Mu Xiang",
         latinName: "Aristolochia debilis Sieb. et Zucc.",
@@ -6746,7 +6729,7 @@ const herbsDatabase = [
         keywords: ["马兜铃酸", "止痛", "慎用"]
     },
     {
-        id: "herb_374",
+        id: "herb_373",
         name: "干漆",
         pinyin: "Gan Qi",
         latinName: "Toxicodendron vernicifluum (Stokes) F.A.Barkl.",
@@ -6765,7 +6748,7 @@ const herbsDatabase = [
         keywords: ["经闭", "癥瘕", "大黄䗪虫丸"]
     },
     {
-        id: "herb_375",
+        id: "herb_374",
         name: "虻虫",
         pinyin: "Meng Chong",
         latinName: "Tabanus bivittatus Matsumura",
@@ -6784,7 +6767,7 @@ const herbsDatabase = [
         keywords: ["经闭", "癥瘕", "虻虫"]
     },
     {
-        id: "herb_376",
+        id: "herb_375",
         name: "蛴螬",
         pinyin: "Qi Cao",
         latinName: "Holotrichia diomphalia Bates",
@@ -6803,7 +6786,7 @@ const herbsDatabase = [
         keywords: ["癥瘕", "经闭"]
     },
     {
-        id: "herb_377",
+        id: "herb_376",
         name: "川牛膝",
         pinyin: "Chuan Niu Xi",
         latinName: "Cyathula officinalis Kuan",
@@ -6821,7 +6804,7 @@ const herbsDatabase = [
         keywords: ["经闭", "痹痛", "牛膝"]
     },
     {
-        id: "herb_378",
+        id: "herb_377",
         name: "枫香脂",
         pinyin: "Feng Xiang Zhi",
         aliases: ["白胶香"],
@@ -6839,7 +6822,7 @@ const herbsDatabase = [
         keywords: ["跌打", "生肌", "小金丹"]
     },
     {
-        id: "herb_379",
+        id: "herb_378",
         name: "棕榈炭",
         pinyin: "Zong Lv Tan",
         aliases: ["棕榈皮", "陈棕炭"],
@@ -6857,7 +6840,7 @@ const herbsDatabase = [
         keywords: ["吐血", "崩漏", "收敛止血"]
     },
     {
-        id: "herb_380",
+        id: "herb_379",
         name: "百草霜",
         pinyin: "Bai Cao Shuang",
         aliases: ["墨炭", "灶突墨"],
@@ -6875,7 +6858,7 @@ const herbsDatabase = [
         keywords: ["吐血", "崩漏", "小金丹"]
     },
     {
-        id: "herb_381",
+        id: "herb_380",
         name: "伏龙肝",
         pinyin: "Fu Long Gan",
         aliases: ["灶心黄土", "灶中黄土"],
@@ -6893,7 +6876,7 @@ const herbsDatabase = [
         keywords: ["温中", "黄土汤", "呕吐"]
     },
     {
-        id: "herb_382",
+        id: "herb_381",
         name: "荷叶",
         pinyin: "He Ye",
         latinName: "Nelumbo nucifera Gaertn.",
@@ -6910,7 +6893,7 @@ const herbsDatabase = [
         keywords: ["清暑", "升阳", "十灰散"]
     },
     {
-        id: "herb_383",
+        id: "herb_382",
         name: "海浮石",
         pinyin: "Hai Fu Shi",
         latinName: "Os Costaziae",
@@ -6927,7 +6910,7 @@ const herbsDatabase = [
         keywords: ["痰热咳嗽", "瘿瘤", "咳血方"]
     },
     {
-        id: "herb_384",
+        id: "herb_383",
         name: "礞石",
         pinyin: "Meng Shi",
         latinName: "Chlorite Schist",
@@ -6946,7 +6929,7 @@ const herbsDatabase = [
         keywords: ["顽痰", "癫痫", "滚痰丸"]
     },
     {
-        id: "herb_385",
+        id: "herb_384",
         name: "茯神",
         pinyin: "Fu Shen",
         aliases: ["茯神木"],
@@ -6964,7 +6947,7 @@ const herbsDatabase = [
         keywords: ["失眠", "惊悸", "归脾汤"]
     },
     {
-        id: "herb_386",
+        id: "herb_385",
         name: "龙齿",
         pinyin: "Long Chi",
         latinName: "Dens Draconis",
@@ -6981,7 +6964,7 @@ const herbsDatabase = [
         keywords: ["惊悸", "失眠", "珍珠母丸"]
     },
     {
-        id: "herb_387",
+        id: "herb_386",
         name: "安息香",
         pinyin: "An Xi Xiang",
         latinName: "Styrax benzoin Dryand.",
@@ -6998,7 +6981,7 @@ const herbsDatabase = [
         keywords: ["昏迷", "苏合香丸", "至宝丹"]
     },
     {
-        id: "herb_388",
+        id: "herb_387",
         name: "饴糖",
         pinyin: "Yi Tang",
         latinName: "Saccharum Granorum",
@@ -7015,7 +6998,7 @@ const herbsDatabase = [
         keywords: ["小建中汤", "缓急", "腹痛"]
     },
     {
-        id: "herb_389",
+        id: "herb_388",
         name: "粳米",
         pinyin: "Jing Mi",
         latinName: "Oryza sativa L.",
@@ -7032,7 +7015,7 @@ const herbsDatabase = [
         keywords: ["白虎汤", "顾护胃气"]
     },
     {
-        id: "herb_390",
+        id: "herb_389",
         name: "紫河车",
         pinyin: "Zi He Che",
         latinName: "Placenta Hominis",
@@ -7049,7 +7032,7 @@ const herbsDatabase = [
         keywords: ["肾虚", "精血不足", "补天大造丸"]
     },
     {
-        id: "herb_391",
+        id: "herb_390",
         name: "鹿角",
         pinyin: "Lu Jiao",
         latinName: "Cervus nippon Temminck",
@@ -7066,7 +7049,7 @@ const herbsDatabase = [
         keywords: ["肾阳", "龟鹿二仙胶"]
     },
     {
-        id: "herb_392",
+        id: "herb_391",
         name: "鹿角胶",
         pinyin: "Lu Jiao Jiao",
         latinName: "Colla Cornus Cervi",
@@ -7083,7 +7066,7 @@ const herbsDatabase = [
         keywords: ["肝肾亏虚", "左归丸", "阳和汤"]
     },
     {
-        id: "herb_393",
+        id: "herb_392",
         name: "龟甲胶",
         pinyin: "Gui Jia Jiao",
         aliases: ["龟板胶", "龟胶"],
@@ -7101,7 +7084,7 @@ const herbsDatabase = [
         keywords: ["阴虚", "左归丸", "大补阴丸"]
     },
     {
-        id: "herb_394",
+        id: "herb_393",
         name: "鸡子黄",
         pinyin: "Ji Zi Huang",
         latinName: "Vitellus Galli",
@@ -7118,7 +7101,7 @@ const herbsDatabase = [
         keywords: ["黄连阿胶汤", "心烦失眠"]
     },
     {
-        id: "herb_395",
+        id: "herb_394",
         name: "猪脊髓",
         pinyin: "Zhu Ji Sui",
         latinName: "Medulla Spinalis Suis",
@@ -7135,7 +7118,7 @@ const herbsDatabase = [
         keywords: ["大补阴丸", "肾虚", "益髓"]
     },
     {
-        id: "herb_396",
+        id: "herb_395",
         name: "莲须",
         pinyin: "Lian Xu",
         latinName: "Stamen Nelumbinis",
@@ -7152,7 +7135,7 @@ const herbsDatabase = [
         keywords: ["遗精", "金锁固精丸"]
     },
     {
-        id: "herb_397",
+        id: "herb_396",
         name: "椿皮",
         pinyin: "Chun Pi",
         aliases: ["椿根皮", "椿白皮"],
@@ -7170,7 +7153,7 @@ const herbsDatabase = [
         keywords: ["带下", "泻痢", "固经丸"]
     },
     {
-        id: "herb_398",
+        id: "herb_397",
         name: "鹤虱",
         pinyin: "He Shi",
         latinName: "Carpesium abrotanoides L.",
@@ -7189,7 +7172,7 @@ const herbsDatabase = [
         keywords: ["蛔虫", "化虫丸"]
     },
     {
-        id: "herb_399",
+        id: "herb_398",
         name: "芜荑",
         pinyin: "Wu Yi",
         latinName: "Ulmus macrocarpa Hance",
@@ -7206,7 +7189,7 @@ const herbsDatabase = [
         keywords: ["虫积", "疳积"]
     },
     {
-        id: "herb_400",
+        id: "herb_399",
         name: "木鳖子",
         pinyin: "Mu Bie Zi",
         latinName: "Momordica cochinchinensis (Lour.) Spreng.",
@@ -7225,7 +7208,7 @@ const herbsDatabase = [
         keywords: ["疮疡", "小金丹", "散结"]
     },
     {
-        id: "herb_401",
+        id: "herb_400",
         name: "皂角刺",
         pinyin: "Zao Jiao Ci",
         aliases: ["天丁", "皂角针"],
@@ -7244,7 +7227,7 @@ const herbsDatabase = [
         keywords: ["透脓散", "仙方活命饮", "托毒"]
     },
     {
-        id: "herb_402",
+        id: "herb_401",
         name: "儿茶",
         pinyin: "Er Cha",
         aliases: ["孩儿茶"],
@@ -7262,7 +7245,7 @@ const herbsDatabase = [
         keywords: ["七厘散", "疮疡", "敛疮"]
     },
     {
-        id: "herb_403",
+        id: "herb_402",
         name: "玳瑁",
         pinyin: "Dai Mao",
         latinName: "Eretmochelys imbricata L.",
@@ -7279,7 +7262,7 @@ const herbsDatabase = [
         keywords: ["高热神昏", "至宝丹"]
     },
     {
-        id: "herb_404",
+        id: "herb_403",
         name: "草豆蔻",
         pinyin: "Cao Dou Kou",
         latinName: "Alpinia katsumadai Hayata",
@@ -7296,7 +7279,7 @@ const herbsDatabase = [
         keywords: ["寒湿", "脘腹胀满", "厚朴温中汤"]
     },
     {
-        id: "herb_405",
+        id: "herb_404",
         name: "梨皮",
         pinyin: "Li Pi",
         latinName: "Pyrus spp.",
@@ -7313,7 +7296,7 @@ const herbsDatabase = [
         keywords: ["肺燥", "桑杏汤"]
     },
     {
-        id: "herb_406",
+        id: "herb_405",
         name: "松子仁",
         pinyin: "Song Zi Ren",
         latinName: "Pinus koraiensis Sieb. et Zucc.",
@@ -7330,7 +7313,7 @@ const herbsDatabase = [
         keywords: ["便秘", "五仁丸", "润肺"]
     },
     {
-        id: "herb_407",
+        id: "herb_406",
         name: "糯米",
         pinyin: "Nuo Mi",
         latinName: "Oryza sativa L. var. glutinosa",
@@ -7347,7 +7330,7 @@ const herbsDatabase = [
         keywords: ["健脾", "泰山磐石散"]
     },
     {
-        id: "herb_408",
+        id: "herb_407",
         name: "紫苏梗",
         pinyin: "Zi Su Geng",
         latinName: "Perilla frutescens (L.) Britt.",
@@ -7364,7 +7347,7 @@ const herbsDatabase = [
         keywords: ["胸膈痞闷", "胎动不安", "紫苏"]
     },
     {
-        id: "herb_409",
+        id: "herb_408",
         name: "鸭跖草",
         pinyin: "Ya Zhi Cao",
         latinName: "Commelina communis L.",
@@ -7381,7 +7364,7 @@ const herbsDatabase = [
         keywords: ["发热", "热淋", "痈肿"]
     },
     {
-        id: "herb_410",
+        id: "herb_409",
         name: "拳参",
         pinyin: "Quan Shen",
         latinName: "Polygonum bistorta L.",
@@ -7398,7 +7381,7 @@ const herbsDatabase = [
         keywords: ["痈肿", "蛇伤", "惊痫"]
     },
     {
-        id: "herb_411",
+        id: "herb_410",
         name: "漏芦",
         pinyin: "Lou Lu",
         latinName: "Rhaponticum uniflorum (L.) DC.",
@@ -7416,7 +7399,7 @@ const herbsDatabase = [
         keywords: ["乳痈", "乳汁不下", "瘰疬"]
     },
     {
-        id: "herb_412",
+        id: "herb_411",
         name: "金荞麦",
         pinyin: "Jin Qiao Mai",
         latinName: "Fagopyrum dibotrys (D.Don) Hara",
@@ -7433,7 +7416,7 @@ const herbsDatabase = [
         keywords: ["肺痈", "咳嗽", "咽喉肿痛"]
     },
     {
-        id: "herb_413",
+        id: "herb_412",
         name: "熊胆",
         pinyin: "Xiong Dan",
         latinName: "Fel Ursi",
@@ -7450,7 +7433,7 @@ const herbsDatabase = [
         keywords: ["惊痫", "目赤", "痔疮"]
     },
     {
-        id: "herb_414",
+        id: "herb_413",
         name: "千里光",
         pinyin: "Qian Li Guang",
         latinName: "Senecio scandens Buch.-Ham.",
@@ -7467,7 +7450,7 @@ const herbsDatabase = [
         keywords: ["目赤", "痈肿", "湿疹"]
     },
     {
-        id: "herb_415",
+        id: "herb_414",
         name: "芦荟",
         pinyin: "Lu Hui",
         latinName: "Aloe vera L. var. chinensis (Haw.) Berg.",
@@ -7486,7 +7469,7 @@ const herbsDatabase = [
         keywords: ["便秘", "肝火", "疳积"]
     },
     {
-        id: "herb_416",
+        id: "herb_415",
         name: "蚕沙",
         pinyin: "Can Sha",
         latinName: "Faeces Bombycis",
@@ -7503,7 +7486,7 @@ const herbsDatabase = [
         keywords: ["痹痛", "转筋", "湿疹"]
     },
     {
-        id: "herb_417",
+        id: "herb_416",
         name: "臭梧桐",
         pinyin: "Chou Wu Tong",
         latinName: "Clerodendrum trichotomum Thunb.",
@@ -7520,7 +7503,7 @@ const herbsDatabase = [
         keywords: ["痹痛", "麻木", "眩晕"]
     },
     {
-        id: "herb_418",
+        id: "herb_417",
         name: "海桐皮",
         pinyin: "Hai Tong Pi",
         latinName: "Erythrina variegata L.",
@@ -7537,7 +7520,7 @@ const herbsDatabase = [
         keywords: ["痹痛", "拘挛", "疥癣"]
     },
     {
-        id: "herb_419",
+        id: "herb_418",
         name: "千年健",
         pinyin: "Qian Nian Jian",
         latinName: "Homalomena occulta (Lour.) Schott",
@@ -7554,7 +7537,7 @@ const herbsDatabase = [
         keywords: ["痹痛", "腰膝冷痛"]
     },
     {
-        id: "herb_420",
+        id: "herb_419",
         name: "鹿衔草",
         pinyin: "Lu Xian Cao",
         latinName: "Pyrola calliantha H.Andr.",
@@ -7571,7 +7554,7 @@ const herbsDatabase = [
         keywords: ["痹痛", "腰膝无力", "咯血"]
     },
     {
-        id: "herb_421",
+        id: "herb_420",
         name: "扁豆花",
         pinyin: "Bian Dou Hua",
         latinName: "Dolichos lablab L.",
@@ -7588,7 +7571,7 @@ const herbsDatabase = [
         keywords: ["暑湿", "泄泻", "带下"]
     },
     {
-        id: "herb_422",
+        id: "herb_421",
         name: "葫芦",
         pinyin: "Hu Lu",
         latinName: "Lagenaria siceraria (Molina) Standl.",
@@ -7605,7 +7588,7 @@ const herbsDatabase = [
         keywords: ["水肿", "腹水"]
     },
     {
-        id: "herb_423",
+        id: "herb_422",
         name: "香加皮",
         pinyin: "Xiang Jia Pi",
         latinName: "Periploca sepium Bunge",
@@ -7624,7 +7607,7 @@ const herbsDatabase = [
         keywords: ["水肿", "痹痛", "强心苷"]
     },
     {
-        id: "herb_424",
+        id: "herb_423",
         name: "枳椇子",
         pinyin: "Zhi Ju Zi",
         latinName: "Hovenia dulcis Thunb.",
@@ -7641,7 +7624,7 @@ const herbsDatabase = [
         keywords: ["水肿", "解酒毒"]
     },
     {
-        id: "herb_425",
+        id: "herb_424",
         name: "冬葵子",
         pinyin: "Dong Kui Zi",
         latinName: "Malva verticillata L.",
@@ -7659,7 +7642,7 @@ const herbsDatabase = [
         keywords: ["淋证", "水肿", "通乳"]
     },
     {
-        id: "herb_426",
+        id: "herb_425",
         name: "灯心草",
         pinyin: "Deng Xin Cao",
         latinName: "Juncus effusus L.",
@@ -7676,7 +7659,7 @@ const herbsDatabase = [
         keywords: ["热淋", "心烦失眠", "口疮"]
     },
     {
-        id: "herb_427",
+        id: "herb_426",
         name: "泽漆",
         pinyin: "Ze Qi",
         latinName: "Euphorbia helioscopia L.",
@@ -7695,7 +7678,7 @@ const herbsDatabase = [
         keywords: ["水肿", "腹水", "瘰疬"]
     },
     {
-        id: "herb_428",
+        id: "herb_427",
         name: "胡椒",
         pinyin: "Hu Jiao",
         latinName: "Piper nigrum L.",
@@ -7712,7 +7695,7 @@ const herbsDatabase = [
         keywords: ["胃寒", "呕吐", "泄泻"]
     },
     {
-        id: "herb_429",
+        id: "herb_428",
         name: "荜澄茄",
         pinyin: "Bi Cheng Qie",
         latinName: "Litsea cubeba (Lour.) Pers.",
@@ -7729,7 +7712,7 @@ const herbsDatabase = [
         keywords: ["胃寒", "脘腹冷痛"]
     },
     {
-        id: "herb_430",
+        id: "herb_429",
         name: "红豆蔻",
         pinyin: "Hong Dou Kou",
         latinName: "Alpinia galanga Willd.",
@@ -7746,7 +7729,7 @@ const herbsDatabase = [
         keywords: ["脘腹冷痛", "呕吐"]
     },
     {
-        id: "herb_431",
+        id: "herb_430",
         name: "香橼",
         pinyin: "Xiang Yuan",
         latinName: "Citrus medica L.",
@@ -7763,7 +7746,7 @@ const herbsDatabase = [
         keywords: ["胸胁胀痛", "化痰"]
     },
     {
-        id: "herb_432",
+        id: "herb_431",
         name: "绿萼梅",
         pinyin: "Lv E Mei",
         latinName: "Prunus mume Sieb. et Zucc.",
@@ -7780,7 +7763,7 @@ const herbsDatabase = [
         keywords: ["肝胃气痛", "梅核气"]
     },
     {
-        id: "herb_433",
+        id: "herb_432",
         name: "娑罗子",
         pinyin: "Suo Luo Zi",
         latinName: "Aesculus chinensis Bunge",
@@ -7797,7 +7780,7 @@ const herbsDatabase = [
         keywords: ["肝胃气痛", "乳房胀痛"]
     },
     {
-        id: "herb_434",
+        id: "herb_433",
         name: "甘松",
         pinyin: "Gan Song",
         latinName: "Nardostachys jatamansi DC.",
@@ -7814,7 +7797,7 @@ const herbsDatabase = [
         keywords: ["脘腹胀痛", "醒脾"]
     },
     {
-        id: "herb_435",
+        id: "herb_434",
         name: "刀豆",
         pinyin: "Dao Dou",
         latinName: "Canavalia gladiata (Jacq.) DC.",
@@ -7831,7 +7814,7 @@ const herbsDatabase = [
         keywords: ["呃逆", "肾虚腰痛"]
     },
     {
-        id: "herb_436",
+        id: "herb_435",
         name: "化橘红",
         pinyin: "Hua Ju Hong",
         aliases: ["柚皮橘红", "光七爪"],
@@ -7849,7 +7832,7 @@ const herbsDatabase = [
         keywords: ["化痰", "咳嗽", "食积"]
     },
     {
-        id: "herb_437",
+        id: "herb_436",
         name: "阿魏",
         pinyin: "A Wei",
         latinName: "Ferula sinkiangensis K.M.Shen",
@@ -7868,7 +7851,7 @@ const herbsDatabase = [
         keywords: ["癥瘕", "虫积"]
     },
     {
-        id: "herb_438",
+        id: "herb_437",
         name: "胡荽",
         pinyin: "Hu Sui",
         aliases: ["香菜", "芫荽"],
@@ -7886,7 +7869,7 @@ const herbsDatabase = [
         keywords: ["麻疹不透", "透疹", "开胃"]
     },
     {
-        id: "herb_439",
+        id: "herb_438",
         name: "西河柳",
         pinyin: "Xi He Liu",
         aliases: ["柽柳", "观音柳"],
@@ -7904,7 +7887,7 @@ const herbsDatabase = [
         keywords: ["麻疹不透", "风疹", "痹痛"]
     },
     {
-        id: "herb_440",
+        id: "herb_439",
         name: "榧子",
         pinyin: "Fei Zi",
         latinName: "Torreya grandis Fort.",
@@ -7921,7 +7904,7 @@ const herbsDatabase = [
         keywords: ["虫积", "便秘", "咳嗽"]
     },
     {
-        id: "herb_441",
+        id: "herb_440",
         name: "紫石英",
         pinyin: "Zi Shi Ying",
         latinName: "Fluorite",
@@ -7938,7 +7921,7 @@ const herbsDatabase = [
         keywords: ["心悸", "失眠", "宫冷"]
     },
     {
-        id: "herb_442",
+        id: "herb_441",
         name: "合欢花",
         pinyin: "He Huan Hua",
         latinName: "Albizia julibrissin Durazz.",
@@ -7955,7 +7938,7 @@ const herbsDatabase = [
         keywords: ["失眠", "忧郁", "健忘"]
     },
     {
-        id: "herb_443",
+        id: "herb_442",
         name: "缬草",
         pinyin: "Xie Cao",
         latinName: "Valeriana officinalis L.",
@@ -7972,7 +7955,7 @@ const herbsDatabase = [
         keywords: ["失眠", "心神不宁", "胀痛"]
     },
     {
-        id: "herb_444",
+        id: "herb_443",
         name: "生铁落",
         pinyin: "Sheng Tie Luo",
         latinName: "Iron filings",
@@ -7989,7 +7972,7 @@ const herbsDatabase = [
         keywords: ["癫狂", "惊痫", "心悸"]
     },
     {
-        id: "herb_445",
+        id: "herb_444",
         name: "赭石",
         pinyin: "Zhe Shi",
         aliases: ["代赭石"],
@@ -8008,7 +7991,7 @@ const herbsDatabase = [
         keywords: ["头晕目眩", "呃逆", "吐衄"]
     },
     {
-        id: "herb_446",
+        id: "herb_445",
         name: "罗布麻叶",
         pinyin: "Luo Bu Ma Ye",
         latinName: "Apocynum venetum L.",
@@ -8025,7 +8008,7 @@ const herbsDatabase = [
         keywords: ["眩晕", "心悸", "失眠"]
     },
     {
-        id: "herb_447",
+        id: "herb_446",
         name: "紫贝齿",
         pinyin: "Zi Bei Chi",
         latinName: "Cypraea (Mauritia) arabica L.",
@@ -8042,7 +8025,7 @@ const herbsDatabase = [
         keywords: ["眩晕", "惊悸", "目赤"]
     },
     {
-        id: "herb_448",
+        id: "herb_447",
         name: "瓦楞子",
         pinyin: "Wa Leng Zi",
         latinName: "Arca subcrenata Lischke",
@@ -8059,7 +8042,7 @@ const herbsDatabase = [
         keywords: ["痰结", "瘰疬", "泛酸"]
     },
     {
-        id: "herb_449",
+        id: "herb_448",
         name: "芥子",
         pinyin: "Gai Zi",
         aliases: ["白芥子"],
@@ -8070,14 +8053,14 @@ const herbsDatabase = [
         tastes: ["辛"],
         meridians: ["肺经", "胃经"],
         functions: ["温肺化痰", "利气散结", "通络止痛"],
-        indications: ["寒痰咳喘", "悬饮胁痛", "阴疽流注", "肢体麻木"],
-        usage: "煎服，3-6g。外用适量，研末醋调敷。",
+        indications: ["寒痰咳喘", "悬饮胁痛", "阴疽流注", "肢体麻木", "痰滞经络", "关节麻木疼痛"],
+        usage: "煎服，3-9g。外用适量，研末醋调敷。",
         contraindications: ["肺虚久咳者忌用", "阴虚火旺者忌用", "皮肤过敏者慎用"],
         tags: ["化痰", "通络"],
         keywords: ["寒痰", "咳喘", "阴疽"]
     },
     {
-        id: "herb_450",
+        id: "herb_449",
         name: "矮地茶",
         pinyin: "Ai Di Cha",
         aliases: ["平地木", "紫金牛"],
@@ -8095,7 +8078,7 @@ const herbsDatabase = [
         keywords: ["咳嗽", "喘促", "黄疸"]
     },
     {
-        id: "herb_451",
+        id: "herb_450",
         name: "洋金花",
         pinyin: "Yang Jin Hua",
         latinName: "Datura metel L.",
@@ -8114,7 +8097,7 @@ const herbsDatabase = [
         keywords: ["哮喘", "麻醉", "癫痫"]
     },
     {
-        id: "herb_452",
+        id: "herb_451",
         name: "罗汉果",
         pinyin: "Luo Han Guo",
         latinName: "Siraitia grosvenorii (Swingle) C. Jeffrey",
@@ -8131,7 +8114,7 @@ const herbsDatabase = [
         keywords: ["咳嗽", "咽痛", "便秘"]
     },
     {
-        id: "herb_453",
+        id: "herb_452",
         name: "猫爪草",
         pinyin: "Mao Zhao Cao",
         latinName: "Ranunculus ternatus Thunb.",
@@ -8148,7 +8131,7 @@ const herbsDatabase = [
         keywords: ["瘰疬", "痰核", "疔疮"]
     },
     {
-        id: "herb_454",
+        id: "herb_453",
         name: "青天葵",
         pinyin: "Qing Tian Kui",
         latinName: "Nervilia fordii (Hance) Schltr.",
@@ -8165,7 +8148,7 @@ const herbsDatabase = [
         keywords: ["肺热咳嗽", "瘰疬", "咳血"]
     },
     {
-        id: "herb_455",
+        id: "herb_454",
         name: "伸筋草",
         pinyin: "Shen Jin Cao",
         latinName: "Lycopodium japonicum Thunb.",
@@ -8183,7 +8166,7 @@ const herbsDatabase = [
         keywords: ["痹痛", "拘挛", "跌打"]
     },
     {
-        id: "herb_456",
+        id: "herb_455",
         name: "青风藤",
         pinyin: "Qing Feng Teng",
         latinName: "Sinomenium acutum (Thunb.) Rehd. et Wils.",
@@ -8200,7 +8183,7 @@ const herbsDatabase = [
         keywords: ["痹痛", "关节肿", "水肿"]
     },
     {
-        id: "herb_457",
+        id: "herb_456",
         name: "老鹳草",
         pinyin: "Lao Guan Cao",
         latinName: "Erodium stephanianum Willd.",
@@ -8217,7 +8200,7 @@ const herbsDatabase = [
         keywords: ["痹痛", "麻木", "泄泻"]
     },
     {
-        id: "herb_458",
+        id: "herb_457",
         name: "丝瓜络",
         pinyin: "Si Gua Luo",
         latinName: "Luffa cylindrica (L.) Roem.",
@@ -8234,7 +8217,7 @@ const herbsDatabase = [
         keywords: ["痹痛", "胁痛", "通乳"]
     },
     {
-        id: "herb_459",
+        id: "herb_458",
         name: "穿山龙",
         pinyin: "Chuan Shan Long",
         latinName: "Dioscorea nipponica Makino",
@@ -8251,7 +8234,7 @@ const herbsDatabase = [
         keywords: ["痹痛", "咳嗽", "胸痹"]
     },
     {
-        id: "herb_460",
+        id: "herb_459",
         name: "水红花子",
         pinyin: "Shui Hong Hua Zi",
         aliases: ["水红花", "红蓼子"],
@@ -8270,7 +8253,7 @@ const herbsDatabase = [
         keywords: ["癥瘕", "瘿瘤", "食积"]
     },
     {
-        id: "herb_461",
+        id: "herb_460",
         name: "凤仙花",
         pinyin: "Feng Xian Hua",
         latinName: "Impatiens balsamina L.",
@@ -8289,7 +8272,7 @@ const herbsDatabase = [
         keywords: ["闭经", "痛经", "跌打"]
     },
     {
-        id: "herb_462",
+        id: "herb_461",
         name: "灶心土",
         pinyin: "Zao Xin Tu",
         aliases: ["伏龙肝"],
@@ -8307,7 +8290,7 @@ const herbsDatabase = [
         keywords: ["吐血", "便血", "呕吐", "久泻"]
     },
     {
-        id: "herb_463",
+        id: "herb_462",
         name: "花蕊石",
         pinyin: "Hua Rui Shi",
         latinName: "Ophicalcitum",
@@ -8325,7 +8308,7 @@ const herbsDatabase = [
         keywords: ["吐血", "衄血", "外伤出血"]
     },
     {
-        id: "herb_464",
+        id: "herb_463",
         name: "苎麻根",
         pinyin: "Zhu Ma Gen",
         latinName: "Boehmeria nivea (L.) Gaud.",
@@ -8342,7 +8325,7 @@ const herbsDatabase = [
         keywords: ["出血", "胎动不安", "痈肿"]
     },
     {
-        id: "herb_465",
+        id: "herb_464",
         name: "石榴皮",
         pinyin: "Shi Liu Pi",
         latinName: "Punica granatum L.",
@@ -8359,7 +8342,7 @@ const herbsDatabase = [
         keywords: ["久泻", "久痢", "便血"]
     },
     {
-        id: "herb_466",
+        id: "herb_465",
         name: "阳起石",
         pinyin: "Yang Qi Shi",
         latinName: "Actinolitum",
@@ -8376,7 +8359,7 @@ const herbsDatabase = [
         keywords: ["阳痿", "宫冷", "腰膝冷"]
     },
     {
-        id: "herb_467",
+        id: "herb_466",
         name: "刺五加",
         pinyin: "Ci Wu Jia",
         latinName: "Acanthopanax senticosus (Rupr. et Maxim.) Harms",
@@ -8393,7 +8376,7 @@ const herbsDatabase = [
         keywords: ["乏力", "食欲不振", "失眠"]
     },
     {
-        id: "herb_468",
+        id: "herb_467",
         name: "绞股蓝",
         pinyin: "Jiao Gu Lan",
         latinName: "Gynostemma pentaphyllum (Thunb.) Makino",
@@ -8410,7 +8393,7 @@ const herbsDatabase = [
         keywords: ["乏力", "食欲不振", "咳嗽"]
     },
     {
-        id: "herb_469",
+        id: "herb_468",
         name: "红景天",
         pinyin: "Hong Jing Tian",
         latinName: "Rhodiola crenulata (Hook.f. et Thoms.) H.Ohba",
@@ -8428,7 +8411,7 @@ const herbsDatabase = [
         keywords: ["胸痹", "心痛", "喘咳"]
     },
     {
-        id: "herb_470",
+        id: "herb_469",
         name: "大蒜",
         pinyin: "Da Suan",
         latinName: "Allium sativum L.",
@@ -8445,7 +8428,7 @@ const herbsDatabase = [
         keywords: ["痈肿", "疥癣", "痢疾"]
     },
     {
-        id: "herb_471",
+        id: "herb_470",
         name: "青果",
         pinyin: "Qing Guo",
         aliases: ["橄榄", "干青果"],
@@ -8463,7 +8446,7 @@ const herbsDatabase = [
         keywords: ["咽痛", "烦渴", "橄榄"]
     },
     {
-        id: "herb_472",
+        id: "herb_471",
         name: "木蝴蝶",
         pinyin: "Mu Hu Die",
         aliases: ["千张纸", "玉蝴蝶"],
@@ -8481,7 +8464,7 @@ const herbsDatabase = [
         keywords: ["咽痛", "音哑", "咳嗽"]
     },
     {
-        id: "herb_473",
+        id: "herb_472",
         name: "地锦草",
         pinyin: "Di Jin Cao",
         aliases: ["血见愁", "乳汁草"],
@@ -8499,7 +8482,7 @@ const herbsDatabase = [
         keywords: ["痢疾", "便血", "黄疸"]
     },
     {
-        id: "herb_474",
+        id: "herb_473",
         name: "金果榄",
         pinyin: "Jin Guo Lan",
         latinName: "Tinospora sagittata (Oliv.) Gagnep.",
@@ -8516,7 +8499,7 @@ const herbsDatabase = [
         keywords: ["咽痛", "痈肿", "痢疾"]
     },
     {
-        id: "herb_475",
+        id: "herb_474",
         name: "锦灯笼",
         pinyin: "Jin Deng Long",
         aliases: ["挂金灯", "酸浆"],
@@ -8535,7 +8518,7 @@ const herbsDatabase = [
         keywords: ["咽痛", "咳嗽", "酸浆"]
     },
     {
-        id: "herb_476",
+        id: "herb_475",
         name: "委陵菜",
         pinyin: "Wei Ling Cai",
         latinName: "Potentilla chinensis Ser.",
@@ -8552,7 +8535,7 @@ const herbsDatabase = [
         keywords: ["痢疾", "泻痢", "痔血"]
     },
     {
-        id: "herb_477",
+        id: "herb_476",
         name: "翻白草",
         pinyin: "Fan Bai Cao",
         latinName: "Potentilla discolor Bunge",
@@ -8569,7 +8552,7 @@ const herbsDatabase = [
         keywords: ["痢疾", "崩漏", "痈肿"]
     },
     {
-        id: "herb_478",
+        id: "herb_477",
         name: "绿豆",
         pinyin: "Lv Dou",
         latinName: "Phaseolus radiatus L.",
@@ -8586,7 +8569,7 @@ const herbsDatabase = [
         keywords: ["疮毒", "中暑", "药毒"]
     },
     {
-        id: "herb_479",
+        id: "herb_478",
         name: "鸡骨草",
         pinyin: "Ji Gu Cao",
         latinName: "Abrus cantoniensis Hance",
@@ -8603,7 +8586,7 @@ const herbsDatabase = [
         keywords: ["黄疸", "胁痛", "乳痈"]
     },
     {
-        id: "herb_480",
+        id: "herb_479",
         name: "珍珠草",
         pinyin: "Zhen Zhu Cao",
         aliases: ["叶下珠"],
@@ -8621,7 +8604,7 @@ const herbsDatabase = [
         keywords: ["黄疸", "淋证", "目赤"]
     },
     {
-        id: "herb_481",
+        id: "herb_480",
         name: "鸡矢藤",
         pinyin: "Ji Shi Teng",
         aliases: ["鸡屎藤"],
@@ -8639,7 +8622,7 @@ const herbsDatabase = [
         keywords: ["食积", "疳积", "咳嗽"]
     },
     {
-        id: "herb_482",
+        id: "herb_481",
         name: "隔山消",
         pinyin: "Ge Shan Xiao",
         aliases: ["白首乌"],
@@ -8657,7 +8640,7 @@ const herbsDatabase = [
         keywords: ["食积", "腹胀", "催乳"]
     },
     {
-        id: "herb_483",
+        id: "herb_482",
         name: "羊蹄",
         pinyin: "Yang Ti",
         aliases: ["土大黄"],
@@ -8676,7 +8659,7 @@ const herbsDatabase = [
         keywords: ["吐血", "便血", "疥癣"]
     },
     {
-        id: "herb_484",
+        id: "herb_483",
         name: "月季花",
         pinyin: "Yue Ji Hua",
         latinName: "Rosa chinensis Jacq.",
@@ -8694,7 +8677,7 @@ const herbsDatabase = [
         keywords: ["月经不调", "痛经", "胁痛"]
     },
     {
-        id: "herb_485",
+        id: "herb_484",
         name: "夏天无",
         pinyin: "Xia Tian Wu",
         aliases: ["伏生紫堇", "无柄紫堇"],
@@ -8713,7 +8696,7 @@ const herbsDatabase = [
         keywords: ["痹痛", "跌打", "偏瘫"]
     },
     {
-        id: "herb_486",
+        id: "herb_485",
         name: "沙棘",
         pinyin: "Sha Ji",
         latinName: "Hippophae rhamnoides L.",
@@ -8730,7 +8713,7 @@ const herbsDatabase = [
         keywords: ["食少", "咳嗽", "胸痹"]
     },
     {
-        id: "herb_487",
+        id: "herb_486",
         name: "胡芦巴",
         pinyin: "Hu Lu Ba",
         latinName: "Trigonella foenum-graecum L.",
@@ -8748,7 +8731,7 @@ const herbsDatabase = [
         keywords: ["阳痿", "寒疝", "腰膝冷痛"]
     },
     {
-        id: "herb_488",
+        id: "herb_487",
         name: "明党参",
         pinyin: "Ming Dang Shen",
         latinName: "Changium smyrnioides Wolff",
@@ -8766,7 +8749,7 @@ const herbsDatabase = [
         keywords: ["咳嗽", "呕吐", "口干"]
     },
     {
-        id: "herb_489",
+        id: "herb_488",
         name: "楮实子",
         pinyin: "Chu Shi Zi",
         latinName: "Broussonetia papyrifera (L.) Vent.",
@@ -8783,7 +8766,7 @@ const herbsDatabase = [
         keywords: ["腰膝酸软", "目昏", "水肿"]
     },
     {
-        id: "herb_490",
+        id: "herb_489",
         name: "禹余粮",
         pinyin: "Yu Yu Liang",
         latinName: "Limonitum",
@@ -8801,7 +8784,7 @@ const herbsDatabase = [
         keywords: ["久泻", "便血", "崩漏"]
     },
     {
-        id: "herb_491",
+        id: "herb_490",
         name: "糯稻根",
         pinyin: "Nuo Dao Gen",
         latinName: "Oryza sativa L. var. glutinosa Matsum.",
@@ -8818,7 +8801,7 @@ const herbsDatabase = [
         keywords: ["自汗", "盗汗", "虚热"]
     },
     {
-        id: "herb_492",
+        id: "herb_491",
         name: "胆矾",
         pinyin: "Dan Fan",
         latinName: "Chalcanthitum",
@@ -8837,7 +8820,7 @@ const herbsDatabase = [
         keywords: ["痰涎", "癫痫", "喉痹"]
     },
     {
-        id: "herb_493",
+        id: "herb_492",
         name: "徐长卿",
         pinyin: "Xu Chang Qing",
         aliases: ["寮刁竹", "竹叶细辛"],
@@ -8856,7 +8839,7 @@ const herbsDatabase = [
         keywords: ["痹痛", "牙痛", "湿疹"]
     },
     {
-        id: "herb_494",
+        id: "herb_493",
         name: "油松节",
         pinyin: "You Song Jie",
         aliases: ["松节"],
@@ -8874,7 +8857,7 @@ const herbsDatabase = [
         keywords: ["痹痛", "关节痛"]
     },
     {
-        id: "herb_495",
+        id: "herb_494",
         name: "丁公藤",
         pinyin: "Ding Gong Teng",
         latinName: "Erycibe obtusifolia Benth.",
@@ -8893,7 +8876,7 @@ const herbsDatabase = [
         keywords: ["痹痛", "半身不遂", "跌打"]
     },
     {
-        id: "herb_496",
+        id: "herb_495",
         name: "昆明山海棠",
         pinyin: "Kun Ming Shan Hai Tang",
         latinName: "Tripterygium hypoglaucum (Levl.) Hutch.",
@@ -8912,7 +8895,7 @@ const herbsDatabase = [
         keywords: ["痹痛", "跌打", "骨折"]
     },
     {
-        id: "herb_497",
+        id: "herb_496",
         name: "路路通",
         pinyin: "Lu Lu Tong",
         aliases: ["枫实", "九空子"],
@@ -8931,7 +8914,7 @@ const herbsDatabase = [
         keywords: ["痹痛", "麻木", "通乳"]
     },
     {
-        id: "herb_498",
+        id: "herb_497",
         name: "雪莲花",
         pinyin: "Xue Lian Hua",
         latinName: "Saussurea involucrata (Kar. et Kir.) Sch.-Bip.",
@@ -8949,7 +8932,7 @@ const herbsDatabase = [
         keywords: ["痹痛", "腰膝酸软", "阳痿"]
     },
     {
-        id: "herb_499",
+        id: "herb_498",
         name: "天山雪莲",
         pinyin: "Tian Shan Xue Lian",
         latinName: "Saussurea involucrata (Kar. et Kir.) Sch.-Bip. (新疆)",
@@ -8967,7 +8950,7 @@ const herbsDatabase = [
         keywords: ["痹痛", "阳痿", "腰膝酸软"]
     },
     {
-        id: "herb_500",
+        id: "herb_499",
         name: "地耳草",
         pinyin: "Di Er Cao",
         aliases: ["田基黄"],
@@ -8985,7 +8968,7 @@ const herbsDatabase = [
         keywords: ["黄疸", "痈肿", "跌打"]
     },
     {
-        id: "herb_501",
+        id: "herb_500",
         name: "海狗肾",
         pinyin: "Hai Gou Shen",
         latinName: "Callorhinus ursinus L.",
@@ -9002,7 +8985,7 @@ const herbsDatabase = [
         keywords: ["阳痿", "腰膝酸软", "畏寒"]
     },
     {
-        id: "herb_502",
+        id: "herb_501",
         name: "海马",
         pinyin: "Hai Ma",
         latinName: "Hippocampus kelloggi Jordan et Snyder",
@@ -9020,7 +9003,7 @@ const herbsDatabase = [
         keywords: ["阳痿", "遗尿", "虚喘"]
     },
     {
-        id: "herb_503",
+        id: "herb_502",
         name: "哈蟆油",
         pinyin: "Ha Ma You",
         aliases: ["蛤蟆油", "雪蛤"],
@@ -9038,7 +9021,7 @@ const herbsDatabase = [
         keywords: ["体虚", "久咳", "盗汗"]
     },
     {
-        id: "herb_504",
+        id: "herb_503",
         name: "刺猬皮",
         pinyin: "Ci Wei Pi",
         latinName: "Erinaceus europaeus L.",
@@ -9056,7 +9039,7 @@ const herbsDatabase = [
         keywords: ["遗精", "遗尿", "便血"]
     },
     {
-        id: "herb_505",
+        id: "herb_504",
         name: "鸡冠花",
         pinyin: "Ji Guan Hua",
         latinName: "Celosia cristata L.",
@@ -9073,7 +9056,7 @@ const herbsDatabase = [
         keywords: ["崩漏", "带下", "便血"]
     },
     {
-        id: "herb_506",
+        id: "herb_505",
         name: "藜芦",
         pinyin: "Li Lu",
         latinName: "Veratrum nigrum L.",
@@ -9092,7 +9075,7 @@ const herbsDatabase = [
         keywords: ["痰壅", "癫痫", "喉痹"]
     },
     {
-        id: "herb_507",
+        id: "herb_506",
         name: "苍耳草",
         pinyin: "Cang Er Cao",
         latinName: "Xanthium sibiricum Patr.",
@@ -9109,7 +9092,7 @@ const herbsDatabase = [
         keywords: ["感冒", "头痛", "疥癣"]
     },
     {
-        id: "herb_508",
+        id: "herb_507",
         name: "大豆黄卷",
         pinyin: "Da Dou Huang Juan",
         aliases: ["大豆卷", "黄卷"],
@@ -9127,7 +9110,7 @@ const herbsDatabase = [
         keywords: ["暑湿", "感冒", "水肿"]
     },
     {
-        id: "herb_509",
+        id: "herb_508",
         name: "忍冬藤",
         pinyin: "Ren Dong Teng",
         aliases: ["金银藤", "银花藤"],
@@ -9145,7 +9128,7 @@ const herbsDatabase = [
         keywords: ["发热", "热痢", "热痹"]
     },
     {
-        id: "herb_510",
+        id: "herb_509",
         name: "山银花",
         pinyin: "Shan Yin Hua",
         latinName: "Lonicera hypoglauca Miq.",
@@ -9162,7 +9145,7 @@ const herbsDatabase = [
         keywords: ["痈肿", "喉痹", "丹毒"]
     },
     {
-        id: "herb_511",
+        id: "herb_510",
         name: "墓头回",
         pinyin: "Mu Tou Hui",
         latinName: "Patrinia heterophylla Bunge",
@@ -9179,7 +9162,7 @@ const herbsDatabase = [
         keywords: ["带下", "崩漏", "痢疾"]
     },
     {
-        id: "herb_512",
+        id: "herb_511",
         name: "北豆根",
         pinyin: "Bei Dou Gen",
         latinName: "Menispermum dauricum DC.",
@@ -9196,7 +9179,7 @@ const herbsDatabase = [
         keywords: ["咽痛", "泻痢", "痹痛"]
     },
     {
-        id: "herb_513",
+        id: "herb_512",
         name: "西青果",
         pinyin: "Xi Qing Guo",
         aliases: ["藏青果"],
@@ -9214,7 +9197,7 @@ const herbsDatabase = [
         keywords: ["咽痛", "音哑", "口干"]
     },
     {
-        id: "herb_514",
+        id: "herb_513",
         name: "半枝莲",
         pinyin: "Ban Zhi Lian",
         latinName: "Scutellaria barbata D.Don",
@@ -9232,7 +9215,7 @@ const herbsDatabase = [
         keywords: ["痈肿", "蛇伤", "水肿"]
     },
     {
-        id: "herb_515",
+        id: "herb_514",
         name: "猪胆粉",
         pinyin: "Zhu Dan Fen",
         latinName: "Sus scrofa domestica Brisson",
@@ -9249,7 +9232,7 @@ const herbsDatabase = [
         keywords: ["燥渴", "咳嗽", "黄疸"]
     },
     {
-        id: "herb_516",
+        id: "herb_515",
         name: "绿豆衣",
         pinyin: "Lv Dou Yi",
         aliases: ["绿豆壳"],
@@ -9267,7 +9250,7 @@ const herbsDatabase = [
         keywords: ["暑热", "目赤", "痈肿"]
     },
     {
-        id: "herb_517",
+        id: "herb_516",
         name: "黑豆",
         pinyin: "Hei Dou",
         aliases: ["黑大豆", "乌豆"],
@@ -9285,7 +9268,7 @@ const herbsDatabase = [
         keywords: ["水肿", "脚气", "痈肿"]
     },
     {
-        id: "herb_518",
+        id: "herb_517",
         name: "鲜地黄",
         pinyin: "Xian Di Huang",
         latinName: "Rehmannia glutinosa Libosch. (鲜品)",
@@ -9302,7 +9285,7 @@ const herbsDatabase = [
         keywords: ["伤阴", "烦渴", "吐衄"]
     },
     {
-        id: "herb_519",
+        id: "herb_518",
         name: "紫草茸",
         pinyin: "Zi Cao Rong",
         latinName: "Laccifer lacca Kerr",
@@ -9320,7 +9303,7 @@ const herbsDatabase = [
         keywords: ["麻疹", "疮疡"]
     },
     {
-        id: "herb_520",
+        id: "herb_519",
         name: "狼毒",
         pinyin: "Lang Du",
         latinName: "Euphorbia fischeriana Steud.",
@@ -9339,7 +9322,7 @@ const herbsDatabase = [
         keywords: ["水肿", "痰饮", "疥癣"]
     },
     {
-        id: "herb_521",
+        id: "herb_520",
         name: "金钱白花蛇",
         pinyin: "Jin Qian Bai Hua She",
         latinName: "Bungarus parvus Boulenger",
@@ -9357,7 +9340,7 @@ const herbsDatabase = [
         keywords: ["顽痹", "麻木", "惊风"]
     },
     {
-        id: "herb_522",
+        id: "herb_521",
         name: "蛇蜕",
         pinyin: "She Tui",
         aliases: ["龙衣", "蛇皮"],
@@ -9376,7 +9359,7 @@ const herbsDatabase = [
         keywords: ["惊风", "目翳", "瘙痒"]
     },
     {
-        id: "herb_523",
+        id: "herb_522",
         name: "松花粉",
         pinyin: "Song Hua Fen",
         latinName: "Pinus massoniana Lamb. (花粉)",
@@ -9393,7 +9376,7 @@ const herbsDatabase = [
         keywords: ["眩晕", "胃痛", "创伤出血"]
     },
     {
-        id: "herb_524",
+        id: "herb_523",
         name: "厚朴花",
         pinyin: "Hou Po Hua",
         latinName: "Magnolia officinalis Rehd. et Wils. (花)",
@@ -9410,7 +9393,7 @@ const herbsDatabase = [
         keywords: ["痞闷", "纳呆"]
     },
     {
-        id: "herb_525",
+        id: "herb_524",
         name: "砂仁壳",
         pinyin: "Sha Ren Ke",
         latinName: "Amomum villosum Lour. (果壳)",
@@ -9427,7 +9410,7 @@ const herbsDatabase = [
         keywords: ["腹胀", "食积"]
     },
     {
-        id: "herb_526",
+        id: "herb_525",
         name: "豆蔻壳",
         pinyin: "Dou Kou Ke",
         latinName: "Amomum kravanh Pierre ex Gagnep. (果壳)",
@@ -9444,7 +9427,7 @@ const herbsDatabase = [
         keywords: ["脘腹胀满", "呕吐"]
     },
     {
-        id: "herb_527",
+        id: "herb_526",
         name: "车前草",
         pinyin: "Che Qian Cao",
         latinName: "Plantago asiatica L.",
@@ -9461,7 +9444,7 @@ const herbsDatabase = [
         keywords: ["热淋", "水肿", "泄泻"]
     },
     {
-        id: "herb_528",
+        id: "herb_527",
         name: "川木通",
         pinyin: "Chuan Mu Tong",
         latinName: "Clematis armandii Franch.",
@@ -9479,7 +9462,7 @@ const herbsDatabase = [
         keywords: ["热淋", "水肿", "通乳"]
     },
     {
-        id: "herb_529",
+        id: "herb_528",
         name: "海金沙藤",
         pinyin: "Hai Jin Sha Teng",
         latinName: "Lygodium japonicum (Thunb.) Sw. (藤叶)",
@@ -9496,7 +9479,7 @@ const herbsDatabase = [
         keywords: ["热淋", "石淋", "水肿"]
     },
     {
-        id: "herb_530",
+        id: "herb_529",
         name: "连钱草",
         pinyin: "Lian Qian Cao",
         aliases: ["活血丹", "金钱草"],
@@ -9514,7 +9497,7 @@ const herbsDatabase = [
         keywords: ["黄疸", "石淋", "痈肿"]
     },
     {
-        id: "herb_531",
+        id: "herb_530",
         name: "广金钱草",
         pinyin: "Guang Jin Qian Cao",
         latinName: "Desmodium styracifolium (Osb.) Merr.",
@@ -9531,7 +9514,7 @@ const herbsDatabase = [
         keywords: ["黄疸", "石淋"]
     },
     {
-        id: "herb_532",
+        id: "herb_531",
         name: "江西金钱草",
         pinyin: "Jiang Xi Jin Qian Cao",
         aliases: ["天胡荽"],
@@ -9549,7 +9532,7 @@ const herbsDatabase = [
         keywords: ["黄疸", "水肿"]
     },
     {
-        id: "herb_533",
+        id: "herb_532",
         name: "小金钱草",
         pinyin: "Xiao Jin Qian Cao",
         aliases: ["马蹄金", "黄胆草"],
@@ -9567,7 +9550,7 @@ const herbsDatabase = [
         keywords: ["黄疸", "痢疾"]
     },
     {
-        id: "herb_534",
+        id: "herb_533",
         name: "八角茴香",
         pinyin: "Ba Jiao Hui Xiang",
         aliases: ["大茴香", "八角"],
@@ -9585,7 +9568,7 @@ const herbsDatabase = [
         keywords: ["寒疝", "腰痛", "呕吐"]
     },
     {
-        id: "herb_535",
+        id: "herb_534",
         name: "母丁香",
         pinyin: "Mu Ding Xiang",
         latinName: "Eugenia caryophyllata Thunb. (果实)",
@@ -9602,7 +9585,7 @@ const herbsDatabase = [
         keywords: ["呃逆", "呕吐", "冷痛"]
     },
     {
-        id: "herb_536",
+        id: "herb_535",
         name: "橘络",
         pinyin: "Ju Luo",
         latinName: "Citrus reticulata Blanco (果皮内维管束)",
@@ -9619,7 +9602,7 @@ const herbsDatabase = [
         keywords: ["痰滞", "胸痛", "胁痛"]
     },
     {
-        id: "herb_537",
+        id: "herb_536",
         name: "橘叶",
         pinyin: "Ju Ye",
         latinName: "Citrus reticulata Blanco (叶)",
@@ -9636,7 +9619,7 @@ const herbsDatabase = [
         keywords: ["胁痛", "乳痈", "乳胀"]
     },
     {
-        id: "herb_538",
+        id: "herb_537",
         name: "土木香",
         pinyin: "Tu Mu Xiang",
         latinName: "Inula helenium L.",
@@ -9653,7 +9636,7 @@ const herbsDatabase = [
         keywords: ["胃痛", "纳呆", "胎动"]
     },
     {
-        id: "herb_539",
+        id: "herb_538",
         name: "建神曲",
         pinyin: "Jian Shen Qu",
         aliases: ["建曲", "泉州神曲"],
@@ -9671,7 +9654,7 @@ const herbsDatabase = [
         keywords: ["食积", "腹胀"]
     },
     {
-        id: "herb_540",
+        id: "herb_539",
         name: "槐角",
         pinyin: "Huai Jiao",
         latinName: "Sophora japonica L. (果实)",
@@ -9689,7 +9672,7 @@ const herbsDatabase = [
         keywords: ["便血", "痔血", "目赤"]
     },
     {
-        id: "herb_541",
+        id: "herb_540",
         name: "菊叶三七",
         pinyin: "Ju Ye San Qi",
         aliases: ["土三七", "景天三七"],
@@ -9708,7 +9691,7 @@ const herbsDatabase = [
         keywords: ["吐血", "便血", "跌打"]
     },
     {
-        id: "herb_542",
+        id: "herb_541",
         name: "景天三七",
         pinyin: "Jing Tian San Qi",
         aliases: ["费菜", "土三七"],
@@ -9727,7 +9710,7 @@ const herbsDatabase = [
         keywords: ["吐血", "失眠", "疮疡"]
     },
     {
-        id: "herb_543",
+        id: "herb_542",
         name: "大叶紫珠",
         pinyin: "Da Ye Zi Zhu",
         latinName: "Callicarpa macrophylla Vahl",
@@ -9744,7 +9727,7 @@ const herbsDatabase = [
         keywords: ["咯血", "便血", "跌打"]
     },
     {
-        id: "herb_544",
+        id: "herb_543",
         name: "片姜黄",
         pinyin: "Pian Jiang Huang",
         latinName: "Curcuma wenyujin Y.H.Chen et C.Ling (切片)",
@@ -9762,7 +9745,7 @@ const herbsDatabase = [
         keywords: ["胁痛", "经闭", "肩臂痛"]
     },
     {
-        id: "herb_545",
+        id: "herb_544",
         name: "西红花",
         pinyin: "Xi Hong Hua",
         aliases: ["藏红花", "番红花"],
@@ -9781,7 +9764,7 @@ const herbsDatabase = [
         keywords: ["经闭", "瘀阻", "发斑"]
     },
     {
-        id: "herb_546",
+        id: "herb_545",
         name: "茺蔚子",
         pinyin: "Chong Wei Zi",
         latinName: "Leonurus japonicus Houtt. (果实)",
@@ -9799,7 +9782,7 @@ const herbsDatabase = [
         keywords: ["月经不调", "痛经", "目赤"]
     },
     {
-        id: "herb_547",
+        id: "herb_546",
         name: "土牛膝",
         pinyin: "Tu Niu Xi",
         latinName: "Achyranthes aspera L.",
@@ -9817,7 +9800,7 @@ const herbsDatabase = [
         keywords: ["经闭", "跌打", "咽痛"]
     },
     {
-        id: "herb_548",
+        id: "herb_547",
         name: "北刘寄奴",
         pinyin: "Bei Liu Ji Nu",
         latinName: "Siphonostegia chinensis Benth.",
@@ -9835,7 +9818,7 @@ const herbsDatabase = [
         keywords: ["跌打", "经闭", "黄疸"]
     },
     {
-        id: "herb_549",
+        id: "herb_548",
         name: "水半夏",
         pinyin: "Shui Ban Xia",
         latinName: "Typhonium flagelliforme (Lodd.) Bl.",
@@ -9854,7 +9837,7 @@ const herbsDatabase = [
         keywords: ["咳嗽", "痰多"]
     },
     {
-        id: "herb_550",
+        id: "herb_549",
         name: "关白附",
         pinyin: "Guan Bai Fu",
         latinName: "Aconitum coreanum (Levl.) Raipaics",
@@ -9873,7 +9856,7 @@ const herbsDatabase = [
         keywords: ["痰壅", "癫痫", "头痛"]
     },
     {
-        id: "herb_551",
+        id: "herb_550",
         name: "金沸草",
         pinyin: "Jin Fei Cao",
         latinName: "Inula japonica Thunb. (地上部分)",
@@ -9890,7 +9873,7 @@ const herbsDatabase = [
         keywords: ["咳嗽", "痰多"]
     },
     {
-        id: "herb_552",
+        id: "herb_551",
         name: "平贝母",
         pinyin: "Ping Bei Mu",
         latinName: "Fritillaria ussuriensis Maxim.",
@@ -9907,7 +9890,7 @@ const herbsDatabase = [
         keywords: ["燥咳", "干咳", "劳嗽"]
     },
     {
-        id: "herb_553",
+        id: "herb_552",
         name: "伊贝母",
         pinyin: "Yi Bei Mu",
         latinName: "Fritillaria pallidiflora Schrenk",
@@ -9924,7 +9907,7 @@ const herbsDatabase = [
         keywords: ["咳嗽", "痰稠", "瘰疬"]
     },
     {
-        id: "herb_554",
+        id: "herb_553",
         name: "湖北贝母",
         pinyin: "Hu Bei Bei Mu",
         latinName: "Fritillaria hupehensis Hsiao et K.C.Hsia",
@@ -9941,7 +9924,7 @@ const herbsDatabase = [
         keywords: ["咳嗽", "瘰疬"]
     },
     {
-        id: "herb_555",
+        id: "herb_554",
         name: "土贝母",
         pinyin: "Tu Bei Mu",
         latinName: "Bolbostemma paniculatum (Maxim.) Franquet",
@@ -9958,7 +9941,7 @@ const herbsDatabase = [
         keywords: ["乳痈", "瘰疬", "疮疡"]
     },
     {
-        id: "herb_556",
+        id: "herb_555",
         name: "瓜蒌皮",
         pinyin: "Gua Lou Pi",
         latinName: "Trichosanthes kirilowii Maxim. (果皮)",
@@ -9975,7 +9958,7 @@ const herbsDatabase = [
         keywords: ["痰热咳嗽", "胸痹"]
     },
     {
-        id: "herb_557",
+        id: "herb_556",
         name: "瓜蒌子",
         pinyin: "Gua Lou Zi",
         latinName: "Trichosanthes kirilowii Maxim. (种子)",
@@ -9992,7 +9975,7 @@ const herbsDatabase = [
         keywords: ["燥咳", "便秘"]
     },
     {
-        id: "herb_558",
+        id: "herb_557",
         name: "甜杏仁",
         pinyin: "Tian Xing Ren",
         latinName: "Prunus armeniaca L. var. ansu Maxim. (甜)",
@@ -10009,7 +9992,7 @@ const herbsDatabase = [
         keywords: ["燥咳", "便秘"]
     },
     {
-        id: "herb_559",
+        id: "herb_558",
         name: "天仙藤",
         pinyin: "Tian Xian Teng",
         latinName: "Aristolochia debilis Sieb. et Zucc. (茎叶)",
@@ -10028,7 +10011,7 @@ const herbsDatabase = [
         keywords: ["脘腹痛", "疝气", "妊娠水肿"]
     },
     {
-        id: "herb_560",
+        id: "herb_559",
         name: "银杏叶",
         pinyin: "Yin Xing Ye",
         latinName: "Ginkgo biloba L. (叶)",
@@ -10046,7 +10029,7 @@ const herbsDatabase = [
         keywords: ["胸痹", "偏瘫", "咳喘"]
     },
     {
-        id: "herb_561",
+        id: "herb_560",
         name: "山羊角",
         pinyin: "Shan Yang Jiao",
         latinName: "Capra hircus L. (角)",
@@ -10063,7 +10046,7 @@ const herbsDatabase = [
         keywords: ["眩晕", "惊风", "目赤"]
     },
     {
-        id: "herb_562",
+        id: "herb_561",
         name: "体外培育牛黄",
         pinyin: "Ti Wai Pei Yu Niu Huang",
         latinName: "Bos taurus domesticus Gmelin (体外培育)",
@@ -10081,7 +10064,7 @@ const herbsDatabase = [
         keywords: ["神昏", "抽搐", "咽痛"]
     },
     {
-        id: "herb_563",
+        id: "herb_562",
         name: "人工牛黄",
         pinyin: "Ren Gong Niu Huang",
         latinName: "Bos taurus domesticus Gmelin (人工合成)",
@@ -10099,7 +10082,7 @@ const herbsDatabase = [
         keywords: ["谵妄", "咽痛", "口疮"]
     },
     {
-        id: "herb_564",
+        id: "herb_563",
         name: "蜜环菌",
         pinyin: "Mi Huan Jun",
         latinName: "Armillaria mellea (Vahl ex Fr.) Quél.",
@@ -10116,7 +10099,7 @@ const herbsDatabase = [
         keywords: ["眩晕", "头痛", "失眠"]
     },
     {
-        id: "herb_565",
+        id: "herb_564",
         name: "僵蛹",
         pinyin: "Jiang Yong",
         latinName: "Bombyx mori L. (僵化蛹)",
@@ -10133,7 +10116,7 @@ const herbsDatabase = [
         keywords: ["惊痫", "咳喘", "瘰疬"]
     },
     {
-        id: "herb_566",
+        id: "herb_565",
         name: "雄蚕蛾",
         pinyin: "Xiong Can E",
         latinName: "Bombyx mori L. (雄性成虫)",
@@ -10150,7 +10133,7 @@ const herbsDatabase = [
         keywords: ["阳痿", "遗精", "尿频"]
     },
     {
-        id: "herb_567",
+        id: "herb_566",
         name: "人工麝香",
         pinyin: "Ren Gong She Xiang",
         latinName: "Moschus (人工合成)",
@@ -10168,7 +10151,7 @@ const herbsDatabase = [
         keywords: ["神昏", "经闭", "跌打"]
     },
     {
-        id: "herb_568",
+        id: "herb_567",
         name: "九节菖蒲",
         pinyin: "Jiu Jie Chang Pu",
         latinName: "Anemone altaica Fisch.",
@@ -10186,7 +10169,7 @@ const herbsDatabase = [
         keywords: ["神昏", "癫痫", "健忘"]
     },
     {
-        id: "herb_569",
+        id: "herb_568",
         name: "人参叶",
         pinyin: "Ren Shen Ye",
         latinName: "Panax ginseng C.A.Mey. (叶)",
@@ -10203,7 +10186,7 @@ const herbsDatabase = [
         keywords: ["乏力", "口渴", "暑热"]
     },
     {
-        id: "herb_570",
+        id: "herb_569",
         name: "红芪",
         pinyin: "Hong Qi",
         latinName: "Hedysarum polybotrys Hand.-Mazz.",
@@ -10220,7 +10203,7 @@ const herbsDatabase = [
         keywords: ["乏力", "自汗", "水肿"]
     },
     {
-        id: "herb_571",
+        id: "herb_570",
         name: "扁豆衣",
         pinyin: "Bian Dou Yi",
         latinName: "Dolichos lablab L. (种皮)",
@@ -10237,7 +10220,7 @@ const herbsDatabase = [
         keywords: ["泄泻", "暑湿"]
     },
     {
-        id: "herb_572",
+        id: "herb_571",
         name: "蜂胶",
         pinyin: "Feng Jiao",
         latinName: "Apis cerana Fabricius (蜂胶)",
@@ -10254,7 +10237,7 @@ const herbsDatabase = [
         keywords: ["乏力", "溃疡", "疮疡"]
     },
     {
-        id: "herb_573",
+        id: "herb_572",
         name: "鹿角霜",
         pinyin: "Lu Jiao Shuang",
         latinName: "Cervus nippon Temminck (鹿角熬胶后残渣)",
@@ -10271,7 +10254,7 @@ const herbsDatabase = [
         keywords: ["腰膝冷痛", "遗精", "崩漏"]
     },
     {
-        id: "herb_574",
+        id: "herb_573",
         name: "脐带",
         pinyin: "Qi Dai",
         latinName: "Homo sapiens L. (脐带)",
@@ -10288,7 +10271,7 @@ const herbsDatabase = [
         keywords: ["虚劳", "喘促", "盗汗"]
     },
     {
-        id: "herb_575",
+        id: "herb_574",
         name: "杜仲叶",
         pinyin: "Du Zhong Ye",
         latinName: "Eucommia ulmoides Oliv. (叶)",
@@ -10305,7 +10288,7 @@ const herbsDatabase = [
         keywords: ["腰膝酸软"]
     },
     {
-        id: "herb_576",
+        id: "herb_575",
         name: "黄狗肾",
         pinyin: "Huang Gou Shen",
         latinName: "Canis familiaris L. (阴茎及睾丸)",
@@ -10322,7 +10305,7 @@ const herbsDatabase = [
         keywords: ["阳痿", "遗精", "腰膝酸软"]
     },
     {
-        id: "herb_577",
+        id: "herb_576",
         name: "海龙",
         pinyin: "Hai Long",
         latinName: "Syngnathus (Solenognathus) hardwickii (Gray)",
@@ -10340,7 +10323,7 @@ const herbsDatabase = [
         keywords: ["阳痿", "遗尿", "癥瘕"]
     },
     {
-        id: "herb_578",
+        id: "herb_577",
         name: "铁皮石斛",
         pinyin: "Tie Pi Shi Hu",
         latinName: "Dendrobium officinale Kimura et Migo",
@@ -10357,7 +10340,7 @@ const herbsDatabase = [
         keywords: ["津伤", "口干", "胃阴不足"]
     },
     {
-        id: "herb_579",
+        id: "herb_578",
         name: "小麦",
         pinyin: "Xiao Mai",
         latinName: "Triticum aestivum L.",
@@ -10374,7 +10357,7 @@ const herbsDatabase = [
         keywords: ["失眠", "自汗", "盗汗"]
     },
     {
-        id: "herb_580",
+        id: "herb_579",
         name: "莲房",
         pinyin: "Lian Fang",
         aliases: ["莲蓬壳"],
@@ -10393,7 +10376,7 @@ const herbsDatabase = [
         keywords: ["崩漏", "尿血", "痔血"]
     },
     {
-        id: "herb_581",
+        id: "herb_580",
         name: "莲子心",
         pinyin: "Lian Zi Xin",
         latinName: "Nelumbo nucifera Gaertn. (胚芽)",
@@ -10410,7 +10393,7 @@ const herbsDatabase = [
         keywords: ["失眠", "心烦", "遗精"]
     },
     {
-        id: "herb_582",
+        id: "herb_581",
         name: "荷梗",
         pinyin: "He Geng",
         latinName: "Nelumbo nucifera Gaertn. (叶柄及花柄)",
@@ -10427,7 +10410,7 @@ const herbsDatabase = [
         keywords: ["暑湿", "泄泻"]
     },
     {
-        id: "herb_583",
+        id: "herb_582",
         name: "石莲子",
         pinyin: "Shi Lian Zi",
         latinName: "Nelumbo nucifera Gaertn. (老熟果实)",
@@ -10444,7 +10427,7 @@ const herbsDatabase = [
         keywords: ["烦渴", "噤口痢", "久泻"]
     },
     {
-        id: "herb_584",
+        id: "herb_583",
         name: "蜀漆",
         pinyin: "Shu Qi",
         latinName: "Dichroa febrifuga Lour. (嫩枝叶)",
@@ -10463,7 +10446,7 @@ const herbsDatabase = [
         keywords: ["痰饮", "疟疾"]
     },
     {
-        id: "herb_585",
+        id: "herb_584",
         name: "皂矾",
         pinyin: "Zao Fan",
         aliases: ["绿矾", "青矾"],
@@ -10483,7 +10466,7 @@ const herbsDatabase = [
         keywords: ["疥癣", "钩虫", "黄肿"]
     },
     {
-        id: "herb_586",
+        id: "herb_585",
         name: "木槿皮",
         pinyin: "Mu Jin Pi",
         latinName: "Hibiscus syriacus L. (茎皮)",
@@ -10500,7 +10483,7 @@ const herbsDatabase = [
         keywords: ["疥癣", "带下", "痢疾"]
     },
     {
-        id: "herb_587",
+        id: "herb_586",
         name: "蜂蜡",
         pinyin: "Feng La",
         latinName: "Apis cerana Fabricius (蜡)",
@@ -10517,7 +10500,7 @@ const herbsDatabase = [
         keywords: ["溃疡", "烫伤"]
     },
     {
-        id: "herb_588",
+        id: "herb_587",
         name: "蟾皮",
         pinyin: "Chan Pi",
         latinName: "Bufo bufo gargarizans Cantor (皮)",
@@ -10536,7 +10519,7 @@ const herbsDatabase = [
         keywords: ["痈肿", "瘰疬", "水肿"]
     },
     {
-        id: "herb_589",
+        id: "herb_588",
         name: "守宫",
         pinyin: "Shou Gong",
         aliases: ["壁虎", "天龙"],
@@ -10556,7 +10539,7 @@ const herbsDatabase = [
         keywords: ["瘰疬", "癌肿", "惊风"]
     },
     {
-        id: "herb_590",
+        id: "herb_589",
         name: "水银",
         pinyin: "Shui Yin",
         latinName: "Hydrargyrum",
@@ -10575,7 +10558,7 @@ const herbsDatabase = [
         keywords: ["疥癣", "梅毒", "恶疮"]
     },
     {
-        id: "herb_591",
+        id: "herb_590",
         name: "密陀僧",
         pinyin: "Mi Tuo Seng",
         latinName: "Lithargyrum",
@@ -10610,33 +10593,33 @@ const herbCategories = {
             { id: "herb_005", name: "防风" },
             { id: "herb_006", name: "白芷" },
             { id: "herb_007", name: "荆芥" },
-            { id: "herb_124", name: "细辛" },
-            { id: "herb_161", name: "羌活" },
-            { id: "herb_162", name: "苍耳子" },
-            { id: "herb_163", name: "辛夷" },
-            { id: "herb_164", name: "藁本" },
-            { id: "herb_201", name: "香薷" },
-            { id: "herb_361", name: "葱白" },
-            { id: "herb_408", name: "紫苏梗" },
-            { id: "herb_438", name: "胡荽" },
-            { id: "herb_439", name: "西河柳" },
-            { id: "herb_507", name: "苍耳草" }
+            { id: "herb_123", name: "细辛" },
+            { id: "herb_160", name: "羌活" },
+            { id: "herb_161", name: "苍耳子" },
+            { id: "herb_162", name: "辛夷" },
+            { id: "herb_163", name: "藁本" },
+            { id: "herb_200", name: "香薷" },
+            { id: "herb_360", name: "葱白" },
+            { id: "herb_407", name: "紫苏梗" },
+            { id: "herb_437", name: "胡荽" },
+            { id: "herb_438", name: "西河柳" },
+            { id: "herb_506", name: "苍耳草" }
         ],
         "发散风热药": [
             { id: "herb_008", name: "薄荷" },
             { id: "herb_009", name: "牛蒡子" },
             { id: "herb_010", name: "菊花" },
             { id: "herb_011", name: "柴胡" },
-            { id: "herb_121", name: "葛根" },
-            { id: "herb_122", name: "升麻" },
-            { id: "herb_123", name: "桑叶" },
-            { id: "herb_165", name: "浮萍" },
-            { id: "herb_166", name: "蔓荆子" },
-            { id: "herb_202", name: "蝉蜕" },
-            { id: "herb_203", name: "淡豆豉" },
-            { id: "herb_362", name: "木贼" },
-            { id: "herb_363", name: "葛花" },
-            { id: "herb_508", name: "大豆黄卷" }
+            { id: "herb_120", name: "葛根" },
+            { id: "herb_121", name: "升麻" },
+            { id: "herb_122", name: "桑叶" },
+            { id: "herb_164", name: "浮萍" },
+            { id: "herb_165", name: "蔓荆子" },
+            { id: "herb_201", name: "蝉蜕" },
+            { id: "herb_202", name: "淡豆豉" },
+            { id: "herb_361", name: "木贼" },
+            { id: "herb_362", name: "葛花" },
+            { id: "herb_507", name: "大豆黄卷" }
         ]
     },
     // 清热药
@@ -10646,25 +10629,25 @@ const herbCategories = {
             { id: "herb_013", name: "知母" },
             { id: "herb_014", name: "栀子" },
             { id: "herb_015", name: "夏枯草" },
-            { id: "herb_125", name: "芦根" },
-            { id: "herb_126", name: "天花粉" },
-            { id: "herb_167", name: "决明子" },
-            { id: "herb_168", name: "青葙子" },
-            { id: "herb_169", name: "谷精草" },
-            { id: "herb_170", name: "密蒙花" },
-            { id: "herb_204", name: "淡竹叶" },
-            { id: "herb_251", name: "竹叶" },
-            { id: "herb_366", name: "寒水石" },
-            { id: "herb_409", name: "鸭跖草" }
+            { id: "herb_124", name: "芦根" },
+            { id: "herb_125", name: "天花粉" },
+            { id: "herb_166", name: "决明子" },
+            { id: "herb_167", name: "青葙子" },
+            { id: "herb_168", name: "谷精草" },
+            { id: "herb_169", name: "密蒙花" },
+            { id: "herb_203", name: "淡竹叶" },
+            { id: "herb_250", name: "竹叶" },
+            { id: "herb_365", name: "寒水石" },
+            { id: "herb_408", name: "鸭跖草" }
         ],
         "清热燥湿药": [
             { id: "herb_016", name: "黄芩" },
             { id: "herb_017", name: "黄连" },
             { id: "herb_018", name: "黄柏" },
-            { id: "herb_131", name: "秦皮" },
-            { id: "herb_171", name: "苦参" },
-            { id: "herb_252", name: "龙胆" },
-            { id: "herb_253", name: "白鲜皮" }
+            { id: "herb_130", name: "秦皮" },
+            { id: "herb_170", name: "苦参" },
+            { id: "herb_251", name: "龙胆" },
+            { id: "herb_252", name: "白鲜皮" }
         ],
         "清热解毒药": [
             { id: "herb_019", name: "金银花" },
@@ -10672,67 +10655,67 @@ const herbCategories = {
             { id: "herb_021", name: "板蓝根" },
             { id: "herb_022", name: "蒲公英" },
             { id: "herb_023", name: "鱼腥草" },
-            { id: "herb_130", name: "白头翁" },
-            { id: "herb_172", name: "山慈菇" },
-            { id: "herb_173", name: "马齿苋" },
-            { id: "herb_174", name: "半边莲" },
-            { id: "herb_175", name: "白花蛇舌草" },
-            { id: "herb_176", name: "贯众" },
-            { id: "herb_205", name: "射干" },
-            { id: "herb_206", name: "山豆根" },
-            { id: "herb_207", name: "马勃" },
-            { id: "herb_208", name: "紫花地丁" },
-            { id: "herb_209", name: "土茯苓" },
-            { id: "herb_254", name: "大青叶" },
-            { id: "herb_255", name: "青黛" },
-            { id: "herb_256", name: "穿心莲" },
-            { id: "herb_257", name: "野菊花" },
-            { id: "herb_258", name: "重楼" },
-            { id: "herb_259", name: "大血藤" },
-            { id: "herb_260", name: "败酱草" },
-            { id: "herb_261", name: "鸦胆子" },
-            { id: "herb_262", name: "白蔹" },
-            { id: "herb_263", name: "四季青" },
-            { id: "herb_367", name: "天葵子" },
-            { id: "herb_410", name: "拳参" },
-            { id: "herb_411", name: "漏芦" },
-            { id: "herb_412", name: "金荞麦" },
-            { id: "herb_413", name: "熊胆" },
-            { id: "herb_414", name: "千里光" },
-            { id: "herb_471", name: "青果" },
-            { id: "herb_472", name: "木蝴蝶" },
-            { id: "herb_473", name: "地锦草" },
-            { id: "herb_474", name: "金果榄" },
-            { id: "herb_475", name: "锦灯笼" },
-            { id: "herb_476", name: "委陵菜" },
-            { id: "herb_477", name: "翻白草" },
-            { id: "herb_478", name: "绿豆" },
-            { id: "herb_509", name: "忍冬藤" },
-            { id: "herb_510", name: "山银花" },
-            { id: "herb_511", name: "墓头回" },
-            { id: "herb_512", name: "北豆根" },
-            { id: "herb_513", name: "西青果" },
-            { id: "herb_514", name: "半枝莲" },
-            { id: "herb_515", name: "猪胆粉" },
-            { id: "herb_516", name: "绿豆衣" },
-            { id: "herb_517", name: "黑豆" }
+            { id: "herb_129", name: "白头翁" },
+            { id: "herb_171", name: "山慈菇" },
+            { id: "herb_172", name: "马齿苋" },
+            { id: "herb_173", name: "半边莲" },
+            { id: "herb_174", name: "白花蛇舌草" },
+            { id: "herb_175", name: "贯众" },
+            { id: "herb_204", name: "射干" },
+            { id: "herb_205", name: "山豆根" },
+            { id: "herb_206", name: "马勃" },
+            { id: "herb_207", name: "紫花地丁" },
+            { id: "herb_208", name: "土茯苓" },
+            { id: "herb_253", name: "大青叶" },
+            { id: "herb_254", name: "青黛" },
+            { id: "herb_255", name: "穿心莲" },
+            { id: "herb_256", name: "野菊花" },
+            { id: "herb_257", name: "重楼" },
+            { id: "herb_258", name: "大血藤" },
+            { id: "herb_259", name: "败酱草" },
+            { id: "herb_260", name: "鸦胆子" },
+            { id: "herb_261", name: "白蔹" },
+            { id: "herb_262", name: "四季青" },
+            { id: "herb_366", name: "天葵子" },
+            { id: "herb_409", name: "拳参" },
+            { id: "herb_410", name: "漏芦" },
+            { id: "herb_411", name: "金荞麦" },
+            { id: "herb_412", name: "熊胆" },
+            { id: "herb_413", name: "千里光" },
+            { id: "herb_470", name: "青果" },
+            { id: "herb_471", name: "木蝴蝶" },
+            { id: "herb_472", name: "地锦草" },
+            { id: "herb_473", name: "金果榄" },
+            { id: "herb_474", name: "锦灯笼" },
+            { id: "herb_475", name: "委陵菜" },
+            { id: "herb_476", name: "翻白草" },
+            { id: "herb_477", name: "绿豆" },
+            { id: "herb_508", name: "忍冬藤" },
+            { id: "herb_509", name: "山银花" },
+            { id: "herb_510", name: "墓头回" },
+            { id: "herb_511", name: "北豆根" },
+            { id: "herb_512", name: "西青果" },
+            { id: "herb_513", name: "半枝莲" },
+            { id: "herb_514", name: "猪胆粉" },
+            { id: "herb_515", name: "绿豆衣" },
+            { id: "herb_516", name: "黑豆" }
         ],
         "清热凉血药": [
             { id: "herb_024", name: "生地黄" },
             { id: "herb_025", name: "玄参" },
             { id: "herb_026", name: "牡丹皮" },
-            { id: "herb_127", name: "赤芍" },
-            { id: "herb_177", name: "紫草" },
-            { id: "herb_264", name: "水牛角" },
-            { id: "herb_518", name: "鲜地黄" },
-            { id: "herb_519", name: "紫草茸" }
+            { id: "herb_126", name: "赤芍" },
+            { id: "herb_176", name: "紫草" },
+            { id: "herb_263", name: "水牛角" },
+            { id: "herb_517", name: "鲜地黄" },
+            { id: "herb_518", name: "紫草茸" }
         ],
         "清虚热药": [
-            { id: "herb_128", name: "青蒿" },
-            { id: "herb_129", name: "地骨皮" },
-            { id: "herb_210", name: "胡黄连" },
-            { id: "herb_265", name: "白薇" },
-            { id: "herb_266", name: "银柴胡" }
+            { id: "herb_127", name: "青蒿" },
+            { id: "herb_128", name: "地骨皮" },
+            { id: "herb_209", name: "胡黄连" },
+            { id: "herb_264", name: "白薇" },
+            { id: "herb_265", name: "银柴胡" }
         ]
     },
     // 泻下药
@@ -10740,24 +10723,24 @@ const herbCategories = {
         "攻下药": [
             { id: "herb_027", name: "大黄" },
             { id: "herb_028", name: "芒硝" },
-            { id: "herb_211", name: "番泻叶" },
-            { id: "herb_415", name: "芦荟" }
+            { id: "herb_210", name: "番泻叶" },
+            { id: "herb_414", name: "芦荟" }
         ],
         "润下药": [
             { id: "herb_029", name: "火麻仁" },
             { id: "herb_030", name: "郁李仁" },
-            { id: "herb_406", name: "松子仁" }
+            { id: "herb_405", name: "松子仁" }
         ],
         "峻下逐水药": [
             { id: "herb_031", name: "甘遂" },
-            { id: "herb_212", name: "牵牛子" },
-            { id: "herb_335", name: "京大戟" },
-            { id: "herb_336", name: "芫花" },
-            { id: "herb_337", name: "商陆" },
-            { id: "herb_338", name: "巴豆" },
-            { id: "herb_364", name: "千金子" },
-            { id: "herb_365", name: "红大戟" },
-            { id: "herb_520", name: "狼毒" }
+            { id: "herb_211", name: "牵牛子" },
+            { id: "herb_334", name: "京大戟" },
+            { id: "herb_335", name: "芫花" },
+            { id: "herb_336", name: "商陆" },
+            { id: "herb_337", name: "巴豆" },
+            { id: "herb_363", name: "千金子" },
+            { id: "herb_364", name: "红大戟" },
+            { id: "herb_519", name: "狼毒" }
         ]
     },
     // 祛风湿药
@@ -10765,45 +10748,45 @@ const herbCategories = {
         "祛风寒湿药": [
             { id: "herb_032", name: "独活" },
             { id: "herb_033", name: "威灵仙" },
-            { id: "herb_132", name: "木瓜" },
-            { id: "herb_178", name: "海风藤" },
-            { id: "herb_301", name: "川乌" },
-            { id: "herb_302", name: "草乌" },
-            { id: "herb_303", name: "蕲蛇" },
-            { id: "herb_304", name: "乌梢蛇" },
-            { id: "herb_416", name: "蚕沙" },
-            { id: "herb_455", name: "伸筋草" },
-            { id: "herb_493", name: "徐长卿" },
-            { id: "herb_494", name: "油松节" },
-            { id: "herb_495", name: "丁公藤" },
-            { id: "herb_496", name: "昆明山海棠" },
-            { id: "herb_497", name: "路路通" },
-            { id: "herb_521", name: "金钱白花蛇" },
-            { id: "herb_522", name: "蛇蜕" },
-            { id: "herb_523", name: "松花粉" }
+            { id: "herb_131", name: "木瓜" },
+            { id: "herb_177", name: "海风藤" },
+            { id: "herb_300", name: "川乌" },
+            { id: "herb_301", name: "草乌" },
+            { id: "herb_302", name: "蕲蛇" },
+            { id: "herb_303", name: "乌梢蛇" },
+            { id: "herb_415", name: "蚕沙" },
+            { id: "herb_454", name: "伸筋草" },
+            { id: "herb_492", name: "徐长卿" },
+            { id: "herb_493", name: "油松节" },
+            { id: "herb_494", name: "丁公藤" },
+            { id: "herb_495", name: "昆明山海棠" },
+            { id: "herb_496", name: "路路通" },
+            { id: "herb_520", name: "金钱白花蛇" },
+            { id: "herb_521", name: "蛇蜕" },
+            { id: "herb_522", name: "松花粉" }
         ],
         "祛风湿热药": [
             { id: "herb_034", name: "秦艽" },
             { id: "herb_035", name: "防己" },
-            { id: "herb_213", name: "桑枝" },
-            { id: "herb_214", name: "络石藤" },
-            { id: "herb_305", name: "豨莶草" },
-            { id: "herb_306", name: "雷公藤" },
-            { id: "herb_417", name: "臭梧桐" },
-            { id: "herb_418", name: "海桐皮" },
-            { id: "herb_456", name: "青风藤" },
-            { id: "herb_457", name: "老鹳草" },
-            { id: "herb_458", name: "丝瓜络" },
-            { id: "herb_459", name: "穿山龙" }
+            { id: "herb_212", name: "桑枝" },
+            { id: "herb_213", name: "络石藤" },
+            { id: "herb_304", name: "豨莶草" },
+            { id: "herb_305", name: "雷公藤" },
+            { id: "herb_416", name: "臭梧桐" },
+            { id: "herb_417", name: "海桐皮" },
+            { id: "herb_455", name: "青风藤" },
+            { id: "herb_456", name: "老鹳草" },
+            { id: "herb_457", name: "丝瓜络" },
+            { id: "herb_458", name: "穿山龙" }
         ],
         "祛风湿强筋骨药": [
             { id: "herb_036", name: "桑寄生" },
-            { id: "herb_215", name: "五加皮" },
-            { id: "herb_216", name: "狗脊" },
-            { id: "herb_419", name: "千年健" },
-            { id: "herb_420", name: "鹿衔草" },
-            { id: "herb_498", name: "雪莲花" },
-            { id: "herb_499", name: "天山雪莲" }
+            { id: "herb_214", name: "五加皮" },
+            { id: "herb_215", name: "狗脊" },
+            { id: "herb_418", name: "千年健" },
+            { id: "herb_419", name: "鹿衔草" },
+            { id: "herb_497", name: "雪莲花" },
+            { id: "herb_498", name: "天山雪莲" }
         ]
     },
     // 化湿药
@@ -10813,14 +10796,14 @@ const herbCategories = {
             { id: "herb_038", name: "苍术" },
             { id: "herb_039", name: "厚朴" },
             { id: "herb_040", name: "砂仁" },
-            { id: "herb_133", name: "佩兰" },
-            { id: "herb_179", name: "草果" },
-            { id: "herb_217", name: "豆蔻" },
-            { id: "herb_404", name: "草豆蔻" },
-            { id: "herb_421", name: "扁豆花" },
-            { id: "herb_524", name: "厚朴花" },
-            { id: "herb_525", name: "砂仁壳" },
-            { id: "herb_526", name: "豆蔻壳" }
+            { id: "herb_132", name: "佩兰" },
+            { id: "herb_178", name: "草果" },
+            { id: "herb_216", name: "豆蔻" },
+            { id: "herb_403", name: "草豆蔻" },
+            { id: "herb_420", name: "扁豆花" },
+            { id: "herb_523", name: "厚朴花" },
+            { id: "herb_524", name: "砂仁壳" },
+            { id: "herb_525", name: "豆蔻壳" }
         ]
     },
     // 利水渗湿药
@@ -10829,47 +10812,47 @@ const herbCategories = {
             { id: "herb_041", name: "茯苓" },
             { id: "herb_042", name: "猪苓" },
             { id: "herb_043", name: "泽泻" },
-            { id: "herb_134", name: "薏苡仁" },
-            { id: "herb_180", name: "茯苓皮" },
-            { id: "herb_352", name: "冬瓜皮" },
-            { id: "herb_353", name: "玉米须" },
-            { id: "herb_368", name: "冬瓜子" },
-            { id: "herb_369", name: "赤小豆" },
-            { id: "herb_370", name: "椒目" },
-            { id: "herb_422", name: "葫芦" },
-            { id: "herb_423", name: "香加皮" },
-            { id: "herb_424", name: "枳椇子" },
-            { id: "herb_427", name: "泽漆" }
+            { id: "herb_133", name: "薏苡仁" },
+            { id: "herb_179", name: "茯苓皮" },
+            { id: "herb_351", name: "冬瓜皮" },
+            { id: "herb_352", name: "玉米须" },
+            { id: "herb_367", name: "冬瓜子" },
+            { id: "herb_368", name: "赤小豆" },
+            { id: "herb_369", name: "椒目" },
+            { id: "herb_421", name: "葫芦" },
+            { id: "herb_422", name: "香加皮" },
+            { id: "herb_423", name: "枳椇子" },
+            { id: "herb_426", name: "泽漆" }
         ],
         "利尿通淋药": [
             { id: "herb_044", name: "车前子" },
             { id: "herb_045", name: "滑石" },
-            { id: "herb_135", name: "瞿麦" },
-            { id: "herb_181", name: "海金沙" },
-            { id: "herb_182", name: "地肤子" },
-            { id: "herb_183", name: "萆薢" },
-            { id: "herb_218", name: "萹蓄" },
-            { id: "herb_307", name: "木通" },
-            { id: "herb_308", name: "通草" },
-            { id: "herb_309", name: "石韦" },
-            { id: "herb_425", name: "冬葵子" },
-            { id: "herb_426", name: "灯心草" },
-            { id: "herb_527", name: "车前草" },
-            { id: "herb_528", name: "川木通" },
-            { id: "herb_529", name: "海金沙藤" }
+            { id: "herb_134", name: "瞿麦" },
+            { id: "herb_180", name: "海金沙" },
+            { id: "herb_181", name: "地肤子" },
+            { id: "herb_182", name: "萆薢" },
+            { id: "herb_217", name: "萹蓄" },
+            { id: "herb_306", name: "木通" },
+            { id: "herb_307", name: "通草" },
+            { id: "herb_308", name: "石韦" },
+            { id: "herb_424", name: "冬葵子" },
+            { id: "herb_425", name: "灯心草" },
+            { id: "herb_526", name: "车前草" },
+            { id: "herb_527", name: "川木通" },
+            { id: "herb_528", name: "海金沙藤" }
         ],
         "利湿退黄药": [
             { id: "herb_046", name: "茵陈" },
             { id: "herb_047", name: "金钱草" },
-            { id: "herb_220", name: "虎杖" },
-            { id: "herb_310", name: "垂盆草" },
-            { id: "herb_479", name: "鸡骨草" },
-            { id: "herb_480", name: "珍珠草" },
-            { id: "herb_500", name: "地耳草" },
-            { id: "herb_530", name: "连钱草" },
-            { id: "herb_531", name: "广金钱草" },
-            { id: "herb_532", name: "江西金钱草" },
-            { id: "herb_533", name: "小金钱草" }
+            { id: "herb_219", name: "虎杖" },
+            { id: "herb_309", name: "垂盆草" },
+            { id: "herb_478", name: "鸡骨草" },
+            { id: "herb_479", name: "珍珠草" },
+            { id: "herb_499", name: "地耳草" },
+            { id: "herb_529", name: "连钱草" },
+            { id: "herb_530", name: "广金钱草" },
+            { id: "herb_531", name: "江西金钱草" },
+            { id: "herb_532", name: "小金钱草" }
         ]
     },
     // 温里药
@@ -10878,17 +10861,17 @@ const herbCategories = {
             { id: "herb_048", name: "附子" },
             { id: "herb_049", name: "干姜" },
             { id: "herb_050", name: "肉桂" },
-            { id: "herb_136", name: "吴茱萸" },
-            { id: "herb_184", name: "小茴香" },
-            { id: "herb_185", name: "花椒" },
-            { id: "herb_221", name: "丁香" },
-            { id: "herb_222", name: "高良姜" },
-            { id: "herb_311", name: "荜茇" },
-            { id: "herb_428", name: "胡椒" },
-            { id: "herb_429", name: "荜澄茄" },
-            { id: "herb_430", name: "红豆蔻" },
-            { id: "herb_534", name: "八角茴香" },
-            { id: "herb_535", name: "母丁香" }
+            { id: "herb_135", name: "吴茱萸" },
+            { id: "herb_183", name: "小茴香" },
+            { id: "herb_184", name: "花椒" },
+            { id: "herb_220", name: "丁香" },
+            { id: "herb_221", name: "高良姜" },
+            { id: "herb_310", name: "荜茇" },
+            { id: "herb_427", name: "胡椒" },
+            { id: "herb_428", name: "荜澄茄" },
+            { id: "herb_429", name: "红豆蔻" },
+            { id: "herb_533", name: "八角茴香" },
+            { id: "herb_534", name: "母丁香" }
         ]
     },
     // 理气药
@@ -10899,30 +10882,30 @@ const herbCategories = {
             { id: "herb_053", name: "木香" },
             { id: "herb_054", name: "香附" },
             { id: "herb_055", name: "薤白" },
-            { id: "herb_137", name: "川楝子" },
-            { id: "herb_186", name: "枳壳" },
-            { id: "herb_187", name: "乌药" },
-            { id: "herb_223", name: "青皮" },
-            { id: "herb_224", name: "佛手" },
-            { id: "herb_225", name: "柿蒂" },
-            { id: "herb_312", name: "沉香" },
-            { id: "herb_313", name: "荔枝核" },
-            { id: "herb_314", name: "玫瑰花" },
-            { id: "herb_315", name: "大腹皮" },
-            { id: "herb_316", name: "九香虫" },
-            { id: "herb_358", name: "檀香" },
-            { id: "herb_371", name: "橘核" },
-            { id: "herb_372", name: "橘红" },
-            { id: "herb_373", name: "青木香" },
-            { id: "herb_431", name: "香橼" },
-            { id: "herb_432", name: "绿萼梅" },
-            { id: "herb_433", name: "娑罗子" },
-            { id: "herb_434", name: "甘松" },
-            { id: "herb_435", name: "刀豆" },
-            { id: "herb_436", name: "化橘红" },
-            { id: "herb_536", name: "橘络" },
-            { id: "herb_537", name: "橘叶" },
-            { id: "herb_538", name: "土木香" }
+            { id: "herb_136", name: "川楝子" },
+            { id: "herb_185", name: "枳壳" },
+            { id: "herb_186", name: "乌药" },
+            { id: "herb_222", name: "青皮" },
+            { id: "herb_223", name: "佛手" },
+            { id: "herb_224", name: "柿蒂" },
+            { id: "herb_311", name: "沉香" },
+            { id: "herb_312", name: "荔枝核" },
+            { id: "herb_313", name: "玫瑰花" },
+            { id: "herb_314", name: "大腹皮" },
+            { id: "herb_315", name: "九香虫" },
+            { id: "herb_357", name: "檀香" },
+            { id: "herb_370", name: "橘核" },
+            { id: "herb_371", name: "橘红" },
+            { id: "herb_372", name: "青木香" },
+            { id: "herb_430", name: "香橼" },
+            { id: "herb_431", name: "绿萼梅" },
+            { id: "herb_432", name: "娑罗子" },
+            { id: "herb_433", name: "甘松" },
+            { id: "herb_434", name: "刀豆" },
+            { id: "herb_435", name: "化橘红" },
+            { id: "herb_535", name: "橘络" },
+            { id: "herb_536", name: "橘叶" },
+            { id: "herb_537", name: "土木香" }
         ]
     },
     // 消食药
@@ -10931,28 +10914,28 @@ const herbCategories = {
             { id: "herb_056", name: "山楂" },
             { id: "herb_057", name: "神曲" },
             { id: "herb_058", name: "麦芽" },
-            { id: "herb_138", name: "莱菔子" },
-            { id: "herb_188", name: "鸡内金" },
-            { id: "herb_226", name: "谷芽" },
-            { id: "herb_359", name: "稻芽" },
-            { id: "herb_437", name: "阿魏" },
-            { id: "herb_481", name: "鸡矢藤" },
-            { id: "herb_482", name: "隔山消" },
-            { id: "herb_539", name: "建神曲" }
+            { id: "herb_137", name: "莱菔子" },
+            { id: "herb_187", name: "鸡内金" },
+            { id: "herb_225", name: "谷芽" },
+            { id: "herb_358", name: "稻芽" },
+            { id: "herb_436", name: "阿魏" },
+            { id: "herb_480", name: "鸡矢藤" },
+            { id: "herb_481", name: "隔山消" },
+            { id: "herb_538", name: "建神曲" }
         ]
     },
     // 驱虫药
     "驱虫药": {
         "驱虫药": [
             { id: "herb_059", name: "使君子" },
-            { id: "herb_227", name: "槟榔" },
-            { id: "herb_317", name: "苦楝皮" },
-            { id: "herb_318", name: "南瓜子" },
-            { id: "herb_319", name: "鹤草芽" },
-            { id: "herb_320", name: "雷丸" },
-            { id: "herb_398", name: "鹤虱" },
-            { id: "herb_399", name: "芜荑" },
-            { id: "herb_440", name: "榧子" }
+            { id: "herb_226", name: "槟榔" },
+            { id: "herb_316", name: "苦楝皮" },
+            { id: "herb_317", name: "南瓜子" },
+            { id: "herb_318", name: "鹤草芽" },
+            { id: "herb_319", name: "雷丸" },
+            { id: "herb_397", name: "鹤虱" },
+            { id: "herb_398", name: "芜荑" },
+            { id: "herb_439", name: "榧子" }
         ]
     },
     // 止血药
@@ -10961,38 +10944,38 @@ const herbCategories = {
             { id: "herb_060", name: "小蓟" },
             { id: "herb_061", name: "地榆" },
             { id: "herb_062", name: "白茅根" },
-            { id: "herb_139", name: "大蓟" },
-            { id: "herb_229", name: "槐花" },
-            { id: "herb_230", name: "侧柏叶" },
-            { id: "herb_382", name: "荷叶" },
-            { id: "herb_464", name: "苎麻根" },
-            { id: "herb_483", name: "羊蹄" },
-            { id: "herb_540", name: "槐角" }
+            { id: "herb_138", name: "大蓟" },
+            { id: "herb_228", name: "槐花" },
+            { id: "herb_229", name: "侧柏叶" },
+            { id: "herb_381", name: "荷叶" },
+            { id: "herb_463", name: "苎麻根" },
+            { id: "herb_482", name: "羊蹄" },
+            { id: "herb_539", name: "槐角" }
         ],
         "化瘀止血药": [
             { id: "herb_063", name: "三七" },
             { id: "herb_064", name: "蒲黄" },
-            { id: "herb_189", name: "茜草" },
-            { id: "herb_322", name: "降香" },
-            { id: "herb_463", name: "花蕊石" },
-            { id: "herb_541", name: "菊叶三七" },
-            { id: "herb_542", name: "景天三七" }
+            { id: "herb_188", name: "茜草" },
+            { id: "herb_321", name: "降香" },
+            { id: "herb_462", name: "花蕊石" },
+            { id: "herb_540", name: "菊叶三七" },
+            { id: "herb_541", name: "景天三七" }
         ],
         "收敛止血药": [
             { id: "herb_065", name: "白及" },
             { id: "herb_066", name: "仙鹤草" },
-            { id: "herb_323", name: "紫珠叶" },
-            { id: "herb_324", name: "藕节" },
-            { id: "herb_356", name: "血余炭" },
-            { id: "herb_379", name: "棕榈炭" },
-            { id: "herb_380", name: "百草霜" },
-            { id: "herb_543", name: "大叶紫珠" }
+            { id: "herb_322", name: "紫珠叶" },
+            { id: "herb_323", name: "藕节" },
+            { id: "herb_355", name: "血余炭" },
+            { id: "herb_378", name: "棕榈炭" },
+            { id: "herb_379", name: "百草霜" },
+            { id: "herb_542", name: "大叶紫珠" }
         ],
         "温经止血药": [
             { id: "herb_067", name: "艾叶" },
-            { id: "herb_321", name: "炮姜" },
-            { id: "herb_381", name: "伏龙肝" },
-            { id: "herb_462", name: "灶心土" }
+            { id: "herb_320", name: "炮姜" },
+            { id: "herb_380", name: "伏龙肝" },
+            { id: "herb_461", name: "灶心土" }
         ]
     },
     // 活血化瘀药
@@ -11001,51 +10984,51 @@ const herbCategories = {
             { id: "herb_068", name: "川芎" },
             { id: "herb_069", name: "延胡索" },
             { id: "herb_070", name: "郁金" },
-            { id: "herb_191", name: "乳香" },
-            { id: "herb_192", name: "没药" },
-            { id: "herb_193", name: "五灵脂" },
-            { id: "herb_289", name: "姜黄" },
-            { id: "herb_378", name: "枫香脂" },
-            { id: "herb_485", name: "夏天无" },
-            { id: "herb_544", name: "片姜黄" }
+            { id: "herb_190", name: "乳香" },
+            { id: "herb_191", name: "没药" },
+            { id: "herb_192", name: "五灵脂" },
+            { id: "herb_288", name: "姜黄" },
+            { id: "herb_377", name: "枫香脂" },
+            { id: "herb_484", name: "夏天无" },
+            { id: "herb_543", name: "片姜黄" }
         ],
         "活血调经药": [
             { id: "herb_071", name: "丹参" },
             { id: "herb_072", name: "红花" },
             { id: "herb_073", name: "桃仁" },
             { id: "herb_074", name: "益母草" },
-            { id: "herb_140", name: "牛膝" },
-            { id: "herb_141", name: "鸡血藤" },
-            { id: "herb_194", name: "泽兰" },
-            { id: "herb_232", name: "王不留行" },
-            { id: "herb_355", name: "凌霄花" },
-            { id: "herb_377", name: "川牛膝" },
-            { id: "herb_461", name: "凤仙花" },
-            { id: "herb_484", name: "月季花" },
-            { id: "herb_545", name: "西红花" },
-            { id: "herb_546", name: "茺蔚子" },
-            { id: "herb_547", name: "土牛膝" }
+            { id: "herb_139", name: "牛膝" },
+            { id: "herb_140", name: "鸡血藤" },
+            { id: "herb_193", name: "泽兰" },
+            { id: "herb_231", name: "王不留行" },
+            { id: "herb_354", name: "凌霄花" },
+            { id: "herb_376", name: "川牛膝" },
+            { id: "herb_460", name: "凤仙花" },
+            { id: "herb_483", name: "月季花" },
+            { id: "herb_544", name: "西红花" },
+            { id: "herb_545", name: "茺蔚子" },
+            { id: "herb_546", name: "土牛膝" }
         ],
         "活血疗伤药": [
             { id: "herb_075", name: "骨碎补" },
-            { id: "herb_233", name: "苏木" },
-            { id: "herb_290", name: "土鳖虫" },
-            { id: "herb_291", name: "自然铜" },
-            { id: "herb_292", name: "马钱子" },
-            { id: "herb_293", name: "血竭" },
-            { id: "herb_294", name: "刘寄奴" },
-            { id: "herb_354", name: "穿山甲" },
-            { id: "herb_548", name: "北刘寄奴" }
+            { id: "herb_232", name: "苏木" },
+            { id: "herb_289", name: "土鳖虫" },
+            { id: "herb_290", name: "自然铜" },
+            { id: "herb_291", name: "马钱子" },
+            { id: "herb_292", name: "血竭" },
+            { id: "herb_293", name: "刘寄奴" },
+            { id: "herb_353", name: "穿山甲" },
+            { id: "herb_547", name: "北刘寄奴" }
         ],
         "破血消癥药": [
             { id: "herb_076", name: "莪术" },
-            { id: "herb_195", name: "三棱" },
-            { id: "herb_295", name: "水蛭" },
-            { id: "herb_296", name: "斑蝥" },
-            { id: "herb_374", name: "干漆" },
-            { id: "herb_375", name: "虻虫" },
-            { id: "herb_376", name: "蛴螬" },
-            { id: "herb_460", name: "水红花子" }
+            { id: "herb_194", name: "三棱" },
+            { id: "herb_294", name: "水蛭" },
+            { id: "herb_295", name: "斑蝥" },
+            { id: "herb_373", name: "干漆" },
+            { id: "herb_374", name: "虻虫" },
+            { id: "herb_375", name: "蛴螬" },
+            { id: "herb_459", name: "水红花子" }
         ]
     },
     // 化痰止咳平喘药
@@ -11053,299 +11036,298 @@ const herbCategories = {
         "温化寒痰药": [
             { id: "herb_077", name: "半夏" },
             { id: "herb_078", name: "天南星" },
-            { id: "herb_079", name: "白芥子" },
-            { id: "herb_143", name: "旋覆花" },
-            { id: "herb_196", name: "白前" },
-            { id: "herb_197", name: "前胡" },
-            { id: "herb_237", name: "白附子" },
-            { id: "herb_348", name: "皂荚" },
-            { id: "herb_401", name: "皂角刺" },
-            { id: "herb_449", name: "芥子" },
-            { id: "herb_549", name: "水半夏" },
-            { id: "herb_550", name: "关白附" },
-            { id: "herb_551", name: "金沸草" }
+            { id: "herb_142", name: "旋覆花" },
+            { id: "herb_195", name: "白前" },
+            { id: "herb_196", name: "前胡" },
+            { id: "herb_236", name: "白附子" },
+            { id: "herb_347", name: "皂荚" },
+            { id: "herb_400", name: "皂角刺" },
+            { id: "herb_448", name: "芥子" },
+            { id: "herb_548", name: "水半夏" },
+            { id: "herb_549", name: "关白附" },
+            { id: "herb_550", name: "金沸草" }
         ],
         "清化热痰药": [
-            { id: "herb_080", name: "川贝母" },
-            { id: "herb_081", name: "瓜蒌" },
-            { id: "herb_082", name: "竹茹" },
-            { id: "herb_142", name: "桔梗" },
-            { id: "herb_146", name: "浙贝母" },
-            { id: "herb_198", name: "海蛤壳" },
-            { id: "herb_199", name: "昆布" },
-            { id: "herb_234", name: "胖大海" },
-            { id: "herb_297", name: "海藻" },
-            { id: "herb_349", name: "竹沥" },
-            { id: "herb_350", name: "天竺黄" },
-            { id: "herb_351", name: "黄药子" },
-            { id: "herb_383", name: "海浮石" },
-            { id: "herb_384", name: "礞石" },
-            { id: "herb_405", name: "梨皮" },
-            { id: "herb_448", name: "瓦楞子" },
-            { id: "herb_453", name: "猫爪草" },
-            { id: "herb_552", name: "平贝母" },
-            { id: "herb_553", name: "伊贝母" },
-            { id: "herb_554", name: "湖北贝母" },
-            { id: "herb_555", name: "土贝母" },
-            { id: "herb_556", name: "瓜蒌皮" },
-            { id: "herb_557", name: "瓜蒌子" }
+            { id: "herb_079", name: "川贝母" },
+            { id: "herb_080", name: "瓜蒌" },
+            { id: "herb_081", name: "竹茹" },
+            { id: "herb_141", name: "桔梗" },
+            { id: "herb_145", name: "浙贝母" },
+            { id: "herb_197", name: "海蛤壳" },
+            { id: "herb_198", name: "昆布" },
+            { id: "herb_233", name: "胖大海" },
+            { id: "herb_296", name: "海藻" },
+            { id: "herb_348", name: "竹沥" },
+            { id: "herb_349", name: "天竺黄" },
+            { id: "herb_350", name: "黄药子" },
+            { id: "herb_382", name: "海浮石" },
+            { id: "herb_383", name: "礞石" },
+            { id: "herb_404", name: "梨皮" },
+            { id: "herb_447", name: "瓦楞子" },
+            { id: "herb_452", name: "猫爪草" },
+            { id: "herb_551", name: "平贝母" },
+            { id: "herb_552", name: "伊贝母" },
+            { id: "herb_553", name: "湖北贝母" },
+            { id: "herb_554", name: "土贝母" },
+            { id: "herb_555", name: "瓜蒌皮" },
+            { id: "herb_556", name: "瓜蒌子" }
         ],
         "止咳平喘药": [
-            { id: "herb_083", name: "苦杏仁" },
-            { id: "herb_084", name: "百部" },
-            { id: "herb_085", name: "桑白皮" },
-            { id: "herb_144", name: "紫菀" },
-            { id: "herb_145", name: "款冬花" },
-            { id: "herb_235", name: "紫苏子" },
-            { id: "herb_236", name: "枇杷叶" },
-            { id: "herb_298", name: "葶苈子" },
-            { id: "herb_299", name: "白果" },
-            { id: "herb_300", name: "马兜铃" },
-            { id: "herb_450", name: "矮地茶" },
-            { id: "herb_451", name: "洋金花" },
-            { id: "herb_452", name: "罗汉果" },
-            { id: "herb_454", name: "青天葵" },
-            { id: "herb_558", name: "甜杏仁" },
-            { id: "herb_559", name: "天仙藤" },
-            { id: "herb_560", name: "银杏叶" }
+            { id: "herb_082", name: "苦杏仁" },
+            { id: "herb_083", name: "百部" },
+            { id: "herb_084", name: "桑白皮" },
+            { id: "herb_143", name: "紫菀" },
+            { id: "herb_144", name: "款冬花" },
+            { id: "herb_234", name: "紫苏子" },
+            { id: "herb_235", name: "枇杷叶" },
+            { id: "herb_297", name: "葶苈子" },
+            { id: "herb_298", name: "白果" },
+            { id: "herb_299", name: "马兜铃" },
+            { id: "herb_449", name: "矮地茶" },
+            { id: "herb_450", name: "洋金花" },
+            { id: "herb_451", name: "罗汉果" },
+            { id: "herb_453", name: "青天葵" },
+            { id: "herb_557", name: "甜杏仁" },
+            { id: "herb_558", name: "天仙藤" },
+            { id: "herb_559", name: "银杏叶" }
         ]
     },
     // 安神药
     "安神药": {
         "重镇安神药": [
-            { id: "herb_086", name: "朱砂" },
-            { id: "herb_087", name: "龙骨" },
-            { id: "herb_238", name: "磁石" },
-            { id: "herb_325", name: "琥珀" },
-            { id: "herb_386", name: "龙齿" },
-            { id: "herb_441", name: "紫石英" }
+            { id: "herb_085", name: "朱砂" },
+            { id: "herb_086", name: "龙骨" },
+            { id: "herb_237", name: "磁石" },
+            { id: "herb_324", name: "琥珀" },
+            { id: "herb_385", name: "龙齿" },
+            { id: "herb_440", name: "紫石英" }
         ],
         "养心安神药": [
-            { id: "herb_088", name: "酸枣仁" },
-            { id: "herb_089", name: "远志" },
-            { id: "herb_090", name: "合欢皮" },
-            { id: "herb_147", name: "柏子仁" },
-            { id: "herb_200", name: "首乌藤" },
-            { id: "herb_239", name: "灵芝" },
-            { id: "herb_385", name: "茯神" },
-            { id: "herb_442", name: "合欢花" },
-            { id: "herb_443", name: "缬草" }
+            { id: "herb_087", name: "酸枣仁" },
+            { id: "herb_088", name: "远志" },
+            { id: "herb_089", name: "合欢皮" },
+            { id: "herb_146", name: "柏子仁" },
+            { id: "herb_199", name: "首乌藤" },
+            { id: "herb_238", name: "灵芝" },
+            { id: "herb_384", name: "茯神" },
+            { id: "herb_441", name: "合欢花" },
+            { id: "herb_442", name: "缬草" }
         ]
     },
     // 平肝息风药
     "平肝息风药": {
         "平抑肝阳药": [
-            { id: "herb_091", name: "石决明" },
-            { id: "herb_092", name: "牡蛎" },
-            { id: "herb_093", name: "代赭石" },
-            { id: "herb_240", name: "珍珠母" },
-            { id: "herb_241", name: "刺蒺藜" },
-            { id: "herb_403", name: "玳瑁" },
-            { id: "herb_444", name: "生铁落" },
-            { id: "herb_445", name: "赭石" },
-            { id: "herb_446", name: "罗布麻叶" },
-            { id: "herb_447", name: "紫贝齿" }
+            { id: "herb_090", name: "石决明" },
+            { id: "herb_091", name: "牡蛎" },
+            { id: "herb_092", name: "代赭石" },
+            { id: "herb_239", name: "珍珠母" },
+            { id: "herb_240", name: "刺蒺藜" },
+            { id: "herb_402", name: "玳瑁" },
+            { id: "herb_443", name: "生铁落" },
+            { id: "herb_444", name: "赭石" },
+            { id: "herb_445", name: "罗布麻叶" },
+            { id: "herb_446", name: "紫贝齿" }
         ],
         "息风止痉药": [
-            { id: "herb_094", name: "天麻" },
-            { id: "herb_095", name: "钩藤" },
-            { id: "herb_096", name: "全蝎" },
-            { id: "herb_148", name: "僵蚕" },
-            { id: "herb_149", name: "地龙" },
-            { id: "herb_242", name: "蜈蚣" },
-            { id: "herb_326", name: "羚羊角" },
-            { id: "herb_327", name: "牛黄" },
-            { id: "herb_328", name: "珍珠" },
-            { id: "herb_561", name: "山羊角" },
-            { id: "herb_562", name: "体外培育牛黄" },
-            { id: "herb_563", name: "人工牛黄" },
-            { id: "herb_564", name: "蜜环菌" },
-            { id: "herb_565", name: "僵蛹" },
-            { id: "herb_566", name: "雄蚕蛾" }
+            { id: "herb_093", name: "天麻" },
+            { id: "herb_094", name: "钩藤" },
+            { id: "herb_095", name: "全蝎" },
+            { id: "herb_147", name: "僵蚕" },
+            { id: "herb_148", name: "地龙" },
+            { id: "herb_241", name: "蜈蚣" },
+            { id: "herb_325", name: "羚羊角" },
+            { id: "herb_326", name: "牛黄" },
+            { id: "herb_327", name: "珍珠" },
+            { id: "herb_560", name: "山羊角" },
+            { id: "herb_561", name: "体外培育牛黄" },
+            { id: "herb_562", name: "人工牛黄" },
+            { id: "herb_563", name: "蜜环菌" },
+            { id: "herb_564", name: "僵蛹" },
+            { id: "herb_565", name: "雄蚕蛾" }
         ]
     },
     // 开窍药
     "开窍药": {
         "开窍药": [
-            { id: "herb_097", name: "麝香" },
-            { id: "herb_098", name: "冰片" },
-            { id: "herb_150", name: "石菖蒲" },
-            { id: "herb_243", name: "苏合香" },
-            { id: "herb_387", name: "安息香" },
-            { id: "herb_567", name: "人工麝香" },
-            { id: "herb_568", name: "九节菖蒲" }
+            { id: "herb_096", name: "麝香" },
+            { id: "herb_097", name: "冰片" },
+            { id: "herb_149", name: "石菖蒲" },
+            { id: "herb_242", name: "苏合香" },
+            { id: "herb_386", name: "安息香" },
+            { id: "herb_566", name: "人工麝香" },
+            { id: "herb_567", name: "九节菖蒲" }
         ]
     },
     // 补虚药
     "补虚药": {
         "补气药": [
-            { id: "herb_099", name: "人参" },
-            { id: "herb_100", name: "黄芪" },
-            { id: "herb_101", name: "白术" },
-            { id: "herb_102", name: "甘草" },
-            { id: "herb_151", name: "山药" },
-            { id: "herb_152", name: "白扁豆" },
-            { id: "herb_244", name: "党参" },
-            { id: "herb_245", name: "西洋参" },
-            { id: "herb_246", name: "大枣" },
-            { id: "herb_273", name: "太子参" },
-            { id: "herb_347", name: "蜂蜜" },
-            { id: "herb_388", name: "饴糖" },
-            { id: "herb_389", name: "粳米" },
-            { id: "herb_407", name: "糯米" },
-            { id: "herb_467", name: "刺五加" },
-            { id: "herb_468", name: "绞股蓝" },
-            { id: "herb_469", name: "红景天" },
-            { id: "herb_486", name: "沙棘" },
-            { id: "herb_488", name: "明党参" },
-            { id: "herb_569", name: "人参叶" },
-            { id: "herb_570", name: "红芪" },
-            { id: "herb_571", name: "扁豆衣" },
-            { id: "herb_572", name: "蜂胶" }
+            { id: "herb_098", name: "人参" },
+            { id: "herb_099", name: "黄芪" },
+            { id: "herb_100", name: "白术" },
+            { id: "herb_101", name: "甘草" },
+            { id: "herb_150", name: "山药" },
+            { id: "herb_151", name: "白扁豆" },
+            { id: "herb_243", name: "党参" },
+            { id: "herb_244", name: "西洋参" },
+            { id: "herb_245", name: "大枣" },
+            { id: "herb_272", name: "太子参" },
+            { id: "herb_346", name: "蜂蜜" },
+            { id: "herb_387", name: "饴糖" },
+            { id: "herb_388", name: "粳米" },
+            { id: "herb_406", name: "糯米" },
+            { id: "herb_466", name: "刺五加" },
+            { id: "herb_467", name: "绞股蓝" },
+            { id: "herb_468", name: "红景天" },
+            { id: "herb_485", name: "沙棘" },
+            { id: "herb_487", name: "明党参" },
+            { id: "herb_568", name: "人参叶" },
+            { id: "herb_569", name: "红芪" },
+            { id: "herb_570", name: "扁豆衣" },
+            { id: "herb_571", name: "蜂胶" }
         ],
         "补血药": [
-            { id: "herb_103", name: "当归" },
-            { id: "herb_104", name: "熟地黄" },
-            { id: "herb_105", name: "白芍" },
-            { id: "herb_153", name: "龙眼肉" },
-            { id: "herb_154", name: "阿胶" },
-            { id: "herb_155", name: "何首乌" }
+            { id: "herb_102", name: "当归" },
+            { id: "herb_103", name: "熟地黄" },
+            { id: "herb_104", name: "白芍" },
+            { id: "herb_152", name: "龙眼肉" },
+            { id: "herb_153", name: "阿胶" },
+            { id: "herb_154", name: "何首乌" }
         ],
         "补阴药": [
-            { id: "herb_106", name: "北沙参" },
-            { id: "herb_107", name: "麦冬" },
-            { id: "herb_108", name: "枸杞子" },
-            { id: "herb_109", name: "龟甲" },
-            { id: "herb_156", name: "女贞子" },
-            { id: "herb_157", name: "墨旱莲" },
-            { id: "herb_158", name: "百合" },
-            { id: "herb_159", name: "鳖甲" },
-            { id: "herb_278", name: "天冬" },
-            { id: "herb_279", name: "玉竹" },
-            { id: "herb_280", name: "黄精" },
-            { id: "herb_281", name: "黑芝麻" },
-            { id: "herb_340", name: "石斛" },
-            { id: "herb_345", name: "南沙参" },
-            { id: "herb_346", name: "桑椹" },
-            { id: "herb_393", name: "龟甲胶" },
-            { id: "herb_394", name: "鸡子黄" },
-            { id: "herb_395", name: "猪脊髓" },
-            { id: "herb_489", name: "楮实子" },
-            { id: "herb_578", name: "铁皮石斛" }
+            { id: "herb_105", name: "北沙参" },
+            { id: "herb_106", name: "麦冬" },
+            { id: "herb_107", name: "枸杞子" },
+            { id: "herb_108", name: "龟甲" },
+            { id: "herb_155", name: "女贞子" },
+            { id: "herb_156", name: "墨旱莲" },
+            { id: "herb_157", name: "百合" },
+            { id: "herb_158", name: "鳖甲" },
+            { id: "herb_277", name: "天冬" },
+            { id: "herb_278", name: "玉竹" },
+            { id: "herb_279", name: "黄精" },
+            { id: "herb_280", name: "黑芝麻" },
+            { id: "herb_339", name: "石斛" },
+            { id: "herb_344", name: "南沙参" },
+            { id: "herb_345", name: "桑椹" },
+            { id: "herb_392", name: "龟甲胶" },
+            { id: "herb_393", name: "鸡子黄" },
+            { id: "herb_394", name: "猪脊髓" },
+            { id: "herb_488", name: "楮实子" },
+            { id: "herb_577", name: "铁皮石斛" }
         ],
         "补阳药": [
-            { id: "herb_110", name: "鹿茸" },
-            { id: "herb_111", name: "杜仲" },
-            { id: "herb_112", name: "补骨脂" },
-            { id: "herb_160", name: "菟丝子" },
-            { id: "herb_219", name: "淫羊藿" },
-            { id: "herb_228", name: "肉苁蓉" },
-            { id: "herb_231", name: "仙茅" },
-            { id: "herb_247", name: "巴戟天" },
-            { id: "herb_274", name: "蛤蚧" },
-            { id: "herb_275", name: "冬虫夏草" },
-            { id: "herb_276", name: "胡桃仁" },
-            { id: "herb_277", name: "沙苑子" },
-            { id: "herb_339", name: "续断" },
-            { id: "herb_341", name: "益智仁" },
-            { id: "herb_342", name: "锁阳" },
-            { id: "herb_343", name: "核桃仁" },
-            { id: "herb_344", name: "韭菜子" },
-            { id: "herb_390", name: "紫河车" },
-            { id: "herb_391", name: "鹿角" },
-            { id: "herb_392", name: "鹿角胶" },
-            { id: "herb_466", name: "阳起石" },
-            { id: "herb_487", name: "胡芦巴" },
-            { id: "herb_501", name: "海狗肾" },
-            { id: "herb_502", name: "海马" },
-            { id: "herb_503", name: "哈蟆油" },
-            { id: "herb_573", name: "鹿角霜" },
-            { id: "herb_574", name: "脐带" },
-            { id: "herb_575", name: "杜仲叶" },
-            { id: "herb_576", name: "黄狗肾" },
-            { id: "herb_577", name: "海龙" }
+            { id: "herb_109", name: "鹿茸" },
+            { id: "herb_110", name: "杜仲" },
+            { id: "herb_111", name: "补骨脂" },
+            { id: "herb_159", name: "菟丝子" },
+            { id: "herb_218", name: "淫羊藿" },
+            { id: "herb_227", name: "肉苁蓉" },
+            { id: "herb_230", name: "仙茅" },
+            { id: "herb_246", name: "巴戟天" },
+            { id: "herb_273", name: "蛤蚧" },
+            { id: "herb_274", name: "冬虫夏草" },
+            { id: "herb_275", name: "胡桃仁" },
+            { id: "herb_276", name: "沙苑子" },
+            { id: "herb_338", name: "续断" },
+            { id: "herb_340", name: "益智仁" },
+            { id: "herb_341", name: "锁阳" },
+            { id: "herb_342", name: "核桃仁" },
+            { id: "herb_343", name: "韭菜子" },
+            { id: "herb_389", name: "紫河车" },
+            { id: "herb_390", name: "鹿角" },
+            { id: "herb_391", name: "鹿角胶" },
+            { id: "herb_465", name: "阳起石" },
+            { id: "herb_486", name: "胡芦巴" },
+            { id: "herb_500", name: "海狗肾" },
+            { id: "herb_501", name: "海马" },
+            { id: "herb_502", name: "哈蟆油" },
+            { id: "herb_572", name: "鹿角霜" },
+            { id: "herb_573", name: "脐带" },
+            { id: "herb_574", name: "杜仲叶" },
+            { id: "herb_575", name: "黄狗肾" },
+            { id: "herb_576", name: "海龙" }
         ]
     },
     // 收涩药
     "收涩药": {
         "固表止汗药": [
-            { id: "herb_113", name: "麻黄根" },
-            { id: "herb_248", name: "浮小麦" },
-            { id: "herb_491", name: "糯稻根" },
-            { id: "herb_579", name: "小麦" }
+            { id: "herb_112", name: "麻黄根" },
+            { id: "herb_247", name: "浮小麦" },
+            { id: "herb_490", name: "糯稻根" },
+            { id: "herb_578", name: "小麦" }
         ],
         "敛肺涩肠药": [
-            { id: "herb_114", name: "五味子" },
-            { id: "herb_115", name: "乌梅" },
-            { id: "herb_249", name: "诃子" },
-            { id: "herb_282", name: "五倍子" },
-            { id: "herb_283", name: "罂粟壳" },
-            { id: "herb_284", name: "肉豆蔻" },
-            { id: "herb_285", name: "赤石脂" },
-            { id: "herb_397", name: "椿皮" },
-            { id: "herb_465", name: "石榴皮" },
-            { id: "herb_490", name: "禹余粮" }
+            { id: "herb_113", name: "五味子" },
+            { id: "herb_114", name: "乌梅" },
+            { id: "herb_248", name: "诃子" },
+            { id: "herb_281", name: "五倍子" },
+            { id: "herb_282", name: "罂粟壳" },
+            { id: "herb_283", name: "肉豆蔻" },
+            { id: "herb_284", name: "赤石脂" },
+            { id: "herb_396", name: "椿皮" },
+            { id: "herb_464", name: "石榴皮" },
+            { id: "herb_489", name: "禹余粮" }
         ],
         "固精缩尿止带药": [
-            { id: "herb_116", name: "山茱萸" },
-            { id: "herb_117", name: "金樱子" },
-            { id: "herb_190", name: "海螵蛸" },
-            { id: "herb_250", name: "芡实" },
-            { id: "herb_286", name: "覆盆子" },
-            { id: "herb_287", name: "桑螵蛸" },
-            { id: "herb_288", name: "莲子" },
-            { id: "herb_396", name: "莲须" },
-            { id: "herb_504", name: "刺猬皮" },
-            { id: "herb_505", name: "鸡冠花" },
-            { id: "herb_580", name: "莲房" },
-            { id: "herb_581", name: "莲子心" },
-            { id: "herb_582", name: "荷梗" },
-            { id: "herb_583", name: "石莲子" }
+            { id: "herb_115", name: "山茱萸" },
+            { id: "herb_116", name: "金樱子" },
+            { id: "herb_189", name: "海螵蛸" },
+            { id: "herb_249", name: "芡实" },
+            { id: "herb_285", name: "覆盆子" },
+            { id: "herb_286", name: "桑螵蛸" },
+            { id: "herb_287", name: "莲子" },
+            { id: "herb_395", name: "莲须" },
+            { id: "herb_503", name: "刺猬皮" },
+            { id: "herb_504", name: "鸡冠花" },
+            { id: "herb_579", name: "莲房" },
+            { id: "herb_580", name: "莲子心" },
+            { id: "herb_581", name: "荷梗" },
+            { id: "herb_582", name: "石莲子" }
         ]
     },
     // 涌吐药
     "涌吐药": {
         "涌吐药": [
-            { id: "herb_118", name: "常山" },
-            { id: "herb_357", name: "瓜蒂" },
-            { id: "herb_492", name: "胆矾" },
-            { id: "herb_506", name: "藜芦" },
-            { id: "herb_584", name: "蜀漆" }
+            { id: "herb_117", name: "常山" },
+            { id: "herb_356", name: "瓜蒂" },
+            { id: "herb_491", name: "胆矾" },
+            { id: "herb_505", name: "藜芦" },
+            { id: "herb_583", name: "蜀漆" }
         ]
     },
     // 攻毒杀虫止痒药
     "攻毒杀虫止痒药": {
         "攻毒杀虫止痒药": [
-            { id: "herb_119", name: "雄黄" },
-            { id: "herb_120", name: "蛇床子" },
-            { id: "herb_329", name: "硫黄" },
-            { id: "herb_330", name: "白矾" },
-            { id: "herb_331", name: "蟾酥" },
-            { id: "herb_332", name: "樟脑" },
-            { id: "herb_333", name: "土荆皮" },
-            { id: "herb_334", name: "蜂房" },
-            { id: "herb_400", name: "木鳖子" },
-            { id: "herb_402", name: "儿茶" },
-            { id: "herb_470", name: "大蒜" },
-            { id: "herb_585", name: "皂矾" },
-            { id: "herb_586", name: "木槿皮" },
-            { id: "herb_587", name: "蜂蜡" },
-            { id: "herb_588", name: "蟾皮" },
-            { id: "herb_589", name: "守宫" }
+            { id: "herb_118", name: "雄黄" },
+            { id: "herb_119", name: "蛇床子" },
+            { id: "herb_328", name: "硫黄" },
+            { id: "herb_329", name: "白矾" },
+            { id: "herb_330", name: "蟾酥" },
+            { id: "herb_331", name: "樟脑" },
+            { id: "herb_332", name: "土荆皮" },
+            { id: "herb_333", name: "蜂房" },
+            { id: "herb_399", name: "木鳖子" },
+            { id: "herb_401", name: "儿茶" },
+            { id: "herb_469", name: "大蒜" },
+            { id: "herb_584", name: "皂矾" },
+            { id: "herb_585", name: "木槿皮" },
+            { id: "herb_586", name: "蜂蜡" },
+            { id: "herb_587", name: "蟾皮" },
+            { id: "herb_588", name: "守宫" }
         ]
     },
     // 拔毒化腐生肌药
     "拔毒化腐生肌药": {
         "拔毒化腐生肌药": [
-            { id: "herb_267", name: "红粉" },
-            { id: "herb_268", name: "轻粉" },
-            { id: "herb_269", name: "砒石" },
-            { id: "herb_270", name: "铅丹" },
-            { id: "herb_271", name: "炉甘石" },
-            { id: "herb_272", name: "硼砂" },
-            { id: "herb_360", name: "升药" },
-            { id: "herb_590", name: "水银" },
-            { id: "herb_591", name: "密陀僧" }
+            { id: "herb_266", name: "红粉" },
+            { id: "herb_267", name: "轻粉" },
+            { id: "herb_268", name: "砒石" },
+            { id: "herb_269", name: "铅丹" },
+            { id: "herb_270", name: "炉甘石" },
+            { id: "herb_271", name: "硼砂" },
+            { id: "herb_359", name: "升药" },
+            { id: "herb_589", name: "水银" },
+            { id: "herb_590", name: "密陀僧" }
         ]
     }
 };

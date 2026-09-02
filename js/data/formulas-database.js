@@ -449,7 +449,7 @@ const formulasDatabase = [
         pinyin: "Ban Xia Xie Xin Tang",
         source: "《伤寒论》",
         category: "和解剂",
-        subcategory: "调和肠胃剂",
+        subcategory: "调和寒热剂",
         composition: [
             { herbName: "半夏", dosage: "12g", role: "君药" },
             { herbName: "黄芩", dosage: "9g", role: "臣药" },
@@ -1029,7 +1029,7 @@ const formulasDatabase = [
         pinyin: "Di Huang Yin Zi",
         source: "《圣济总录》",
         category: "补益剂",
-        subcategory: "阴阳双补剂",
+        subcategory: "阴阳并补剂",
         composition: [
             { herbName: "熟地黄", dosage: "15g", role: "君药" },
             { herbName: "山茱萸", dosage: "9g", role: "臣药" },
@@ -1094,7 +1094,7 @@ const formulasDatabase = [
         pinyin: "Si Shen Wan",
         source: "《内科摘要》",
         category: "固涩剂",
-        subcategory: "涩肠止泻剂",
+        subcategory: "涩肠固脱剂",
         composition: [
             { herbName: "补骨脂", dosage: "12g", role: "君药" },
             { herbName: "肉豆蔻", dosage: "9g", role: "臣药" },
@@ -1121,7 +1121,7 @@ const formulasDatabase = [
         pinyin: "Jin Suo Gu Jing Wan",
         source: "《医方集解》",
         category: "固涩剂",
-        subcategory: "固精止遗剂",
+        subcategory: "涩精止遗剂",
         composition: [
             { herbName: "沙苑蒺藜", dosage: "12g", role: "君药" },
             { herbName: "芡实", dosage: "12g", role: "臣药" },
@@ -2189,7 +2189,7 @@ const formulasDatabase = [
         pinyin: "Bai Tou Weng Tang",
         source: "《伤寒论》",
         category: "清热剂",
-        subcategory: "清热解毒剂",
+        subcategory: "清脏腑热剂",
         composition: [
             { herbName: "白头翁", dosage: "15g", role: "君药" },
             { herbName: "黄连", dosage: "6g", role: "臣药" },
@@ -2214,7 +2214,7 @@ const formulasDatabase = [
         pinyin: "Shao Yao Tang",
         source: "《素问病机气宜保命集》",
         category: "清热剂",
-        subcategory: "清热解毒剂",
+        subcategory: "清脏腑热剂",
         composition: [
             { herbName: "芍药", dosage: "30g", role: "君药" },
             { herbName: "当归", dosage: "9g", role: "臣药" },
@@ -2357,7 +2357,7 @@ const formulasDatabase = [
         pinyin: "Zhi Gan Cao Tang",
         source: "《伤寒论》",
         category: "补益剂",
-        subcategory: "补血剂",
+        subcategory: "气血双补剂",
         composition: [
             { herbName: "炙甘草", dosage: "12g", role: "君药" },
             { herbName: "人参", dosage: "6g", role: "臣药" },
@@ -3124,7 +3124,7 @@ const formulasDatabase = [
         pinyin: "San Zi Yang Qin Tang",
         source: "《韩氏医通》",
         category: "祛痰剂",
-        subcategory: "燥湿化痰剂",
+        subcategory: "温化寒痰剂",
         composition: [
             { herbName: "紫苏子", dosage: "9g", role: "君药" },
             { herbName: "白芥子", dosage: "6g", role: "臣药" },
@@ -3449,8 +3449,8 @@ const formulasDatabase = [
         name: "易黄汤",
         pinyin: "Yi Huang Tang",
         source: "《傅青主女科》",
-        category: "祛湿剂",
-        subcategory: "清热祛湿剂",
+        category: "固涩剂",
+        subcategory: "固崩止带剂",
         composition: [
             { herbName: "山药", dosage: "30g", role: "君药" },
             { herbName: "芡实", dosage: "30g", role: "君药" },
@@ -4097,7 +4097,7 @@ const formulasDatabase = [
         pinyin: "Liang Ge San",
         source: "《太平惠民和剂局方》",
         category: "清热剂",
-        subcategory: "清气分热剂",
+        subcategory: "清热解毒剂",
         composition: [
             { herbName: "连翘", dosage: "25g", role: "君药" },
             { herbName: "黄芩", dosage: "15g", role: "臣药" },
@@ -4174,8 +4174,8 @@ const formulasDatabase = [
         name: "千金苇茎汤",
         pinyin: "Qian Jin Wei Jing Tang",
         source: "《备急千金要方》",
-        category: "清热剂",
-        subcategory: "清脏腑热剂",
+        category: "治痈疡剂",
+        subcategory: "散结消痈剂",
         composition: [
             { herbName: "芦根", dosage: "60g", role: "君药" },
             { herbName: "薏苡仁", dosage: "30g", role: "臣药" },
@@ -4389,7 +4389,7 @@ const formulasDatabase = [
         pinyin: "Sang Piao Xiao San",
         source: "《本草衍义》",
         category: "固涩剂",
-        subcategory: "固精止遗剂",
+        subcategory: "涩精止遗剂",
         composition: [
             { herbName: "桑螵蛸", dosage: "30g", role: "君药" },
             { herbName: "龙骨", dosage: "30g", role: "臣药" },
@@ -4418,7 +4418,7 @@ const formulasDatabase = [
         pinyin: "Zhen Ren Yang Zang Tang",
         source: "《太平惠民和剂局方》",
         category: "固涩剂",
-        subcategory: "涩肠止泻剂",
+        subcategory: "涩肠固脱剂",
         composition: [
             { herbName: "罂粟壳", dosage: "18g", role: "君药" },
             { herbName: "诃子", dosage: "12g", role: "臣药" },
@@ -4501,8 +4501,8 @@ const formulasDatabase = [
         name: "暖肝煎",
         pinyin: "Nuan Gan Jian",
         source: "《景岳全书》",
-        category: "理气剂",
-        subcategory: "行气剂",
+        category: "温里剂",
+        subcategory: "温经散寒剂",
         composition: [
             { herbName: "肉桂", dosage: "6g", role: "君药" },
             { herbName: "小茴香", dosage: "6g", role: "君药" },
@@ -5459,7 +5459,7 @@ const formulasDatabase = [
         pinyin: "Tai Shan Pan Shi San",
         source: "《古今医统大全》",
         category: "补益剂",
-        subcategory: "补气剂",
+        subcategory: "气血双补剂",
         composition: [
             { herbName: "人参", dosage: "3g", role: "君药" },
             { herbName: "黄芪", dosage: "6g", role: "君药" },
@@ -5492,7 +5492,7 @@ const formulasDatabase = [
         pinyin: "Gui Lu Er Xian Jiao",
         source: "《医便》",
         category: "补益剂",
-        subcategory: "阴阳双补剂",
+        subcategory: "阴阳并补剂",
         composition: [
             { herbName: "鹿角", dosage: "5000g", role: "君药" },
             { herbName: "龟甲", dosage: "2500g", role: "君药" },
@@ -5517,7 +5517,7 @@ const formulasDatabase = [
         pinyin: "Qi Bao Mei Ran Dan",
         source: "《积善堂方》（录于《本草纲目》）",
         category: "补益剂",
-        subcategory: "补阳剂",
+        subcategory: "阴阳并补剂",
         composition: [
             { herbName: "何首乌", dosage: "1000g（制）", role: "君药" },
             { herbName: "茯苓", dosage: "250g", role: "佐药" },
@@ -5606,7 +5606,7 @@ const formulasDatabase = [
         pinyin: "Tao Hua Tang",
         source: "《伤寒论》",
         category: "固涩剂",
-        subcategory: "涩肠止泻剂",
+        subcategory: "涩肠固脱剂",
         composition: [
             { herbName: "赤石脂", dosage: "30g（一半入煎、一半冲服）", role: "君药" },
             { herbName: "干姜", dosage: "9g", role: "臣药" },
@@ -5630,7 +5630,7 @@ const formulasDatabase = [
         pinyin: "Suo Quan Wan",
         source: "《魏氏家藏方》",
         category: "固涩剂",
-        subcategory: "固精止遗剂",
+        subcategory: "涩精止遗剂",
         composition: [
             { herbName: "益智仁", dosage: "9g", role: "君药" },
             { herbName: "乌药", dosage: "9g", role: "臣药" },
@@ -5707,7 +5707,7 @@ const formulasDatabase = [
         pinyin: "Zhen Zhu Mu Wan",
         source: "《普济本事方》",
         category: "安神剂",
-        subcategory: "补养安神剂",
+        subcategory: "重镇安神剂",
         composition: [
             { herbName: "珍珠母", dosage: "22.5g", role: "君药" },
             { herbName: "当归", dosage: "45g", role: "臣药" },
@@ -6847,7 +6847,7 @@ const formulasDatabase = [
         pinyin: "Nei Bu Huang Qi Tang",
         source: "《外科正宗》",
         category: "治痈疡剂",
-        subcategory: "托里透脓剂",
+        subcategory: "补虚敛疮剂",
         composition: [
             { herbName: "黄芪", dosage: "15g", role: "君药" },
             { herbName: "人参", dosage: "6g", role: "臣药" },
@@ -7045,7 +7045,7 @@ const formulasDatabase = [
         pinyin: "Qing Shu Yi Qi Tang",
         source: "《脾胃论》",
         category: "祛暑剂",
-        subcategory: "清暑益气剂",
+        subcategory: "祛暑益气剂",
         composition: [
             { herbName: "黄芪", dosage: "12g", role: "君药" },
             { herbName: "苍术", dosage: "6g", role: "佐药" },
@@ -7332,7 +7332,7 @@ const formulasDatabase = [
         pinyin: "Bu Tian Da Zao Wan",
         source: "《医学心悟》",
         category: "补益剂",
-        subcategory: "阴阳双补剂",
+        subcategory: "阴阳并补剂",
         composition: [
             { herbName: "人参", dosage: "9g", role: "君药" },
             { herbName: "白术", dosage: "9g", role: "臣药" },
@@ -7450,7 +7450,7 @@ const formulasDatabase = [
         pinyin: "Zhu Che Wan",
         source: "《备急千金要方》",
         category: "固涩剂",
-        subcategory: "涩肠止泻剂",
+        subcategory: "涩肠固脱剂",
         composition: [
             { herbName: "黄连", dosage: "18g", role: "君药" },
             { herbName: "干姜", dosage: "6g", role: "臣药" },
@@ -7532,7 +7532,7 @@ const formulasDatabase = [
         pinyin: "Ge Hua Jie Cheng Tang",
         source: "《兰室秘藏》",
         category: "消食剂",
-        subcategory: "消食化滞剂",
+        subcategory: "健脾消食剂",
         composition: [
             { herbName: "葛花", dosage: "15g", role: "君药" },
             { herbName: "砂仁", dosage: "6g", role: "臣药" },
@@ -7662,7 +7662,7 @@ const formulaCategories = {
             "formula_015",
             "formula_070"
         ],
-        "调和肠胃剂": [
+        "调和寒热剂": [
             "formula_016"
         ]
     },
@@ -7671,7 +7671,6 @@ const formulaCategories = {
             "formula_017",
             "formula_018",
             "formula_140",
-            "formula_141",
             "formula_181"
         ],
         "清营凉血剂": [
@@ -7681,8 +7680,7 @@ const formulaCategories = {
         "清热解毒剂": [
             "formula_021",
             "formula_022",
-            "formula_074",
-            "formula_075",
+            "formula_141",
             "formula_142"
         ],
         "清脏腑热剂": [
@@ -7690,9 +7688,10 @@ const formulaCategories = {
             "formula_071",
             "formula_072",
             "formula_073",
+            "formula_074",
+            "formula_075",
             "formula_103",
-            "formula_123",
-            "formula_144"
+            "formula_123"
         ],
         "清虚热剂": [
             "formula_024",
@@ -7711,7 +7710,7 @@ const formulaCategories = {
             "formula_242",
             "formula_243"
         ],
-        "清暑益气剂": [
+        "祛暑益气剂": [
             "formula_244"
         ]
     },
@@ -7729,6 +7728,7 @@ const formulaCategories = {
         ],
         "温经散寒剂": [
             "formula_028",
+            "formula_156",
             "formula_257"
         ]
     },
@@ -7753,18 +7753,18 @@ const formulaCategories = {
             "formula_077",
             "formula_079",
             "formula_125",
-            "formula_189",
             "formula_192"
         ],
         "补血剂": [
             "formula_031",
             "formula_032",
-            "formula_078",
-            "formula_080"
+            "formula_078"
         ],
         "气血双补剂": [
             "formula_033",
-            "formula_120"
+            "formula_080",
+            "formula_120",
+            "formula_189"
         ],
         "补阴剂": [
             "formula_034",
@@ -7779,28 +7779,29 @@ const formulaCategories = {
         "补阳剂": [
             "formula_035",
             "formula_105",
-            "formula_149",
-            "formula_191"
+            "formula_149"
         ],
-        "阴阳双补剂": [
+        "阴阳并补剂": [
             "formula_036",
             "formula_190",
+            "formula_191",
             "formula_254"
         ]
     },
     "固涩剂": {
-        "涩肠止泻剂": [
+        "涩肠固脱剂": [
             "formula_038",
             "formula_153",
             "formula_194",
             "formula_258"
         ],
-        "固精止遗剂": [
+        "涩精止遗剂": [
             "formula_039",
             "formula_152",
             "formula_195"
         ],
         "固崩止带剂": [
+            "formula_118",
             "formula_119",
             "formula_196"
         ],
@@ -7815,13 +7816,13 @@ const formulaCategories = {
         "重镇安神剂": [
             "formula_040",
             "formula_197",
+            "formula_198",
             "formula_245"
         ],
         "补养安神剂": [
             "formula_041",
             "formula_042",
             "formula_154",
-            "formula_198",
             "formula_246"
         ],
         "交通心肾剂": [
@@ -7849,7 +7850,6 @@ const formulaCategories = {
             "formula_102",
             "formula_128",
             "formula_155",
-            "formula_156",
             "formula_202",
             "formula_222",
             "formula_248",
@@ -7941,7 +7941,6 @@ const formulaCategories = {
             "formula_093",
             "formula_094",
             "formula_116",
-            "formula_118",
             "formula_215",
             "formula_216"
         ],
@@ -7971,7 +7970,6 @@ const formulaCategories = {
         "燥湿化痰剂": [
             "formula_066",
             "formula_097",
-            "formula_106",
             "formula_255"
         ],
         "清热化痰剂": [
@@ -7984,6 +7982,7 @@ const formulaCategories = {
             "formula_220"
         ],
         "温化寒痰剂": [
+            "formula_106",
             "formula_167",
             "formula_219"
         ],
@@ -7995,11 +7994,11 @@ const formulaCategories = {
         "消食化滞剂": [
             "formula_067",
             "formula_100",
-            "formula_221",
-            "formula_261"
+            "formula_221"
         ],
         "健脾消食剂": [
-            "formula_124"
+            "formula_124",
+            "formula_261"
         ]
     },
     "驱虫剂": {
@@ -8022,6 +8021,7 @@ const formulaCategories = {
             "formula_114",
             "formula_115",
             "formula_143",
+            "formula_144",
             "formula_187",
             "formula_231",
             "formula_232",
@@ -8031,8 +8031,10 @@ const formulaCategories = {
         ],
         "托里透脓剂": [
             "formula_236",
-            "formula_237",
             "formula_238"
+        ],
+        "补虚敛疮剂": [
+            "formula_237"
         ]
     }
 };

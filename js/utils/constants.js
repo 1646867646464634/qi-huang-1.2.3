@@ -1,7 +1,7 @@
 // ===== 岐黄·辅助诊疗系统 - 全局常量 =====
 const CONSTANTS = {
     APP_NAME: '岐黄·辅助诊疗系统',
-    APP_VERSION: '1.3.6',
+    APP_VERSION: '1.3.7',
     
     // 体质类型
     CONSTITUTION_TYPES: [
